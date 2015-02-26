@@ -1,0 +1,276 @@
+version 2
+run General-0-20150226-10:52:32-3108
+attr configname General
+attr datetime 20150226-10:52:32
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network ProxyUnloading
+attr processid 3108
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+scalar ProxyUnloading.youtube.pingApp 	"Pings sent" 	0
+scalar ProxyUnloading.youtube.networkLayer.ipv6 	IPv6_numDropNonActive 	0
+scalar ProxyUnloading.youtube.networkLayer.ipv6 	IPv6_Forwarded 	4
+scalar ProxyUnloading.youtube.eth[0].queue 	"packets received by queue" 	4
+scalar ProxyUnloading.youtube.eth[0].queue 	"packets dropped by queue" 	0
+scalar ProxyUnloading.youtube.eth[0].mac 	"simulated time" 	3371.728539338
+scalar ProxyUnloading.youtube.eth[0].mac 	"txrate (Mb)" 	100
+scalar ProxyUnloading.youtube.eth[0].mac 	"full duplex" 	1
+scalar ProxyUnloading.youtube.eth[0].mac 	"frames sent" 	4
+scalar ProxyUnloading.youtube.eth[0].mac 	"frames rcvd" 	15
+scalar ProxyUnloading.youtube.eth[0].mac 	"bytes sent" 	256
+scalar ProxyUnloading.youtube.eth[0].mac 	"bytes rcvd" 	960
+scalar ProxyUnloading.youtube.eth[0].mac 	"frames from higher layer" 	4
+scalar ProxyUnloading.youtube.eth[0].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar ProxyUnloading.youtube.eth[0].mac 	"frames dropped (bit error)" 	0
+scalar ProxyUnloading.youtube.eth[0].mac 	"frames dropped (not for us)" 	0
+scalar ProxyUnloading.youtube.eth[0].mac 	"frames passed up to HL" 	15
+scalar ProxyUnloading.youtube.eth[0].mac 	"PAUSE frames sent" 	0
+scalar ProxyUnloading.youtube.eth[0].mac 	"PAUSE frames rcvd" 	0
+scalar ProxyUnloading.youtube.eth[0].mac 	"frames/sec sent" 	0.0011863351255393
+scalar ProxyUnloading.youtube.eth[0].mac 	"frames/sec rcvd" 	0.0044487567207724
+scalar ProxyUnloading.youtube.eth[0].mac 	"bits/sec sent" 	0.60740358427613
+scalar ProxyUnloading.youtube.eth[0].mac 	"bits/sec rcvd" 	2.2777634410355
+scalar ProxyUnloading.youtube.eth[0].mac 	"rx channel idle (%)" 	99.999997437516
+scalar ProxyUnloading.youtube.eth[0].mac 	"rx channel utilization (%)" 	2.5624838711649e-06
+scalar ProxyUnloading.youtube.eth[0].mac 	"rx channel collision (%)" 	0
+scalar ProxyUnloading.youtube.eth[0].mac 	collisions 	0
+scalar ProxyUnloading.youtube.eth[0].mac 	backoffs 	0
+scalar ProxyUnloading.youtube.eth[0].encap 	"packets from higher layer" 	4
+scalar ProxyUnloading.youtube.eth[0].encap 	"frames from MAC" 	15
+scalar ProxyUnloading.spotify.pingApp 	"Pings sent" 	0
+scalar ProxyUnloading.spotify.networkLayer.ipv6 	IPv6_numDropNonActive 	0
+scalar ProxyUnloading.spotify.networkLayer.ipv6 	IPv6_Forwarded 	4
+scalar ProxyUnloading.spotify.eth[0].queue 	"packets received by queue" 	4
+scalar ProxyUnloading.spotify.eth[0].queue 	"packets dropped by queue" 	0
+scalar ProxyUnloading.spotify.eth[0].mac 	"simulated time" 	3371.728539338
+scalar ProxyUnloading.spotify.eth[0].mac 	"txrate (Mb)" 	100
+scalar ProxyUnloading.spotify.eth[0].mac 	"full duplex" 	1
+scalar ProxyUnloading.spotify.eth[0].mac 	"frames sent" 	4
+scalar ProxyUnloading.spotify.eth[0].mac 	"frames rcvd" 	13
+scalar ProxyUnloading.spotify.eth[0].mac 	"bytes sent" 	256
+scalar ProxyUnloading.spotify.eth[0].mac 	"bytes rcvd" 	832
+scalar ProxyUnloading.spotify.eth[0].mac 	"frames from higher layer" 	4
+scalar ProxyUnloading.spotify.eth[0].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar ProxyUnloading.spotify.eth[0].mac 	"frames dropped (bit error)" 	0
+scalar ProxyUnloading.spotify.eth[0].mac 	"frames dropped (not for us)" 	0
+scalar ProxyUnloading.spotify.eth[0].mac 	"frames passed up to HL" 	13
+scalar ProxyUnloading.spotify.eth[0].mac 	"PAUSE frames sent" 	0
+scalar ProxyUnloading.spotify.eth[0].mac 	"PAUSE frames rcvd" 	0
+scalar ProxyUnloading.spotify.eth[0].mac 	"frames/sec sent" 	0.0011863351255393
+scalar ProxyUnloading.spotify.eth[0].mac 	"frames/sec rcvd" 	0.0038555891580028
+scalar ProxyUnloading.spotify.eth[0].mac 	"bits/sec sent" 	0.60740358427613
+scalar ProxyUnloading.spotify.eth[0].mac 	"bits/sec rcvd" 	1.9740616488974
+scalar ProxyUnloading.spotify.eth[0].mac 	"rx channel idle (%)" 	99.999997779181
+scalar ProxyUnloading.spotify.eth[0].mac 	"rx channel utilization (%)" 	2.2208193550096e-06
+scalar ProxyUnloading.spotify.eth[0].mac 	"rx channel collision (%)" 	0
+scalar ProxyUnloading.spotify.eth[0].mac 	collisions 	0
+scalar ProxyUnloading.spotify.eth[0].mac 	backoffs 	0
+scalar ProxyUnloading.spotify.eth[0].encap 	"packets from higher layer" 	4
+scalar ProxyUnloading.spotify.eth[0].encap 	"frames from MAC" 	13
+scalar ProxyUnloading.roadSideUnit_A.relayUnit 	"processed frames" 	67509
+scalar ProxyUnloading.roadSideUnit_A.relayUnit 	"dropped frames" 	0
+scalar ProxyUnloading.roadSideUnit_A.wlan.mgmt 	"packets received by queue" 	101226
+scalar ProxyUnloading.roadSideUnit_A.wlan.mgmt 	"packets dropped by queue" 	67409
+scalar ProxyUnloading.roadSideUnit_A.wlan.mac 	numSent 	0
+scalar ProxyUnloading.roadSideUnit_A.wlan.mac 	numSentWithoutRetry 	0
+scalar ProxyUnloading.roadSideUnit_A.wlan.mac 	numReceived 	0
+scalar ProxyUnloading.roadSideUnit_A.wlan.mac 	numSentBroadcast 	5398
+scalar ProxyUnloading.roadSideUnit_A.wlan.mac 	numReceivedBroadcast 	0
+scalar ProxyUnloading.roadSideUnit_A.wlan.mac 	numReceivedOther 	0
+scalar ProxyUnloading.roadSideUnit_A.wlan.mac 	numCollision 	0
+scalar ProxyUnloading.roadSideUnit_A.wlan.mac 	numGivenUp 	0
+scalar ProxyUnloading.roadSideUnit_A.wlan.mac 	numAckSend 	0
+scalar ProxyUnloading.roadSideUnit_A.wlan.mac 	numRetry 	0
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"simulated time" 	3371.728539338
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"txrate (Mb)" 	100
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"full duplex" 	1
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"frames sent" 	0
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"frames rcvd" 	67509
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"bytes sent" 	0
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"bytes rcvd" 	4320576
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"frames from higher layer" 	0
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"frames from higher layer dropped (iface down)" 	0
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"frames dropped (bit error)" 	0
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"frames dropped (not for us)" 	0
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"frames passed up to HL" 	67509
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"PAUSE frames sent" 	0
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"PAUSE frames rcvd" 	0
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"frames/sec sent" 	0
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"frames/sec rcvd" 	20.022074497508
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"bits/sec sent" 	0
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"bits/sec rcvd" 	10251.302142724
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"rx channel idle (%)" 	99.988467285089
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"rx channel utilization (%)" 	0.011532714910565
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	"rx channel collision (%)" 	0
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	collisions 	0
+scalar ProxyUnloading.roadSideUnit_A.eth[0] 	backoffs 	0
+scalar ProxyUnloading.car1.pingApp 	"Pings sent" 	0
+scalar ProxyUnloading.car1.networkLayer.ipv6 	IPv6_numDropNonActive 	0
+scalar ProxyUnloading.car1.networkLayer.ipv6 	IPv6_Forwarded 	4
+scalar ProxyUnloading.car1.wlan[0].mgmt 	"packets received by queue" 	13470
+scalar ProxyUnloading.car1.wlan[0].mgmt 	"packets dropped by queue" 	0
+scalar ProxyUnloading.car1.wlan[0].mac 	numSent 	0
+scalar ProxyUnloading.car1.wlan[0].mac 	numSentWithoutRetry 	0
+scalar ProxyUnloading.car1.wlan[0].mac 	numReceived 	0
+scalar ProxyUnloading.car1.wlan[0].mac 	numSentBroadcast 	10505
+scalar ProxyUnloading.car1.wlan[0].mac 	numReceivedBroadcast 	0
+scalar ProxyUnloading.car1.wlan[0].mac 	numReceivedOther 	0
+scalar ProxyUnloading.car1.wlan[0].mac 	numCollision 	0
+scalar ProxyUnloading.car1.wlan[0].mac 	numGivenUp 	0
+scalar ProxyUnloading.car1.wlan[0].mac 	numAckSend 	0
+scalar ProxyUnloading.car1.wlan[0].mac 	numRetry 	0
+scalar ProxyUnloading.proxy_Server_HA.networkLayer.ipv6 	IPv6_numDropNonActive 	0
+scalar ProxyUnloading.proxy_Server_HA.networkLayer.ipv6 	IPv6_Forwarded 	135022
+scalar ProxyUnloading.proxy_Server_HA.eth[0].queue 	"packets received by queue" 	67509
+scalar ProxyUnloading.proxy_Server_HA.eth[0].queue 	"packets dropped by queue" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"simulated time" 	3371.728539338
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"txrate (Mb)" 	100
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"full duplex" 	1
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"frames sent" 	67509
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"frames rcvd" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"bytes sent" 	4320576
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"bytes rcvd" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"frames from higher layer" 	67509
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"frames dropped (bit error)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"frames dropped (not for us)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"frames passed up to HL" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"PAUSE frames sent" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"PAUSE frames rcvd" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"frames/sec sent" 	20.022074497508
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"frames/sec rcvd" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"bits/sec sent" 	10251.302142724
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"bits/sec rcvd" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"rx channel idle (%)" 	100
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"rx channel utilization (%)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	"rx channel collision (%)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	collisions 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[0].mac 	backoffs 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[0].encap 	"packets from higher layer" 	67509
+scalar ProxyUnloading.proxy_Server_HA.eth[0].encap 	"frames from MAC" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[1].queue 	"packets received by queue" 	67485
+scalar ProxyUnloading.proxy_Server_HA.eth[1].queue 	"packets dropped by queue" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"simulated time" 	3371.728539338
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"txrate (Mb)" 	100
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"full duplex" 	1
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"frames sent" 	67485
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"frames rcvd" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"bytes sent" 	4319040
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"bytes rcvd" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"frames from higher layer" 	67485
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"frames dropped (bit error)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"frames dropped (not for us)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"frames passed up to HL" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"PAUSE frames sent" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"PAUSE frames rcvd" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"frames/sec sent" 	20.014956486755
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"frames/sec rcvd" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"bits/sec sent" 	10247.657721219
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"bits/sec rcvd" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"rx channel idle (%)" 	100
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"rx channel utilization (%)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	"rx channel collision (%)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	collisions 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[1].mac 	backoffs 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[1].encap 	"packets from higher layer" 	67485
+scalar ProxyUnloading.proxy_Server_HA.eth[1].encap 	"frames from MAC" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[2].queue 	"packets received by queue" 	13
+scalar ProxyUnloading.proxy_Server_HA.eth[2].queue 	"packets dropped by queue" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"simulated time" 	3371.728539338
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"txrate (Mb)" 	100
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"full duplex" 	1
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"frames sent" 	13
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"frames rcvd" 	4
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"bytes sent" 	832
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"bytes rcvd" 	256
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"frames from higher layer" 	13
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"frames dropped (bit error)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"frames dropped (not for us)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"frames passed up to HL" 	4
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"PAUSE frames sent" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"PAUSE frames rcvd" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"frames/sec sent" 	0.0038555891580028
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"frames/sec rcvd" 	0.0011863351255393
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"bits/sec sent" 	1.9740616488974
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"bits/sec rcvd" 	0.60740358427613
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"rx channel idle (%)" 	99.999999316671
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"rx channel utilization (%)" 	6.8332903231064e-07
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	"rx channel collision (%)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	collisions 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[2].mac 	backoffs 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[2].encap 	"packets from higher layer" 	13
+scalar ProxyUnloading.proxy_Server_HA.eth[2].encap 	"frames from MAC" 	4
+scalar ProxyUnloading.proxy_Server_HA.eth[3].queue 	"packets received by queue" 	15
+scalar ProxyUnloading.proxy_Server_HA.eth[3].queue 	"packets dropped by queue" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"simulated time" 	3371.728539338
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"txrate (Mb)" 	100
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"full duplex" 	1
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"frames sent" 	15
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"frames rcvd" 	4
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"bytes sent" 	960
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"bytes rcvd" 	256
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"frames from higher layer" 	15
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"frames dropped (bit error)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"frames dropped (not for us)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"frames passed up to HL" 	4
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"PAUSE frames sent" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"PAUSE frames rcvd" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"frames/sec sent" 	0.0044487567207724
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"frames/sec rcvd" 	0.0011863351255393
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"bits/sec sent" 	2.2777634410355
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"bits/sec rcvd" 	0.60740358427613
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"rx channel idle (%)" 	99.999999316671
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"rx channel utilization (%)" 	6.8332903231064e-07
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	"rx channel collision (%)" 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	collisions 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[3].mac 	backoffs 	0
+scalar ProxyUnloading.proxy_Server_HA.eth[3].encap 	"packets from higher layer" 	15
+scalar ProxyUnloading.proxy_Server_HA.eth[3].encap 	"frames from MAC" 	4
+scalar ProxyUnloading.roadSideUnit_B.relayUnit 	"processed frames" 	67485
+scalar ProxyUnloading.roadSideUnit_B.relayUnit 	"dropped frames" 	0
+scalar ProxyUnloading.roadSideUnit_B.wlan.mgmt 	"packets received by queue" 	101202
+scalar ProxyUnloading.roadSideUnit_B.wlan.mgmt 	"packets dropped by queue" 	67385
+scalar ProxyUnloading.roadSideUnit_B.wlan.mac 	numSent 	0
+scalar ProxyUnloading.roadSideUnit_B.wlan.mac 	numSentWithoutRetry 	0
+scalar ProxyUnloading.roadSideUnit_B.wlan.mac 	numReceived 	0
+scalar ProxyUnloading.roadSideUnit_B.wlan.mac 	numSentBroadcast 	5398
+scalar ProxyUnloading.roadSideUnit_B.wlan.mac 	numReceivedBroadcast 	0
+scalar ProxyUnloading.roadSideUnit_B.wlan.mac 	numReceivedOther 	0
+scalar ProxyUnloading.roadSideUnit_B.wlan.mac 	numCollision 	0
+scalar ProxyUnloading.roadSideUnit_B.wlan.mac 	numGivenUp 	0
+scalar ProxyUnloading.roadSideUnit_B.wlan.mac 	numAckSend 	0
+scalar ProxyUnloading.roadSideUnit_B.wlan.mac 	numRetry 	0
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"simulated time" 	3371.728539338
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"txrate (Mb)" 	100
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"full duplex" 	1
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"frames sent" 	0
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"frames rcvd" 	67485
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"bytes sent" 	0
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"bytes rcvd" 	4319040
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"frames from higher layer" 	0
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"frames from higher layer dropped (iface down)" 	0
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"frames dropped (bit error)" 	0
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"frames dropped (not for us)" 	0
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"frames passed up to HL" 	67485
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"PAUSE frames sent" 	0
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"PAUSE frames rcvd" 	0
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"frames/sec sent" 	0
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"frames/sec rcvd" 	20.014956486755
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"bits/sec sent" 	0
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"bits/sec rcvd" 	10247.657721219
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"rx channel idle (%)" 	99.988471385064
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"rx channel utilization (%)" 	0.011528614936371
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	"rx channel collision (%)" 	0
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	collisions 	0
+scalar ProxyUnloading.roadSideUnit_B.eth[0] 	backoffs 	0
