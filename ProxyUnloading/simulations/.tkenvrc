@@ -1,0 +1,3 @@
+# Partial Tkenv config file -- see $HOME/.tkenvrc as well
+inspector "ProxyUnloading" "ProxyUnloading" "2" "607x337+1+80:normal"
+
