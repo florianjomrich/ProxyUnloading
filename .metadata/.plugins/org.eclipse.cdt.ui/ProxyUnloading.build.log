@@ -1,0 +1,8 @@
+08:57:11 **** Incremental Build of configuration gcc-debug for project ProxyUnloading ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/ProxyUnloading/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/ProxyUnloading/src'
+
+08:57:11 Build Finished (took 70ms)
+

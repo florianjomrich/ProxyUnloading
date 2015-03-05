@@ -1,0 +1,1771 @@
+08:49:43 **** Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
+applications/dhcp/DHCPServer.cc
+applications/dhcp/DHCPClient.cc
+applications/ethernet/EtherAppCli.cc
+applications/ethernet/EtherAppSrv.cc
+applications/generic/IPTrafGen.cc
+applications/mcoa/Video/MCoAVideoStreamServer.cc
+applications/mcoa/Video/MCoAVideoStreamServer.cc: In member function ‘virtual void MCoAVideoStreamServer::initialize()’:
+applications/mcoa/Video/MCoAVideoStreamServer.cc:47:9: warning: unused variable ‘destPort’ [-Wunused-variable]
+     int destPort = par("destPort");
+         ^
+applications/mcoa/Video/MCoAVideoStreamCli.cc
+applications/mcoa/Video/MCoAVideoStreamCli.cc: In member function ‘virtual void MCoAVideoStreamCli::receiveStream(cPacket*)’:
+applications/mcoa/Video/MCoAVideoStreamCli.cc:98:37: warning: statement has no effect [-Wunused-value]
+     nLost < 0 ? nLost * (-1) : nLost;
+                                     ^
+applications/mcoa/Video/MCoAVideoCli.cc
+applications/mcoa/Video/MCoAVideoCli.cc: In member function ‘virtual void MCoAVideoCli::receiveStream(cPacket*)’:
+applications/mcoa/Video/MCoAVideoCli.cc:78:37: warning: statement has no effect [-Wunused-value]
+     nLost < 0 ? nLost * (-1) : nLost;
+                                     ^
+applications/mcoa/Video/MCoAVideoSrv.cc
+applications/mcoa/VoIP/MCoAUDPApp.cc
+applications/mcoa/VoIP/MCoAUDPApp.cc: In member function ‘virtual void MCoAUDPApp::processPacket(cPacket*)’:
+applications/mcoa/VoIP/MCoAUDPApp.cc:234:19: warning: variable ‘rtt’ set but not used [-Wunused-but-set-variable]
+         simtime_t rtt = simTime() - packet->getCreationTime();
+                   ^
+applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.cc
+applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.cc: In member function ‘virtual void Proxy_Enhanced_MCoAVideoCli::receiveStream(cPacket*)’:
+applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.cc:78:37: warning: statement has no effect [-Wunused-value]
+     nLost < 0 ? nLost * (-1) : nLost;
+                                     ^
+applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.cc
+applications/mcoa/udpbase/MCoAUDPBase.cc
+applications/pingapp/Proxyunloading_PingApp.cc
+applications/pingapp/PingApp.cc
+applications/rtpapp/RTPApplication.cc
+applications/rtpapp/RTPApplication.cc: In member function ‘virtual void RTPApplication::activity()’:
+applications/rtpapp/RTPApplication.cc:72:10: warning: variable ‘sessionEntered’ set but not used [-Wunused-but-set-variable]
+     bool sessionEntered = false;
+          ^
+applications/rtpapp/RTPApplication.cc:73:10: warning: variable ‘transmissionStarted’ set but not used [-Wunused-but-set-variable]
+     bool transmissionStarted = false;
+          ^
+applications/rtpapp/RTPApplication.cc:74:10: warning: variable ‘transmissionFinished’ set but not used [-Wunused-but-set-variable]
+     bool transmissionFinished = false;
+          ^
+applications/sctpapp/SCTPClient.cc
+applications/sctpapp/SCTPServer.cc
+applications/sctpapp/SCTPPeer.cc
+applications/tcpapp/TCPGenericCliAppBase.cc
+applications/tcpapp/TelnetApp.cc
+applications/tcpapp/TCPGenericSrvApp.cc
+applications/tcpapp/TCPSinkApp.cc
+applications/tcpapp/TCPBasicClientApp.cc
+applications/tcpapp/TCPEchoApp.cc
+applications/tcpapp/TCPGenericSrvThread.cc
+applications/tcpapp/TCPSessionApp.cc
+applications/tcpapp/TCPSrvHostApp.cc
+applications/tcpapp/TCPSpoof.cc
+applications/udpapp/UDPBasicApp.cc
+applications/udpapp/UDPVideoStreamSvr.cc
+applications/udpapp/UDPBasicBurst2.cc
+applications/udpapp/UDPVideoStreamCli.cc
+applications/udpapp/UDPSink.cc
+applications/udpapp/UDPEchoApp.cc
+applications/udpapp/UDPAppBase.cc
+applications/udpapp/UDPBasicBurst.cc
+base/NotifierConsts.cc
+base/ByteArrayMessage.cc
+base/BasicModule.cc
+base/Sink.cc
+base/Join.cc
+base/QueueWithQoS.cc
+base/AbstractQueue.cc
+base/ProtocolMap.cc
+base/ReassemblyBuffer.cc
+base/ModuleAccess.cc
+base/PassiveQueueBase.cc
+base/QueueBase.cc
+base/MMapBoard.cc
+base/Blackboard.cc
+base/NotificationBoard.cc
+battery/BasicBattery.cc
+battery/InetSimpleBattery.cc
+linklayer/contract/MACAddress.cc
+linklayer/ethernet/EtherMACBase.cc
+linklayer/ethernet/EtherMAC.cc
+linklayer/ethernet/EtherMAC2.cc
+linklayer/ethernet/EtherBus.cc
+linklayer/ethernet/EtherHub.cc
+linklayer/ethernet/EtherEncap.cc
+linklayer/ethernet/EtherLLC.cc
+linklayer/etherswitch/MACRelayUnitPP.cc
+linklayer/etherswitch/MACRelayUnitBase.cc
+linklayer/etherswitch/MACRelayUnitNP.cc
+linklayer/ext/ExtInterface.cc
+linklayer/ext/cSocketRTScheduler.cc
+linklayer/ext/cSocketRTScheduler.cc: In member function ‘void cSocketRTScheduler::sendBytes(uint8_t*, size_t, sockaddr*, socklen_t)’:
+linklayer/ext/cSocketRTScheduler.cc:330:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (sent == numBytes)
+                 ^
+linklayer/ieee80211/mac/Ieee80211eMac.cc
+linklayer/ieee80211/mac/FrameBlock.cc
+linklayer/ieee80211/mac/Ieee80211egMac.cc
+linklayer/ieee80211/mac/BlockAckCache.cc
+linklayer/ieee80211/mac/Ieee80211gMac.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from linklayer/ieee80211/mac/Ieee80211gMac.cc:26:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/ieee80211/mac/Ieee80211aMac.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from linklayer/ieee80211/mac/Ieee80211aMac.cc:25:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/ieee80211/mac/Ieee80211NewMac.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from linklayer/ieee80211/mac/Ieee80211NewMac.cc:25:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/ieee80211/mac/Ieee80211NewMac.cc: In member function ‘virtual double Ieee80211NewMac::computeFrameDuration(int, double)’:
+linklayer/ieee80211/mac/Ieee80211NewMac.cc:2087:20: warning: variable ‘modType’ set but not used [-Wunused-but-set-variable]
+     ModulationType modType = WifyModulationType::getMode80211g(bitrate);
+                    ^
+linklayer/ieee80211/mac/Ieee80211NewMac.cc: In member function ‘ModulationType Ieee80211NewMac::getControlAnswerMode(ModulationType)’:
+linklayer/ieee80211/mac/Ieee80211NewMac.cc:2617:48: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (uint32_t idx = 0; idx < getMaxBitrate(); idx++)
+                                                ^
+linklayer/ieee80211/mac/BlockAckFrame.cc
+linklayer/ieee80211/mac/Ieee80211Mac.cc
+linklayer/ieee80211/mgmt/Ieee80211MgmtSTA.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from linklayer/ieee80211/mgmt/Ieee80211MgmtSTA.cc:24:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/ieee80211/mgmt/Ieee80211MgmtSTASimplified.cc
+linklayer/ieee80211/mgmt/Ieee80211MgmtAPSimplified.cc
+linklayer/ieee80211/mgmt/Ieee80211MgmtAP.cc
+linklayer/ieee80211/mgmt/Ieee80211AgentSTA.cc
+linklayer/ieee80211/mgmt/Ieee80211MgmtBase.cc
+linklayer/ieee80211/mgmt/Ieee80211MgmtAdhoc.cc
+linklayer/ieee80211/mgmt/Ieee80211MgmtAPBase.cc
+linklayer/ieee80211/mgmt/Ieee80211eClassifier.cc
+linklayer/mf80211/macLayer/CSMAMacLayer.cc
+linklayer/mf80211/macLayer/Mac80211.cc
+linklayer/mf80211/phyLayer/decider/SnrDecider.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from linklayer/mfcore/BasicDecider.h:27,
+                 from linklayer/mf80211/phyLayer/decider/SnrDecider.h:24,
+                 from linklayer/mf80211/phyLayer/decider/SnrDecider.cc:20:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/mf80211/phyLayer/decider/Decider80211.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from linklayer/mfcore/BasicDecider.h:27,
+                 from linklayer/mf80211/phyLayer/decider/Decider80211.h:26,
+                 from linklayer/mf80211/phyLayer/decider/Decider80211.cc:21:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/mf80211/phyLayer/decider/ErrAndCollDecider.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from linklayer/mfcore/BasicDecider.h:27,
+                 from linklayer/mf80211/phyLayer/decider/SnrDecider.h:24,
+                 from linklayer/mf80211/phyLayer/decider/ErrAndCollDecider.h:24,
+                 from linklayer/mf80211/phyLayer/decider/ErrAndCollDecider.cc:21:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/mf80211/phyLayer/snrEval/SnrEval80211.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelAccess.h:26,
+                 from linklayer/mfcore/BasicSnrEval.h:26,
+                 from linklayer/mf80211/phyLayer/snrEval/SnrEval.h:24,
+                 from linklayer/mf80211/phyLayer/snrEval/SnrEval80211.h:23,
+                 from linklayer/mf80211/phyLayer/snrEval/SnrEval80211.cc:13:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/mf80211/phyLayer/snrEval/SnrEval.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelAccess.h:26,
+                 from linklayer/mfcore/BasicSnrEval.h:26,
+                 from linklayer/mf80211/phyLayer/snrEval/SnrEval.h:24,
+                 from linklayer/mf80211/phyLayer/snrEval/SnrEval.cc:22:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/mf80211/phyLayer/snrEval/GilbertElliotSnr.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelAccess.h:26,
+                 from linklayer/mfcore/BasicSnrEval.h:26,
+                 from linklayer/mf80211/phyLayer/snrEval/SnrEval.h:24,
+                 from linklayer/mf80211/phyLayer/snrEval/GilbertElliotSnr.h:23,
+                 from linklayer/mf80211/phyLayer/snrEval/GilbertElliotSnr.cc:21:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/mfcore/BasicSnrEval.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelAccess.h:26,
+                 from linklayer/mfcore/BasicSnrEval.h:26,
+                 from linklayer/mfcore/BasicSnrEval.cc:21:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/mfcore/WirelessMacBase.cc
+linklayer/mfcore/BasicDecider.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from linklayer/mfcore/BasicDecider.h:27,
+                 from linklayer/mfcore/BasicDecider.cc:21:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/ppp/DuplicatesGenerator.cc
+linklayer/ppp/DropsGenerator.cc
+linklayer/ppp/ThruputMeter.cc
+linklayer/ppp/PPP.cc
+linklayer/radio/Ieee80211Radio.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelAccess.h:26,
+                 from linklayer/radio/AbstractRadio.h:22,
+                 from linklayer/radio/Ieee80211Radio.h:22,
+                 from linklayer/radio/Ieee80211Radio.cc:19:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/radio/Ieee80211aRadio.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelAccess.h:26,
+                 from linklayer/radio/AbstractRadio.h:22,
+                 from linklayer/radio/Ieee80211aRadio.h:23,
+                 from linklayer/radio/Ieee80211aRadio.cc:20:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/radio/qamMode.cc
+linklayer/radio/AbstractRadioExtended.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelAccessExtended.h:26,
+                 from linklayer/radio/AbstractRadioExtended.h:22,
+                 from linklayer/radio/AbstractRadioExtended.cc:23:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/radio/GenericRadio.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelAccess.h:26,
+                 from linklayer/radio/AbstractRadio.h:22,
+                 from linklayer/radio/GenericRadio.h:21,
+                 from linklayer/radio/GenericRadio.cc:18:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/radio/AbstractRadio.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelAccess.h:26,
+                 from linklayer/radio/AbstractRadio.h:22,
+                 from linklayer/radio/AbstractRadio.cc:20:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/radio/TwoRayModel.cc
+In file included from linklayer/radio/TwoRayModel.cc:22:0:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/radio/Ieee80211gRadioModel.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from linklayer/radio/IRadioModel.h:22,
+                 from linklayer/radio/Ieee80211gRadioModel.h:23,
+                 from linklayer/radio/Ieee80211gRadioModel.cc:23:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/radio/Ieee80211aRadioModel.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from linklayer/radio/IRadioModel.h:22,
+                 from linklayer/radio/Ieee80211aRadioModel.h:25,
+                 from linklayer/radio/Ieee80211aRadioModel.cc:21:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/radio/PathLossReceptionModel.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from linklayer/radio/PathLossReceptionModel.cc:19:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/radio/Ieee80211NewRadio.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelAccess.h:26,
+                 from linklayer/radio/AbstractRadio.h:22,
+                 from linklayer/radio/Ieee80211NewRadio.h:22,
+                 from linklayer/radio/Ieee80211NewRadio.cc:19:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/radio/Ieee80211NewRadioModel.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from linklayer/radio/IRadioModel.h:22,
+                 from linklayer/radio/Ieee80211NewRadioModel.h:23,
+                 from linklayer/radio/Ieee80211NewRadioModel.cc:21:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/radio/GenericRadioModel.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from linklayer/radio/IRadioModel.h:22,
+                 from linklayer/radio/GenericRadioModel.h:22,
+                 from linklayer/radio/GenericRadioModel.cc:20:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/radio/Modulation.cc
+linklayer/radio/transmissionMode.cc
+linklayer/radio/transmissionMode.cc:31:17: warning: ‘errorEventPosition’ defined but not used [-Wunused-variable]
+ static uint32_t errorEventPosition = 0; //Position (first bit) of error burst
+                 ^
+linklayer/radio/transmissionMode.cc:32:17: warning: ‘error_in_packet’ defined but not used [-Wunused-variable]
+ static uint32_t error_in_packet=1;
+                 ^
+linklayer/radio/transmissionMode.cc:33:17: warning: ‘cptErrorLessPeriod’ defined but not used [-Wunused-variable]
+ static uint32_t cptErrorLessPeriod=0;
+                 ^
+linklayer/radio/transmissionMode.cc:34:17: warning: ‘cptErrorPeriod’ defined but not used [-Wunused-variable]
+ static uint32_t cptErrorPeriod=0;
+                 ^
+linklayer/radio/transmissionMode.cc:35:17: warning: ‘errorEventLength’ defined but not used [-Wunused-variable]
+ static uint32_t errorEventLength;
+                 ^
+linklayer/radio/transmissionMode.cc:36:16: warning: ‘errorLessEventLength’ defined but not used [-Wunused-variable]
+ static int32_t errorLessEventLength;
+                ^
+linklayer/radio/bpskMode.cc
+linklayer/radio/BerParseFile.cc
+linklayer/radio/Ieee80211gRadio.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelAccess.h:26,
+                 from linklayer/radio/AbstractRadio.h:22,
+                 from linklayer/radio/Ieee80211gRadio.h:23,
+                 from linklayer/radio/Ieee80211gRadio.cc:20:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/radio/Ieee80211RadioModel.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from linklayer/radio/IRadioModel.h:22,
+                 from linklayer/radio/Ieee80211RadioModel.h:22,
+                 from linklayer/radio/Ieee80211RadioModel.cc:20:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/radio/errormodel/WifiMode.cc
+linklayer/radio/errormodel/dsss-error-rate-model.cc
+linklayer/radio/errormodel/yans-error-rate-model.cc
+linklayer/radio/propagation/NakagamiModel.cc
+linklayer/radio/propagation/FreeSpaceModel.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from linklayer/radio/propagation/FreeSpaceModel.cc:25:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/radio/propagation/LogNormalShadowingModel.cc
+linklayer/radio/propagation/RiceModel.cc
+In file included from linklayer/radio/propagation/RiceModel.h:31:0,
+                 from linklayer/radio/propagation/RiceModel.cc:27:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/radio/propagation/TwoRayGroundModel.cc
+linklayer/radio/propagation/RayleighModel.cc
+In file included from linklayer/radio/propagation/RayleighModel.cc:27:0:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/LinearMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/LinearMobility.h:23,
+                 from mobility/LinearMobility.cc:19:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/BonnMotionMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/LineSegmentsMobilityBase.h:22,
+                 from mobility/BonnMotionMobility.h:22,
+                 from mobility/BonnMotionMobility.cc:18:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/RestrictedRandomWPMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/LineSegmentsMobilityBase.h:22,
+                 from mobility/RandomWPMobility.h:22,
+                 from mobility/RestrictedRandomWPMobility.h:22,
+                 from mobility/RestrictedRandomWPMobility.cc:20:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/MassMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/MassMobility.h:26,
+                 from mobility/MassMobility.cc:21:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/RestrictedConstSpeedMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/ConstSpeedMobility.h:26,
+                 from mobility/RestrictedConstSpeedMobility.h:26,
+                 from mobility/RestrictedConstSpeedMobility.cc:21:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/StaticGridMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from ./mobility/BasicMobility.h:29,
+                 from ./mobility/StaticGridMobility.h:24,
+                 from mobility/StaticGridMobility.cc:19:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/ANSimMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/LineSegmentsMobilityBase.h:22,
+                 from mobility/ANSimMobility.h:22,
+                 from mobility/ANSimMobility.cc:18:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/ANSimMobility.cc: In member function ‘virtual void ANSimMobility::extractDataFrom(cXMLElement*)’:
+mobility/ANSimMobility.cc:94:17: warning: unused variable ‘startTimeStr’ [-Wunused-variable]
+     const char *startTimeStr = firstChildWithTag(node, "start_time")->getNodeValue();
+                 ^
+mobility/CircleMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/CircleMobility.h:22,
+                 from mobility/CircleMobility.cc:18:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/RectangleMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/RectangleMobility.h:22,
+                 from mobility/RectangleMobility.cc:18:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/BasicMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/BasicMobility.cc:23:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/Ns2MotionMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/LineSegmentsMobilityBase.h:22,
+                 from mobility/Ns2MotionMobility.h:24,
+                 from mobility/Ns2MotionMobility.cc:22:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/TurtleMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/LineSegmentsMobilityBase.h:22,
+                 from mobility/TurtleMobility.h:22,
+                 from mobility/TurtleMobility.cc:18:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/GaussMarkovMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/GaussMarkovMobility.h:5,
+                 from mobility/GaussMarkovMobility.cc:20:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/RestrictedLinearMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/LinearMobility.h:23,
+                 from mobility/RestrictedLinearMobility.h:23,
+                 from mobility/RestrictedLinearMobility.cc:19:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/LineSegmentsMobilityBase.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/LineSegmentsMobilityBase.h:22,
+                 from mobility/LineSegmentsMobilityBase.cc:19:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/ConstSpeedMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/ConstSpeedMobility.h:26,
+                 from mobility/ConstSpeedMobility.cc:21:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/RandomWPMobilityTrace.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/LineSegmentsMobilityBase.h:22,
+                 from mobility/RandomWPMobility.h:22,
+                 from mobility/RandomWPMobilityTrace.h:13,
+                 from mobility/RandomWPMobilityTrace.cc:1:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/ChiangMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/ChiangMobility.h:5,
+                 from mobility/ChiangMobility.cc:20:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/BonnMotionFileCache.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/BonnMotionFileCache.h:24,
+                 from mobility/BonnMotionFileCache.cc:20:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/RandomWPMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/LineSegmentsMobilityBase.h:22,
+                 from mobility/RandomWPMobility.h:22,
+                 from mobility/RandomWPMobility.cc:19:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/NullMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from mobility/NullMobility.h:24,
+                 from mobility/NullMobility.cc:19:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+mobility/traci/TraCIMobility.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from mobility/BasicMobility.h:29,
+                 from ./mobility/traci/TraCIMobility.h:30,
+                 from mobility/traci/TraCIMobility.cc:24:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+networklayer/arp/ARP.cc
+networklayer/arp/ARP.cc: In member function ‘virtual void ARP::updateDisplayString()’:
+networklayer/arp/ARP.cc:145:83: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘std::map<IPAddress, ARP::ARPCacheEntry*>::size_type {aka long unsigned int}’ [-Wformat=]
+             arpCache.size(), numRequestsSent, numRepliesSent, numFailedResolutions);
+                                                                                   ^
+networklayer/arp/ARP.cc: In member function ‘void ARP::setChangeAddress(const IPAddress&)’:
+networklayer/arp/ARP.cc:588:16: warning: variable ‘address’ set but not used [-Wunused-but-set-variable]
+     MACAddress address = MACAddress::UNSPECIFIED_ADDRESS;
+                ^
+networklayer/autorouting/NetworkConfigurator.cc
+networklayer/autorouting/MCoANetConf6.cc
+networklayer/autorouting/HostAutoConfigurator2.cc
+networklayer/autorouting/HostAutoConfigurator2.cc: In member function ‘void HostAutoConfigurator2::setupRoutingTable()’:
+networklayer/autorouting/HostAutoConfigurator2.cc:328:45: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (i<routingTable->getNumRoutes())
+                                             ^
+networklayer/autorouting/FlatNetworkConfigurator.cc
+networklayer/autorouting/FlatNetworkConfigurator6.cc
+networklayer/autorouting/HostAutoConfigurator.cc
+networklayer/common/InterfaceEntry.cc
+networklayer/common/InterfaceEntry.cc: In member function ‘virtual bool InterfaceEntry::setEstimateCostProcess(int, MacEstimateCostProcess*)’:
+networklayer/common/InterfaceEntry.cc:165:38: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if(estimateCostProcessArray.size()<=position)
+                                      ^
+networklayer/common/InterfaceEntry.cc: In member function ‘virtual MacEstimateCostProcess* InterfaceEntry::getEstimateCostProcess(int)’:
+networklayer/common/InterfaceEntry.cc:177:45: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if(position <estimateCostProcessArray.size())
+                                             ^
+networklayer/common/InterfaceTable.cc
+networklayer/contract/IPv6ControlInfo.cc
+networklayer/contract/IPv6ControlInfo.cc: In member function ‘virtual void IPv6ControlInfo::addExtensionHeader(IPv6ExtensionHeader*, int)’:
+networklayer/contract/IPv6ControlInfo.cc:76:49: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (atPos<0 || atPos>=extensionHeaders.size())
+                                                 ^
+networklayer/contract/IPvXAddress.cc
+networklayer/contract/IPAddressResolver.cc
+networklayer/contract/IPControlInfo.cc
+networklayer/contract/IPAddress.cc
+networklayer/contract/IPv6Address.cc
+networklayer/contract/IPv6Address.cc: In member function ‘std::string IPv6Address::str() const’:
+networklayer/contract/IPv6Address.cc:184:14: warning: narrowing conversion of ‘(((unsigned int)((const IPv6Address*)this)->IPv6Address::d[0]) >> 16)’ from ‘unsigned int’ to ‘int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+         (d[0]>>16), (d[0]&0xffff), (d[1]>>16), (d[1]&0xffff),
+              ^
+networklayer/contract/IPv6Address.cc:184:26: warning: narrowing conversion of ‘(((unsigned int)((const IPv6Address*)this)->IPv6Address::d[0]) & 65535u)’ from ‘unsigned int’ to ‘int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+         (d[0]>>16), (d[0]&0xffff), (d[1]>>16), (d[1]&0xffff),
+                          ^
+networklayer/contract/IPv6Address.cc:184:41: warning: narrowing conversion of ‘(((unsigned int)((const IPv6Address*)this)->IPv6Address::d[1]) >> 16)’ from ‘unsigned int’ to ‘int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+         (d[0]>>16), (d[0]&0xffff), (d[1]>>16), (d[1]&0xffff),
+                                         ^
+networklayer/contract/IPv6Address.cc:184:53: warning: narrowing conversion of ‘(((unsigned int)((const IPv6Address*)this)->IPv6Address::d[1]) & 65535u)’ from ‘unsigned int’ to ‘int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+         (d[0]>>16), (d[0]&0xffff), (d[1]>>16), (d[1]&0xffff),
+                                                     ^
+networklayer/contract/IPv6Address.cc:185:14: warning: narrowing conversion of ‘(((unsigned int)((const IPv6Address*)this)->IPv6Address::d[2]) >> 16)’ from ‘unsigned int’ to ‘int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+         (d[2]>>16), (d[2]&0xffff), (d[3]>>16), (d[3]&0xffff)
+              ^
+networklayer/contract/IPv6Address.cc:185:26: warning: narrowing conversion of ‘(((unsigned int)((const IPv6Address*)this)->IPv6Address::d[2]) & 65535u)’ from ‘unsigned int’ to ‘int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+         (d[2]>>16), (d[2]&0xffff), (d[3]>>16), (d[3]&0xffff)
+                          ^
+networklayer/contract/IPv6Address.cc:185:41: warning: narrowing conversion of ‘(((unsigned int)((const IPv6Address*)this)->IPv6Address::d[3]) >> 16)’ from ‘unsigned int’ to ‘int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+         (d[2]>>16), (d[2]&0xffff), (d[3]>>16), (d[3]&0xffff)
+                                         ^
+networklayer/contract/IPv6Address.cc:185:53: warning: narrowing conversion of ‘(((unsigned int)((const IPv6Address*)this)->IPv6Address::d[3]) & 65535u)’ from ‘unsigned int’ to ‘int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+         (d[2]>>16), (d[2]&0xffff), (d[3]>>16), (d[3]&0xffff)
+                                                     ^
+networklayer/extras/FailureManager.cc
+networklayer/extras/Dummy.cc
+networklayer/extras/NetworkInfo.cc
+networklayer/icmpv6/ICMPv6.cc
+networklayer/icmpv6/IPv6NeighbourCache.cc
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc: In member function ‘const MACAddress& IPv6NeighbourDiscovery::resolveNeighbour_MCoA(const IPv6Address&, int)’:
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc:370:13: warning: reference to local variable ‘nce’ returned [-Wreturn-local-addr]
+   Neighbour nce = it->second;
+             ^
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc: In member function ‘virtual void IPv6NeighbourDiscovery::processARTimeout(cMessage*)’:
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc:739:70: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (nce->numOfARNSSent < ie->ipv6Data()->_getMaxMulticastSolicit())
+                                                                      ^
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc: In member function ‘virtual void IPv6NeighbourDiscovery::processRDTimeout(cMessage*)’:
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc:1213:70: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (rdEntry->numRSSent < ie->ipv6Data()->_getMaxRtrSolicitations())
+                                                                      ^
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc:1219:75: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if (rdEntry->numRSSent == ie->ipv6Data()->_getMaxRtrSolicitations())
+                                                                           ^
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc: In member function ‘virtual void IPv6NeighbourDiscovery::processRSPacket(IPv6RouterSolicitation*, IPv6ControlInfo*)’:
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc:1262:20: warning: variable ‘macAddr’ set but not used [-Wunused-but-set-variable]
+         MACAddress macAddr = rs->getSourceLinkLayerAddress();
+                    ^
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc: In member function ‘virtual void IPv6NeighbourDiscovery::processRAPacket(IPv6RouterAdvertisement*, IPv6ControlInfo*)’:
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc:1502:20: warning: variable ‘macAddress’ set but not used [-Wunused-but-set-variable]
+         MACAddress macAddress = ra->getSourceLinkLayerAddress();
+                    ^
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc:1503:14: warning: unused variable ‘mtu’ [-Wunused-variable]
+         uint mtu = ra->getMTU();
+              ^
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc: In member function ‘virtual void IPv6NeighbourDiscovery::processRAPrefixInfo(IPv6RouterAdvertisement*, InterfaceEntry*)’:
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc:1766:14: warning: unused variable ‘preferredLifetime’ [-Wunused-variable]
+         uint preferredLifetime = prefixInfo.getPreferredLifetime();
+              ^
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc: In member function ‘virtual void IPv6NeighbourDiscovery::sendPeriodicRA(cMessage*)’:
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc:2031:81: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if(advIfEntry->numRASent <= ie->ipv6Data()->_getMaxInitialRtrAdvertisements())
+                                                                                 ^
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc: In member function ‘virtual void IPv6NeighbourDiscovery::processNSForNonTentativeAddress(IPv6NeighbourSolicitation*, IPv6ControlInfo*, InterfaceEntry*)’:
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc:2264:16: warning: variable ‘nsMacAddr’ set but not used [-Wunused-but-set-variable]
+     MACAddress nsMacAddr = ns->getSourceLinkLayerAddress();
+                ^
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc:2266:9: warning: unused variable ‘ifID’ [-Wunused-variable]
+     int ifID = ie->getInterfaceId();
+         ^
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc: In member function ‘virtual void IPv6NeighbourDiscovery::processRedirectPacket(IPv6Redirect*, IPv6ControlInfo*)’:
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc:2747:17: warning: variable ‘targetAddr’ set but not used [-Wunused-but-set-variable]
+     IPv6Address targetAddr = redirect->getTargetAddress();//Addressed to me
+                 ^
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc:2748:17: warning: variable ‘destAddr’ set but not used [-Wunused-but-set-variable]
+     IPv6Address destAddr = redirect->getDestinationAddress();//new dest addr
+                 ^
+networklayer/icmpv6/IPv6NeighbourDiscovery.cc:2751:16: warning: variable ‘macAddr’ set but not used [-Wunused-but-set-variable]
+     MACAddress macAddr = redirect->getTargetLinkLayerAddress();
+                ^
+networklayer/ipv4/RoutingTable.cc
+networklayer/ipv4/RoutingTable.cc: In member function ‘virtual void RoutingTable::updateDisplayString()’:
+networklayer/ipv4/RoutingTable.cc:156:75: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘std::vector<IPRoute*>::size_type {aka long unsigned int}’ [-Wformat=]
+         sprintf(buf, "%d+%d routes", routes.size(), multicastRoutes.size());
+                                                                           ^
+networklayer/ipv4/RoutingTable.cc:156:75: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘std::vector<IPRoute*>::size_type {aka long unsigned int}’ [-Wformat=]
+networklayer/ipv4/RoutingTable.cc:158:113: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘std::vector<IPRoute*>::size_type {aka long unsigned int}’ [-Wformat=]
+         sprintf(buf, "routerId: %s\n%d+%d routes", routerId.str().c_str(), routes.size(), multicastRoutes.size());
+                                                                                                                 ^
+networklayer/ipv4/RoutingTable.cc:158:113: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘std::vector<IPRoute*>::size_type {aka long unsigned int}’ [-Wformat=]
+networklayer/ipv4/RoutingTableParser.cc
+networklayer/ipv4/IPFragBuf.cc
+networklayer/ipv4/IP.cc
+networklayer/ipv4/ICMP.cc
+networklayer/ipv4/IPRoute.cc
+networklayer/ipv4/IPv4InterfaceData.cc
+networklayer/ipv4/ErrorHandling.cc
+networklayer/ipv6/IPv6ExtensionHeaders.cc
+networklayer/ipv6/IPv6Tunneling.cc
+In file included from networklayer/ipv6/IPv6Tunneling.cc:41:0:
+networklayer/ipv6/IPv6Tunneling.h: In constructor ‘IPv6Tunneling::Tunnel::Tunnel(const IPv6Address&, const IPv6Address&, const IPv6Address&)’:
+networklayer/ipv6/IPv6Tunneling.h:110:16: warning: ‘IPv6Tunneling::Tunnel::destTrigger’ will be initialized after [-Wreorder]
+    IPv6Address destTrigger;
+                ^
+networklayer/ipv6/IPv6Tunneling.h:104:15: warning:   ‘IPv6Tunneling::TunnelType IPv6Tunneling::Tunnel::tunnelType’ [-Wreorder]
+    TunnelType tunnelType;
+               ^
+networklayer/ipv6/IPv6Tunneling.cc:103:1: warning:   when initialized here [-Wreorder]
+ IPv6Tunneling::Tunnel::Tunnel(const IPv6Address& _entry, const IPv6Address& _exit, const IPv6Address& _destTrigger)
+ ^
+In file included from networklayer/ipv6/IPv6Tunneling.cc:41:0:
+networklayer/ipv6/IPv6Tunneling.h:104:15: warning: ‘IPv6Tunneling::Tunnel::tunnelType’ will be initialized after [-Wreorder]
+    TunnelType tunnelType;
+               ^
+networklayer/ipv6/IPv6Tunneling.h:95:8: warning:   ‘int IPv6Tunneling::Tunnel::tunnelMTU’ [-Wreorder]
+    int tunnelMTU;
+        ^
+networklayer/ipv6/IPv6Tunneling.cc:103:1: warning:   when initialized here [-Wreorder]
+ IPv6Tunneling::Tunnel::Tunnel(const IPv6Address& _entry, const IPv6Address& _exit, const IPv6Address& _destTrigger)
+ ^
+networklayer/ipv6/IPv6Tunneling.cc: In member function ‘void IPv6Tunneling::encapsulateDatagram(IPv6Datagram*)’:
+networklayer/ipv6/IPv6Tunneling.cc:443:16: warning: variable ‘nextHop’ set but not used [-Wunused-but-set-variable]
+    IPv6Address nextHop = rt->lookupDestCache(dest, interfaceId);
+                ^
+networklayer/ipv6/IPv6FragBuf.cc
+networklayer/ipv6/IPv6.cc
+networklayer/ipv6/RoutingTable6.cc
+networklayer/ipv6/RoutingTable6.cc: In member function ‘virtual void RoutingTable6::updateDisplayString()’:
+networklayer/ipv6/RoutingTable6.cc:188:85: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘std::map<IPv6Address, RoutingTable6::DestCacheEntry>::size_type {aka long unsigned int}’ [-Wformat=]
+     sprintf(buf, "%d routes\n%d destcache entries", getNumRoutes(), destCache.size());
+                                                                                     ^
+networklayer/ipv6/IPv6ErrorHandling.cc
+networklayer/ipv6/IPv6ErrorHandling.cc: In member function ‘virtual void IPv6ErrorHandling::handleMessage(cMessage*)’:
+networklayer/ipv6/IPv6ErrorHandling.cc:54:32: warning: unused variable ‘msg2’ [-Wunused-variable]
+         ICMPv6PacketTooBigMsg *msg2 = (ICMPv6PacketTooBigMsg *)icmpv6Msg;
+                                ^
+networklayer/ipv6/IPv6Datagram.cc
+networklayer/ipv6/IPv6InterfaceData.cc
+In file included from /home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:23:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/carray.h:23,
+                 from /home/ubuntu/omnetpp-4.4.1/include/omnetpp.h:21,
+                 from networklayer/ipv6/IPv6InterfaceData.h:25,
+                 from networklayer/ipv6/IPv6InterfaceData.cc:21:
+networklayer/ipv6/IPv6InterfaceData.cc: In member function ‘IPv6InterfaceData::AddressType IPv6InterfaceData::getAddressType(int) const’:
+networklayer/ipv6/IPv6InterfaceData.cc:245:37: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     ASSERT(i>=0 && i<addresses.size());
+                                     ^
+/home/ubuntu/omnetpp-4.4.1/include/simkerneldefs.h:63:13: note: in definition of macro ‘ASSERT’
+   ((void) ((expr) ? 0 : (opp_error("ASSERT: condition %s false in function %s, %s line %d", \
+             ^
+networklayer/ipv6/IPv6InterfaceData.cc: In member function ‘void IPv6InterfaceData::tentativelyAssign(int)’:
+networklayer/ipv6/IPv6InterfaceData.cc:286:34: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  ASSERT(i>=0 && i<addresses.size());
+                                  ^
+/home/ubuntu/omnetpp-4.4.1/include/simkerneldefs.h:63:13: note: in definition of macro ‘ASSERT’
+   ((void) ((expr) ? 0 : (opp_error("ASSERT: condition %s false in function %s, %s line %d", \
+             ^
+networklayer/ldp/LDP.cc
+networklayer/ldp/LDP.cc: In member function ‘virtual void LDP::openTCPConnectionToPeer(int)’:
+networklayer/ldp/LDP.cc:548:44: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+     socket->setCallbackObject(this, (void*)peerIndex);
+                                            ^
+networklayer/ldp/LDP.cc: In member function ‘virtual void LDP::processMessageFromTCP(cMessage*)’:
+networklayer/ldp/LDP.cc:581:49: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+         socket->setCallbackObject(this, (void *)i);
+                                                 ^
+networklayer/manetrouting/aodv/aodv_msg_struct.cc
+networklayer/manetrouting/aodv/aodv_uu_omnet.cc
+networklayer/manetrouting/aodv/aodv_uu_omnet.cc: In member function ‘virtual void AODVUU::initialize(int)’:
+networklayer/manetrouting/aodv/aodv_uu_omnet.cc:69:13: warning: variable ‘lista_ptr’ set but not used [-Wunused-but-set-variable]
+     list_t *lista_ptr;
+             ^
+networklayer/manetrouting/aodv/packet_queue_omnet.cc
+networklayer/manetrouting/aodv/aodv-uu/routing_table.cc
+networklayer/manetrouting/aodv/aodv-uu/aodv_timeout.cc
+networklayer/manetrouting/aodv/aodv-uu/aodv_rreq.cc
+networklayer/manetrouting/aodv/aodv-uu/aodv_rreq.cc: In member function ‘void AODVUU::rreq_process(RREQ*, int, In_addr, In_addr, int, unsigned int)’:
+networklayer/manetrouting/aodv/aodv-uu/aodv_rreq.cc:221:18: warning: variable ‘ifaddr’ set but not used [-Wunused-but-set-variable]
+     unsigned int ifaddr;
+                  ^
+networklayer/manetrouting/aodv/aodv-uu/aodv_rreq.cc:524:1: warning: label ‘forward’ defined but not used [-Wunused-label]
+ forward:
+ ^
+networklayer/manetrouting/aodv/aodv-uu/aodv_neighbor.cc
+networklayer/manetrouting/aodv/aodv-uu/aodv_rrep.cc
+networklayer/manetrouting/aodv/aodv-uu/locality.cc
+networklayer/manetrouting/aodv/aodv-uu/aodv_hello.cc
+networklayer/manetrouting/aodv/aodv-uu/aodv_hello.cc: In member function ‘long int AODVUU::hello_jitter()’:
+networklayer/manetrouting/aodv/aodv-uu/aodv_hello.cc:62:57: warning: integer overflow in expression [-Woverflow]
+         return (long) (((float) intuniform(0,RAND_MAX + 1) / RAND_MAX - 0.5)
+                                                         ^
+networklayer/manetrouting/aodv/aodv-uu/seek_list.cc
+networklayer/manetrouting/aodv/aodv-uu/timer_queue_aodv.cc
+networklayer/manetrouting/aodv/aodv-uu/timer_queue_aodv.cc: In member function ‘void AODVUU::timer_add(timer*)’:
+networklayer/manetrouting/aodv/aodv-uu/timer_queue_aodv.cc:114:14: warning: variable ‘lista_ptr’ set but not used [-Wunused-but-set-variable]
+     list_t * lista_ptr;
+              ^
+networklayer/manetrouting/aodv/aodv-uu/aodv_socket.cc
+networklayer/manetrouting/aodv/aodv-uu/aodv_socket.cc: In member function ‘void AODVUU::aodv_socket_send(AODV_msg*, In_addr, int, u_int8_t, dev_info*, double)’:
+networklayer/manetrouting/aodv/aodv-uu/aodv_socket.cc:409:9: warning: unused variable ‘retval’ [-Wunused-variable]
+     int retval = 0;
+         ^
+networklayer/manetrouting/aodv/aodv-uu/list.cc
+networklayer/manetrouting/aodv/aodv-uu/debug_aodv.cc
+networklayer/manetrouting/aodv/aodv-uu/debug_aodv.cc: In member function ‘void AODVUU::alog(int, int, const char*, const char*, ...)’:
+networklayer/manetrouting/aodv/aodv-uu/debug_aodv.cc:228:23: warning: format not a string literal and no format arguments [-Wformat-security]
+         printf(log_buf);
+                       ^
+networklayer/manetrouting/aodv/aodv-uu/debug_aodv.cc: In member function ‘void AODVUU::log_pkt_fields(AODV_msg*)’:
+networklayer/manetrouting/aodv/aodv-uu/debug_aodv.cc:292:11: warning: variable ‘rerr’ set but not used [-Wunused-but-set-variable]
+     RERR *rerr;
+           ^
+networklayer/manetrouting/aodv/aodv-uu/aodv_rerr.cc
+networklayer/manetrouting/base/uint128.cc
+networklayer/manetrouting/base/int128.cc
+networklayer/manetrouting/base/ManetRoutingBase.cc
+In file included from base/Coord.h:26:0,
+                 from networklayer/manetrouting/base/ManetRoutingBase.cc:31:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+networklayer/manetrouting/base/ManetRoutingBase.cc: In member function ‘virtual void ManetRoutingBase::registerRoutingModule()’:
+networklayer/manetrouting/base/ManetRoutingBase.cc:115:24: warning: variable ‘i_face’ set but not used [-Wunused-but-set-variable]
+     InterfaceEntry *   i_face;
+                        ^
+networklayer/manetrouting/dsdv/DSDV_2.cc
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.cc
+In file included from networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:92:0,
+                 from networklayer/manetrouting/dsr/dsr-uu-omnetpp.cc:26:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h: In function ‘void* __tbl_detach(tbl*, list_t*)’:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h:187:9: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
+     int len;
+         ^
+In file included from networklayer/manetrouting/dsr/dsr-uu-omnetpp.cc:26:0:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h: In function ‘void omnet_debug(const char*, ...)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:462:9: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+     int r;
+         ^
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.cc: In member function ‘void DSRUU::omnet_deliver(dsr_pkt*)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.cc:174:9: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
+     int len;
+         ^
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.cc: In member function ‘void DSRUU::packetFailed(IPDatagram*)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.cc:808:20: warning: variable ‘prev_hop’ set but not used [-Wunused-but-set-variable]
+     struct in_addr prev_hop;
+                    ^
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.cc: In member function ‘void DSRUU::tap(DSRPkt*)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.cc:907:20: warning: variable ‘next_hop’ set but not used [-Wunused-but-set-variable]
+     struct in_addr next_hop, prev_hop;
+                    ^
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.cc:907:30: warning: variable ‘prev_hop’ set but not used [-Wunused-but-set-variable]
+     struct in_addr next_hop, prev_hop;
+                              ^
+networklayer/manetrouting/dsr/dsr-pkt_omnet.cc
+In file included from networklayer/manetrouting/dsr/dsr-uu/dsr-opt.h:28:0,
+                 from networklayer/manetrouting/dsr/dsr-pkt_omnet.h:17,
+                 from networklayer/manetrouting/dsr/dsr-pkt_omnet.cc:23:
+networklayer/manetrouting/dsr/dsr-uu/dsr.h:115:3: warning: ‘confvals_def’ defined but not used [-Wunused-variable]
+ } confvals_def[CONFVAL_MAX] =
+   ^
+networklayer/manetrouting/dsr/dsr-uu/maint-buf.cc
+In file included from networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:92:0,
+                 from networklayer/manetrouting/dsr/dsr-uu/maint-buf.cc:41:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h: In function ‘void* __tbl_detach(tbl*, list_t*)’:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h:187:9: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
+     int len;
+         ^
+In file included from networklayer/manetrouting/dsr/dsr-uu/maint-buf.cc:41:0:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h: In function ‘void omnet_debug(const char*, ...)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:462:9: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+     int r;
+         ^
+networklayer/manetrouting/dsr/dsr-uu/dsr-opt.cc
+In file included from networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:92:0,
+                 from networklayer/manetrouting/dsr/dsr-uu/dsr-opt.cc:19:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h: In function ‘void* __tbl_detach(tbl*, list_t*)’:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h:187:9: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
+     int len;
+         ^
+In file included from networklayer/manetrouting/dsr/dsr-uu/dsr-opt.cc:19:0:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h: In function ‘void omnet_debug(const char*, ...)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:462:9: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+     int r;
+         ^
+networklayer/manetrouting/dsr/dsr-uu/dsr-io.cc
+In file included from networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:92:0,
+                 from networklayer/manetrouting/dsr/dsr-uu/dsr-io.cc:12:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h: In function ‘void* __tbl_detach(tbl*, list_t*)’:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h:187:9: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
+     int len;
+         ^
+In file included from networklayer/manetrouting/dsr/dsr-uu/dsr-io.cc:12:0:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h: In function ‘void omnet_debug(const char*, ...)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:462:9: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+     int r;
+         ^
+networklayer/manetrouting/dsr/dsr-uu/dsr-rerr.cc
+In file included from networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:92:0,
+                 from networklayer/manetrouting/dsr/dsr-uu/dsr-rerr.cc:18:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h: In function ‘void* __tbl_detach(tbl*, list_t*)’:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h:187:9: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
+     int len;
+         ^
+In file included from networklayer/manetrouting/dsr/dsr-uu/dsr-rerr.cc:18:0:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h: In function ‘void omnet_debug(const char*, ...)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:462:9: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+     int r;
+         ^
+networklayer/manetrouting/dsr/dsr-uu/send-buf.cc
+In file included from networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:92:0,
+                 from networklayer/manetrouting/dsr/dsr-uu/send-buf.cc:27:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h: In function ‘void* __tbl_detach(tbl*, list_t*)’:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h:187:9: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
+     int len;
+         ^
+In file included from networklayer/manetrouting/dsr/dsr-uu/send-buf.cc:27:0:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h: In function ‘void omnet_debug(const char*, ...)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:462:9: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+     int r;
+         ^
+networklayer/manetrouting/dsr/dsr-uu/link-cache.cc
+In file included from networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:92:0,
+                 from networklayer/manetrouting/dsr/dsr-uu/link-cache.cc:19:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h: In function ‘void* __tbl_detach(tbl*, list_t*)’:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h:187:9: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
+     int len;
+         ^
+In file included from networklayer/manetrouting/dsr/dsr-uu/link-cache.cc:19:0:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h: In function ‘void omnet_debug(const char*, ...)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:462:9: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+     int r;
+         ^
+networklayer/manetrouting/dsr/dsr-uu/link-cache.cc: In member function ‘dsr_srt* DSRUU::lc_srt_find(in_addr, in_addr)’:
+networklayer/manetrouting/dsr/dsr-uu/link-cache.cc:503:25: warning: variable ‘d’ set but not used [-Wunused-but-set-variable]
+         struct lc_node *d, *n;
+                         ^
+networklayer/manetrouting/dsr/dsr-uu/dsr-rreq.cc
+In file included from networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:92:0,
+                 from networklayer/manetrouting/dsr/dsr-uu/dsr-rreq.cc:23:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h: In function ‘void* __tbl_detach(tbl*, list_t*)’:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h:187:9: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
+     int len;
+         ^
+In file included from networklayer/manetrouting/dsr/dsr-uu/dsr-rreq.cc:23:0:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h: In function ‘void omnet_debug(const char*, ...)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:462:9: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+     int r;
+         ^
+networklayer/manetrouting/dsr/dsr-uu/dsr-rreq.cc: In member function ‘int DSRUU::rreq_tbl_add_id(in_addr, in_addr, short unsigned int, double, char*, int)’:
+networklayer/manetrouting/dsr/dsr-uu/dsr-rreq.cc:409:9: warning: variable ‘res’ set but not used [-Wunused-but-set-variable]
+     int res = 0;
+         ^
+networklayer/manetrouting/dsr/dsr-uu/dsr-ack.cc
+In file included from networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:92:0,
+                 from networklayer/manetrouting/dsr/dsr-uu/dsr-ack.cc:20:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h: In function ‘void* __tbl_detach(tbl*, list_t*)’:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h:187:9: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
+     int len;
+         ^
+In file included from networklayer/manetrouting/dsr/dsr-uu/dsr-ack.cc:20:0:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h: In function ‘void omnet_debug(const char*, ...)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:462:9: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+     int r;
+         ^
+networklayer/manetrouting/dsr/dsr-uu/dsr-rrep.cc
+In file included from networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:92:0,
+                 from networklayer/manetrouting/dsr/dsr-uu/dsr-rrep.cc:25:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h: In function ‘void* __tbl_detach(tbl*, list_t*)’:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h:187:9: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
+     int len;
+         ^
+In file included from networklayer/manetrouting/dsr/dsr-uu/dsr-rrep.cc:25:0:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h: In function ‘void omnet_debug(const char*, ...)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:462:9: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+     int r;
+         ^
+networklayer/manetrouting/dsr/dsr-uu/path-cache.cc
+In file included from networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:92:0,
+                 from networklayer/manetrouting/dsr/dsr-uu/path-cache.cc:32:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h: In function ‘void* __tbl_detach(tbl*, list_t*)’:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h:187:9: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
+     int len;
+         ^
+In file included from networklayer/manetrouting/dsr/dsr-uu/path-cache.cc:32:0:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h: In function ‘void omnet_debug(const char*, ...)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:462:9: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+     int r;
+         ^
+networklayer/manetrouting/dsr/dsr-uu/path-cache.cc: In member function ‘dsr_srt* DSRUU::ph_srt_find(in_addr, in_addr, int, unsigned int)’:
+networklayer/manetrouting/dsr/dsr-uu/path-cache.cc:271:9: warning: variable ‘status’ set but not used [-Wunused-but-set-variable]
+     int status;
+         ^
+networklayer/manetrouting/dsr/dsr-uu/neigh.cc
+In file included from networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:92:0,
+                 from networklayer/manetrouting/dsr/dsr-uu/neigh.cc:17:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h: In function ‘void* __tbl_detach(tbl*, list_t*)’:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h:187:9: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
+     int len;
+         ^
+In file included from networklayer/manetrouting/dsr/dsr-uu/neigh.cc:17:0:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h: In function ‘void omnet_debug(const char*, ...)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:462:9: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+     int r;
+         ^
+networklayer/manetrouting/dsr/dsr-uu/dsr-srt.cc
+In file included from networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:92:0,
+                 from networklayer/manetrouting/dsr/dsr-uu/dsr-srt.cc:19:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h: In function ‘void* __tbl_detach(tbl*, list_t*)’:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h:187:9: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
+     int len;
+         ^
+In file included from networklayer/manetrouting/dsr/dsr-uu/dsr-srt.cc:19:0:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h: In function ‘void omnet_debug(const char*, ...)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:462:9: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+     int r;
+         ^
+networklayer/manetrouting/dsr/dsr-uu/dsr-pkt.cc
+In file included from networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:92:0,
+                 from networklayer/manetrouting/dsr/dsr-uu/dsr-pkt.cc:20:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h: In function ‘void* __tbl_detach(tbl*, list_t*)’:
+networklayer/manetrouting/dsr/dsr-uu/tbl.h:187:9: warning: variable ‘len’ set but not used [-Wunused-but-set-variable]
+     int len;
+         ^
+In file included from networklayer/manetrouting/dsr/dsr-uu/dsr-pkt.cc:20:0:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h: In function ‘void omnet_debug(const char*, ...)’:
+networklayer/manetrouting/dsr/dsr-uu-omnetpp.h:462:9: warning: variable ‘r’ set but not used [-Wunused-but-set-variable]
+     int r;
+         ^
+networklayer/manetrouting/dymo/dymo_msg_struct.cc
+networklayer/manetrouting/dymo/dymo_msg_struct.cc: In member function ‘virtual std::string DYMO_element::detailedInfo() const’:
+networklayer/manetrouting/dymo/dymo_msg_struct.cc:287:16: warning: variable ‘uerr_type’ set but not used [-Wunused-but-set-variable]
+     Dymo_UERR *uerr_type=NULL;
+                ^
+networklayer/manetrouting/dymo/dymo_msg_struct.cc:289:17: warning: variable ‘hello_type’ set but not used [-Wunused-but-set-variable]
+     Dymo_HELLO *hello_type=NULL;
+                 ^
+networklayer/manetrouting/dymo/dymo_um_omnet.cc
+networklayer/manetrouting/dymo/dymo_um_omnet.cc: In destructor ‘virtual DYMOUM::~DYMOUM()’:
+networklayer/manetrouting/dymo/dymo_um_omnet.cc:222:19: warning: variable ‘pos’ set but not used [-Wunused-but-set-variable]
+     dlist_head_t *pos, *tmp;
+                   ^
+networklayer/manetrouting/dymo/dymo_um_omnet.cc: In member function ‘void DYMOUM::processPacket(IPDatagram*, unsigned int)’:
+networklayer/manetrouting/dymo/dymo_um_omnet.cc:672:21: warning: variable ‘ipd’ set but not used [-Wunused-but-set-variable]
+     struct ip_data *ipd = NULL;
+                     ^
+networklayer/manetrouting/dymo/dymo_um_omnet.cc: In member function ‘void DYMOUM::processMacPacket(cPacket*, const Uint128&, const Uint128&, int)’:
+networklayer/manetrouting/dymo/dymo_um_omnet.cc:781:21: warning: variable ‘ipd’ set but not used [-Wunused-but-set-variable]
+     struct ip_data *ipd = NULL;
+                     ^
+networklayer/manetrouting/dymo/dymo_um_omnet.cc: In member function ‘virtual void DYMOUM::processFullPromiscuous(const cPolymorphic*)’:
+networklayer/manetrouting/dymo/dymo_um_omnet.cc:1063:31: warning: variable ‘twoAddressFrame’ set but not used [-Wunused-but-set-variable]
+     Ieee80211TwoAddressFrame *twoAddressFrame;
+                               ^
+networklayer/manetrouting/dymo/dymo_packet_queue_omnet.cc
+networklayer/manetrouting/dymo/dymoum/dymo_rerr.cc
+networklayer/manetrouting/dymo/dymoum/pending_rreq.cc
+networklayer/manetrouting/dymo/dymoum/debug_dymo.cc
+networklayer/manetrouting/dymo/dymoum/dymo_re.cc
+networklayer/manetrouting/dymo/dymoum/timer_queue.cc
+networklayer/manetrouting/dymo/dymoum/dymo_uerr.cc
+networklayer/manetrouting/dymo/dymoum/dymo_nb.cc
+networklayer/manetrouting/dymo/dymoum/dymo_hello.cc
+networklayer/manetrouting/dymo/dymoum/icmp_socket.cc
+networklayer/manetrouting/dymo/dymoum/blacklist.cc
+networklayer/manetrouting/dymo/dymoum/dymo_socket.cc
+networklayer/manetrouting/dymo/dymoum/dymo_timeout.cc
+networklayer/manetrouting/dymo/dymoum/dymo_generic.cc
+networklayer/manetrouting/dymo/dymoum/rtable.cc
+networklayer/manetrouting/dymo_fau/DYMO_OutstandingRREQList.cc
+networklayer/manetrouting/dymo_fau/DYMO_RoutingEntry.cc
+networklayer/manetrouting/dymo_fau/InspectorHelpers.cc
+networklayer/manetrouting/dymo_fau/DYMO_Timer.cc
+networklayer/manetrouting/dymo_fau/DYMO_RoutingTable.cc
+networklayer/manetrouting/dymo_fau/DYMO.cc
+networklayer/manetrouting/dymo_fau/DYMO_TokenBucket.cc
+networklayer/manetrouting/dymo_fau/DYMO_DataQueue.cc
+networklayer/manetrouting/manager/ManetManager.cc
+networklayer/manetrouting/olsr/OLSR_ETX.cc
+networklayer/manetrouting/olsr/OLSR_ETX_state.cc
+networklayer/manetrouting/olsr/OLSR_ETX_dijkstra.cc
+networklayer/manetrouting/olsr/OLSR_ETX_dijkstra.cc: In member function ‘void Dijkstra::run()’:
+networklayer/manetrouting/olsr/OLSR_ETX_dijkstra.cc:187:17: warning: variable ‘destHop’ set but not used [-Wunused-but-set-variable]
+             hop destHop =itDest->second;
+                 ^
+networklayer/manetrouting/olsr/OLSR_ETX_dijkstra.cc:188:17: warning: variable ‘currentHop’ set but not used [-Wunused-but-set-variable]
+             hop currentHop =itCurrent->second;
+                 ^
+networklayer/manetrouting/olsr/OLSR_rtable.cc
+networklayer/manetrouting/olsr/OLSR_state.cc
+networklayer/manetrouting/olsr/OLSR.cc
+networklayer/mcoa/XMIPv6SM.cc
+networklayer/mcoa/KeyMCoADAD.cc
+networklayer/mcoa/MCoA.cc
+networklayer/mcoa/KeyMCoABind.cc
+networklayer/mcoa/KeyMCoABind.cc: In member function ‘int KeyMCoABind::compareBID(uint)’:
+networklayer/mcoa/KeyMCoABind.cc:102:12: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if (BID > addr){ return 1; }
+            ^
+networklayer/mcoa/KeyMCoABind.cc:103:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  else if (BID < addr) {return -1;}
+                 ^
+networklayer/mcoa/IPv6PrefAdr.cc
+networklayer/mcoa/IPv6TunAdr.cc
+networklayer/mpls/MPLS.cc
+networklayer/mpls/LIBTable.cc
+networklayer/mpls/MPLSPacket.cc
+networklayer/ospfv2/OSPFRouting.cc
+networklayer/ospfv2/interface/OSPFInterfaceStateBackup.cc
+networklayer/ospfv2/interface/OSPFInterfaceState.cc
+networklayer/ospfv2/interface/OSPFInterfaceState.cc: In member function ‘void OSPF::InterfaceState::CalculateDesignatedRouter(OSPF::Interface*)’:
+networklayer/ospfv2/interface/OSPFInterfaceState.cc:240:38: warning: variable ‘neighborsBackupDesignatedRouter’ set but not used [-Wunused-but-set-variable]
+             OSPF::DesignatedRouterID neighborsBackupDesignatedRouter = neighbor->GetBackupDesignatedRouter();
+                                      ^
+networklayer/ospfv2/interface/OSPFInterfaceState.cc:281:75: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+                 (declaredDesignatedRouter.routerID != OSPF::NullRouterID) &&
+                                                                           ^
+networklayer/ospfv2/interface/OSPFInterfaceState.cc:292:65: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+                 (declaredBackup.routerID != OSPF::NullRouterID) &&
+                                                                 ^
+networklayer/ospfv2/interface/OSPFInterfaceStateNotDesignatedRouter.cc
+networklayer/ospfv2/interface/OSPFInterfaceStateLoopback.cc
+networklayer/ospfv2/interface/OSPFInterface.cc
+networklayer/ospfv2/interface/OSPFInterfaceStatePointToPoint.cc
+networklayer/ospfv2/interface/OSPFInterfaceStateDown.cc
+networklayer/ospfv2/interface/OSPFInterfaceStateWaiting.cc
+networklayer/ospfv2/interface/OSPFInterfaceStateDesignatedRouter.cc
+networklayer/ospfv2/messagehandler/LinkStateAcknowledgementHandler.cc
+networklayer/ospfv2/messagehandler/DatabaseDescriptionHandler.cc
+networklayer/ospfv2/messagehandler/HelloHandler.cc
+networklayer/ospfv2/messagehandler/LinkStateRequestHandler.cc
+networklayer/ospfv2/messagehandler/LinkStateUpdateHandler.cc
+networklayer/ospfv2/messagehandler/MessageHandler.cc
+networklayer/ospfv2/neighbor/OSPFNeighborStateInit.cc
+networklayer/ospfv2/neighbor/OSPFNeighborState.cc
+networklayer/ospfv2/neighbor/OSPFNeighborStateTwoWay.cc
+networklayer/ospfv2/neighbor/OSPFNeighborStateExchange.cc
+networklayer/ospfv2/neighbor/OSPFNeighborStateAttempt.cc
+networklayer/ospfv2/neighbor/OSPFNeighborStateLoading.cc
+networklayer/ospfv2/neighbor/OSPFNeighbor.cc
+networklayer/ospfv2/neighbor/OSPFNeighborStateExchangeStart.cc
+networklayer/ospfv2/neighbor/OSPFNeighborStateFull.cc
+networklayer/ospfv2/neighbor/OSPFNeighborStateDown.cc
+networklayer/ospfv2/router/NetworkLSA.cc
+networklayer/ospfv2/router/SummaryLSA.cc
+networklayer/ospfv2/router/RouterLSA.cc
+networklayer/ospfv2/router/OSPFRouter.cc
+networklayer/ospfv2/router/OSPFArea.cc
+networklayer/ospfv2/router/ASExternalLSA.cc
+networklayer/queue/REDQueue.cc
+networklayer/queue/DropTailQueue.cc
+networklayer/queue/BasicDSCPClassifier.cc
+networklayer/queue/DropTailQoSQueue.cc
+networklayer/queue/DropTailQoSQueue.cc: In constructor ‘DropTailQoSQueue::DropTailQoSQueue()’:
+networklayer/queue/DropTailQoSQueue.cc:28:15: warning: converting to non-pointer type ‘int’ from NULL [-Wconversion-null]
+     numQueues = NULL;
+               ^
+networklayer/queue/WeightedFairQueue.cc
+networklayer/rsvp_te/RSVP.cc
+networklayer/rsvp_te/RSVP.cc: In member function ‘virtual void RSVP::processPathTearMsg(RSVPPathTear*)’:
+networklayer/rsvp_te/RSVP.cc:1531:42: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if (it->OutInterface.getInt() != lspid)
+                                          ^
+networklayer/rsvp_te/SimpleClassifier.cc
+networklayer/rsvp_te/Utils.cc
+networklayer/ted/TED.cc
+networklayer/ted/LinkStateRouting.cc
+networklayer/xmipv6/xMIPv6.cc
+networklayer/xmipv6/xMIPv6.cc: In member function ‘void xMIPv6::processBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:1599:8: warning: variable ‘buBID’ set but not used [-Wunused-but-set-variable]
+    int buBID;
+        ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBUMessage(BindingUpdate*, IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:2277:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+      NULL);
+          ^
+networklayer/xmipv6/xMIPv6.cc:2355:12: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+       NULL );
+            ^
+networklayer/xmipv6/xMIPv6.cc:2391:10: warning: passing NULL to non-pointer argument 1 of ‘SimTime::SimTime(double)’ [-Wconversion-null]
+     NULL );
+          ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateBAck(const BindingAcknowledgement&, const IPv6ControlInfo*)’:
+networklayer/xmipv6/xMIPv6.cc:3071:14: warning: variable ‘destAddress’ set but not used [-Wunused-but-set-variable]
+  IPv6Address destAddress  = ctrlInfo->getDestAddr();
+              ^
+networklayer/xmipv6/xMIPv6.cc:3072:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry *ie = ift->getInterfaceById( ctrlInfo->getInterfaceId() );
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::validateHoTMessage(const HomeTest&, const IPv6ControlInfo*, InterfaceEntry*)’:
+networklayer/xmipv6/xMIPv6.cc:4204:53: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if ( bulEntry->cookieHoTI != HoT.getHomeInitCookie() )
+                                                     ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘bool xMIPv6::cancelTimerIfEntry2(std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator&)’:
+networklayer/xmipv6/xMIPv6.cc:4702:24: warning: unused variable ‘buIfEntry’ [-Wunused-variable]
+     BUTransmitIfEntry *buIfEntry = (BUTransmitIfEntry*) entry;
+                        ^
+networklayer/xmipv6/xMIPv6.cc:4707:25: warning: unused variable ‘tokEntry’ [-Wunused-variable]
+     TokenExpiryIfEntry *tokEntry = (TokenExpiryIfEntry*) entry;
+                         ^
+networklayer/xmipv6/xMIPv6.cc:4696:13: warning: variable ‘key’ set but not used [-Wunused-but-set-variable]
+    KeyTimer key = pos->first;
+             ^
+networklayer/xmipv6/xMIPv6.cc:4698:14: warning: unused variable ‘aux’ [-Wunused-variable]
+    cMessage* aux = cancelEvent(entry->timer);
+              ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘void xMIPv6::cancelEntries(int, IPv6Address&, int)’:
+networklayer/xmipv6/xMIPv6.cc:5028:18: warning: unused variable ‘ie’ [-Wunused-variable]
+  InterfaceEntry* ie = ift->getInterfaceById(interfaceId);
+                  ^
+networklayer/xmipv6/xMIPv6.cc: In member function ‘std::map<xMIPv6::KeyTimer, xMIPv6::TimerIfEntry*>::iterator xMIPv6::ftimer(xMIPv6::KeyTimer)’:
+networklayer/xmipv6/xMIPv6.cc:6056:10: warning: statement has no effect [-Wunused-value]
+  for (pos; pos != transmitIfList.end(); pos++){
+          ^
+networklayer/xmipv6/BindingUpdateList.cc
+networklayer/xmipv6/BindingUpdateList.cc: In member function ‘virtual BindingUpdateList::BindingUpdateListEntry* BindingUpdateList::lookup2(const KeyMCoABind&)’:
+networklayer/xmipv6/BindingUpdateList.cc:280:8: warning: statement has no effect [-Wunused-value]
+  for (i; i!=bindingUpdateList.end(); i++ ){
+        ^
+networklayer/xmipv6/BindingUpdateList.cc: In member function ‘virtual bool BindingUpdateList::removeBinding(const KeyMCoABind&)’:
+networklayer/xmipv6/BindingUpdateList.cc:522:9: warning: statement has no effect [-Wunused-value]
+  for (it; it!=bindingUpdateList.end(); it++ ){
+         ^
+networklayer/xmipv6/MobilityHeader.cc
+networklayer/xmipv6/BindingCache.cc
+networklayer/xmipv6/BindingCache.cc: In member function ‘uint BindingCache::readBCSequenceNumberOnlyAddr(const IPv6Address&, uint)’:
+networklayer/xmipv6/BindingCache.cc:101:11: warning: statement has no effect [-Wunused-value]
+  for (pos ; pos != bindingCache.rend();pos++){
+           ^
+networklayer/xmipv6/BindingCache.cc: In member function ‘bool BindingCache::isInBindingCacheOnlyBID(uint)’:
+networklayer/xmipv6/BindingCache.cc:134:10: warning: statement has no effect [-Wunused-value]
+  for (pos; pos != bindingCache.end();pos++){
+          ^
+networklayer/xmipv6/BindingCache.cc: In member function ‘bool BindingCache::deleteALLEntries()’:
+networklayer/xmipv6/BindingCache.cc:165:12: warning: statement has no effect [-Wunused-value]
+  for ( pos ; pos != bindingCache.end(); pos++ ){
+            ^
+networklayer/xmipv6/BindingCache.cc: In member function ‘bool BindingCache::getHomeRegistrationOnlyAddr(const IPv6Address&, uint)’:
+networklayer/xmipv6/BindingCache.cc:193:11: warning: statement has no effect [-Wunused-value]
+  for (pos ; pos != bindingCache.rend();pos++){
+           ^
+transport/contract/TCPSocket.cc
+transport/contract/TCPSocketMap.cc
+transport/contract/SCTPSocket.cc
+transport/contract/UDPSocket.cc
+transport/rtp/RTCP.cc
+transport/rtp/RTCP.cc: In member function ‘virtual void RTCP::calculateAveragePacketSize(int)’:
+transport/rtp/RTCP.cc:535:136: warning: operation on ‘((RTCP*)this)->RTCP::_packetsCalculated’ may be undefined [-Wsequence-point]
+     _averagePacketSize = ((double)(_packetsCalculated) * _averagePacketSize + (double)(size + 20 + 8)) / (double)(++_packetsCalculated);
+                                                                                                                                        ^
+transport/rtp/RTPInterfacePacket.cc
+transport/rtp/RTPInnerPacket.cc
+transport/rtp/RTPPacket.cc
+transport/rtp/sdes.cc
+transport/rtp/RTPPayloadSender.cc
+transport/rtp/RTPParticipantInfo.cc
+transport/rtp/RTPReceiverInfo.cc
+transport/rtp/reports.cc
+transport/rtp/RTPProfile.cc
+transport/rtp/RTPSenderInfo.cc
+transport/rtp/RTP.cc
+transport/rtp/RTPPayloadReceiver.cc
+transport/rtp/RTCPPacket.cc
+transport/rtp/profiles/avprofile/RTPAVProfile.cc
+transport/rtp/profiles/avprofile/RTPAVProfilePayload32Sender.cc
+transport/rtp/profiles/avprofile/RTPAVProfilePayload32Receiver.cc
+transport/sctp/SCTPReceiveStream.cc
+transport/sctp/SCTPSendStream.cc
+transport/sctp/SCTPCCFunctions.cc
+transport/sctp/SCTPAssociationBase.cc
+transport/sctp/SCTPMessage.cc
+transport/sctp/SCTPAssociationRcvMessage.cc
+transport/sctp/SCTPAssociationRcvMessage.cc: In member function ‘bool SCTPAssociation::process_RCV_Message(SCTPMessage*, const IPvXAddress&, const IPvXAddress&)’:
+transport/sctp/SCTPAssociationRcvMessage.cc:86:10: warning: variable ‘dataChunkDelivered’ set but not used [-Wunused-but-set-variable]
+     bool dataChunkDelivered = false;
+          ^
+transport/sctp/SCTPAssociationRcvMessage.cc: In member function ‘SCTPEventCode SCTPAssociation::processSackArrived(SCTPSackChunk*)’:
+transport/sctp/SCTPAssociationRcvMessage.cc:712:30: warning: variable ‘ctsnaAdvanced’ set but not used [-Wunused-but-set-variable]
+     bool                     ctsnaAdvanced            = false;
+                              ^
+transport/sctp/SCTPAssociationEventProc.cc
+transport/sctp/SCTPAssociationSendAll.cc
+transport/sctp/SCTPAssociationSendAll.cc: In member function ‘void SCTPAssociation::sendOnPath(SCTPPathVariables*, bool)’:
+transport/sctp/SCTPAssociationSendAll.cc:325:10: warning: variable ‘rtxActive’ set but not used [-Wunused-but-set-variable]
+     bool rtxActive              = false;
+          ^
+transport/sctp/SCTP.cc
+transport/sctp/SCTPSSFunctions.cc
+transport/sctp/SCTPAssociationUtil.cc
+transport/sctp/SCTPAssociationUtil.cc: In member function ‘bool SCTPAssociation::makeRoomForTsn(uint32_t, uint32_t, bool)’:
+transport/sctp/SCTPAssociationUtil.cc:1210:14: warning: variable ‘delQ’ set but not used [-Wunused-but-set-variable]
+     bool     delQ = false;
+              ^
+transport/sctp/SCTPQueue.cc
+transport/sctp/SCTPAlg.cc
+transport/tcp/TCPConnectionEventProc.cc
+transport/tcp/TCPConnectionRcvSegment.cc
+transport/tcp/TCPSegment.cc
+transport/tcp/TCPSACKRexmitQueue.cc
+transport/tcp/TCPConnectionBase.cc
+transport/tcp/TCPConnectionUtil.cc
+transport/tcp/TCP.cc
+transport/tcp/flavours/TCPBaseAlg.cc
+transport/tcp/flavours/TCPNewReno.cc
+transport/tcp/flavours/TCPReno.cc
+transport/tcp/flavours/TCPNoCongestionControl.cc
+transport/tcp/flavours/TCPTahoeRenoFamily.cc
+transport/tcp/flavours/DumbTCP.cc
+transport/tcp/flavours/TCPTahoe.cc
+transport/tcp/queues/TCPVirtualDataRcvQueue.cc
+transport/tcp/queues/TCPVirtualDataSendQueue.cc
+transport/tcp/queues/TCPMsgBasedSendQueue.cc
+transport/tcp/queues/TCPMsgBasedRcvQueue.cc
+transport/tcp/queues/TCPMsgBasedRcvQueue.cc: In member function ‘virtual std::string TCPMsgBasedRcvQueue::info() const’:
+transport/tcp/queues/TCPMsgBasedRcvQueue.cc:49:47: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 3 has type ‘std::map<unsigned int, cPacket*>::size_type {aka long unsigned int}’ [-Wformat=]
+     sprintf(buf, "%u msgs", payloadList.size());
+                                               ^
+transport/udp/UDP.cc
+util/InlineXmlDoc.cc
+util/opp_utils.cc
+util/NAMTraceWriter.cc
+util/dijktraKShortest.cc
+util/NetAnimTrace.cc
+util/TCPDump.cc
+util/TCPDump.cc: In member function ‘void TCPDumper::sctpDump(const char*, SCTPMessage*, const string&, const string&, const char*)’:
+util/TCPDump.cc:302:34: warning: variable ‘parameterType’ set but not used [-Wunused-but-set-variable]
+                           uint32 parameterType;
+                                  ^
+util/common.cc
+util/PowerControlManager.cc
+util/XMLUtils.cc
+util/ThruputMeteringChannel.cc
+util/headerserializers/IPSerializer.cc
+util/headerserializers/ICMPSerializer.cc
+util/headerserializers/UDPSerializer.cc
+util/headerserializers/TCPIPchecksum.cc
+util/headerserializers/SCTPSerializer.cc
+util/headerserializers/SCTPSerializer.cc: In member function ‘void SCTPSerializer::parse(const uint8_t*, uint32_t, SCTPMessage*)’:
+util/headerserializers/SCTPSerializer.cc:998:43: warning: variable ‘error’ set but not used [-Wunused-but-set-variable]
+                 const struct error_chunk *error;
+                                           ^
+util/headerserializers/TCPSerializer.cc
+world/ChannelControlExtended.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from world/ChannelControlExtended.h:27,
+                 from world/ChannelControlExtended.cc:20:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+world/ChannelInstaller.cc
+world/ChannelAccess.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelAccess.h:26,
+                 from world/ChannelAccess.cc:21:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+world/ChannelControl.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from world/ChannelControl.cc:18:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+world/ScenarioManager.cc
+world/NAMTrace.cc
+world/ChannelAccessExtended.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelAccessExtended.h:26,
+                 from world/ChannelAccessExtended.cc:28:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+world/annotations/AnnotationDummy.cc
+world/annotations/AnnotationManager.cc
+In file included from base/Coord.h:26:0,
+                 from ./world/annotations/AnnotationManager.h:29,
+                 from world/annotations/AnnotationManager.cc:22:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+world/obstacles/ObstacleControl.cc
+In file included from base/Coord.h:26:0,
+                 from ./world/obstacles/ObstacleControl.h:29,
+                 from world/obstacles/ObstacleControl.cc:24:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+world/obstacles/Obstacle.cc
+In file included from base/Coord.h:26:0,
+                 from ./world/obstacles/Obstacle.h:25,
+                 from world/obstacles/Obstacle.cc:21:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+world/traci/TraCIScenarioManager.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from ./world/traci/TraCIScenarioManager.h:32,
+                 from world/traci/TraCIScenarioManager.cc:37:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+world/traci/TraCIScenarioManagerLaunchd.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from world/ChannelControl.h:25,
+                 from ./world/traci/TraCIScenarioManager.h:32,
+                 from ./world/traci/TraCIScenarioManagerLaunchd.h:26,
+                 from world/traci/TraCIScenarioManagerLaunchd.cc:20:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+applications/dhcp/DHCP_m.cc
+applications/ethernet/EtherApp_m.cc
+applications/mcoa/Video/MCoAVideoStreaming_m.cc
+applications/mcoa/VoIP/MCOAVoIPMsg_m.cc
+applications/pingapp/PingPayload_m.cc
+applications/tcpapp/GenericAppMsg_m.cc
+applications/udpapp/UDPEchoAppMsg_m.cc
+base/ByteArrayMessage_m.cc
+linklayer/contract/ControlInfoBreakLink_m.cc
+linklayer/contract/MeshControlInfo_m.cc
+linklayer/contract/Ieee802Ctrl_m.cc
+linklayer/contract/PhyControlInfo_m.cc
+linklayer/contract/Radio80211aControlInfo_m.cc
+linklayer/ethernet/EtherFrame_m.cc
+linklayer/ext/ExtFrame_m.cc
+linklayer/ieee80211/mac/Ieee80211Frame_m.cc
+linklayer/ieee80211/mgmt/Ieee80211MgmtFrames_m.cc
+linklayer/ieee80211/mgmt/Ieee80211Primitives_m.cc
+linklayer/mf80211/macLayer/MacPkt_m.cc
+linklayer/mf80211/macLayer/Mac80211Pkt_m.cc
+linklayer/mfcore/SnrControlInfo_m.cc
+linklayer/mfcore/TransmComplete_m.cc
+linklayer/mfcore/AirFrame_m.cc
+In file included from base/Coord.h:26:0,
+                 from linklayer/mfcore/AirFrame_m.h:18,
+                 from linklayer/mfcore/AirFrame_m.cc:13:
+util/FWMath.h: In static member function ‘static double FWMath::div(double, double)’:
+util/FWMath.h:69:14: warning: variable ‘f’ set but not used [-Wunused-but-set-variable]
+       double f;
+              ^
+linklayer/ppp/PPPFrame_m.cc
+networklayer/arp/ARPPacket_m.cc
+networklayer/contract/IPProtocolId_m.cc
+networklayer/contract/IPControlInfo_m.cc
+networklayer/contract/IPv6ControlInfo_m.cc
+networklayer/icmpv6/ICMPv6Message_m.cc
+networklayer/icmpv6/IPv6NDMessage_m.cc
+networklayer/ipv4/ControlManetRouting_m.cc
+networklayer/ipv4/ICMPMessage_m.cc
+networklayer/ipv4/IPDatagram_m.cc
+networklayer/ipv6/IPv6Datagram_m.cc
+networklayer/ipv6/IPv6ExtensionHeaders_m.cc
+networklayer/ldp/LDPPacket_m.cc
+networklayer/manetrouting/dsdv/DSDVhello_m.cc
+networklayer/manetrouting/dymo_fau/DYMO_Packet_m.cc
+networklayer/manetrouting/dymo_fau/DYMO_RM_m.cc
+networklayer/manetrouting/dymo_fau/DYMO_UERR_m.cc
+networklayer/manetrouting/dymo_fau/DYMO_Timeout_m.cc
+networklayer/manetrouting/dymo_fau/DYMO_PacketBBMessage_m.cc
+networklayer/manetrouting/dymo_fau/DYMO_RREP_m.cc
+networklayer/manetrouting/dymo_fau/DYMO_RERR_m.cc
+networklayer/manetrouting/dymo_fau/DYMO_RREQ_m.cc
+networklayer/manetrouting/olsr/OLSRpkt_m.cc
+networklayer/ospfv2/OSPFPacket_m.cc
+networklayer/ospfv2/OSPFTimer_m.cc
+networklayer/rsvp_te/RSVPPathMsg_m.cc
+networklayer/rsvp_te/RSVPHello_m.cc
+networklayer/rsvp_te/SignallingMsg_m.cc
+networklayer/rsvp_te/RSVPResvMsg_m.cc
+networklayer/rsvp_te/RSVPPacket_m.cc
+networklayer/rsvp_te/IntServ_m.cc
+networklayer/ted/LinkStatePacket_m.cc
+networklayer/ted/TED_m.cc
+networklayer/xmipv6/MobilityHeader_m.cc
+transport/contract/SCTPCommand_m.cc
+transport/contract/TCPCommand_m.cc
+transport/contract/UDPControlInfo_m.cc
+transport/rtp/RTPSenderControlMessage_m.cc
+transport/rtp/RTPSenderStatusMessage_m.cc
+transport/rtp/profiles/avprofile/RTPMpegPacket_m.cc
+transport/sctp/SCTPMessage_m.cc
+transport/tcp/TCPSegment_m.cc
+transport/udp/UDPPacket_m.cc
+util/PowerControlMessages_m.cc
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
+08:54:30 **** Build of configuration gcc-debug for project ProxyUnloading ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/ProxyUnloading/src'
+Creating executable: ../out/gcc-debug/src/ProxyUnloading
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/ProxyUnloading/src'
+08:54:34 **** Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+08:54:37 **** Build of configuration gcc-debug for project test_modifziert_PingApp_Dynamisch_eingestellt ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+Creating executable: ../out/gcc-debug//src/test_modifziert_PingApp_Dynamisch_eingestellt
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+08:54:41 **** Build of configuration gcc-debug for project test_modifziert_nur_noch_1_Mobile_Node ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+Creating executable: ../out/gcc-debug//src/test_modifziert_nur_noch_1_Mobile_Node
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+08:54:44 **** Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+08:57:07 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.cc
+applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.cc: In member function ‘virtual void Proxy_Enhanced_MCoAVideoCli::receiveStream(cPacket*)’:
+applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.cc:80:37: warning: statement has no effect [-Wunused-value]
+     nLost < 0 ? nLost * (-1) : nLost;
+                                     ^
+applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.cc
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
+08:57:11 **** Incremental Build of configuration gcc-debug for project ProxyUnloading ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/ProxyUnloading/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/ProxyUnloading/src'
+08:57:11 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+Creating dependencies...
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+opp_makedep: warning: no input files
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+08:57:12 **** Incremental Build of configuration gcc-debug for project test_modifziert_PingApp_Dynamisch_eingestellt ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+Creating executable: ../out/gcc-debug//src/test_modifziert_PingApp_Dynamisch_eingestellt
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+08:57:12 **** Incremental Build of configuration gcc-debug for project test_modifziert_nur_noch_1_Mobile_Node ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+Creating executable: ../out/gcc-debug//src/test_modifziert_nur_noch_1_Mobile_Node
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+08:57:13 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'

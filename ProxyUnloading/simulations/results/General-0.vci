@@ -1,4 +1,4 @@
-file 19016784 1424864358                                        
+file 19016784 1425373494                                        
 version 2
 run General-0-20150225-12:37:22-9884
 attr configname General
@@ -15,120 +15,119 @@ attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
-
 vector 4  ProxyUnloading.youtube.networkLayer.ipv6  IPv6Active_Event  ETV
-vector 23  ProxyUnloading.spotify.networkLayer.ipv6  IPv6Active_Event  ETV
-vector 63  ProxyUnloading.car1.networkLayer.ipv6  IPv6Active_Event  ETV
-vector 69  ProxyUnloading.proxy_Server_HA.networkLayer.ipv6  IPv6Active_Event  ETV
-vector 42  ProxyUnloading.roadSideUnit_A.wlan.mac  RadioState  ETV
-attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
-attr enumname  RadioState
-vector 41  ProxyUnloading.roadSideUnit_A.wlan.mac  State  ETV
-attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
-attr enumname  Ieee80211Mac
-vector 67  ProxyUnloading.car1.wlan[0].mac  RadioState  ETV
-attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
-attr enumname  RadioState
-vector 66  ProxyUnloading.car1.wlan[0].mac  State  ETV
-attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
-attr enumname  Ieee80211Mac
-vector 130  ProxyUnloading.roadSideUnit_B.wlan.mac  RadioState  ETV
-attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
-attr enumname  RadioState
-vector 129  ProxyUnloading.roadSideUnit_B.wlan.mac  State  ETV
-attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
-attr enumname  Ieee80211Mac
-vector 183  ProxyUnloading.proxy_Server_HA.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
-vector 70  ProxyUnloading.proxy_Server_HA.eth[0].queue  "queue length"  ETV
-vector 84  ProxyUnloading.proxy_Server_HA.eth[1].queue  "queue length"  ETV
-vector 144  ProxyUnloading.youtube.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
-vector 157  ProxyUnloading.spotify.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
-vector 170  ProxyUnloading.car1.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
-vector 7  ProxyUnloading.youtube.eth[0].mac  framesSent  ETV
-vector 9  ProxyUnloading.youtube.eth[0].mac  bytesSent  ETV
-vector 26  ProxyUnloading.spotify.eth[0].mac  framesSent  ETV
-vector 28  ProxyUnloading.spotify.eth[0].mac  bytesSent  ETV
-vector 72  ProxyUnloading.proxy_Server_HA.eth[0].mac  framesSent  ETV
-vector 74  ProxyUnloading.proxy_Server_HA.eth[0].mac  bytesSent  ETV
-vector 86  ProxyUnloading.proxy_Server_HA.eth[1].mac  framesSent  ETV
-vector 88  ProxyUnloading.proxy_Server_HA.eth[1].mac  bytesSent  ETV
-vector 100  ProxyUnloading.proxy_Server_HA.eth[2].mac  framesSent  ETV
-vector 102  ProxyUnloading.proxy_Server_HA.eth[2].mac  bytesSent  ETV
-vector 114  ProxyUnloading.proxy_Server_HA.eth[3].mac  framesSent  ETV
-vector 116  ProxyUnloading.proxy_Server_HA.eth[3].mac  bytesSent  ETV
-vector 115  ProxyUnloading.proxy_Server_HA.eth[3].mac  framesReceivedOK  ETV
-vector 117  ProxyUnloading.proxy_Server_HA.eth[3].mac  bytesReceivedOK  ETV
-vector 121  ProxyUnloading.proxy_Server_HA.eth[3].mac  framesPassedToHL  ETV
-vector 101  ProxyUnloading.proxy_Server_HA.eth[2].mac  framesReceivedOK  ETV
-vector 103  ProxyUnloading.proxy_Server_HA.eth[2].mac  bytesReceivedOK  ETV
-vector 107  ProxyUnloading.proxy_Server_HA.eth[2].mac  framesPassedToHL  ETV
-vector 45  ProxyUnloading.roadSideUnit_A.eth[0]  framesReceivedOK  ETV
-vector 47  ProxyUnloading.roadSideUnit_A.eth[0]  bytesReceivedOK  ETV
-vector 51  ProxyUnloading.roadSideUnit_A.eth[0]  framesPassedToHL  ETV
-vector 133  ProxyUnloading.roadSideUnit_B.eth[0]  framesReceivedOK  ETV
-vector 135  ProxyUnloading.roadSideUnit_B.eth[0]  bytesReceivedOK  ETV
-vector 139  ProxyUnloading.roadSideUnit_B.eth[0]  framesPassedToHL  ETV
-vector 27  ProxyUnloading.spotify.eth[0].mac  framesReceivedOK  ETV
-vector 29  ProxyUnloading.spotify.eth[0].mac  bytesReceivedOK  ETV
-vector 33  ProxyUnloading.spotify.eth[0].mac  framesPassedToHL  ETV
-vector 8  ProxyUnloading.youtube.eth[0].mac  framesReceivedOK  ETV
-vector 10  ProxyUnloading.youtube.eth[0].mac  bytesReceivedOK  ETV
-vector 14  ProxyUnloading.youtube.eth[0].mac  framesPassedToHL  ETV
-vector 38  ProxyUnloading.roadSideUnit_A.relayUnit  "buffer level"  ETV
-vector 126  ProxyUnloading.roadSideUnit_B.relayUnit  "buffer level"  ETV
-vector 39  ProxyUnloading.roadSideUnit_A.wlan.mgmt  "queue length"  ETV
-vector 127  ProxyUnloading.roadSideUnit_B.wlan.mgmt  "queue length"  ETV
-vector 128  ProxyUnloading.roadSideUnit_B.wlan.mgmt  "queue drop count"  ETV
-vector 40  ProxyUnloading.roadSideUnit_A.wlan.mgmt  "queue drop count"  ETV
 4	4748 8 0 0 0 0 1 1 1 1 1
-7	4756 96 226 6405 1.000006719999 10.798147796041 4 1 4 10 30
-8	4852 294 398 877350 1.010006719999 1468.065289748631 11 1 11 66 506
-9	5146 103 226 6405 1.000006719999 10.798147796041 4 64 256 640 122880
-10	5249 324 398 877350 1.010006719999 1468.065289748631 11 64 704 4224 2072576
-14	5573 305 398 877350 1.010006719999 1468.065289748631 11 1 11 66 506
+vector 23  ProxyUnloading.spotify.networkLayer.ipv6  IPv6Active_Event  ETV
 23	5878 9 0 0 0 0 1 1 1 1 1
-26	5887 97 227 6341 1.000006719999 10.72363007394 4 1 4 10 30
-27	5984 276 397 871731 1.010006719999 1458.811540454423 10 1 10 55 385
-28	6260 104 227 6341 1.000006719999 10.72363007394 4 64 256 640 122880
-29	6364 294 397 871731 1.010006719999 1458.811540454423 10 64 640 3520 1576960
-33	6658 276 397 871731 1.010006719999 1458.811540454423 10 1 10 55 385
-38	6934 1745178 401 882023 1.010006719999 1475.881957229902 59132 0 64 1892224 121102336
-39	1752112 2549 412 2970 1.010006719999 5.209784561899 100 1 100 5050 338350
-40	1754661 855349 2999 882024 5.255123050939 1475.881957229902 29466 1 1 29466 29466
-41	2610010 688336 0 882017 0 1475.879572337037 23638 0 5 75635 302547
-42	3298346 275336 0 882017 0 1475.879572337037 9456 0 2 9454 18908
-45	3573682 964964 395 882021 1.010006719999 1475.881957229902 29566 1 29566 437088961 8615460510271
-47	4538646 1017844 395 882021 1.010006719999 1475.881957229902 29566 64 1892224 27973693504 3.528892625007e+16
-51	5556490 964964 395 882021 1.010006719999 1475.881957229902 29566 1 29566 437088961 8615460510271
+vector 63  ProxyUnloading.car1.networkLayer.ipv6  IPv6Active_Event  ETV
 63	6521454 9 0 0 0 0 1 1 1 1 1
-66	6521463 1291576 0 881881 0 1475.66331872045 45908 0 5 146899 587603
-67	7813039 516632 0 881881 0 1475.66331872045 18364 0 2 18362 36724
+vector 69  ProxyUnloading.proxy_Server_HA.networkLayer.ipv6  IPv6Active_Event  ETV
 69	8329671 9 0 0 0 0 1 1 1 1 1
-70	8329680 874 37 366 0.117835437948 1.000120959982 36 0 18 324 3894
-72	8330554 964995 228 882054 1.000006719999 1475.9392153486 29567 1 29567 437118528 8616334717760
-74	9295549 1017877 228 882054 1.000006719999 1475.9392153486 29567 64 1892288 27975585792 3.5292507003945e+16
-84	10313426 921 38 375 0.117835437948 1.000127679981 38 0 19 361 4579
-86	10314347 964031 229 882042 1.000006719999 1475.919509612588 29542 1 29542 436379653 8594497265835
-88	11278378 1016863 229 882042 1.000006719999 1475.919509612588 29542 64 1890688 27928297792 3.520306080086e+16
-100	12295241 286 230 871719 1.000006719999 1458.801540454423 10 1 10 55 385
-101	12295527 101 394 6354 1.010006719999 10.73363007394 4 1 4 10 30
-102	12295628 304 230 871719 1.000006719999 1458.801540454423 10 64 640 3520 1576960
-103	12295932 108 394 6354 1.010006719999 10.73363007394 4 64 256 640 122880
-107	12296040 101 394 6354 1.010006719999 10.73363007394 4 1 4 10 30
-114	12296141 316 231 877335 1.000006719999 1468.055289748631 11 1 11 66 506
-115	12296457 104 393 6417 1.010006719999 10.808147796041 4 1 4 10 30
-116	12296561 335 231 877335 1.000006719999 1468.055289748631 11 64 704 4224 2072576
-117	12296896 111 393 6417 1.010006719999 10.808147796041 4 64 256 640 122880
-121	12297007 104 393 6417 1.010006719999 10.808147796041 4 1 4 10 30
-126	12297111 1802566 402 882046 1.010006719999 1475.929509612588 59084 0 64 1890688 121004032
-127	14099677 2650 413 2753 1.010006719999 4.863086761877 100 1 100 5050 338350
-128	14102327 883954 2778 882047 4.9131397372 1475.929509612588 29442 1 1 29442 29442
-129	14986281 711984 0 882033 0 1475.899030561984 23638 0 5 75635 302547
+vector 42  ProxyUnloading.roadSideUnit_A.wlan.mac  RadioState  ETV
+attr enum "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname RadioState
+42	3298346 275336 0 882017 0 1475.879572337037 9456 0 2 9454 18908
+vector 41  ProxyUnloading.roadSideUnit_A.wlan.mac  State  ETV
+attr enum "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
+attr enumname Ieee80211Mac
+41	2610010 688336 0 882017 0 1475.879572337037 23638 0 5 75635 302547
+vector 67  ProxyUnloading.car1.wlan[0].mac  RadioState  ETV
+attr enum "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname RadioState
+67	7813039 516632 0 881881 0 1475.66331872045 18364 0 2 18362 36724
+vector 66  ProxyUnloading.car1.wlan[0].mac  State  ETV
+attr enum "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
+attr enumname Ieee80211Mac
+66	6521463 1291576 0 881881 0 1475.66331872045 45908 0 5 146899 587603
+vector 130  ProxyUnloading.roadSideUnit_B.wlan.mac  RadioState  ETV
+attr enum "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname RadioState
 130	15698265 284796 0 882033 0 1475.899030561984 9456 0 2 9454 18908
-133	15983061 993574 396 882044 1.010006719999 1475.929509612588 29542 1 29542 436379653 8594497265835
-135	16976635 1046406 396 882044 1.010006719999 1475.929509612588 29542 64 1890688 27928297792 3.520306080086e+16
-139	18023041 993574 396 882044 1.010006719999 1475.929509612588 29542 1 29542 436379653 8594497265835
-144	19016615 24 69 69 0.253376608528 0.253376608528 1 1 1 1 1
-157	19016639 24 82 82 0.291066044662 0.291066044662 1 1 1 1 1
-170	19016663 25 102 102 0.416690013371 0.416690013371 1 1 1 1 1
+vector 129  ProxyUnloading.roadSideUnit_B.wlan.mac  State  ETV
+attr enum "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
+attr enumname Ieee80211Mac
+129	14986281 711984 0 882033 0 1475.899030561984 23638 0 5 75635 302547
+vector 183  ProxyUnloading.proxy_Server_HA.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
 183	19016688 96 32 32 0.117835437948 0.117835437948 4 1 1 4 4
+vector 70  ProxyUnloading.proxy_Server_HA.eth[0].queue  "queue length"  ETV
+70	8329680 874 37 366 0.117835437948 1.000120959982 36 0 18 324 3894
+vector 84  ProxyUnloading.proxy_Server_HA.eth[1].queue  "queue length"  ETV
+84	10313426 921 38 375 0.117835437948 1.000127679981 38 0 19 361 4579
+vector 144  ProxyUnloading.youtube.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
+144	19016615 24 69 69 0.253376608528 0.253376608528 1 1 1 1 1
+vector 157  ProxyUnloading.spotify.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
+157	19016639 24 82 82 0.291066044662 0.291066044662 1 1 1 1 1
+vector 170  ProxyUnloading.car1.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
+170	19016663 25 102 102 0.416690013371 0.416690013371 1 1 1 1 1
+vector 7  ProxyUnloading.youtube.eth[0].mac  framesSent  ETV
+7	4756 96 226 6405 1.000006719999 10.798147796041 4 1 4 10 30
+vector 9  ProxyUnloading.youtube.eth[0].mac  bytesSent  ETV
+9	5146 103 226 6405 1.000006719999 10.798147796041 4 64 256 640 122880
+vector 26  ProxyUnloading.spotify.eth[0].mac  framesSent  ETV
+26	5887 97 227 6341 1.000006719999 10.72363007394 4 1 4 10 30
+vector 28  ProxyUnloading.spotify.eth[0].mac  bytesSent  ETV
+28	6260 104 227 6341 1.000006719999 10.72363007394 4 64 256 640 122880
+vector 72  ProxyUnloading.proxy_Server_HA.eth[0].mac  framesSent  ETV
+72	8330554 964995 228 882054 1.000006719999 1475.9392153486 29567 1 29567 437118528 8616334717760
+vector 74  ProxyUnloading.proxy_Server_HA.eth[0].mac  bytesSent  ETV
+74	9295549 1017877 228 882054 1.000006719999 1475.9392153486 29567 64 1892288 27975585792 3.5292507003945e+16
+vector 86  ProxyUnloading.proxy_Server_HA.eth[1].mac  framesSent  ETV
+86	10314347 964031 229 882042 1.000006719999 1475.919509612588 29542 1 29542 436379653 8594497265835
+vector 88  ProxyUnloading.proxy_Server_HA.eth[1].mac  bytesSent  ETV
+88	11278378 1016863 229 882042 1.000006719999 1475.919509612588 29542 64 1890688 27928297792 3.520306080086e+16
+vector 100  ProxyUnloading.proxy_Server_HA.eth[2].mac  framesSent  ETV
+100	12295241 286 230 871719 1.000006719999 1458.801540454423 10 1 10 55 385
+vector 102  ProxyUnloading.proxy_Server_HA.eth[2].mac  bytesSent  ETV
+102	12295628 304 230 871719 1.000006719999 1458.801540454423 10 64 640 3520 1576960
+vector 114  ProxyUnloading.proxy_Server_HA.eth[3].mac  framesSent  ETV
+114	12296141 316 231 877335 1.000006719999 1468.055289748631 11 1 11 66 506
+vector 116  ProxyUnloading.proxy_Server_HA.eth[3].mac  bytesSent  ETV
+116	12296561 335 231 877335 1.000006719999 1468.055289748631 11 64 704 4224 2072576
+vector 115  ProxyUnloading.proxy_Server_HA.eth[3].mac  framesReceivedOK  ETV
+115	12296457 104 393 6417 1.010006719999 10.808147796041 4 1 4 10 30
+vector 117  ProxyUnloading.proxy_Server_HA.eth[3].mac  bytesReceivedOK  ETV
+117	12296896 111 393 6417 1.010006719999 10.808147796041 4 64 256 640 122880
+vector 121  ProxyUnloading.proxy_Server_HA.eth[3].mac  framesPassedToHL  ETV
+121	12297007 104 393 6417 1.010006719999 10.808147796041 4 1 4 10 30
+vector 101  ProxyUnloading.proxy_Server_HA.eth[2].mac  framesReceivedOK  ETV
+101	12295527 101 394 6354 1.010006719999 10.73363007394 4 1 4 10 30
+vector 103  ProxyUnloading.proxy_Server_HA.eth[2].mac  bytesReceivedOK  ETV
+103	12295932 108 394 6354 1.010006719999 10.73363007394 4 64 256 640 122880
+vector 107  ProxyUnloading.proxy_Server_HA.eth[2].mac  framesPassedToHL  ETV
+107	12296040 101 394 6354 1.010006719999 10.73363007394 4 1 4 10 30
+vector 45  ProxyUnloading.roadSideUnit_A.eth[0]  framesReceivedOK  ETV
+45	3573682 964964 395 882021 1.010006719999 1475.881957229902 29566 1 29566 437088961 8615460510271
+vector 47  ProxyUnloading.roadSideUnit_A.eth[0]  bytesReceivedOK  ETV
+47	4538646 1017844 395 882021 1.010006719999 1475.881957229902 29566 64 1892224 27973693504 3.528892625007e+16
+vector 51  ProxyUnloading.roadSideUnit_A.eth[0]  framesPassedToHL  ETV
+51	5556490 964964 395 882021 1.010006719999 1475.881957229902 29566 1 29566 437088961 8615460510271
+vector 133  ProxyUnloading.roadSideUnit_B.eth[0]  framesReceivedOK  ETV
+133	15983061 993574 396 882044 1.010006719999 1475.929509612588 29542 1 29542 436379653 8594497265835
+vector 135  ProxyUnloading.roadSideUnit_B.eth[0]  bytesReceivedOK  ETV
+135	16976635 1046406 396 882044 1.010006719999 1475.929509612588 29542 64 1890688 27928297792 3.520306080086e+16
+vector 139  ProxyUnloading.roadSideUnit_B.eth[0]  framesPassedToHL  ETV
+139	18023041 993574 396 882044 1.010006719999 1475.929509612588 29542 1 29542 436379653 8594497265835
+vector 27  ProxyUnloading.spotify.eth[0].mac  framesReceivedOK  ETV
+27	5984 276 397 871731 1.010006719999 1458.811540454423 10 1 10 55 385
+vector 29  ProxyUnloading.spotify.eth[0].mac  bytesReceivedOK  ETV
+29	6364 294 397 871731 1.010006719999 1458.811540454423 10 64 640 3520 1576960
+vector 33  ProxyUnloading.spotify.eth[0].mac  framesPassedToHL  ETV
+33	6658 276 397 871731 1.010006719999 1458.811540454423 10 1 10 55 385
+vector 8  ProxyUnloading.youtube.eth[0].mac  framesReceivedOK  ETV
+8	4852 294 398 877350 1.010006719999 1468.065289748631 11 1 11 66 506
+vector 10  ProxyUnloading.youtube.eth[0].mac  bytesReceivedOK  ETV
+10	5249 324 398 877350 1.010006719999 1468.065289748631 11 64 704 4224 2072576
+vector 14  ProxyUnloading.youtube.eth[0].mac  framesPassedToHL  ETV
+14	5573 305 398 877350 1.010006719999 1468.065289748631 11 1 11 66 506
+vector 38  ProxyUnloading.roadSideUnit_A.relayUnit  "buffer level"  ETV
+38	6934 1745178 401 882023 1.010006719999 1475.881957229902 59132 0 64 1892224 121102336
+vector 126  ProxyUnloading.roadSideUnit_B.relayUnit  "buffer level"  ETV
+126	12297111 1802566 402 882046 1.010006719999 1475.929509612588 59084 0 64 1890688 121004032
+vector 39  ProxyUnloading.roadSideUnit_A.wlan.mgmt  "queue length"  ETV
+39	1752112 2549 412 2970 1.010006719999 5.209784561899 100 1 100 5050 338350
+vector 127  ProxyUnloading.roadSideUnit_B.wlan.mgmt  "queue length"  ETV
+127	14099677 2650 413 2753 1.010006719999 4.863086761877 100 1 100 5050 338350
+vector 128  ProxyUnloading.roadSideUnit_B.wlan.mgmt  "queue drop count"  ETV
+128	14102327 883954 2778 882047 4.9131397372 1475.929509612588 29442 1 1 29442 29442
+vector 40  ProxyUnloading.roadSideUnit_A.wlan.mgmt  "queue drop count"  ETV
+40	1754661 855349 2999 882024 5.255123050939 1475.881957229902 29466 1 1 29466 29466
