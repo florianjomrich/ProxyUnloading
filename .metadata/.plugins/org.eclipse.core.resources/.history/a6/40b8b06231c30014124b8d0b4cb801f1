@@ -1,0 +1,18 @@
+/*
+ * ProxyEnhancedxMIPv6.cpp
+ *
+ *  Created on: Mar 5, 2015
+ *      Author: ubuntu
+ */
+
+#include <ProxyEnhancedxMIPv6.h>
+
+Proxy_Enhanced_xMIPv6::Proxy_Enhanced_xMIPv6() {
+    // TODO Auto-generated constructor stub
+
+}
+
+Proxy_Enhanced_xMIPv6::~Proxy_Enhanced_xMIPv6() {
+    // TODO Auto-generated destructor stub
+}
+

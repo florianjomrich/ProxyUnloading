@@ -24,6 +24,8 @@
 #include "IPAddressResolver.h"
 #include "IPv6ControlInfo.h"
 
+#define PROXY_ENHANCED_BU_MESSAGE  42
+
 using std::cout;
 
 Define_Module(Proxy_Enhanced_MCoAVideoCli);
@@ -87,6 +89,7 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
     	          msg->setControlInfo(ctrl);*/
     	    cMessage* msg = new cMessage();
     	    msg->setName("Message for the Proxy");
+    	    msg->setKind(PROXY_ENHANCED_BU_MESSAGE);
     	    send(msg, "proxy_Enhanced_App_Control_Channel_OUT");
 
     	}
