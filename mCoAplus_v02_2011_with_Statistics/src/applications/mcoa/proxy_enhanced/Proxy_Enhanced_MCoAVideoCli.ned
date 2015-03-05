@@ -47,6 +47,6 @@ simple Proxy_Enhanced_MCoAVideoCli like MCoAUDPBase
     gates:
         input udpIn;
         output udpOut;
-        output proxy_Enhanced_App_ProxyServer_ControlBus_Out;
+        output proxy_Enhanced_App_Control_Channel_OUT;
 }
 
