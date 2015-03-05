@@ -27,6 +27,7 @@
 #include "IPv6PrefAdr.h"
 
 #define MK_REMOVE_ADDRESS_PAIR 1
+#define PROXY_CONTEXT_START 42
 #define MCOAUDPBASE_DELAY_MSG_REMOVE 0.5
 #define STR_MK_REMOVE_ADDRES_PAIR "MCoAUDPBase_delAdr"
 

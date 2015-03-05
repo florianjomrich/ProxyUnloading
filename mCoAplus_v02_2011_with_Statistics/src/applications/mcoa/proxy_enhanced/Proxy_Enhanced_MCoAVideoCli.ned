@@ -39,6 +39,11 @@ simple Proxy_Enhanced_MCoAVideoCli like MCoAUDPBase
     	bool useMCoA ;// to use MCoA?
     	string destAddresses = default(""); // list of \IP addresses, separated by spaces
     	bool isDestiny = default(true); //If it is destiny (ony replies to messages).
+    	
+    	//FOR PROXY_UNLOADING FJ
+    	double startTime = default(10);//start Proxying Process at StartTime
+    
+    	
     gates:
         input udpIn;
         output udpOut;

@@ -29,7 +29,10 @@ Define_Module(Proxy_Enhanced_MCoAVideoCli);
 
 void Proxy_Enhanced_MCoAVideoCli::initialize()
 {
+    //PROXY UNLOADING FJ
     cout<<"Initializing Proxy_Enhanced_MCoAVideoCli module"<<endl;
+    startTime = par("startTime");
+
 
 	MCoAUDPBase::startMCoAUDPBase();
 
@@ -41,6 +44,13 @@ void Proxy_Enhanced_MCoAVideoCli::initialize()
 
     int localPort = par("localPort");
     bindToPort(localPort);
+
+    if (startTime>=0){
+        cMessage *start_proxying_context = new cMessage("Starting_Proxying_Context");
+        //timer->setContextPointer(d);
+        start_proxying_context->setKind(PROXY_CONTEXT_START);
+        scheduleAt(startTime, start_proxying_context);
+    }
 
 }
 
@@ -60,6 +70,10 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
 
 			return; // and that's it!
 		}
+    	if(msg->getKind()== PROXY_CONTEXT_START){
+    	    cout<<"!! Proxying Context Started !!"<<endl;
+    	}
+
     }
     else
     {

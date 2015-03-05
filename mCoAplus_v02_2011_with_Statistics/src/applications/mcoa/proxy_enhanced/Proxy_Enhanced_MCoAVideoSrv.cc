@@ -82,6 +82,7 @@ void Proxy_Enhanced_MCoAVideoSrv::initialize()
 
     if (startTime>=0){
     	cMessage *timer = new cMessage("UDPVideoStart");
+    	timer->setName("Proxy_Context_Message");
 		//timer->setContextPointer(d);
 		scheduleAt(startTime, timer);
     }
@@ -103,9 +104,22 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
 			return; // and that's it!
 		}
 
+        //###########################################
+    	//Proxy_Unloading FJ
+    	if(msg->getName()=="Proxy_Context_Message"){
+    	    cout<<"Proxy Context wurde gestartet"<<endl;
+    	}
+
+
+
+    	//###########################################
+
+
         // timer for a particular video stream expired, send packet
         sendStreamData(msg);
+
     }
+
 
 }
 
