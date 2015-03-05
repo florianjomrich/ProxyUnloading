@@ -1033,8 +1033,15 @@ $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.o: applications/
 	base/NotificationBoard.h \
 	base/NotifierConsts.h \
 	networklayer/contract/IPAddress.h \
+	networklayer/contract/IPAddressResolver.h \
+	networklayer/contract/IPProtocolId_m.h \
 	networklayer/contract/IPv6Address.h \
+	networklayer/contract/IPv6ControlInfo.h \
+	networklayer/contract/IPv6ControlInfo_m.h \
 	networklayer/contract/IPvXAddress.h \
+	networklayer/ipv6/IPv6Datagram.h \
+	networklayer/ipv6/IPv6Datagram_m.h \
+	networklayer/ipv6/IPv6ExtensionHeaders_m.h \
 	networklayer/mcoa/IPv6PrefAdr.h \
 	networklayer/mcoa/IPv6TunAdr.h
 $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.o: applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.cc \

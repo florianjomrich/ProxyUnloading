@@ -1,4 +1,4 @@
-10:43:05 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+11:09:49 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
 make MODE=debug CONFIGNAME=gcc-debug all 
 cd src && opp_makemake -f --deep
 Creating Makefile in /home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src...
@@ -12,5 +12,5 @@ make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
 Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
 make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
 
-10:43:05 Build Finished (took 218ms)
+11:09:49 Build Finished (took 228ms)
 

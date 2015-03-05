@@ -116,10 +116,10 @@ void PingApp::handleMessage(cMessage *msg)
         IPvXAddress mn1 = IPAddressResolver().resolve("MN[1]");
         IPvXAddress cn0 = IPAddressResolver().resolve("CN[0]");
 
-        cout<< "Home_Agent_IP: " << ha <<endl;//FJ
-        cout<< "Mobile Node 0: " << mn0 << endl;
-        cout<< "Mobile Node 1: " << mn1 << endl;
-        cout<< "Care of Node 0: " << cn0 << endl;
+      //  cout<< "Home_Agent_IP: " << ha <<endl;//FJ
+      //  cout<< "Mobile Node 0: " << mn0 << endl;
+      //  cout<< "Mobile Node 1: " << mn1 << endl;
+       // cout<< "Care of Node 0: " << cn0 << endl;
         //#############################################################
 }
 

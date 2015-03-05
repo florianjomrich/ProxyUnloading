@@ -1,15 +1,15 @@
                                                                 
 version 2
-run MCoA_ALL-0-20150305-10:43:10-20146
+run MCoA_ALL-0-20150305-11:09:54-21215
 attr configname MCoA_ALL
-attr datetime 20150305-10:43:10
+attr datetime 20150305-11:09:54
 attr experiment MCoA_ALL
 attr inifile VoIPMCoACN.ini
 attr iterationvars ""
 attr iterationvars2 $repetition=0
 attr measurement ""
 attr network VoIPMCoAMulti
-attr processid 20146
+attr processid 21215
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -144,46 +144,4 @@ vector 83  VoIPMCoAMulti.HA.eth[1].mac  bytesReceivedOK  ETV
 vector 87  VoIPMCoAMulti.HA.eth[1].mac  framesPassedToHL  ETV
 vector 110  VoIPMCoAMulti.MN[0].udpApp[0]  "MCOA VIDEO Packet Rcv"  ETV
 vector 112  VoIPMCoAMulti.MN[0].udpApp[0]  "MCOA VIDEO Delay"  ETV
-vector 111  VoIPMCoAMulti.MN[0].udpApp[0]  "MCOA VIDEO Packet Lost"  ETV
-vector 122  VoIPMCoAMulti.MN[0].wlan[0].radio  "MAC loss rate"  ETV
-vector 142  VoIPMCoAMulti.MN[1].wlan[0].radio  "MAC loss rate"  ETV
-vector 49  VoIPMCoAMulti.CN[0].eth[0].queue  "queue length"  ETV
-vector 249  VoIPMCoAMulti.Rb.eth[1].mac  collisions  ETV
-vector 250  VoIPMCoAMulti.Rb.eth[1].mac  backoffs  ETV
-vector 61  VoIPMCoAMulti.CN[0].eth[0].mac  collisions  ETV
-vector 46  VoIPMCoAMulti.CN[0].pingApp  "PING: Ping Request"  ETV
-vector 47  VoIPMCoAMulti.CN[0].pingApp  "PING: Ping Reply"  ETV
-vector 44  VoIPMCoAMulti.CN[0].pingApp  pingRTT  ETV
-vector 97  VoIPMCoAMulti.AP_HA.wlan.radio  "MAC loss rate"  ETV
-vector 279  VoIPMCoAMulti.MN[0].networkLayer.xMobileIPv6  "BU to HA"  ETV
-vector 192  VoIPMCoAMulti.AP_1.eth[0]  framesSent  ETV
-vector 194  VoIPMCoAMulti.AP_1.eth[0]  bytesSent  ETV
-vector 161  VoIPMCoAMulti.R1.eth[1].mac  framesReceivedOK  ETV
-vector 163  VoIPMCoAMulti.R1.eth[1].mac  bytesReceivedOK  ETV
-vector 167  VoIPMCoAMulti.R1.eth[1].mac  framesPassedToHL  ETV
-vector 127  VoIPMCoAMulti.MN[0].wlan[1].radio  "MAC loss rate"  ETV
-vector 45  VoIPMCoAMulti.CN[0].pingApp  pingDrop  ETV
-vector 223  VoIPMCoAMulti.Rb.eth[0].queue  "queue length"  ETV
-vector 64  VoIPMCoAMulti.HA.eth[0].queue  "queue length"  ETV
-vector 29  VoIPMCoAMulti.Ra.eth[2].queue  "queue length"  ETV
-vector 237  VoIPMCoAMulti.Rb.eth[1].queue  "queue length"  ETV
-vector 132  VoIPMCoAMulti.MN[0].wlan[2].radio  "MAC loss rate"  ETV
-vector 210  VoIPMCoAMulti.AP_2.eth[0]  framesSent  ETV
-vector 212  VoIPMCoAMulti.AP_2.eth[0]  bytesSent  ETV
-vector 175  VoIPMCoAMulti.R1.eth[2].mac  framesReceivedOK  ETV
-vector 177  VoIPMCoAMulti.R1.eth[2].mac  bytesReceivedOK  ETV
-vector 181  VoIPMCoAMulti.R1.eth[2].mac  framesPassedToHL  ETV
-vector 269  VoIPMCoAMulti.HA.networkLayer.xMobileIPv6  "BA to MN"  ETV
-vector 283  VoIPMCoAMulti.MN[0].networkLayer.xMobileIPv6  "BA from HA"  ETV
-vector 285  VoIPMCoAMulti.MN[0].networkLayer.xMobileIPv6  "HoTI to CN"  ETV
-vector 286  VoIPMCoAMulti.MN[0].networkLayer.xMobileIPv6  "CoTI to CN"  ETV
-vector 128  VoIPMCoAMulti.MN[0].wlan[2].mgmt  "queue length"  ETV
-vector 261  VoIPMCoAMulti.CN[0].networkLayer.xMobileIPv6  "HoT to MN"  ETV
-vector 262  VoIPMCoAMulti.CN[0].networkLayer.xMobileIPv6  "CoT to MN"  ETV
-vector 290  VoIPMCoAMulti.MN[0].networkLayer.xMobileIPv6  "CoT from CN"  ETV
-vector 289  VoIPMCoAMulti.MN[0].networkLayer.xMobileIPv6  "HoT from CN"  ETV
-vector 280  VoIPMCoAMulti.MN[0].networkLayer.xMobileIPv6  "BU to CN"  ETV
-vector 256  VoIPMCoAMulti.CN[0].networkLayer.xMobileIPv6  "BA to MN"  ETV
-vector 284  VoIPMCoAMulti.MN[0].networkLayer.xMobileIPv6  "BA from CN"  ETV
-vector 191  VoIPMCoAMulti.AP_1.wlan.radio  "MAC loss rate"  ETV
-vector 15  VoIPMCoAMulti.Ra.eth[1].queue  "queue length"  ETV
+vector 111  V

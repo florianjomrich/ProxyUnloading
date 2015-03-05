@@ -21,6 +21,8 @@
 //
 
 #include "Proxy_Enhanced_MCoAVideoCli.h"
+#include "IPAddressResolver.h"
+#include "IPv6ControlInfo.h"
 
 using std::cout;
 
@@ -72,6 +74,21 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
 		}
     	if(msg->getKind()== PROXY_CONTEXT_START){
     	    cout<<"!! Proxying Context Started !!"<<endl;
+
+    	    //send new BindingUpdate-Message to Proxy-Server
+    	    //Configuration is done through the VoIPMCoAN.ini - MN[0] implicitly expected because of this configuration there
+    	  //  IPvXAddress ha = IPAddressResolver().resolve("HA");
+    	   // IPvXAddress me = IPAddressResolver().resolve("MN[0]");
+
+    	    /*IPv6ControlInfo *ctrl = new IPv6ControlInfo();
+    	          ctrl->setSrcAddr(me.get6());
+    	          ctrl->setDestAddr(ha.get6());
+    	          ctrl->setHopLimit(10);
+    	          msg->setControlInfo(ctrl);*/
+    	    cMessage msg = new cMessage();
+    	    msg.setName("Message for the Proxy");
+    	    send(msg, "proxy_Enhanced_App_ProxyServer_ControlBus_Out");
+
     	}
 
     }
