@@ -51,11 +51,11 @@ network ProxyUnloading
         car1: WirelessHost6Multi {
             @display("p=519,383");
         }
-        //Kanal Kontrolle -
+        //Kanal Kontrolle
         channelControl: ChannelControlExtended {
             @display("p=67,370");
         }
-        //Netzwerk-Konfigurator - dient laut INET-Manual dafür IP Adressen an Hosts und Router zu vergeben und statisches Routing zu ermöglichen
+        //Netzwerk-Konfigurator
         configurator: MCoANetConf6 {
             parameters:
                 @display("p=176,370");

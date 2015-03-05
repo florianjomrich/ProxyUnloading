@@ -1,0 +1,416 @@
+version 2
+run MCoA_ALL-0-20150302-11:03:25-3045
+attr configname MCoA_ALL
+attr datetime 20150302-11:03:25
+attr experiment MCoA_ALL
+attr inifile VoIPMCoACN.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network VoIPMCoAMulti
+attr processid 3045
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+scalar VoIPMCoAMulti.Ra.networkLayer.ipv6 	IPv6_numDropNonActive 	0
+scalar VoIPMCoAMulti.Ra.networkLayer.ipv6 	IPv6_Forwarded 	706
+scalar VoIPMCoAMulti.Ra.eth[0].queue 	"packets received by queue" 	226
+scalar VoIPMCoAMulti.Ra.eth[0].queue 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"simulated time" 	200
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"txrate (Mb)" 	10
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"full duplex" 	1
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"frames sent" 	226
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"frames rcvd" 	194
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"bytes sent" 	34594
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"bytes rcvd" 	21924
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"frames from higher layer" 	226
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"frames dropped (bit error)" 	0
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"frames dropped (not for us)" 	0
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"frames passed up to HL" 	194
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"PAUSE frames sent" 	0
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"PAUSE frames rcvd" 	0
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"frames/sec sent" 	1.13
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"frames/sec rcvd" 	0.97
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"bits/sec sent" 	1383.76
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"bits/sec rcvd" 	876.96
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"rx channel idle (%)" 	99.9906096
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"rx channel utilization (%)" 	0.0093904
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	"rx channel collision (%)" 	0
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	collisions 	0
+scalar VoIPMCoAMulti.Ra.eth[0].mac 	backoffs 	0
+scalar VoIPMCoAMulti.Ra.eth[0].encap 	"packets from higher layer" 	226
+scalar VoIPMCoAMulti.Ra.eth[0].encap 	"frames from MAC" 	194
+scalar VoIPMCoAMulti.Ra.eth[1].queue 	"packets received by queue" 	285
+scalar VoIPMCoAMulti.Ra.eth[1].queue 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"simulated time" 	200
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"txrate (Mb)" 	10
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"full duplex" 	1
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"frames sent" 	285
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"frames rcvd" 	14
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"bytes sent" 	127630
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"bytes rcvd" 	1316
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"frames from higher layer" 	285
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"frames dropped (bit error)" 	0
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"frames dropped (not for us)" 	0
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"frames passed up to HL" 	14
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"PAUSE frames sent" 	0
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"PAUSE frames rcvd" 	0
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"frames/sec sent" 	1.425
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"frames/sec rcvd" 	0.07
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"bits/sec sent" 	5105.2
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"bits/sec rcvd" 	52.64
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"rx channel idle (%)" 	99.9994288
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"rx channel utilization (%)" 	0.0005712
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	"rx channel collision (%)" 	0
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	collisions 	0
+scalar VoIPMCoAMulti.Ra.eth[1].mac 	backoffs 	0
+scalar VoIPMCoAMulti.Ra.eth[1].encap 	"packets from higher layer" 	285
+scalar VoIPMCoAMulti.Ra.eth[1].encap 	"frames from MAC" 	14
+scalar VoIPMCoAMulti.Ra.eth[2].queue 	"packets received by queue" 	195
+scalar VoIPMCoAMulti.Ra.eth[2].queue 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"simulated time" 	200
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"txrate (Mb)" 	10
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"full duplex" 	1
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"frames sent" 	195
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"frames rcvd" 	497
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"bytes sent" 	21554
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"bytes rcvd" 	160474
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"frames from higher layer" 	195
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"frames dropped (bit error)" 	0
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"frames dropped (not for us)" 	0
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"frames passed up to HL" 	497
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"PAUSE frames sent" 	0
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"PAUSE frames rcvd" 	0
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"frames/sec sent" 	0.975
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"frames/sec rcvd" 	2.485
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"bits/sec sent" 	862.16
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"bits/sec rcvd" 	6418.96
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"rx channel idle (%)" 	99.93422
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"rx channel utilization (%)" 	0.06578
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	"rx channel collision (%)" 	0
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	collisions 	0
+scalar VoIPMCoAMulti.Ra.eth[2].mac 	backoffs 	0
+scalar VoIPMCoAMulti.Ra.eth[2].encap 	"packets from higher layer" 	195
+scalar VoIPMCoAMulti.Ra.eth[2].encap 	"frames from MAC" 	497
+scalar VoIPMCoAMulti.CN[0].pingApp 	"Pings sent" 	185
+scalar VoIPMCoAMulti.CN[0].pingApp 	"Pings dropped" 	9
+scalar VoIPMCoAMulti.CN[0].pingApp 	"Out-of-order ping arrivals" 	0
+scalar VoIPMCoAMulti.CN[0].pingApp 	"Pings outstanding at end" 	0
+scalar VoIPMCoAMulti.CN[0].pingApp 	"Ping drop rate (%)" 	4.8648648648649
+scalar VoIPMCoAMulti.CN[0].pingApp 	"Ping out-of-order rate (%)" 	0
+statistic VoIPMCoAMulti.CN[0].pingApp 	"Ping roundtrip delays"
+field count 176
+field mean 0.10121901818182
+field stddev 0.007567792685988
+field sum 17.8145472
+field sqrsum 1.8131934870118
+field min 0.1006432
+field max 0.2010464
+scalar VoIPMCoAMulti.CN[0].networkLayer.ipv6 	IPv6_numDropNonActive 	0
+scalar VoIPMCoAMulti.CN[0].networkLayer.ipv6 	IPv6_Forwarded 	509
+scalar VoIPMCoAMulti.CN[0].eth[0].queue 	"packets received by queue" 	509
+scalar VoIPMCoAMulti.CN[0].eth[0].queue 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"simulated time" 	200
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"txrate (Mb)" 	10
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"full duplex" 	0
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"frames sent" 	509
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"frames rcvd" 	198
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"bytes sent" 	163050
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"bytes rcvd" 	21746
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"frames from higher layer" 	509
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"frames dropped (bit error)" 	0
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"frames dropped (not for us)" 	0
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"frames passed up to HL" 	198
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"PAUSE frames sent" 	0
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"PAUSE frames rcvd" 	0
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"frames/sec sent" 	2.545
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"frames/sec rcvd" 	0.99
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"bits/sec sent" 	6522
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"bits/sec rcvd" 	869.84
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"rx channel idle (%)" 	99.9238064
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"rx channel utilization (%)" 	0.0761808
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	"rx channel collision (%)" 	1.28e-05
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	collisions 	8
+scalar VoIPMCoAMulti.CN[0].eth[0].mac 	backoffs 	0
+scalar VoIPMCoAMulti.CN[0].eth[0].encap 	"packets from higher layer" 	509
+scalar VoIPMCoAMulti.CN[0].eth[0].encap 	"frames from MAC" 	198
+scalar VoIPMCoAMulti.hub 	"simulated time" 	200
+scalar VoIPMCoAMulti.hub 	"messages handled" 	725
+scalar VoIPMCoAMulti.hub 	messages/sec 	3.625
+scalar VoIPMCoAMulti.HA.networkLayer.ipv6 	IPv6_numDropNonActive 	104
+scalar VoIPMCoAMulti.HA.networkLayer.ipv6 	IPv6_Forwarded 	4116
+scalar VoIPMCoAMulti.HA.eth[0].queue 	"packets received by queue" 	194
+scalar VoIPMCoAMulti.HA.eth[0].queue 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"simulated time" 	200
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"txrate (Mb)" 	10
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"full duplex" 	1
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"frames sent" 	194
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"frames rcvd" 	226
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"bytes sent" 	21924
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"bytes rcvd" 	34594
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"frames from higher layer" 	194
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"frames dropped (bit error)" 	0
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"frames dropped (not for us)" 	0
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"frames passed up to HL" 	226
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"PAUSE frames sent" 	0
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"PAUSE frames rcvd" 	0
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"frames/sec sent" 	0.97
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"frames/sec rcvd" 	1.13
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"bits/sec sent" 	876.96
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"bits/sec rcvd" 	1383.76
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"rx channel idle (%)" 	99.9854392
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"rx channel utilization (%)" 	0.0145608
+scalar VoIPMCoAMulti.HA.eth[0].mac 	"rx channel collision (%)" 	0
+scalar VoIPMCoAMulti.HA.eth[0].mac 	collisions 	0
+scalar VoIPMCoAMulti.HA.eth[0].mac 	backoffs 	0
+scalar VoIPMCoAMulti.HA.eth[0].encap 	"packets from higher layer" 	194
+scalar VoIPMCoAMulti.HA.eth[0].encap 	"frames from MAC" 	226
+scalar VoIPMCoAMulti.HA.eth[1].queue 	"packets received by queue" 	3922
+scalar VoIPMCoAMulti.HA.eth[1].queue 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"simulated time" 	200
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"txrate (Mb)" 	10
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"full duplex" 	1
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"frames sent" 	3922
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"frames rcvd" 	2
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"bytes sent" 	261460
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"bytes rcvd" 	80
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"frames from higher layer" 	3922
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"frames dropped (bit error)" 	0
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"frames dropped (not for us)" 	0
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"frames passed up to HL" 	2
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"PAUSE frames sent" 	0
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"PAUSE frames rcvd" 	0
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"frames/sec sent" 	19.61
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"frames/sec rcvd" 	0.01
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"bits/sec sent" 	10458.4
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"bits/sec rcvd" 	3.2
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"rx channel idle (%)" 	99.9999616
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"rx channel utilization (%)" 	3.84e-05
+scalar VoIPMCoAMulti.HA.eth[1].mac 	"rx channel collision (%)" 	0
+scalar VoIPMCoAMulti.HA.eth[1].mac 	collisions 	0
+scalar VoIPMCoAMulti.HA.eth[1].mac 	backoffs 	0
+scalar VoIPMCoAMulti.HA.eth[1].encap 	"packets from higher layer" 	3922
+scalar VoIPMCoAMulti.HA.eth[1].encap 	"frames from MAC" 	2
+scalar VoIPMCoAMulti.AP_HA.wlan.mgmt 	"packets received by queue" 	5934
+scalar VoIPMCoAMulti.AP_HA.wlan.mgmt 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.AP_HA.wlan.mac 	numSent 	36
+scalar VoIPMCoAMulti.AP_HA.wlan.mac 	numSentWithoutRetry 	36
+scalar VoIPMCoAMulti.AP_HA.wlan.mac 	numReceived 	10
+scalar VoIPMCoAMulti.AP_HA.wlan.mac 	numSentBroadcast 	5898
+scalar VoIPMCoAMulti.AP_HA.wlan.mac 	numReceivedBroadcast 	2
+scalar VoIPMCoAMulti.AP_HA.wlan.mac 	numReceivedOther 	0
+scalar VoIPMCoAMulti.AP_HA.wlan.mac 	numCollision 	0
+scalar VoIPMCoAMulti.AP_HA.wlan.mac 	numGivenUp 	0
+scalar VoIPMCoAMulti.AP_HA.wlan.mac 	numAckSend 	10
+scalar VoIPMCoAMulti.AP_HA.wlan.mac 	numRetry 	0
+scalar VoIPMCoAMulti.MN[0].pingApp 	"Pings sent" 	0
+scalar VoIPMCoAMulti.MN[0].networkLayer.ipv6 	IPv6_numDropNonActive 	0
+scalar VoIPMCoAMulti.MN[0].networkLayer.ipv6 	IPv6_Forwarded 	32
+scalar VoIPMCoAMulti.MN[0].wlan[0].mgmt 	"packets received by queue" 	533
+scalar VoIPMCoAMulti.MN[0].wlan[0].mgmt 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.MN[0].wlan[0].mac 	numSent 	10
+scalar VoIPMCoAMulti.MN[0].wlan[0].mac 	numSentWithoutRetry 	10
+scalar VoIPMCoAMulti.MN[0].wlan[0].mac 	numReceived 	36
+scalar VoIPMCoAMulti.MN[0].wlan[0].mac 	numSentBroadcast 	523
+scalar VoIPMCoAMulti.MN[0].wlan[0].mac 	numReceivedBroadcast 	1907
+scalar VoIPMCoAMulti.MN[0].wlan[0].mac 	numReceivedOther 	0
+scalar VoIPMCoAMulti.MN[0].wlan[0].mac 	numCollision 	0
+scalar VoIPMCoAMulti.MN[0].wlan[0].mac 	numGivenUp 	0
+scalar VoIPMCoAMulti.MN[0].wlan[0].mac 	numAckSend 	36
+scalar VoIPMCoAMulti.MN[0].wlan[0].mac 	numRetry 	0
+scalar VoIPMCoAMulti.MN[0].wlan[1].mgmt 	"packets received by queue" 	340
+scalar VoIPMCoAMulti.MN[0].wlan[1].mgmt 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.MN[0].wlan[1].mac 	numSent 	21
+scalar VoIPMCoAMulti.MN[0].wlan[1].mac 	numSentWithoutRetry 	21
+scalar VoIPMCoAMulti.MN[0].wlan[1].mac 	numReceived 	141
+scalar VoIPMCoAMulti.MN[0].wlan[1].mac 	numSentBroadcast 	319
+scalar VoIPMCoAMulti.MN[0].wlan[1].mac 	numReceivedBroadcast 	3317
+scalar VoIPMCoAMulti.MN[0].wlan[1].mac 	numReceivedOther 	0
+scalar VoIPMCoAMulti.MN[0].wlan[1].mac 	numCollision 	0
+scalar VoIPMCoAMulti.MN[0].wlan[1].mac 	numGivenUp 	0
+scalar VoIPMCoAMulti.MN[0].wlan[1].mac 	numAckSend 	141
+scalar VoIPMCoAMulti.MN[0].wlan[1].mac 	numRetry 	0
+scalar VoIPMCoAMulti.MN[0].wlan[2].mgmt 	"packets received by queue" 	334
+scalar VoIPMCoAMulti.MN[0].wlan[2].mgmt 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.MN[0].wlan[2].mac 	numSent 	12
+scalar VoIPMCoAMulti.MN[0].wlan[2].mac 	numSentWithoutRetry 	12
+scalar VoIPMCoAMulti.MN[0].wlan[2].mac 	numReceived 	112
+scalar VoIPMCoAMulti.MN[0].wlan[2].mac 	numSentBroadcast 	322
+scalar VoIPMCoAMulti.MN[0].wlan[2].mac 	numReceivedBroadcast 	3417
+scalar VoIPMCoAMulti.MN[0].wlan[2].mac 	numReceivedOther 	0
+scalar VoIPMCoAMulti.MN[0].wlan[2].mac 	numCollision 	0
+scalar VoIPMCoAMulti.MN[0].wlan[2].mac 	numGivenUp 	0
+scalar VoIPMCoAMulti.MN[0].wlan[2].mac 	numAckSend 	112
+scalar VoIPMCoAMulti.MN[0].wlan[2].mac 	numRetry 	0
+scalar VoIPMCoAMulti.R1.networkLayer.ipv6 	IPv6_numDropNonActive 	424
+scalar VoIPMCoAMulti.R1.networkLayer.ipv6 	IPv6_Forwarded 	7896
+scalar VoIPMCoAMulti.R1.eth[0].queue 	"packets received by queue" 	14
+scalar VoIPMCoAMulti.R1.eth[0].queue 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"simulated time" 	200
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"txrate (Mb)" 	10
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"full duplex" 	1
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"frames sent" 	14
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"frames rcvd" 	285
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"bytes sent" 	1316
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"bytes rcvd" 	127630
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"frames from higher layer" 	14
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"frames dropped (bit error)" 	0
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"frames dropped (not for us)" 	0
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"frames passed up to HL" 	285
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"PAUSE frames sent" 	0
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"PAUSE frames rcvd" 	0
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"frames/sec sent" 	0.07
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"frames/sec rcvd" 	1.425
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"bits/sec sent" 	52.64
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"bits/sec rcvd" 	5105.2
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"rx channel idle (%)" 	99.948036
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"rx channel utilization (%)" 	0.051964
+scalar VoIPMCoAMulti.R1.eth[0].mac 	"rx channel collision (%)" 	0
+scalar VoIPMCoAMulti.R1.eth[0].mac 	collisions 	0
+scalar VoIPMCoAMulti.R1.eth[0].mac 	backoffs 	0
+scalar VoIPMCoAMulti.R1.eth[0].encap 	"packets from higher layer" 	14
+scalar VoIPMCoAMulti.R1.eth[0].encap 	"frames from MAC" 	285
+scalar VoIPMCoAMulti.R1.eth[1].queue 	"packets received by queue" 	3960
+scalar VoIPMCoAMulti.R1.eth[1].queue 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"simulated time" 	200
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"txrate (Mb)" 	10
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"full duplex" 	1
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"frames sent" 	3960
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"frames rcvd" 	8
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"bytes sent" 	313158
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"bytes rcvd" 	532
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"frames from higher layer" 	3960
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"frames dropped (bit error)" 	0
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"frames dropped (not for us)" 	0
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"frames passed up to HL" 	8
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"PAUSE frames sent" 	0
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"PAUSE frames rcvd" 	0
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"frames/sec sent" 	19.8
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"frames/sec rcvd" 	0.04
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"bits/sec sent" 	12526.32
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"bits/sec rcvd" 	21.28
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"rx channel idle (%)" 	99.9997616
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"rx channel utilization (%)" 	0.0002384
+scalar VoIPMCoAMulti.R1.eth[1].mac 	"rx channel collision (%)" 	0
+scalar VoIPMCoAMulti.R1.eth[1].mac 	collisions 	0
+scalar VoIPMCoAMulti.R1.eth[1].mac 	backoffs 	0
+scalar VoIPMCoAMulti.R1.eth[1].encap 	"packets from higher layer" 	3960
+scalar VoIPMCoAMulti.R1.eth[1].encap 	"frames from MAC" 	8
+scalar VoIPMCoAMulti.R1.eth[2].queue 	"packets received by queue" 	3922
+scalar VoIPMCoAMulti.R1.eth[2].queue 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"simulated time" 	200
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"txrate (Mb)" 	10
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"full duplex" 	1
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"frames sent" 	3922
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"frames rcvd" 	9
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"bytes sent" 	293042
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"bytes rcvd" 	616
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"frames from higher layer" 	3922
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"frames dropped (bit error)" 	0
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"frames dropped (not for us)" 	0
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"frames passed up to HL" 	9
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"PAUSE frames sent" 	0
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"PAUSE frames rcvd" 	0
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"frames/sec sent" 	19.61
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"frames/sec rcvd" 	0.045
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"bits/sec sent" 	11721.68
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"bits/sec rcvd" 	24.64
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"rx channel idle (%)" 	99.9997248
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"rx channel utilization (%)" 	0.0002752
+scalar VoIPMCoAMulti.R1.eth[2].mac 	"rx channel collision (%)" 	0
+scalar VoIPMCoAMulti.R1.eth[2].mac 	collisions 	0
+scalar VoIPMCoAMulti.R1.eth[2].mac 	backoffs 	0
+scalar VoIPMCoAMulti.R1.eth[2].encap 	"packets from higher layer" 	3922
+scalar VoIPMCoAMulti.R1.eth[2].encap 	"frames from MAC" 	9
+scalar VoIPMCoAMulti.AP_1.wlan.mgmt 	"packets received by queue" 	5984
+scalar VoIPMCoAMulti.AP_1.wlan.mgmt 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.AP_1.wlan.mac 	numSent 	141
+scalar VoIPMCoAMulti.AP_1.wlan.mac 	numSentWithoutRetry 	141
+scalar VoIPMCoAMulti.AP_1.wlan.mac 	numReceived 	21
+scalar VoIPMCoAMulti.AP_1.wlan.mac 	numSentBroadcast 	5813
+scalar VoIPMCoAMulti.AP_1.wlan.mac 	numReceivedBroadcast 	4
+scalar VoIPMCoAMulti.AP_1.wlan.mac 	numReceivedOther 	0
+scalar VoIPMCoAMulti.AP_1.wlan.mac 	numCollision 	0
+scalar VoIPMCoAMulti.AP_1.wlan.mac 	numGivenUp 	30
+scalar VoIPMCoAMulti.AP_1.wlan.mac 	numAckSend 	21
+scalar VoIPMCoAMulti.AP_1.wlan.mac 	numRetry 	180
+scalar VoIPMCoAMulti.AP_2.wlan.mgmt 	"packets received by queue" 	5934
+scalar VoIPMCoAMulti.AP_2.wlan.mgmt 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.AP_2.wlan.mac 	numSent 	112
+scalar VoIPMCoAMulti.AP_2.wlan.mac 	numSentWithoutRetry 	112
+scalar VoIPMCoAMulti.AP_2.wlan.mac 	numReceived 	12
+scalar VoIPMCoAMulti.AP_2.wlan.mac 	numSentBroadcast 	5822
+scalar VoIPMCoAMulti.AP_2.wlan.mac 	numReceivedBroadcast 	0
+scalar VoIPMCoAMulti.AP_2.wlan.mac 	numReceivedOther 	0
+scalar VoIPMCoAMulti.AP_2.wlan.mac 	numCollision 	0
+scalar VoIPMCoAMulti.AP_2.wlan.mac 	numGivenUp 	0
+scalar VoIPMCoAMulti.AP_2.wlan.mac 	numAckSend 	12
+scalar VoIPMCoAMulti.AP_2.wlan.mac 	numRetry 	0
+scalar VoIPMCoAMulti.Rb.networkLayer.ipv6 	IPv6_numDropNonActive 	0
+scalar VoIPMCoAMulti.Rb.networkLayer.ipv6 	IPv6_Forwarded 	695
+scalar VoIPMCoAMulti.Rb.eth[0].queue 	"packets received by queue" 	497
+scalar VoIPMCoAMulti.Rb.eth[0].queue 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"simulated time" 	200
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"txrate (Mb)" 	10
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"full duplex" 	1
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"frames sent" 	497
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"frames rcvd" 	195
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"bytes sent" 	160474
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"bytes rcvd" 	21554
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"frames from higher layer" 	497
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"frames dropped (bit error)" 	0
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"frames dropped (not for us)" 	0
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"frames passed up to HL" 	195
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"PAUSE frames sent" 	0
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"PAUSE frames rcvd" 	0
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"frames/sec sent" 	2.485
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"frames/sec rcvd" 	0.975
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"bits/sec sent" 	6418.96
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"bits/sec rcvd" 	862.16
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"rx channel idle (%)" 	99.9907544
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"rx channel utilization (%)" 	0.0092456
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	"rx channel collision (%)" 	0
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	collisions 	0
+scalar VoIPMCoAMulti.Rb.eth[0].mac 	backoffs 	0
+scalar VoIPMCoAMulti.Rb.eth[0].encap 	"packets from higher layer" 	497
+scalar VoIPMCoAMulti.Rb.eth[0].encap 	"frames from MAC" 	195
+scalar VoIPMCoAMulti.Rb.eth[1].queue 	"packets received by queue" 	198
+scalar VoIPMCoAMulti.Rb.eth[1].queue 	"packets dropped by queue" 	0
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"simulated time" 	200
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"txrate (Mb)" 	10
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"full duplex" 	0
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"frames sent" 	198
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"frames rcvd" 	501
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"bytes sent" 	21746
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"bytes rcvd" 	160730
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"frames from higher layer" 	198
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"frames from higher layer dropped (iface down)" 	0
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"frames dropped (bit error)" 	0
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"frames dropped (not for us)" 	0
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"frames passed up to HL" 	501
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"PAUSE frames sent" 	0
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"PAUSE frames rcvd" 	0
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"frames/sec sent" 	0.99
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"frames/sec rcvd" 	2.505
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"bits/sec sent" 	869.84
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"bits/sec rcvd" 	6429.2
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"rx channel idle (%)" 	99.9238192
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"rx channel utilization (%)" 	0.0752272
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	"rx channel collision (%)" 	0.0009536
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	collisions 	8
+scalar VoIPMCoAMulti.Rb.eth[1].mac 	backoffs 	8
+scalar VoIPMCoAMulti.Rb.eth[1].encap 	"packets from higher layer" 	198
+scalar VoIPMCoAMulti.Rb.eth[1].encap 	"frames from MAC" 	501

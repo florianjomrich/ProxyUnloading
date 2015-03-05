@@ -1,0 +1,200 @@
+lugin path: ./plugins
+PingApp initialized for 2
+Initializing xMIPv6 module
+Initializing xMIPv6 module
+PingApp initialized for 
+Initializing xMIPv6 module
+Initiating Mobile IPv6 protocol ..  for 2001:db8::2aa:101 with interface 101
+MIPv6 getting HA adr2001:db8::2aa:1a2
+Es wird mit MCoA Erweiterung konfiguriert
+Starting up: dest=2001:db8::2aa:101  src=<unspec>
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=0 ttl=26 time=222.421554538 msec (ping0)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=1 ttl=29 time=122.23830785 msec (ping1)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=2 ttl=29 time=122.218364486 msec (ping2)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=3 ttl=29 time=122.038430298 msec (ping3)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=4 ttl=29 time=121.93849666 msec (ping4)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=5 ttl=29 time=123.723199071 msec (ping5)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=6 ttl=29 time=121.958629744 msec (ping6)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=7 ttl=29 time=121.998696348 msec (ping7)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=8 ttl=29 time=121.898762968 msec (ping8)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=9 ttl=29 time=122.278829602 msec (ping9)
+MIPv6 has already been triggered, sorry... ignoring new CoA event 2001:db8::299:102
+Initiating Mobile IPv6 protocol on a second(or more) try  for 2001:db8::299:102
+[MCoA]-MCoAcreateBUTimer creating BU Timer for only one CoA --> 1 ,2001:db8::299:102 , 2001:db8::2aa:1a2 just created! 
+[MCOA] BUTimer Bu Timer for 2001:db8::2aa:1a2, 1 with CoA =2001:db8::299:102?=2001:db8::2aa:1a2
+Creating BU 1 ,2001:db8::299:102 , 2001:db8::2aa:1a2
+DBGTimer BU Timer created for 2001:db8::2aa:1a2 , 1 dest 2001:db8::2aa:1a2  with CoA 2001:db8::299:102 at simtime 20.034207152719 with lifetime 3600 and in BuIfEntry 3600 with sequenceNumber 0
+[MCoA]-MCoAcreateBUTimer creating BU Timer for only one CoA --> 1 ,2001:db8::299:102 , 2001:db8::2aa:1a2 just created! 
+[MCOA] BUTimer Bu Timer for 2001:db8::2aa:1a2, 1 with CoA =2001:db8::299:102?=2001:db8::2aa:1a2
+Creating BU 1 ,2001:db8::299:102 , 2001:db8::2aa:1a2
+DBGTimer BU Timer created for 2001:db8::2aa:1a2 , 1 dest 2001:db8::2aa:1a2  with CoA 2001:db8::299:102 at simtime 20.034207152719 with lifetime 3600 and in BuIfEntry 3600 with sequenceNumber 0
+MIPv6 Procedure starting for address 2001:db8::299:102
+Sending periodic BU message at time: 20.034207152719 seconds.
+### lifetime of buIfEntry=3600 and seq#= 0
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=10 ttl=29 time=121.998896242 msec (ping10)
+Sending periodic BU message at time: 21.034207152719 seconds.
+### lifetime of buIfEntry=3600 and seq#= 1
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=11 ttl=29 time=121.858962886 msec (ping11)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=12 ttl=29 time=122.199029536 msec (ping12)
+Sending periodic BU message at time: 23.034207152719 seconds.
+### lifetime of buIfEntry=3600 and seq#= 2
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=13 ttl=29 time=121.899096188 msec (ping13)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=14 ttl=29 time=122.279162842 msec (ping14)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=15 ttl=29 time=122.019229498 msec (ping15)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=16 ttl=29 time=122.199296156 msec (ping16)
+Sending periodic BU message at time: 27.034207152719 seconds.
+### lifetime of buIfEntry=3600 and seq#= 3
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=17 ttl=29 time=122.079362814 msec (ping17)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=18 ttl=29 time=122.099429474 msec (ping18)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=19 ttl=29 time=122.239496134 msec (ping19)
+Sending periodic BU message at time: 35.034207152719 seconds.
+### lifetime of buIfEntry=3600 and seq#= 4
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=25 ttl=29 time=122.079896108 msec (ping25)
+Sending periodic BU message at time: 51.034207152719 seconds.
+### lifetime of buIfEntry=3600 and seq#= 5
+Sending periodic BU message at time: 83.034207152719 seconds.
+### lifetime of buIfEntry=3600 and seq#= 6
+Sending periodic BU message at time: 115.034207152719 seconds.
+### lifetime of buIfEntry=3600 and seq#= 7
+MIPv6 has already been triggered, sorry... ignoring new CoA event 2001:db8::199:103
+Initiating Mobile IPv6 protocol on a second(or more) try  for 2001:db8::199:103
+[MCoA]-MCoAcreateBUTimer creating BU Timer for only one CoA --> 2 ,2001:db8::199:103 , 2001:db8::2aa:1a2 just created! 
+[MCOA] BUTimer Bu Timer for 2001:db8::2aa:1a2, 2 with CoA =2001:db8::199:103?=2001:db8::2aa:1a2
+Creating BU 2 ,2001:db8::199:103 , 2001:db8::2aa:1a2
+DBGTimer BU Timer created for 2001:db8::2aa:1a2 , 2 dest 2001:db8::2aa:1a2  with CoA 2001:db8::199:103 at simtime 140.296272683238 with lifetime 3600 and in BuIfEntry 3600 with sequenceNumber 0
+[MCoA]-MCoAcreateBUTimer creating BU Timer for only one CoA --> 2 ,2001:db8::199:103 , 2001:db8::2aa:1a2 just created! 
+[MCOA] BUTimer Bu Timer for 2001:db8::2aa:1a2, 2 with CoA =2001:db8::199:103?=2001:db8::2aa:1a2
+Creating BU 2 ,2001:db8::199:103 , 2001:db8::2aa:1a2
+DBGTimer BU Timer created for 2001:db8::2aa:1a2 , 2 dest 2001:db8::2aa:1a2  with CoA 2001:db8::199:103 at simtime 140.296272683238 with lifetime 3600 and in BuIfEntry 3600 with sequenceNumber 0
+MIPv6 Procedure starting for address 2001:db8::199:103
+Sending periodic BU message at time: 140.296272683238 seconds.
+### lifetime of buIfEntry=3600 and seq#= 0
+Message recognised as BINDING UPDATE (BU) From: 2001:db8::199:103  to: 2001:db8::2aa:1a2
+BU von HA empfangen.
+Home-Agent-Address:2001:db8::2aa:101
+[MCOA-BA] Sending BA msg to 2001:db8::2aa:1a2 CoA 2001:db8::199:103 and lifetime 3600
+[MCOA] BUTimer Bu Timer for 2001:db8::33a1:cc01, 2 with CoA =2001:db8::199:103?=2001:db8::33a1:cc01
+Creating BU 2 ,2001:db8::199:103 , 2001:db8::33a1:cc01
+DBGTimer BU Timer created for 2001:db8::33a1:cc01 , 2 dest 2001:db8::33a1:cc01  with CoA 2001:db8::199:103 at simtime 140.561224192377 with lifetime 3600 and in BuIfEntry 3600 with sequenceNumber 0
+Sending periodic BU message at time: 140.561224192377 seconds.
+### lifetime of buIfEntry=3600 and seq#= 0
+SEARCHING FOR COA in KEY 2 ,2001:db8::199:103 , 2001:db8::33a1:cc01
+[MCOA] BUTimer Bu Timer for 2001:db8::33a1:cc01, 1 with CoA =2001:db8::299:102?=2001:db8::33a1:cc01
+Creating BU 1 ,2001:db8::299:102 , 2001:db8::33a1:cc01
+DBGTimer BU Timer created for 2001:db8::33a1:cc01 , 1 dest 2001:db8::33a1:cc01  with CoA 2001:db8::299:102 at simtime 140.563190188099 with lifetime 3600 and in BuIfEntry 3600 with sequenceNumber 1
+Sending periodic BU message at time: 140.563190188099 seconds.
+### lifetime of buIfEntry=3600 and seq#= 1
+SEARCHING FOR COA in KEY 1 ,2001:db8::299:102 , 2001:db8::33a1:cc01
+Message recognised as BINDING UPDATE (BU) From: 2001:db8::299:102  to: 2001:db8::33a1:cc01
+BU von CN empfangen
+Home-Agent-Address:2001:db8::2aa:101
+CN received it
+CN received it
+[MCOA-BA] Sending BA msg to 2001:db8::33a1:cc01 CoA 2001:db8::299:102 and lifetime 3600
+[MCOA] BUTimer Bu Timer for 2001:db8::33a1:cc01, 2 with CoA =2001:db8::199:103?=2001:db8::33a1:cc01
+Creating BU 2 ,2001:db8::199:103 , 2001:db8::33a1:cc01
+DBGTimer BU Timer created for 2001:db8::33a1:cc01 , 2 dest 2001:db8::33a1:cc01  with CoA 2001:db8::199:103 at simtime 141.560446149542 with lifetime 3600 and in BuIfEntry 3600 with sequenceNumber 1
+Sending periodic BU message at time: 141.560446149542 seconds.
+### lifetime of buIfEntry=3600 and seq#= 1
+SEARCHING FOR COA in KEY 2 ,2001:db8::199:103 , 2001:db8::33a1:cc01
+[MCOA] BUTimer Bu Timer for 2001:db8::33a1:cc01, 1 with CoA =2001:db8::299:102?=2001:db8::33a1:cc01
+Creating BU 1 ,2001:db8::299:102 , 2001:db8::33a1:cc01
+DBGTimer BU Timer created for 2001:db8::33a1:cc01 , 1 dest 2001:db8::33a1:cc01  with CoA 2001:db8::299:102 at simtime 141.561209089817 with lifetime 3600 and in BuIfEntry 3600 with sequenceNumber 2
+Sending periodic BU message at time: 141.561209089817 seconds.
+### lifetime of buIfEntry=3600 and seq#= 2
+SEARCHING FOR COA in KEY 1 ,2001:db8::299:102 , 2001:db8::33a1:cc01
+Message recognised as BINDING UPDATE (BU) From: 2001:db8::299:102  to: 2001:db8::33a1:cc01
+BU von CN empfangen
+Home-Agent-Address:2001:db8::2aa:101
+CN received it
+CN received it
+[MCOA-BA] Sending BA msg to 2001:db8::33a1:cc01 CoA 2001:db8::299:102 and lifetime 3600
+[MCOA] BUTimer Bu Timer for 2001:db8::33a1:cc01, 2 with CoA =2001:db8::199:103?=2001:db8::33a1:cc01
+Creating BU 2 ,2001:db8::199:103 , 2001:db8::33a1:cc01
+DBGTimer BU Timer created for 2001:db8::33a1:cc01 , 2 dest 2001:db8::33a1:cc01  with CoA 2001:db8::199:103 at simtime 143.560446082255 with lifetime 3600 and in BuIfEntry 3600 with sequenceNumber 2
+Sending periodic BU message at time: 143.560446082255 seconds.
+### lifetime of buIfEntry=3600 and seq#= 2
+SEARCHING FOR COA in KEY 2 ,2001:db8::199:103 , 2001:db8::33a1:cc01
+[MCOA] BUTimer Bu Timer for 2001:db8::33a1:cc01, 1 with CoA =2001:db8::299:102?=2001:db8::33a1:cc01
+Creating BU 1 ,2001:db8::299:102 , 2001:db8::33a1:cc01
+DBGTimer BU Timer created for 2001:db8::33a1:cc01 , 1 dest 2001:db8::33a1:cc01  with CoA 2001:db8::299:102 at simtime 143.561802055482 with lifetime 3600 and in BuIfEntry 3600 with sequenceNumber 3
+Sending periodic BU message at time: 143.561802055482 seconds.
+### lifetime of buIfEntry=3600 and seq#= 3
+SEARCHING FOR COA in KEY 1 ,2001:db8::299:102 , 2001:db8::33a1:cc01
+Message recognised as BINDING UPDATE (BU) From: 2001:db8::299:102  to: 2001:db8::33a1:cc01
+BU von CN empfangen
+Home-Agent-Address:2001:db8::2aa:101
+CN received it
+CN received it
+[MCOA-BA] Sending BA msg to 2001:db8::33a1:cc01 CoA 2001:db8::299:102 and lifetime 3600
+Sending periodic BU message at time: 147.034207152719 seconds.
+### lifetime of buIfEntry=3600 and seq#= 8
+[MCOA] BUTimer Bu Timer for 2001:db8::33a1:cc01, 2 with CoA =2001:db8::199:103?=2001:db8::33a1:cc01
+Creating BU 2 ,2001:db8::199:103 , 2001:db8::33a1:cc01
+DBGTimer BU Timer created for 2001:db8::33a1:cc01 , 2 dest 2001:db8::33a1:cc01  with CoA 2001:db8::199:103 at simtime 147.560446025498 with lifetime 3600 and in BuIfEntry 3600 with sequenceNumber 3
+Sending periodic BU message at time: 147.560446025498 seconds.
+### lifetime of buIfEntry=3600 and seq#= 3
+SEARCHING FOR COA in KEY 2 ,2001:db8::199:103 , 2001:db8::33a1:cc01
+[MCOA] BUTimer Bu Timer for 2001:db8::33a1:cc01, 1 with CoA =2001:db8::299:102?=2001:db8::33a1:cc01
+Creating BU 1 ,2001:db8::299:102 , 2001:db8::33a1:cc01
+DBGTimer BU Timer created for 2001:db8::33a1:cc01 , 1 dest 2001:db8::33a1:cc01  with CoA 2001:db8::299:102 at simtime 147.561142824706 with lifetime 3600 and in BuIfEntry 3600 with sequenceNumber 4
+Sending periodic BU message at time: 147.561142824706 seconds.
+### lifetime of buIfEntry=3600 and seq#= 4
+SEARCHING FOR COA in KEY 1 ,2001:db8::299:102 , 2001:db8::33a1:cc01
+Message recognised as BINDING UPDATE (BU) From: 2001:db8::299:102  to: 2001:db8::33a1:cc01
+BU von CN empfangen
+Home-Agent-Address:2001:db8::2aa:101
+CN received it
+CN received it
+[MCOA-BA] Sending BA msg to 2001:db8::33a1:cc01 CoA 2001:db8::299:102 and lifetime 3600
+[MCOA] BUTimer Bu Timer for 2001:db8::33a1:cc01, 2 with CoA =2001:db8::199:103?=2001:db8::33a1:cc01
+Creating BU 2 ,2001:db8::199:103 , 2001:db8::33a1:cc01
+DBGTimer BU Timer created for 2001:db8::33a1:cc01 , 2 dest 2001:db8::33a1:cc01  with CoA 2001:db8::199:103 at simtime 155.560446035377 with lifetime 3600 and in BuIfEntry 3600 with sequenceNumber 4
+Sending periodic BU message at time: 155.560446035377 seconds.
+### lifetime of buIfEntry=3600 and seq#= 4
+SEARCHING FOR COA in KEY 2 ,2001:db8::199:103 , 2001:db8::33a1:cc01
+[MCOA] BUTimer Bu Timer for 2001:db8::33a1:cc01, 1 with CoA =2001:db8::299:102?=2001:db8::33a1:cc01
+Creating BU 1 ,2001:db8::299:102 , 2001:db8::33a1:cc01
+DBGTimer BU Timer created for 2001:db8::33a1:cc01 , 1 dest 2001:db8::33a1:cc01  with CoA 2001:db8::299:102 at simtime 155.56180229182 with lifetime 3600 and in BuIfEntry 3600 with sequenceNumber 5
+Sending periodic BU message at time: 155.56180229182 seconds.
+### lifetime of buIfEntry=3600 and seq#= 5
+SEARCHING FOR COA in KEY 1 ,2001:db8::299:102 , 2001:db8::33a1:cc01
+Message recognised as BINDING UPDATE (BU) From: 2001:db8::299:102  to: 2001:db8::33a1:cc01
+BU von CN empfangen
+Home-Agent-Address:2001:db8::2aa:101
+CN received it
+CN received it
+[MCOA-BA] Sending BA msg to 2001:db8::33a1:cc01 CoA 2001:db8::299:102 and lifetime 3600
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=160 ttl=28 time=1142.784526999 msec (ping160)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=161 ttl=28 time=143.735233064 msec (ping161)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=162 ttl=29 time=121.694112022 msec (ping162)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=163 ttl=29 time=121.694115993 msec (ping163)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=164 ttl=29 time=121.694120371 msec (ping164)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=165 ttl=29 time=121.694125189 msec (ping165)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=166 ttl=29 time=121.761330491 msec (ping166)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=167 ttl=29 time=121.69413633 msec (ping167)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=168 ttl=29 time=121.694142774 msec (ping168)
+Sending periodic BU message at time: 179.034207152719 seconds.
+### lifetime of buIfEntry=3600 and seq#= 9
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=169 ttl=29 time=121.694149901 msec (ping169)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=170 ttl=29 time=121.694157804 msec (ping170)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=171 ttl=29 time=122.277068903 msec (ping171)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=172 ttl=29 time=121.694176385 msec (ping172)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=173 ttl=29 time=121.694187333 msec (ping173)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=174 ttl=29 time=121.694167799 msec (ping174)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=175 ttl=29 time=121.694145097 msec (ping175)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=176 ttl=29 time=121.694125567 msec (ping176)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=178 ttl=29 time=121.69409629 msec (ping178)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=179 ttl=29 time=121.694086658 msec (ping179)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=180 ttl=29 time=121.694080443 msec (ping180)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=181 ttl=29 time=121.694077707 msec (ping181)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=182 ttl=29 time=121.694078525 msec (ping182)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=183 ttl=29 time=121.694082973 msec (ping183)
+VoIPMCoAMulti.CN[0].pingApp: reply of 56 bytes from 2001:db8::2aa:101 icmp_seq=184 ttl=29 time=121.694091128 msec (ping184)
+--------------------------------------------------------
+	VoIPMCoAMulti.CN[0].pingApp
+--------------------------------------------------------
+sent: 185   drop rate (%): 75.6757
+round-trip min/avg/max (ms): 121.694/147.336/1142.78
+stddev (ms): 152.53   variance:0.0232654
+--------------------------------------------------------

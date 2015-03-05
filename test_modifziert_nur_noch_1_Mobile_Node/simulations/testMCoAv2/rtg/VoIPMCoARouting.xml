@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+<!--
+NOTE:
+AdvValidLifetime must be >= AdvPreferredLifetime
+-->
+
+
+<local node="HA">
+
+	<!-- connected to the Ra -->
+	<interface name="eth0" AdvSendAdvertisements="on">
+	   <AdvPrefixList> 
+		<AdvPrefix AdvOnLinkFlag="on" AdvValidLifetime="1800" AdvPreferredLifetime="1800" AdvAutonomousFlag="on" advRtrAddr="on"  rtrAddr="2001:db8::02BD:1A1">2001:db8::02BD:00/112</AdvPrefix>
+		</AdvPrefixList>
+		<inetAddr tentative="off">2001:db8::02BD:1A1</inetAddr> 
+	</interface>
+	
+		<!-- connected to the AP_HA -->
+		<!-- <AdvPrefix AdvOnLinkFlag="on" AdvValidLifetime="1800" AdvPreferredLifetime="1800" AdvAutonomousFlag="on" advRtrAddr="on"  rtrAddr="2001:db8::12AA:1A2">2001:db8::12AA:00/112</AdvPrefix> -->>
+	<interface name="eth1" AdvSendAdvertisements="on">
+	   <AdvPrefixList> 
+		<AdvPrefix AdvOnLinkFlag="on" AdvValidLifetime="1800" AdvPreferredLifetime="1800" AdvAutonomousFlag="on" advRtrAddr="on"  rtrAddr="2001:db8::02AA:1A2">2001:db8::02AA:00/112</AdvPrefix>
+		</AdvPrefixList>
+		<inetAddr tentative="off">2001:db8::02AA:1A2</inetAddr> 
+	</interface>
+	
+	
+</local>
+
+
+
+<local node="R1">
+
+	<!-- connected to the Ra -->
+	<interface name="eth0" AdvSendAdvertisements="on">
+	   <AdvPrefixList> 
+		<AdvPrefix AdvOnLinkFlag="on" AdvValidLifetime="1800" AdvPreferredLifetime="1800" AdvAutonomousFlag="on" advRtrAddr="on"  rtrAddr="2001:db8::02FF:3C3">2001:db8::02FF:00/112</AdvPrefix>
+		</AdvPrefixList>
+		<inetAddr tentative="off">2001:db8::02FF:2B1</inetAddr> 
+	</interface>
+	
+	
+	<!-- connected to the AP_1 -->
+	<interface name="eth1" AdvSendAdvertisements="on">
+	   <AdvPrefixList> 
+		<AdvPrefix AdvOnLinkFlag="on" AdvValidLifetime="1800" AdvPreferredLifetime="1800" AdvAutonomousFlag="on" advRtrAddr="on"  rtrAddr="2001:db8::0299:2B2">2001:db8::0299:00/112</AdvPrefix>
+		</AdvPrefixList>
+		<inetAddr tentative="off">2001:db8::0299:2B2</inetAddr> 
+	</interface>
+	
+	<!-- connected to the AP_2 -->
+	<interface name="eth2" AdvSendAdvertisements="on">
+	   <AdvPrefixList> 
+		<AdvPrefix AdvOnLinkFlag="on" AdvValidLifetime="1800" AdvPreferredLifetime="1800" AdvAutonomousFlag="on" advRtrAddr="on"  rtrAddr="2001:db8::0199:2B3">2001:db8::0199:00/112</AdvPrefix>
+		</AdvPrefixList> 
+		<inetAddr tentative="off">2001:db8::0199:2B3</inetAddr>
+	</interface>
+	
+</local>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<local node="Ra">
+	
+	<!-- connected to the Home_Agent -->
+	<interface name="eth0" AdvSendAdvertisements="on">
+		<inetAddr tentative="off">2001:db8::02BD:3C2</inetAddr>
+	</interface>
+	
+	
+	<!-- connected to the R1 -->
+	<interface name="eth1" AdvSendAdvertisements="on">
+	<AdvPrefixList>
+		<AdvPrefix AdvOnLinkFlag="on" AdvValidLifetime="1800" AdvPreferredLifetime="1800" AdvAutonomousFlag="on" advRtrAddr="on"  rtrAddr="2001:db8::02FF:3C3">2001:db8::02FF:00/112</AdvPrefix>
+		</AdvPrefixList>
+		<inetAddr tentative="off">2001:db8::02FF:3C3</inetAddr>
+	</interface>
+	
+	
+	<!-- connected to the Rb -->
+	<interface name="eth2" AdvSendAdvertisements="on">
+	<AdvPrefixList>
+		<AdvPrefix AdvOnLinkFlag="on" AdvValidLifetime="1800" AdvPreferredLifetime="1800" AdvAutonomousFlag="on" advRtrAddr="on"  rtrAddr="2001:db8::33D1:3C4">2001:db8::33D1:00/112</AdvPrefix>
+		</AdvPrefixList>
+		<inetAddr tentative="off">2001:db8::33D1:3C4</inetAddr>
+	</interface>
+	
+	
+</local>
+
+
+
+
+
+
+<local node="Rb">
+
+	<!-- connected to the Ra -->
+	<interface name="eth0" AdvSendAdvertisements="on">
+	   <AdvPrefixList> 
+		<AdvPrefix AdvOnLinkFlag="on" AdvValidLifetime="1800" AdvPreferredLifetime="1800" AdvAutonomousFlag="on" advRtrAddr="on"  rtrAddr="2001:db8::33D1:3C6">2001:db8::33D1:00/112</AdvPrefix>
+		</AdvPrefixList>
+		<inetAddr tentative="off">2001:db8::33D1:5D1</inetAddr> 
+	</interface>
+	
+	
+	
+	
+	<!-- connected to the hub -->
+	<interface name="eth1" AdvSendAdvertisements="on">
+	   <AdvPrefixList> 
+		<AdvPrefix AdvOnLinkFlag="on" AdvValidLifetime="1800" AdvPreferredLifetime="1800" AdvAutonomousFlag="on" advRtrAddr="on"  rtrAddr="2001:db8::33A1:5D2">2001:db8::33A1:00/112</AdvPrefix>
+		</AdvPrefixList>
+		<inetAddr tentative="off">2001:db8::33A1:5D2</inetAddr> 
+	</interface>
+	
+</local>	
+
+
+
+
+<!-- MN and CN should not have any address specified -->
+</root>

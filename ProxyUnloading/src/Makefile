@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for ProxyUnloading
 #
 # This file was generated with the command:
-#  opp_makemake -f --deep -L/home/ubuntu/omnetpp-4.4.1/proxyWorkspace/mCoAplus_v02_2011_with_Statistics/out/$$\(CONFIGNAME\)/src -linet -KMCOAPLUS_V02_2011_WITH_STATISTICS_PROJ=/home/ubuntu/omnetpp-4.4.1/proxyWorkspace/mCoAplus_v02_2011_with_Statistics
+#  opp_makemake -f --deep -L../../mCoAplus_v02_2011_with_Statistics/out/$$\(CONFIGNAME\)/src -linet -KMCOAPLUS_V02_2011_WITH_STATISTICS_PROJ=../../mCoAplus_v02_2011_with_Statistics
 #
 
 # Name of target to be created (-o option)
@@ -20,8 +20,8 @@ INCLUDE_PATH = -I.
 EXTRA_OBJS =
 
 # Additional libraries (-L, -l options)
-LIBS = -L$(MCOAPLUS_V02_2011_WITH_STATISTICS_PROJ)/out/$(CONFIGNAME)/src  -linet
-LIBS += -Wl,-rpath,`abspath $(MCOAPLUS_V02_2011_WITH_STATISTICS_PROJ)/out/$(CONFIGNAME)/src`
+LIBS = -L../../mCoAplus_v02_2011_with_Statistics/out/$(CONFIGNAME)/src  -linet
+LIBS += -Wl,-rpath,`abspath ../../mCoAplus_v02_2011_with_Statistics/out/$(CONFIGNAME)/src`
 
 # Output directory
 PROJECT_OUTPUT_DIR = ../out
@@ -35,7 +35,7 @@ OBJS =
 MSGFILES =
 
 # Other makefile variables (-K)
-MCOAPLUS_V02_2011_WITH_STATISTICS_PROJ=/home/ubuntu/omnetpp-4.4.1/proxyWorkspace/mCoAplus_v02_2011_with_Statistics
+MCOAPLUS_V02_2011_WITH_STATISTICS_PROJ=../../mCoAplus_v02_2011_with_Statistics
 
 #------------------------------------------------------------------------------
 

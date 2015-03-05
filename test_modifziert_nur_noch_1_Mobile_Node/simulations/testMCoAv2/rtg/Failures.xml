@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<scenario>
+	
+     <at t="20.000">
+    	<new-IPv6Status module="R1.networkLayer.ipv6" isActive="false"> </new-IPv6Status>        
+    </at>
+    
+    <at t="25.000">
+    	<new-IPv6Status module="R1.networkLayer.ipv6" isActive="true"> </new-IPv6Status> 
+    </at>
+    
+    
+    <at t="30.000">
+    	<new-IPv6Status module="HA.networkLayer.ipv6" isActive="false"> </new-IPv6Status> 
+    </at>
+   
+   <at t="35.000">
+    	<new-IPv6Status module="HA.networkLayer.ipv6" isActive="true"> </new-IPv6Status> 
+    </at>
+    
+    
+    <at t="40.000">
+    	<new-IPv6Status module="R1.networkLayer.ipv6" isActive="false"> </new-IPv6Status> 
+    </at>
+   
+   <at t="45.000">
+    	<new-IPv6Status module="R1.networkLayer.ipv6" isActive="true"> </new-IPv6Status> 
+    </at>
+    
+</scenario>
+
+ 
