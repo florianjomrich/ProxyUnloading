@@ -26,7 +26,7 @@ package inet.nodes.xmipv6;
 import inet.base.NotificationBoard;
 import inet.applications.pingapp.PingApp;
 import inet.applications.tcpapp.TCPApp;
-import inet.applications.udpapp.UDPApp;
+import inet.applications.mcoa.proxy_enhanced.Proxy_Enhanced_MCoAVideo_HomeAgent_Proxy;
 import inet.transport.tcp.TCP;
 import inet.transport.udp.UDP;
 import inet.linklayer.ethernet.EthernetInterface;
@@ -69,13 +69,13 @@ module Proxy_Enhanced_HomeAgent6
         }
         tcpApp[numTcpApps]: <tcpAppType> like TCPApp {
             parameters:
-                @display("p=297,132;i=block/app");
+                @display("p=314,114;i=block/app");
         }
         tcp: TCP {
             parameters:
                 @display("p=225,181;i=block/wheelbarrow");
         }
-        udpApp[numUdpApps]: <udpAppType> like UDPApp {
+        udpApp[numUdpApps]: Proxy_Enhanced_MCoAVideo_HomeAgent_Proxy {
             parameters:
                 @display("i=block/app;p=427,75");
         }
