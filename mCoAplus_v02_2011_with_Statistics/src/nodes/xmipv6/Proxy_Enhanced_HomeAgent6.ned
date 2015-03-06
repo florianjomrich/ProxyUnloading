@@ -40,8 +40,8 @@ module Proxy_Enhanced_HomeAgent6
         input ethIn[];
         output ethOut[];
         
-         inout from_to_MN;
-        inout from_to_CN; 
+         inout from_to_MN[];
+        inout from_to_CN[]; 
         
     submodules:
         notificationBoard: NotificationBoard {
@@ -83,7 +83,11 @@ module Proxy_Enhanced_HomeAgent6
         }
         
         //PROXY EXTENSION - FOR CONTROLL MESSAGES FJ
-        from_to_MN<-->networkLayer.NETWORK_LAYER_HA_TO_MN;
-        from_to_CN<-->networkLayer.NETWORK_LAYER_HA_TO_CN;
+        for i=0..sizeof(from_to_MN)-1{
+        from_to_MN[i]<-->networkLayer.NETWORK_LAYER_HA_TO_MN;
+         }
+         for k=0..sizeof(from_to_CN)-1{
+           from_to_CN[k]<-->networkLayer.NETWORK_LAYER_HA_TO_CN;   
+         }
 }
 

@@ -18,10 +18,10 @@
 
 #include <xMIPv6.h>
 
-class ProxyEnhancedxMIPv6: public xMIPv6 {
+class ProxyEnhancedxMIPv6ForCorrespondentNode: public xMIPv6 {
 public:
-    ProxyEnhancedxMIPv6();
-    virtual ~ProxyEnhancedxMIPv6();
+    ProxyEnhancedxMIPv6ForCorrespondentNode();
+    virtual ~ProxyEnhancedxMIPv6ForCorrespondentNode();
     virtual void handleMessage(cMessage *msg);
 };
 

@@ -13,25 +13,25 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#include <ProxyEnhancedxMIPv6.h>
+#include <ProxyEnhancedxMIPv6ForHomeAgent.h>
 
 #define PROXY_ENHANCED_BU_MESSAGE  42
 
-Define_Module(ProxyEnhancedxMIPv6);
+Define_Module(ProxyEnhancedxMIPv6ForHomeAgent);
 
 
 
-ProxyEnhancedxMIPv6::ProxyEnhancedxMIPv6() {
+ProxyEnhancedxMIPv6ForHomeAgent::ProxyEnhancedxMIPv6ForHomeAgent() {
     // TODO Auto-generated constructor stub
     xMIPv6();
 }
 
-ProxyEnhancedxMIPv6::~ProxyEnhancedxMIPv6() {
+ProxyEnhancedxMIPv6ForHomeAgent::~ProxyEnhancedxMIPv6ForHomeAgent() {
     // TODO Auto-generated destructor stub
 
 }
 
-void ProxyEnhancedxMIPv6::handleMessage(cMessage *msg){
+void ProxyEnhancedxMIPv6ForHomeAgent::handleMessage(cMessage *msg){
     if(msg->getKind()==PROXY_ENHANCED_BU_MESSAGE){
         cout<< "Steuernachricht der Proxy_Enhanced_App erhalten"<<endl;
        // xMIPv6::sendPeriodicBU(msg);
