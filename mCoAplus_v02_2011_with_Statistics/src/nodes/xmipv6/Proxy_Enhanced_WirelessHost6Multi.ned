@@ -62,6 +62,8 @@ module Proxy_Enhanced_WirelessHost6Multi
            //out: out[];
            //in: ethIn[];
            //out: ethOut[];
+        inout from_to_HA;
+        inout from_to_CN;   
         input radioIn[numRadios] @directIn;
     submodules:
         notificationBoard: NotificationBoard {
@@ -93,7 +95,8 @@ module Proxy_Enhanced_WirelessHost6Multi
             parameters:
                 @display("i=block/app;p=312,75");
             gates:
-               proxy_Enhanced_App_Control_Channel_OUT;    
+               proxy_Enhanced_App_Control_Channel_OUT; 
+             
         }
         udp: UDP {
             parameters:
@@ -103,7 +106,7 @@ module Proxy_Enhanced_WirelessHost6Multi
             parameters:
                 @display("i=block/app;p=343,248");
         }
-        networkLayer: Proxy_Enhanced_MobileIPLayer6 {
+        networkLayer: Proxy_Enhanced_MobileIPLayer6_For_Mobile_Node {
             parameters:
                 isMN = true; //is Mobile Node
                 isHA = false; //is Home Agent
@@ -170,5 +173,9 @@ module Proxy_Enhanced_WirelessHost6Multi
          for i=0..numUdpApps-1 {
                      udpApp[i].proxy_Enhanced_App_Control_Channel_OUT --> networkLayer.proxy_Enhanced_Control_Channel_IN;
          }
+       
+       	
+       	 from_to_HA <-->networkLayer.NETWORK_LAYER_HA_TO_MN;
+         from_to_CN <-->networkLayer.NETWORK_LAYER_CN_TO_MN;
 }
 
