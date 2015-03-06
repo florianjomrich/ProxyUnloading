@@ -14,6 +14,7 @@
 // 
 
 #include <ProxyEnhancedxMIPv6.h>
+#include <IPAddressResolver.h>
 
 #define PROXY_ENHANCED_BU_MESSAGE  42
 
@@ -34,8 +35,8 @@ ProxyEnhancedxMIPv6::~ProxyEnhancedxMIPv6() {
 void ProxyEnhancedxMIPv6::handleMessage(cMessage *msg){
     if(msg->getKind()==PROXY_ENHANCED_BU_MESSAGE){
         cout<< "Steuernachricht der Proxy_Enhanced_App erhalten"<<endl;
-        xMIPv6::sendPeriodicBU(msg);
-    }
+      //  xMIPv6::sendPeriodicBU(msg);
+           }
     else{
        cout << "### ANDERE NACHRICHT ERHALTEN ###" <<endl;
        xMIPv6::handleMessage(msg);

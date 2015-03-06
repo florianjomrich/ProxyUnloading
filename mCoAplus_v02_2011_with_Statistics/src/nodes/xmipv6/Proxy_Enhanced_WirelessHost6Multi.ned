@@ -63,6 +63,7 @@ module Proxy_Enhanced_WirelessHost6Multi
            //in: ethIn[];
            //out: ethOut[];
         input radioIn[numRadios] @directIn;
+        output directConnectionToHomeAgent;
     submodules:
         notificationBoard: NotificationBoard {
             parameters:

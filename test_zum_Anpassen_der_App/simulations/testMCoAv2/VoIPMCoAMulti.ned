@@ -148,6 +148,11 @@ network VoIPMCoAMulti
 
         Rb.ethg++ <--> internetline <--> Ra.ethg++;
         hub.ethg++ <--> ethernetline <--> Rb.ethg++;
+        
+        
+        for i=0..total_mn-1 {
+         MN[i].directConnectionToHomeAgent-->ethernetline-->HA.directConnectionFromMN++;   
+        }
 
 
 }

@@ -39,6 +39,7 @@ module Proxy_Enhanced_HomeAgent6
            //out: out[];
         input ethIn[];
         output ethOut[];
+        input directConnectionFromMN[];
     submodules:
         notificationBoard: NotificationBoard {
             parameters:
