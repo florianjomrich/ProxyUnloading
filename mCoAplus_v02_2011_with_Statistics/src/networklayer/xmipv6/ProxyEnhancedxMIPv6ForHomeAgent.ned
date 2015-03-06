@@ -38,8 +38,8 @@ simple ProxyEnhancedxMIPv6ForHomeAgent
 		output toIPv6;
 		
 		//PROXY ENHANCED FJ
-		inout XMIP_LAYER_HA_TO_MN;
-		inout XMIP_LAYER_HA_TO_CN;
+		inout XMIP_LAYER_HA_TO_MN[];
+		inout XMIP_LAYER_HA_TO_CN[];
 		input xMIP_proxy_Enhanced_Control_Channel_IN;
 }
 

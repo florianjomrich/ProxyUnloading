@@ -84,10 +84,10 @@ module Proxy_Enhanced_HomeAgent6
         
         //PROXY EXTENSION - FOR CONTROLL MESSAGES FJ
         for i=0..sizeof(from_to_MN)-1{
-        from_to_MN[i]<-->networkLayer.NETWORK_LAYER_HA_TO_MN;
+        from_to_MN[i]<-->networkLayer.NETWORK_LAYER_HA_TO_MN++;
          }
          for k=0..sizeof(from_to_CN)-1{
-           from_to_CN[k]<-->networkLayer.NETWORK_LAYER_HA_TO_CN;   
+           from_to_CN[k]<-->networkLayer.NETWORK_LAYER_HA_TO_CN++;   
          }
 }
 
