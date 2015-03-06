@@ -33,7 +33,7 @@ ProxyEnhancedxMIPv6ForHomeAgent::~ProxyEnhancedxMIPv6ForHomeAgent() {
 
 void ProxyEnhancedxMIPv6ForHomeAgent::handleMessage(cMessage *msg){
     if(msg->getKind()==PROXY_ENHANCED_BU_MESSAGE){
-        cout<< "Steuernachricht der Proxy_Enhanced_App erhalten"<<endl;
+        cout<< "Steuernachricht vom Mobile Node auf der Netzwerkebene des Home Agents erhalten"<<endl;
        // xMIPv6::sendPeriodicBU(msg);
     }
     else{

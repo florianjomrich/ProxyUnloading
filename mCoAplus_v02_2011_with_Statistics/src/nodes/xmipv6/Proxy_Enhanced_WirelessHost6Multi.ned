@@ -63,7 +63,7 @@ module Proxy_Enhanced_WirelessHost6Multi
            //in: ethIn[];
            //out: ethOut[];
         inout from_to_HA;
-        inout from_to_CN;   
+        inout from_to_CN;
         input radioIn[numRadios] @directIn;
     submodules:
         notificationBoard: NotificationBoard {
@@ -95,8 +95,8 @@ module Proxy_Enhanced_WirelessHost6Multi
             parameters:
                 @display("i=block/app;p=312,75");
             gates:
-               proxy_Enhanced_App_Control_Channel_OUT; 
-             
+                proxy_Enhanced_App_Control_Channel_OUT;
+
         }
         udp: UDP {
             parameters:
@@ -104,7 +104,7 @@ module Proxy_Enhanced_WirelessHost6Multi
         }
         pingApp: PingApp {
             parameters:
-                @display("i=block/app;p=343,248");
+                @display("i=block/app;p=341,286");
         }
         networkLayer: Proxy_Enhanced_MobileIPLayer6_For_Mobile_Node {
             parameters:
@@ -168,14 +168,14 @@ module Proxy_Enhanced_WirelessHost6Multi
             wlan[i].uppergateIn <-- networkLayer.ifOut[sizeof(pppg)+sizeof(ethg)+i];
 
         }
-        
+
         //PROXY ENHANCED CONNECTION
-         for i=0..numUdpApps-1 {
-                     udpApp[i].proxy_Enhanced_App_Control_Channel_OUT --> networkLayer.proxy_Enhanced_Control_Channel_IN;
-         }
-       
-       	
-       	 from_to_HA <-->networkLayer.NETWORK_LAYER_HA_TO_MN;
-         from_to_CN <-->networkLayer.NETWORK_LAYER_CN_TO_MN;
+        for i=0..numUdpApps-1 {
+            udpApp[i].proxy_Enhanced_App_Control_Channel_OUT --> networkLayer.proxy_Enhanced_Control_Channel_IN;
+        }
+
+
+        from_to_HA <--> networkLayer.NETWORK_LAYER_HA_TO_MN;
+        from_to_CN <--> networkLayer.NETWORK_LAYER_CN_TO_MN;
 }
 
