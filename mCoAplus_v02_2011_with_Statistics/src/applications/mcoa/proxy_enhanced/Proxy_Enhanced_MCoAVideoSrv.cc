@@ -18,6 +18,7 @@
 #include "Proxy_Enhanced_MCoAVideoSrv.h"
 #include "UDPControlInfo_m.h"
 #include "IPAddressResolver.h"
+#include "IPvXAddress.h"
 
 using std::cout;
 
@@ -145,6 +146,14 @@ void Proxy_Enhanced_MCoAVideoSrv::sendStreamData(cMessage *timer)
 		pkt_video->setByteLength(pktLen);
 		pkt_video->setCurSeq(videoStreamData->seqTx);
 		pkt_video->setCurTime(simTime().dbl());
+
+		//GEHT DAS DAMIT NOCH ??? //FJ
+		//SO könnte man nämlich den Proxy informieren darüber, an wen er die Pakete weiterleitet
+		pkt_video->setName("123");
+
+
+		IPvXAddress testAdress =  IPAddressResolver().resolve("HA");
+		cout<<"passiert "<< testAdress <<endl;
 
 		//sendToUDP(pkt, serverPort, d->clientAddr, d->clientPort);
 		sendToUDPMCOA(pkt_video, localPort, videoStreamData->clientAddr, videoStreamData->clientPort, true);

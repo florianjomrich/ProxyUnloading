@@ -254,8 +254,7 @@ void MCoAUDPBase::TrysendToUDPMCOA(cPacket *msg, int srcPort, const IPvXAddress&
 		ctrl->setDestPort(destPort);
 		msg->setControlInfo(ctrl);
 
-		//GEHT DAS DAMIT NOCH ??? //FJ
-		msg->setName("MN0");
+
 	}
 	EV << "Sending packet: ";
 	printPacket(msg);
