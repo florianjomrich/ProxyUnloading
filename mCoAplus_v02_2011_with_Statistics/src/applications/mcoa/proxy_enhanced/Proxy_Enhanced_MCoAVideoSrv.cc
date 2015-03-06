@@ -127,7 +127,7 @@ void Proxy_Enhanced_MCoAVideoSrv::sendStreamData(cMessage *timer)
 {
     //Be careful with statistics if multiple clients exist
 	for (uint i=0; i< streamVector.size();i++){
-		VideoStreamData *d = streamVector[i];
+		VideoStreamData *videoStreamData = streamVector[i];
 		//VideoStreamData *d = (VideoStreamData *) timer->getContextPointer();
 
 		char msgName[32];
@@ -137,26 +137,26 @@ void Proxy_Enhanced_MCoAVideoSrv::sendStreamData(cMessage *timer)
 		//cPacket *pkt = new cPacket("VideoStrmPk");
 		MCoAVideoStreaming *pkt_video = new MCoAVideoStreaming(msgName);
 		long pktLen = packetLen->longValue();
-		if (pktLen > d->bytesLeft)
-			pktLen = d->bytesLeft;
+		if (pktLen > videoStreamData->bytesLeft)
+			pktLen = videoStreamData->bytesLeft;
 		//pkt->setByteLength(pktLen);
-		d->seqTx = d->seqTx +1;
+		videoStreamData->seqTx = videoStreamData->seqTx +1;
 
 		pkt_video->setByteLength(pktLen);
-		pkt_video->setCurSeq(d->seqTx);
+		pkt_video->setCurSeq(videoStreamData->seqTx);
 		pkt_video->setCurTime(simTime().dbl());
 
 		//sendToUDP(pkt, serverPort, d->clientAddr, d->clientPort);
-		sendToUDPMCOA(pkt_video, localPort, d->clientAddr, d->clientPort, true);
+		sendToUDPMCOA(pkt_video, localPort, videoStreamData->clientAddr, videoStreamData->clientPort, true);
 
-		d->bytesLeft -= pktLen;
-		d->numPkSent++;
+		videoStreamData->bytesLeft -= pktLen;
+		videoStreamData->numPkSent++;
 
 		//Statistics
 		PktSent.record(pkt_video->getCurSeq());
 
 		// reschedule timer if there's bytes left to send
-		if (d->bytesLeft!=0)
+		if (videoStreamData->bytesLeft!=0)
 		{
 			simtime_t interval = (*waitInterval);
 			scheduleAt(simTime()+interval, timer);

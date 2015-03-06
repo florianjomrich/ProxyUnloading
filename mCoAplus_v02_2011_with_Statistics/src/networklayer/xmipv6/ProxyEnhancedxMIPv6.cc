@@ -34,6 +34,7 @@ ProxyEnhancedxMIPv6::~ProxyEnhancedxMIPv6() {
 void ProxyEnhancedxMIPv6::handleMessage(cMessage *msg){
     if(msg->getKind()==PROXY_ENHANCED_BU_MESSAGE){
         cout<< "Steuernachricht der Proxy_Enhanced_App erhalten"<<endl;
+        xMIPv6::sendPeriodicBU(msg);
     }
     else{
        cout << "### ANDERE NACHRICHT ERHALTEN ###" <<endl;

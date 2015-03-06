@@ -7,7 +7,7 @@ import inet.linklayer.ethernet.EtherHub;
 import inet.nodes.ipv6.Router6;
 import inet.nodes.wireless.WirelessAPWithEthMCoA;
 import inet.nodes.xmipv6.CorrespondentNode6;
-import inet.nodes.xmipv6.HomeAgent6;
+import inet.nodes.xmipv6.Proxy_Enhanced_HomeAgent6;
 import inet.nodes.xmipv6.Proxy_Enhanced_WirelessHost6Multi;
 import inet.world.ChannelControlExtended;
 import inet.networklayer.autorouting.MCoANetConf6;
@@ -88,7 +88,7 @@ network VoIPMCoAMulti
             parameters:
                 @display("p=329,461;i=device/hub_s");
         }
-        HA: HomeAgent6 {
+        HA: Proxy_Enhanced_HomeAgent6 {
             parameters:
                 @display("p=149,228;i=abstract/router");
         }

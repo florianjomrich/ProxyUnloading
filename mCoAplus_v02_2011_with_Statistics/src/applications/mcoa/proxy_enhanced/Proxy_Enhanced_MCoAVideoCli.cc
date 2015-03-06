@@ -107,7 +107,7 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
 void Proxy_Enhanced_MCoAVideoCli::receiveStream(cPacket *msg)
 {
 	MCoAVideoStreaming *pkt_video = (MCoAVideoStreaming *)(msg);
-    EV << "Video stream packet:\n";
+    cout << "Video stream packet:\n";
     int nLost;
 
     nLost = (pkt_video->getCurSeq() - lastSeq);
