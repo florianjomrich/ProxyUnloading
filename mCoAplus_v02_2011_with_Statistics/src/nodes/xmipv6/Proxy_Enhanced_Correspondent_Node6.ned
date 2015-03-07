@@ -25,7 +25,7 @@ package inet.nodes.xmipv6;
 
 import inet.applications.pingapp.PingApp;
 import inet.applications.tcpapp.TCPApp;
-import inet.applications.udpapp.UDPApp;
+import inet.applications.mcoa.proxy_enhanced.Proxy_Enhanced_MCoAVideoSrv;
 import inet.base.NotificationBoard;
 import inet.linklayer.ethernet.EthernetInterface;
 import inet.networklayer.common.InterfaceTable;
@@ -81,7 +81,7 @@ module Proxy_Enhanced_Correspondent_Node6
             parameters:
                 @display("p=187,170;i=block/wheelbarrow");
         }
-        udpApp[numUdpApps]: <udpAppType> like UDPApp {
+        udpApp[numUdpApps]: Proxy_Enhanced_MCoAVideoSrv {
             parameters:
                 @display("i=block/app;p=312,75");
         }
@@ -141,7 +141,12 @@ module Proxy_Enhanced_Correspondent_Node6
             eth[i].netwIn <-- networkLayer.ifOut[sizeof(out)+i];
         }
 
+//PROXY ENHANCED
         from_to_HA <--> networkLayer.NETWORK_LAYER_CN_TO_HA;
         from_to_MN <--> networkLayer.NETWORK_LAYER_CN_TO_MN;
+        
+        for k=0..numUdpApps-1{
+        udpApp[k].APP_proxy_Enhanced_Control_Channel_CN     <--> networkLayer.NETWORK_LAYER_proxy_Enhanced_Control_Channel_CN++;
+        }
 }
 

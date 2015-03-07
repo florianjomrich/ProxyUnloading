@@ -39,7 +39,7 @@ simple ProxyEnhancedxMIPv6ForCorrespondentNode
 		
 	
 		//PROXY EXTENSION FJ
-		input xMIP_proxy_Enhanced_Control_Channel_IN;
+		inout xMIP_proxy_Enhanced_Control_Channel_CN[];
 		
         inout XMIP_LAYER_CN_TO_HA;
         inout XMIP_LAYER_CN_TO_MN;

@@ -63,7 +63,7 @@ module Proxy_Enhanced_MobileIPLayer6_For_Correspondent_Node
         inout NETWORK_LAYER_CN_TO_MN;
         
         //PROXY_ENHANCED
-        input proxy_Enhanced_Control_Channel_IN;
+        inout  NETWORK_LAYER_proxy_Enhanced_Control_Channel_CN[];
     submodules:
         ipv6: IPv6 {
             parameters:
@@ -97,7 +97,7 @@ module Proxy_Enhanced_MobileIPLayer6_For_Correspondent_Node
                 isMobileNode = isMN;
                 @display("p=312,131;i=block/classifier2");
                 gates:
-                    xMIP_proxy_Enhanced_Control_Channel_IN;
+                   
         }
         mCoA: MCoA {
             @display("p=326,285");
@@ -149,7 +149,10 @@ module Proxy_Enhanced_MobileIPLayer6_For_Correspondent_Node
         
         
         //PROXY ENHANCED
-        proxy_Enhanced_Control_Channel_IN-->xMobileIPv6.xMIP_proxy_Enhanced_Control_Channel_IN;
+        for i=0..sizeof(NETWORK_LAYER_proxy_Enhanced_Control_Channel_CN)-1{
+                  NETWORK_LAYER_proxy_Enhanced_Control_Channel_CN[i]<-->xMobileIPv6.xMIP_proxy_Enhanced_Control_Channel_CN++;  
+        }
+
         
          NETWORK_LAYER_CN_TO_HA<-->xMobileIPv6.XMIP_LAYER_CN_TO_HA;
          NETWORK_LAYER_CN_TO_MN<-->xMobileIPv6.XMIP_LAYER_CN_TO_MN;

@@ -54,5 +54,7 @@ simple Proxy_Enhanced_MCoAVideoSrv like MCoAUDPBase
     gates:
         input udpIn;
         output udpOut;
+        
+        inout APP_proxy_Enhanced_Control_Channel_CN;
 }
 

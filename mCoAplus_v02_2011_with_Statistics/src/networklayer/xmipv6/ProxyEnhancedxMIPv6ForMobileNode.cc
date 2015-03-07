@@ -42,7 +42,7 @@ void ProxyEnhancedxMIPv6ForMobileNode::handleMessage(cMessage *msg){
 
     }
     else{
-       cout << "### ANDERE NACHRICHT ERHALTEN ###" <<endl;
+       //cout << "### ANDERE NACHRICHT ERHALTEN ###" <<endl;
        xMIPv6::handleMessage(msg);
     }
 

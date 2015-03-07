@@ -33,7 +33,7 @@ ProxyEnhancedxMIPv6ForCorrespondentNode::~ProxyEnhancedxMIPv6ForCorrespondentNod
 
 void ProxyEnhancedxMIPv6ForCorrespondentNode::handleMessage(cMessage *msg){
     if(msg->getKind()==PROXY_ENHANCED_BU_MESSAGE){
-        cout<< "Steuernachricht der Proxy_Enhanced_App erhalten"<<endl;
+      //  cout<< "Steuernachricht der Proxy_Enhanced_App erhalten"<<endl;
        // xMIPv6::sendPeriodicBU(msg);
     }
     else{

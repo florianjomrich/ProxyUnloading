@@ -37,7 +37,7 @@ void ProxyEnhancedxMIPv6ForHomeAgent::handleMessage(cMessage *msg){
        // xMIPv6::sendPeriodicBU(msg);
     }
     else{
-       cout << "### ANDERE NACHRICHT ERHALTEN ###" <<endl;
+      // cout << "### ANDERE NACHRICHT ERHALTEN ###" <<endl;
        xMIPv6::handleMessage(msg);
     }
 
