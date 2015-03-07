@@ -39,6 +39,10 @@ module Proxy_Enhanced_HomeAgent6
            //out: out[];
         input ethIn[];
         output ethOut[];
+        
+         inout from_to_MN[];
+        inout from_to_CN[]; 
+        
     submodules:
         notificationBoard: NotificationBoard {
             parameters:
@@ -57,7 +61,7 @@ module Proxy_Enhanced_HomeAgent6
                 isRouter = true;
                 @display("p=240,60;i=block/table2");
         }
-        networkLayer: Proxy_Enhanced_MobileIPLayer6 {
+        networkLayer: Proxy_Enhanced_MobileIPLayer6_For_Home_Agent {
             parameters:
                 isMN = false; //is Mobile Node
                 isHA = true; //is Home Agent
@@ -77,5 +81,13 @@ module Proxy_Enhanced_HomeAgent6
             eth[i].netwOut --> networkLayer.ifIn[sizeof(out)+i];
             eth[i].netwIn <-- networkLayer.ifOut[sizeof(out)+i];
         }
+        
+        //PROXY EXTENSION - FOR CONTROLL MESSAGES FJ
+        for i=0..sizeof(from_to_MN)-1{
+        from_to_MN[i]<-->networkLayer.NETWORK_LAYER_HA_TO_MN++;
+         }
+         for k=0..sizeof(from_to_CN)-1{
+           from_to_CN[k]<-->networkLayer.NETWORK_LAYER_HA_TO_CN++;   
+         }
 }
 
