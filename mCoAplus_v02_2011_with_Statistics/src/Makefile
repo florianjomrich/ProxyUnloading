@@ -129,6 +129,7 @@ OBJS = \
     $O/applications/mcoa/Video/MCoAVideoCli.o \
     $O/applications/mcoa/Video/MCoAVideoSrv.o \
     $O/applications/mcoa/VoIP/MCoAUDPApp.o \
+    $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.o \
     $O/applications/mcoa/udpbase/MCoAUDPBase.o \
@@ -1029,6 +1030,28 @@ $O/applications/mcoa/VoIP/MCoAUDPApp.o: applications/mcoa/VoIP/MCoAUDPApp.cc \
 $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.o: applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
 	applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.h \
+	applications/mcoa/udpbase/MCoAUDPBase.h \
+	base/INETDefs.h \
+	base/INotifiable.h \
+	base/MCoADefs.h \
+	base/ModuleAccess.h \
+	base/NotificationBoard.h \
+	base/NotifierConsts.h \
+	networklayer/contract/IPAddress.h \
+	networklayer/contract/IPAddressResolver.h \
+	networklayer/contract/IPProtocolId_m.h \
+	networklayer/contract/IPv6Address.h \
+	networklayer/contract/IPv6ControlInfo.h \
+	networklayer/contract/IPv6ControlInfo_m.h \
+	networklayer/contract/IPvXAddress.h \
+	networklayer/ipv6/IPv6Datagram.h \
+	networklayer/ipv6/IPv6Datagram_m.h \
+	networklayer/ipv6/IPv6ExtensionHeaders_m.h \
+	networklayer/mcoa/IPv6PrefAdr.h \
+	networklayer/mcoa/IPv6TunAdr.h
+$O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.o: applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.cc \
+	applications/mcoa/Video/MCoAVideoStreaming_m.h \
+	applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.h \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \
 	base/INotifiable.h \

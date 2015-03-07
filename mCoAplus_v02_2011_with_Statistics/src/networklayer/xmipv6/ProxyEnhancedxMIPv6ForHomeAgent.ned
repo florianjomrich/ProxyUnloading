@@ -40,6 +40,6 @@ simple ProxyEnhancedxMIPv6ForHomeAgent
 		//PROXY ENHANCED FJ
 		inout XMIP_LAYER_HA_TO_MN[];
 		inout XMIP_LAYER_HA_TO_CN[];
-		input xMIP_proxy_Enhanced_Control_Channel_IN;
+		inout xMIP_proxy_Enhanced_Control_Channel_HA[];
 }
 
