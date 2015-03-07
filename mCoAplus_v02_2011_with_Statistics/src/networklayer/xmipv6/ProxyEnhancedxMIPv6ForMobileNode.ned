@@ -40,6 +40,6 @@ simple ProxyEnhancedxMIPv6ForMobileNode
 		//PROXY ENHANCED FJ
 		inout XMIP_LAYER_CN_TO_MN;
 		inout XMIP_LAYER_HA_TO_MN;
-		input xMIP_proxy_Enhanced_Control_Channel_IN;
+		inout xMIP_proxy_Enhanced_Control_Channel_MN[];
 }
 

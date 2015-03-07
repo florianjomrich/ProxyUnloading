@@ -90,7 +90,7 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
     	    cMessage* msg = new cMessage();
     	    msg->setName("Message for the Proxy");
     	    msg->setKind(PROXY_ENHANCED_BU_MESSAGE);
-    	    send(msg, "proxy_Enhanced_App_Control_Channel_OUT");
+    	    send(msg, "APP_proxy_Enhanced_Control_Channel_MN$o");
 
     	}
 
