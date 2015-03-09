@@ -34,7 +34,7 @@ Define_Module(Proxy_Enhanced_MCoAVideoProxy);
 void Proxy_Enhanced_MCoAVideoProxy::initialize()
 {
     //PROXY UNLOADING FJ
-    cout<<"Initializing Proxy_Enhanced_MCoAVideoCli module"<<endl;
+    cout<<"Initializing Proxy_Enhanced_MCoAVideoPROXY module"<<endl;
     startTime = par("startTime");
 
 
@@ -47,6 +47,7 @@ void Proxy_Enhanced_MCoAVideoProxy::initialize()
     lastSeq=0;
 
     int localPort = par("localPort");
+    cout<<"LOCAL PORT:"<<localPort <<endl;
     bindToPort(localPort);
 
    /* if (startTime>=0){
@@ -68,10 +69,7 @@ void Proxy_Enhanced_MCoAVideoProxy::finish()
 void Proxy_Enhanced_MCoAVideoProxy::handleMessage(cMessage* msg)
 {
 
-    	if (msg->getKind() == PROXY_ENHANCED_BU_MESSAGE ){
-			cout<<" !! Proxy Binding Update Message hat die Proxy-App erreicht !!"<<endl;
-
-    	}
+    	cout<<"PROXY APP HAT erhalten:"<< msg->getName() <<endl;
 
 }
 

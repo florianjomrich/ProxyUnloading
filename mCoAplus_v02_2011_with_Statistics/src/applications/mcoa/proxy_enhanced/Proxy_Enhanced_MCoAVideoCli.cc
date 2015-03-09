@@ -114,7 +114,7 @@ void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage *timer)
     cPacket *buPaket = new cPacket();
     buPaket->setName("HALLO WELT");
 
-    sendToUDPMCOA(buPaket, localPort, cliAddr, 1000, true);
+    sendToUDPMCOA(buPaket, localPort, cliAddr, destPort, true);
 }
 
 
