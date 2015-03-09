@@ -96,7 +96,7 @@ void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
     IPvXAddress ha = IPAddressResolver().resolve("HA");
 
     FlowBindingUpdateMessage* halloWelt = new FlowBindingUpdateMessage();
-    halloWelt->setName("HALLO WELT Message for the Proxy");
+    halloWelt->setName(" HALLO WELT ");
 
 
                 sendToUDPMCOA(halloWelt, localPort, ha, 1000, true);
@@ -106,7 +106,7 @@ void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
 void Proxy_Enhanced_MCoAVideoCli::receiveStream(cPacket *msg)
 {
 	MCoAVideoStreaming *pkt_video = (MCoAVideoStreaming *)(msg);
-    cout << "Video stream packet:\n";
+    //cout << "Video stream packet:\n";
     int nLost;
 
     nLost = (pkt_video->getCurSeq() - lastSeq);
