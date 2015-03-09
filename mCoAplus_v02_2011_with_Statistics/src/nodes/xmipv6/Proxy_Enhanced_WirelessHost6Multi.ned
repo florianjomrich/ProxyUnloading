@@ -95,7 +95,7 @@ module Proxy_Enhanced_WirelessHost6Multi
             parameters:
                 @display("i=block/app;p=312,75");
             gates:
-                
+
 
         }
         udp: UDP {
@@ -115,7 +115,7 @@ module Proxy_Enhanced_WirelessHost6Multi
                 ifIn[(sizeof(out)+sizeof(ethOut))+numRadios];
                 ifOut[(sizeof(out)+sizeof(ethOut))+numRadios];
                 NETWORK_LAYER_proxy_Enhanced_Control_Channel_MN[];
-                
+
         }
         wlan[numRadios]: Ieee80211NicSTA {
             parameters:
@@ -171,13 +171,7 @@ module Proxy_Enhanced_WirelessHost6Multi
         }
 
         //PROXY ENHANCED CONNECTION
-       
 
-        from_to_HA <--> networkLayer.NETWORK_LAYER_HA_TO_MN;
-        from_to_CN <--> networkLayer.NETWORK_LAYER_CN_TO_MN;
-        
-          for k=0..numUdpApps-1{
-        udpApp[k].APP_proxy_Enhanced_Control_Channel_MN     <--> networkLayer.NETWORK_LAYER_proxy_Enhanced_Control_Channel_MN++;
-        }
+
 }
 

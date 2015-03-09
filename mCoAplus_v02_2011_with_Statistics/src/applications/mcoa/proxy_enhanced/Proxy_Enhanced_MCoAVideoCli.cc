@@ -23,6 +23,8 @@
 #include "Proxy_Enhanced_MCoAVideoCli.h"
 #include "IPAddressResolver.h"
 #include "IPv6ControlInfo.h"
+#include "FlowBindingUpdateMessage.h"
+
 
 #define PROXY_ENHANCED_BU_MESSAGE  42
 
@@ -76,21 +78,8 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
 		}
     	if(msg->getKind()== PROXY_CONTEXT_START){
     	    cout<<"!! Proxying Context Started !!"<<endl;
+    	    sendControlData(msg);
 
-    	    //send new BindingUpdate-Message to Proxy-Server
-    	    //Configuration is done through the VoIPMCoAN.ini - MN[0] implicitly expected because of this configuration there
-    	  //  IPvXAddress ha = IPAddressResolver().resolve("HA");
-    	   // IPvXAddress me = IPAddressResolver().resolve("MN[0]");
-
-    	    /*IPv6ControlInfo *ctrl = new IPv6ControlInfo();
-    	          ctrl->setSrcAddr(me.get6());
-    	          ctrl->setDestAddr(ha.get6());
-    	          ctrl->setHopLimit(10);
-    	          msg->setControlInfo(ctrl);*/
-    	    cMessage* msg = new cMessage();
-    	    msg->setName("Message for the Proxy");
-    	    msg->setKind(PROXY_ENHANCED_BU_MESSAGE);
-    	    send(msg, "APP_proxy_Enhanced_Control_Channel_MN$o");
 
     	}
 
@@ -103,6 +92,16 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
     }
 }
 
+void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
+    IPvXAddress ha = IPAddressResolver().resolve("HA");
+
+    FlowBindingUpdateMessage* halloWelt = new FlowBindingUpdateMessage();
+    halloWelt->setName("HALLO WELT Message for the Proxy");
+
+
+                sendToUDPMCOA(halloWelt, localPort, ha, 1000, true);
+
+}
 
 void Proxy_Enhanced_MCoAVideoCli::receiveStream(cPacket *msg)
 {

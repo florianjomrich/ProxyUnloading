@@ -57,13 +57,13 @@ module Proxy_Enhanced_MobileIPLayer6_For_Correspondent_Node
         input pingIn;
         output pingOut;
         output errorOut;
-        
+
         //PROXY EXTENSION FJ
         inout NETWORK_LAYER_CN_TO_HA;
         inout NETWORK_LAYER_CN_TO_MN;
-        
+
         //PROXY_ENHANCED
-        inout  NETWORK_LAYER_proxy_Enhanced_Control_Channel_CN[];
+        inout NETWORK_LAYER_proxy_Enhanced_Control_Channel_CN[];
     submodules:
         ipv6: IPv6 {
             parameters:
@@ -96,8 +96,8 @@ module Proxy_Enhanced_MobileIPLayer6_For_Correspondent_Node
                 isHomeAgent = isHA;
                 isMobileNode = isMN;
                 @display("p=312,131;i=block/classifier2");
-                gates:
-                   
+            gates:
+
         }
         mCoA: MCoA {
             @display("p=326,285");
@@ -146,15 +146,7 @@ module Proxy_Enhanced_MobileIPLayer6_For_Correspondent_Node
             ifIn[i] --> { @display("m=s"); } --> ipv6.queueIn[i];
             ifOut[i] <-- { @display("m=s"); } <-- ipv6.queueOut[i];
         }
-        
-        
-        //PROXY ENHANCED
-        for i=0..sizeof(NETWORK_LAYER_proxy_Enhanced_Control_Channel_CN)-1{
-                  NETWORK_LAYER_proxy_Enhanced_Control_Channel_CN[i]<-->xMobileIPv6.xMIP_proxy_Enhanced_Control_Channel_CN++;  
-        }
 
-        
-         NETWORK_LAYER_CN_TO_HA<-->xMobileIPv6.XMIP_LAYER_CN_TO_HA;
-         NETWORK_LAYER_CN_TO_MN<-->xMobileIPv6.XMIP_LAYER_CN_TO_MN;
+
 }
 
