@@ -129,6 +129,7 @@ OBJS = \
     $O/applications/mcoa/Video/MCoAVideoCli.o \
     $O/applications/mcoa/Video/MCoAVideoSrv.o \
     $O/applications/mcoa/VoIP/MCoAUDPApp.o \
+    $O/applications/mcoa/proxy_enhanced/ProxyEnhancedBindingUpdate.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.o \
@@ -1027,6 +1028,8 @@ $O/applications/mcoa/VoIP/MCoAUDPApp.o: applications/mcoa/VoIP/MCoAUDPApp.cc \
 	networklayer/mcoa/IPv6PrefAdr.h \
 	networklayer/mcoa/IPv6TunAdr.h \
 	transport/contract/UDPControlInfo_m.h
+$O/applications/mcoa/proxy_enhanced/ProxyEnhancedBindingUpdate.o: applications/mcoa/proxy_enhanced/ProxyEnhancedBindingUpdate.cc \
+	applications/mcoa/proxy_enhanced/ProxyEnhancedBindingUpdate.h
 $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.o: applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
 	applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.h \
