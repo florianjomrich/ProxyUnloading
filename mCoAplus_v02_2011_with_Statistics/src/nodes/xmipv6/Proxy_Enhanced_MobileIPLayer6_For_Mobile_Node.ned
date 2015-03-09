@@ -149,13 +149,13 @@ module Proxy_Enhanced_MobileIPLayer6_For_Mobile_Node
         
         
         //PROXY ENHANCED
-        for i=0..sizeof(NETWORK_LAYER_proxy_Enhanced_Control_Channel_MN)-1{
-              NETWORK_LAYER_proxy_Enhanced_Control_Channel_MN[i]<-->xMobileIPv6.xMIP_proxy_Enhanced_Control_Channel_MN++;
+     //   for i=0..sizeof(NETWORK_LAYER_proxy_Enhanced_Control_Channel_MN)-1{
+     //         NETWORK_LAYER_proxy_Enhanced_Control_Channel_MN[i]<-->xMobileIPv6.xMIP_proxy_Enhanced_Control_Channel_MN++;
         
-        }
+     //   }
       
-        NETWORK_LAYER_CN_TO_MN<-->xMobileIPv6.XMIP_LAYER_CN_TO_MN;
-        NETWORK_LAYER_HA_TO_MN<-->xMobileIPv6.XMIP_LAYER_HA_TO_MN;
+     //   NETWORK_LAYER_CN_TO_MN<-->xMobileIPv6.XMIP_LAYER_CN_TO_MN;
+     //   NETWORK_LAYER_HA_TO_MN<-->xMobileIPv6.XMIP_LAYER_HA_TO_MN;
         
 }
 

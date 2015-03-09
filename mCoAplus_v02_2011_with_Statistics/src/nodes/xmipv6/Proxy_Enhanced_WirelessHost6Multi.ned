@@ -173,11 +173,11 @@ module Proxy_Enhanced_WirelessHost6Multi
         //PROXY ENHANCED CONNECTION
        
 
-        from_to_HA <--> networkLayer.NETWORK_LAYER_HA_TO_MN;
-        from_to_CN <--> networkLayer.NETWORK_LAYER_CN_TO_MN;
+        //from_to_HA <--> networkLayer.NETWORK_LAYER_HA_TO_MN;
+        //from_to_CN <--> networkLayer.NETWORK_LAYER_CN_TO_MN;
         
-          for k=0..numUdpApps-1{
-        udpApp[k].APP_proxy_Enhanced_Control_Channel_MN     <--> networkLayer.NETWORK_LAYER_proxy_Enhanced_Control_Channel_MN++;
-        }
+        //  for k=0..numUdpApps-1{
+       // udpApp[k].APP_proxy_Enhanced_Control_Channel_MN     <--> networkLayer.NETWORK_LAYER_proxy_Enhanced_Control_Channel_MN++;
+       // }
 }
 

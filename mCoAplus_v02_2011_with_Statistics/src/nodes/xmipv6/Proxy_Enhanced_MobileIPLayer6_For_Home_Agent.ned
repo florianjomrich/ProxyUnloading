@@ -149,15 +149,15 @@ module Proxy_Enhanced_MobileIPLayer6_For_Home_Agent
         
         
         //PROXY ENHANCED - der Home-Agent muss mit allen Mobile-Nodes verbunden sein um Daten austauschen zu können!
-        for z=0..sizeof(NETWORK_LAYER_proxy_Enhanced_Control_Channel_HA)-1{
-         NETWORK_LAYER_proxy_Enhanced_Control_Channel_HA[z]<--> xMobileIPv6.xMIP_proxy_Enhanced_Control_Channel_HA++;
-        }
+       // for z=0..sizeof(NETWORK_LAYER_proxy_Enhanced_Control_Channel_HA)-1{
+       //  NETWORK_LAYER_proxy_Enhanced_Control_Channel_HA[z]<--> xMobileIPv6.xMIP_proxy_Enhanced_Control_Channel_HA++;
+       // }
       
-        for i=0..sizeof(NETWORK_LAYER_HA_TO_MN)-1{
-        NETWORK_LAYER_HA_TO_MN[i]<-->xMobileIPv6.XMIP_LAYER_HA_TO_MN++;
-        }
-        for k=0..sizeof(NETWORK_LAYER_HA_TO_CN)-1{
-        NETWORK_LAYER_HA_TO_CN[k]<-->xMobileIPv6.XMIP_LAYER_HA_TO_CN++;
-        }
+       // for i=0..sizeof(NETWORK_LAYER_HA_TO_MN)-1{
+       // NETWORK_LAYER_HA_TO_MN[i]<-->xMobileIPv6.XMIP_LAYER_HA_TO_MN++;
+       // }
+       // for k=0..sizeof(NETWORK_LAYER_HA_TO_CN)-1{
+       // NETWORK_LAYER_HA_TO_CN[k]<-->xMobileIPv6.XMIP_LAYER_HA_TO_CN++;
+      //  }
 }
 

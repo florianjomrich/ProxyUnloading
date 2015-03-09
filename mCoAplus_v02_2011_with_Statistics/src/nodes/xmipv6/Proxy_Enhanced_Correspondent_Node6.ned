@@ -142,11 +142,11 @@ module Proxy_Enhanced_Correspondent_Node6
         }
 
 //PROXY ENHANCED
-        from_to_HA <--> networkLayer.NETWORK_LAYER_CN_TO_HA;
-        from_to_MN <--> networkLayer.NETWORK_LAYER_CN_TO_MN;
+        //from_to_HA <--> networkLayer.NETWORK_LAYER_CN_TO_HA;
+        //from_to_MN <--> networkLayer.NETWORK_LAYER_CN_TO_MN;
         
-        for k=0..numUdpApps-1{
-        udpApp[k].APP_proxy_Enhanced_Control_Channel_CN     <--> networkLayer.NETWORK_LAYER_proxy_Enhanced_Control_Channel_CN++;
-        }
+       // for k=0..numUdpApps-1{
+       // udpApp[k].APP_proxy_Enhanced_Control_Channel_CN     <--> networkLayer.NETWORK_LAYER_proxy_Enhanced_Control_Channel_CN++;
+        //}
 }
 

@@ -87,10 +87,12 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
     	          ctrl->setDestAddr(ha.get6());
     	          ctrl->setHopLimit(10);
     	          msg->setControlInfo(ctrl);*/
-    	    cMessage* msg = new cMessage();
-    	    msg->setName("Message for the Proxy");
-    	    msg->setKind(PROXY_ENHANCED_BU_MESSAGE);
-    	    send(msg, "APP_proxy_Enhanced_Control_Channel_MN$o");
+
+
+    	  //  cMessage* msg = new cMessage();
+    	  //  msg->setName("Message for the Proxy");
+    	 //   msg->setKind(PROXY_ENHANCED_BU_MESSAGE);
+    	 //   send(msg, "APP_proxy_Enhanced_Control_Channel_MN$o");
 
     	}
 
