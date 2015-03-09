@@ -1,0 +1,24 @@
+file 86146935 1425830825                                        
+version 2
+run General-0-20150308-17:06:40-16180
+attr configname General
+attr datetime 20150308-17:06:40
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network SourceSink
+attr processid 16180
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 0  SourceSink.sink  arrivals  ETV
+attr interpolationmode  none
+0	438 21624957 2 1398102 0 698472.126463994254 699051 1 1 699051 699051
+0	21625395 22690728 1398104 2796204 698472.257933701457 1399813.623247560534 699051 1 1 699051 699051
+0	44316123 22991411 2796206 4194306 1399814.268285122021 2099649.530141866417 699051 1 1 699051 699051
+0	67307534 18839401 4194308 5339934 2099649.94360715567 2672031.401790785806 572814 1 1 572814 572814

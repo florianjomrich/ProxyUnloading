@@ -1,10 +1,14 @@
-16:11:02 **** Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+22:14:12 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
 make MODE=debug CONFIGNAME=gcc-debug all 
 cd src && make
 make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
-networklayer/xmipv6/ProxyEnhancedxMIPv6.cc
+applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.cc
+applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.cc: In member function ‘virtual void Proxy_Enhanced_MCoAVideoProxy::receiveStream(cPacket*)’:
+applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.cc:86:37: warning: statement has no effect [-Wunused-value]
+     nLost < 0 ? nLost * (-1) : nLost;
+                                     ^
 Creating shared library: ../out/gcc-debug/src/libinet.so
 make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
 
-16:11:09 Build Finished (took 6s.572ms)
+22:14:16 Build Finished (took 3s.510ms)
 

@@ -1,0 +1,8 @@
+22:14:16 **** Incremental Build of configuration gcc-debug for project testDesVectors ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/testDesVectors/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/testDesVectors/src'
+
+22:14:16 Build Finished (took 73ms)
+

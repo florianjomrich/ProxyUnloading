@@ -6,7 +6,7 @@
 import inet.linklayer.ethernet.EtherHub;
 import inet.nodes.ipv6.Router6;
 import inet.nodes.wireless.WirelessAPWithEthMCoA;
-import inet.nodes.xmipv6.CorrespondentNode6;
+import inet.nodes.xmipv6.Proxy_Enhanced_Correspondent_Node6;
 import inet.nodes.xmipv6.Proxy_Enhanced_HomeAgent6;
 import inet.nodes.xmipv6.Proxy_Enhanced_WirelessHost6Multi;
 import inet.world.ChannelControlExtended;
@@ -81,7 +81,7 @@ network VoIPMCoAMulti
             parameters:
                 @display("p=378,330");
         }
-        CN[total_cn]: CorrespondentNode6 {
+        CN[total_cn]: Proxy_Enhanced_Correspondent_Node6 {
             @display("p=239,488");
         }
         hub: EtherHub {
@@ -148,6 +148,17 @@ network VoIPMCoAMulti
 
         Rb.ethg++ <--> internetline <--> Ra.ethg++;
         hub.ethg++ <--> ethernetline <--> Rb.ethg++;
-
+        
+       
+        //PROXY ENHANCED CONTROLL MESSAGE CONNECTION
+        
+        //jeden CN und jeden MN mit dem Home-Agent verbinden für die Kontroll-Nachrichten
+       for i=0..total_mn-1 {
+           MN[i].from_to_HA<-->HA.from_to_MN++;
+        }
+        
+        for j=0..total_cn-1 {
+            CN[j].from_to_HA<-->HA.from_to_CN++;
+        }
 
 }

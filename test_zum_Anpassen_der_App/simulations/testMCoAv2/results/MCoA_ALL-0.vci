@@ -1,15 +1,15 @@
                                                                 
 version 2
-run MCoA_ALL-0-20150305-16:13:06-2938
+run MCoA_ALL-0-20150308-22:14:23-17466
 attr configname MCoA_ALL
-attr datetime 20150305-16:13:06
+attr datetime 20150308-22:14:23
 attr experiment MCoA_ALL
 attr inifile VoIPMCoACN.ini
 attr iterationvars ""
 attr iterationvars2 $repetition=0
 attr measurement ""
 attr network VoIPMCoAMulti
-attr processid 2938
+attr processid 17466
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -18,64 +18,64 @@ attr seedset 0
 
 vector 0  VoIPMCoAMulti.Ra.networkLayer.ipv6  IPv6Active_Event  ETV
 vector 48  VoIPMCoAMulti.CN[0].networkLayer.ipv6  IPv6Active_Event  ETV
-vector 63  VoIPMCoAMulti.HA.networkLayer.ipv6  IPv6Active_Event  ETV
-vector 117  VoIPMCoAMulti.MN[0].networkLayer.ipv6  IPv6Active_Event  ETV
-vector 137  VoIPMCoAMulti.MN[1].networkLayer.ipv6  IPv6Active_Event  ETV
-vector 143  VoIPMCoAMulti.R1.networkLayer.ipv6  IPv6Active_Event  ETV
-vector 222  VoIPMCoAMulti.Rb.networkLayer.ipv6  IPv6Active_Event  ETV
-vector 96  VoIPMCoAMulti.AP_HA.wlan.mac  RadioState  ETV
+vector 67  VoIPMCoAMulti.HA.networkLayer.ipv6  IPv6Active_Event  ETV
+vector 121  VoIPMCoAMulti.MN[0].networkLayer.ipv6  IPv6Active_Event  ETV
+vector 141  VoIPMCoAMulti.MN[1].networkLayer.ipv6  IPv6Active_Event  ETV
+vector 147  VoIPMCoAMulti.R1.networkLayer.ipv6  IPv6Active_Event  ETV
+vector 226  VoIPMCoAMulti.Rb.networkLayer.ipv6  IPv6Active_Event  ETV
+vector 100  VoIPMCoAMulti.AP_HA.wlan.mac  RadioState  ETV
 attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
 attr enumname  RadioState
-vector 95  VoIPMCoAMulti.AP_HA.wlan.mac  State  ETV
+vector 99  VoIPMCoAMulti.AP_HA.wlan.mac  State  ETV
 attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
 attr enumname  Ieee80211Mac
-vector 121  VoIPMCoAMulti.MN[0].wlan[0].mac  RadioState  ETV
+vector 125  VoIPMCoAMulti.MN[0].wlan[0].mac  RadioState  ETV
 attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
 attr enumname  RadioState
-vector 120  VoIPMCoAMulti.MN[0].wlan[0].mac  State  ETV
+vector 124  VoIPMCoAMulti.MN[0].wlan[0].mac  State  ETV
 attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
 attr enumname  Ieee80211Mac
-vector 126  VoIPMCoAMulti.MN[0].wlan[1].mac  RadioState  ETV
+vector 130  VoIPMCoAMulti.MN[0].wlan[1].mac  RadioState  ETV
 attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
 attr enumname  RadioState
-vector 125  VoIPMCoAMulti.MN[0].wlan[1].mac  State  ETV
+vector 129  VoIPMCoAMulti.MN[0].wlan[1].mac  State  ETV
 attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
 attr enumname  Ieee80211Mac
-vector 131  VoIPMCoAMulti.MN[0].wlan[2].mac  RadioState  ETV
+vector 135  VoIPMCoAMulti.MN[0].wlan[2].mac  RadioState  ETV
 attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
 attr enumname  RadioState
-vector 130  VoIPMCoAMulti.MN[0].wlan[2].mac  State  ETV
+vector 134  VoIPMCoAMulti.MN[0].wlan[2].mac  State  ETV
 attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
 attr enumname  Ieee80211Mac
-vector 141  VoIPMCoAMulti.MN[1].wlan[0].mac  RadioState  ETV
+vector 145  VoIPMCoAMulti.MN[1].wlan[0].mac  RadioState  ETV
 attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
 attr enumname  RadioState
-vector 140  VoIPMCoAMulti.MN[1].wlan[0].mac  State  ETV
+vector 144  VoIPMCoAMulti.MN[1].wlan[0].mac  State  ETV
 attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
 attr enumname  Ieee80211Mac
-vector 190  VoIPMCoAMulti.AP_1.wlan.mac  RadioState  ETV
+vector 194  VoIPMCoAMulti.AP_1.wlan.mac  RadioState  ETV
 attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
 attr enumname  RadioState
-vector 189  VoIPMCoAMulti.AP_1.wlan.mac  State  ETV
+vector 193  VoIPMCoAMulti.AP_1.wlan.mac  State  ETV
 attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
 attr enumname  Ieee80211Mac
-vector 208  VoIPMCoAMulti.AP_2.wlan.mac  RadioState  ETV
+vector 212  VoIPMCoAMulti.AP_2.wlan.mac  RadioState  ETV
 attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
 attr enumname  RadioState
-vector 207  VoIPMCoAMulti.AP_2.wlan.mac  State  ETV
+vector 211  VoIPMCoAMulti.AP_2.wlan.mac  State  ETV
 attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
 attr enumname  Ieee80211Mac
 vector 43  VoIPMCoAMulti.CN[0].udpApp[0]  "MCOA VIDEO Packet Sent"  ETV
-vector 305  VoIPMCoAMulti.Rb.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
-vector 172  VoIPMCoAMulti.R1.eth[2].queue  "queue length"  ETV
-vector 78  VoIPMCoAMulti.HA.eth[1].queue  "queue length"  ETV
-vector 158  VoIPMCoAMulti.R1.eth[1].queue  "queue length"  ETV
-vector 304  VoIPMCoAMulti.R1.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
-vector 265  VoIPMCoAMulti.HA.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
-vector 251  VoIPMCoAMulti.Ra.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
-vector 291  VoIPMCoAMulti.MN[1].networkLayer.neighbourDiscovery  "Starting DAD"  ETV
-vector 252  VoIPMCoAMulti.CN[0].networkLayer.neighbourDiscovery  "Starting DAD"  ETV
-vector 278  VoIPMCoAMulti.MN[0].networkLayer.neighbourDiscovery  "Starting DAD"  ETV
+vector 162  VoIPMCoAMulti.R1.eth[1].queue  "queue length"  ETV
+vector 82  VoIPMCoAMulti.HA.eth[1].queue  "queue length"  ETV
+vector 176  VoIPMCoAMulti.R1.eth[2].queue  "queue length"  ETV
+vector 256  VoIPMCoAMulti.CN[0].networkLayer.neighbourDiscovery  "Starting DAD"  ETV
+vector 309  VoIPMCoAMulti.Rb.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
+vector 255  VoIPMCoAMulti.Ra.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
+vector 308  VoIPMCoAMulti.R1.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
+vector 282  VoIPMCoAMulti.MN[0].networkLayer.neighbourDiscovery  "Starting DAD"  ETV
+vector 269  VoIPMCoAMulti.HA.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
+vector 295  VoIPMCoAMulti.MN[1].networkLayer.neighbourDiscovery  "Starting DAD"  ETV
 vector 3  VoIPMCoAMulti.Ra.eth[0].mac  framesSent  ETV
 vector 5  VoIPMCoAMulti.Ra.eth[0].mac  bytesSent  ETV
 vector 17  VoIPMCoAMulti.Ra.eth[1].mac  framesSent  ETV
@@ -84,64 +84,71 @@ vector 31  VoIPMCoAMulti.Ra.eth[2].mac  framesSent  ETV
 vector 33  VoIPMCoAMulti.Ra.eth[2].mac  bytesSent  ETV
 vector 51  VoIPMCoAMulti.CN[0].eth[0].mac  framesSent  ETV
 vector 53  VoIPMCoAMulti.CN[0].eth[0].mac  bytesSent  ETV
-vector 66  VoIPMCoAMulti.HA.eth[0].mac  framesSent  ETV
-vector 68  VoIPMCoAMulti.HA.eth[0].mac  bytesSent  ETV
-vector 80  VoIPMCoAMulti.HA.eth[1].mac  framesSent  ETV
-vector 82  VoIPMCoAMulti.HA.eth[1].mac  bytesSent  ETV
-vector 146  VoIPMCoAMulti.R1.eth[0].mac  framesSent  ETV
-vector 148  VoIPMCoAMulti.R1.eth[0].mac  bytesSent  ETV
-vector 160  VoIPMCoAMulti.R1.eth[1].mac  framesSent  ETV
-vector 162  VoIPMCoAMulti.R1.eth[1].mac  bytesSent  ETV
-vector 174  VoIPMCoAMulti.R1.eth[2].mac  framesSent  ETV
-vector 176  VoIPMCoAMulti.R1.eth[2].mac  bytesSent  ETV
-vector 225  VoIPMCoAMulti.Rb.eth[0].mac  framesSent  ETV
-vector 227  VoIPMCoAMulti.Rb.eth[0].mac  bytesSent  ETV
-vector 239  VoIPMCoAMulti.Rb.eth[1].mac  framesSent  ETV
-vector 241  VoIPMCoAMulti.Rb.eth[1].mac  bytesSent  ETV
-vector 67  VoIPMCoAMulti.HA.eth[0].mac  framesReceivedOK  ETV
-vector 69  VoIPMCoAMulti.HA.eth[0].mac  bytesReceivedOK  ETV
-vector 73  VoIPMCoAMulti.HA.eth[0].mac  framesPassedToHL  ETV
-vector 147  VoIPMCoAMulti.R1.eth[0].mac  framesReceivedOK  ETV
-vector 149  VoIPMCoAMulti.R1.eth[0].mac  bytesReceivedOK  ETV
-vector 153  VoIPMCoAMulti.R1.eth[0].mac  framesPassedToHL  ETV
+vector 70  VoIPMCoAMulti.HA.eth[0].mac  framesSent  ETV
+vector 72  VoIPMCoAMulti.HA.eth[0].mac  bytesSent  ETV
+vector 84  VoIPMCoAMulti.HA.eth[1].mac  framesSent  ETV
+vector 86  VoIPMCoAMulti.HA.eth[1].mac  bytesSent  ETV
+vector 150  VoIPMCoAMulti.R1.eth[0].mac  framesSent  ETV
+vector 152  VoIPMCoAMulti.R1.eth[0].mac  bytesSent  ETV
+vector 164  VoIPMCoAMulti.R1.eth[1].mac  framesSent  ETV
+vector 166  VoIPMCoAMulti.R1.eth[1].mac  bytesSent  ETV
+vector 178  VoIPMCoAMulti.R1.eth[2].mac  framesSent  ETV
+vector 180  VoIPMCoAMulti.R1.eth[2].mac  bytesSent  ETV
+vector 229  VoIPMCoAMulti.Rb.eth[0].mac  framesSent  ETV
+vector 231  VoIPMCoAMulti.Rb.eth[0].mac  bytesSent  ETV
+vector 243  VoIPMCoAMulti.Rb.eth[1].mac  framesSent  ETV
+vector 245  VoIPMCoAMulti.Rb.eth[1].mac  bytesSent  ETV
+vector 71  VoIPMCoAMulti.HA.eth[0].mac  framesReceivedOK  ETV
+vector 73  VoIPMCoAMulti.HA.eth[0].mac  bytesReceivedOK  ETV
+vector 77  VoIPMCoAMulti.HA.eth[0].mac  framesPassedToHL  ETV
+vector 151  VoIPMCoAMulti.R1.eth[0].mac  framesReceivedOK  ETV
+vector 153  VoIPMCoAMulti.R1.eth[0].mac  bytesReceivedOK  ETV
+vector 157  VoIPMCoAMulti.R1.eth[0].mac  framesPassedToHL  ETV
 vector 4  VoIPMCoAMulti.Ra.eth[0].mac  framesReceivedOK  ETV
 vector 6  VoIPMCoAMulti.Ra.eth[0].mac  bytesReceivedOK  ETV
 vector 10  VoIPMCoAMulti.Ra.eth[0].mac  framesPassedToHL  ETV
-vector 99  VoIPMCoAMulti.AP_HA.eth[0]  framesReceivedOK  ETV
-vector 101  VoIPMCoAMulti.AP_HA.eth[0]  bytesReceivedOK  ETV
-vector 105  VoIPMCoAMulti.AP_HA.eth[0]  framesPassedToHL  ETV
+vector 103  VoIPMCoAMulti.AP_HA.eth[0]  framesReceivedOK  ETV
+vector 105  VoIPMCoAMulti.AP_HA.eth[0]  bytesReceivedOK  ETV
+vector 109  VoIPMCoAMulti.AP_HA.eth[0]  framesPassedToHL  ETV
 vector 18  VoIPMCoAMulti.Ra.eth[1].mac  framesReceivedOK  ETV
 vector 20  VoIPMCoAMulti.Ra.eth[1].mac  bytesReceivedOK  ETV
 vector 24  VoIPMCoAMulti.Ra.eth[1].mac  framesPassedToHL  ETV
-vector 193  VoIPMCoAMulti.AP_1.eth[0]  framesReceivedOK  ETV
-vector 195  VoIPMCoAMulti.AP_1.eth[0]  bytesReceivedOK  ETV
-vector 199  VoIPMCoAMulti.AP_1.eth[0]  framesPassedToHL  ETV
-vector 211  VoIPMCoAMulti.AP_2.eth[0]  framesReceivedOK  ETV
-vector 213  VoIPMCoAMulti.AP_2.eth[0]  bytesReceivedOK  ETV
-vector 217  VoIPMCoAMulti.AP_2.eth[0]  framesPassedToHL  ETV
-vector 92  VoIPMCoAMulti.AP_HA.relayUnit  "buffer level"  ETV
-vector 186  VoIPMCoAMulti.AP_1.relayUnit  "buffer level"  ETV
-vector 204  VoIPMCoAMulti.AP_2.relayUnit  "buffer level"  ETV
-vector 93  VoIPMCoAMulti.AP_HA.wlan.mgmt  "queue length"  ETV
-vector 187  VoIPMCoAMulti.AP_1.wlan.mgmt  "queue length"  ETV
-vector 205  VoIPMCoAMulti.AP_2.wlan.mgmt  "queue length"  ETV
-vector 226  VoIPMCoAMulti.Rb.eth[0].mac  framesReceivedOK  ETV
-vector 228  VoIPMCoAMulti.Rb.eth[0].mac  bytesReceivedOK  ETV
-vector 232  VoIPMCoAMulti.Rb.eth[0].mac  framesPassedToHL  ETV
+vector 197  VoIPMCoAMulti.AP_1.eth[0]  framesReceivedOK  ETV
+vector 199  VoIPMCoAMulti.AP_1.eth[0]  bytesReceivedOK  ETV
+vector 203  VoIPMCoAMulti.AP_1.eth[0]  framesPassedToHL  ETV
+vector 215  VoIPMCoAMulti.AP_2.eth[0]  framesReceivedOK  ETV
+vector 217  VoIPMCoAMulti.AP_2.eth[0]  bytesReceivedOK  ETV
+vector 221  VoIPMCoAMulti.AP_2.eth[0]  framesPassedToHL  ETV
+vector 96  VoIPMCoAMulti.AP_HA.relayUnit  "buffer level"  ETV
+vector 190  VoIPMCoAMulti.AP_1.relayUnit  "buffer level"  ETV
+vector 208  VoIPMCoAMulti.AP_2.relayUnit  "buffer level"  ETV
+vector 97  VoIPMCoAMulti.AP_HA.wlan.mgmt  "queue length"  ETV
+vector 191  VoIPMCoAMulti.AP_1.wlan.mgmt  "queue length"  ETV
+vector 209  VoIPMCoAMulti.AP_2.wlan.mgmt  "queue length"  ETV
+vector 230  VoIPMCoAMulti.Rb.eth[0].mac  framesReceivedOK  ETV
+vector 232  VoIPMCoAMulti.Rb.eth[0].mac  bytesReceivedOK  ETV
+vector 236  VoIPMCoAMulti.Rb.eth[0].mac  framesPassedToHL  ETV
 vector 32  VoIPMCoAMulti.Ra.eth[2].mac  framesReceivedOK  ETV
 vector 34  VoIPMCoAMulti.Ra.eth[2].mac  bytesReceivedOK  ETV
 vector 38  VoIPMCoAMulti.Ra.eth[2].mac  framesPassedToHL  ETV
-vector 240  VoIPMCoAMulti.Rb.eth[1].mac  framesReceivedOK  ETV
-vector 242  VoIPMCoAMulti.Rb.eth[1].mac  bytesReceivedOK  ETV
-vector 246  VoIPMCoAMulti.Rb.eth[1].mac  framesPassedToHL  ETV
+vector 244  VoIPMCoAMulti.Rb.eth[1].mac  framesReceivedOK  ETV
+vector 246  VoIPMCoAMulti.Rb.eth[1].mac  bytesReceivedOK  ETV
+vector 250  VoIPMCoAMulti.Rb.eth[1].mac  framesPassedToHL  ETV
 vector 52  VoIPMCoAMulti.CN[0].eth[0].mac  framesReceivedOK  ETV
 vector 54  VoIPMCoAMulti.CN[0].eth[0].mac  bytesReceivedOK  ETV
 vector 58  VoIPMCoAMulti.CN[0].eth[0].mac  framesPassedToHL  ETV
-vector 98  VoIPMCoAMulti.AP_HA.eth[0]  framesSent  ETV
-vector 100  VoIPMCoAMulti.AP_HA.eth[0]  bytesSent  ETV
-vector 81  VoIPMCoAMulti.HA.eth[1].mac  framesReceivedOK  ETV
-vector 83  VoIPMCoAMulti.HA.eth[1].mac  bytesReceivedOK  ETV
-vector 87  VoIPMCoAMulti.HA.eth[1].mac  framesPassedToHL  ETV
-vector 110  VoIPMCoAMulti.MN[0].udpApp[0]  "MCOA VIDEO Packet Rcv"  ETV
-vector 112  VoIPMCoAMulti.MN[0].udpApp[0]  "MCOA VIDEO Delay"  ETV
-vector 111  VoI
+vector 146  VoIPMCoAMulti.MN[1].wlan[0].radio  "MAC loss rate"  ETV
+vector 102  VoIPMCoAMulti.AP_HA.eth[0]  framesSent  ETV
+vector 104  VoIPMCoAMulti.AP_HA.eth[0]  bytesSent  ETV
+vector 85  VoIPMCoAMulti.HA.eth[1].mac  framesReceivedOK  ETV
+vector 87  VoIPMCoAMulti.HA.eth[1].mac  bytesReceivedOK  ETV
+vector 91  VoIPMCoAMulti.HA.eth[1].mac  framesPassedToHL  ETV
+vector 114  VoIPMCoAMulti.MN[0].udpApp[0]  "MCOA VIDEO Packet Rcv"  ETV
+vector 116  VoIPMCoAMulti.MN[0].udpApp[0]  "MCOA VIDEO Delay"  ETV
+vector 115  VoIPMCoAMulti.MN[0].udpApp[0]  "MCOA VIDEO Packet Lost"  ETV
+vector 126  VoIPMCoAMulti.MN[0].wlan[0].radio  "MAC loss rate"  ETV
+vector 49  VoIPMCoAMulti.CN[0].eth[0].queue  "queue length"  ETV
+vector 253  VoIPMCoAMulti.Rb.eth[1].mac  collisions  ETV
+vector 254  VoIPMCoAMulti.Rb.eth[1].mac  backoffs  ETV
+vector 61  VoIPMCoAMulti.CN[0].eth[0].mac  collisions  ETV
+vector 46  VoIPMCoAMulti.CN[0].pingApp  "PING: Ping Request"  ETV

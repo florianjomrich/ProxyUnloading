@@ -1,0 +1,3 @@
+# Partial Tkenv config file -- see $HOME/.tkenvrc as well
+inspector "SourceSink" "SourceSink" "2" "607x337+5+192:normal"
+
