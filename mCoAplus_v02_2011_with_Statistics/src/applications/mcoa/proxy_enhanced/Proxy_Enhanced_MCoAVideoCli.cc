@@ -83,12 +83,18 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
 
     	}
 
+
+
     }
     else
     {
-    	if (dynamic_cast<MCoAVideoStreaming*>(msg)){
-    		receiveStream(PK(msg));
-    	}
+    //	if (dynamic_cast<MCoAVideoStreaming*>(msg)){
+    //		receiveStream(PK(msg));
+    //	}
+
+    	if(msg->getKind()==PROXY_CN_MESSAGE_TO_MOBILE_NODE){
+    	            cout<<"Client App hat einen Nachricht von CN erhalten:"<<msg->getName()<<endl;
+    	        }
     }
 }
 

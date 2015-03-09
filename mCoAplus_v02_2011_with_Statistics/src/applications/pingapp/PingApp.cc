@@ -205,11 +205,11 @@ void PingApp::processPingResponse(PingPayload *msg)
 
     if (printPing)
     {
-        cout << getFullPath() << ": reply of " << std::dec << msg->getByteLength()
+       /* cout << getFullPath() << ": reply of " << std::dec << msg->getByteLength()
              << " bytes from " << src
              << " icmp_seq=" << msg->getSeqNo() << " ttl=" << msgHopCount
              << " time=" << (rtt * 1000) << " msec"
-             << " (" << msg->getName() << ")" << endl;
+             << " (" << msg->getName() << ")" << endl; */
     }
 
     // update statistics

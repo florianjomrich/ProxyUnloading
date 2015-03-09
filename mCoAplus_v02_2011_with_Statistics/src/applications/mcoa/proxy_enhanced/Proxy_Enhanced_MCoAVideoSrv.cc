@@ -18,6 +18,7 @@
 #include "Proxy_Enhanced_MCoAVideoSrv.h"
 #include "UDPControlInfo_m.h"
 #include "IPAddressResolver.h"
+#include "FlowBindingUpdateMessage.h"
 
 using std::cout;
 
@@ -51,6 +52,8 @@ void Proxy_Enhanced_MCoAVideoSrv::initialize()
     localPort = par("localPort");
     int destPort = par("destPort");
     simtime_t startTime = par("startTime");
+
+    simtime_t hurzTime = 10;
 
     const char *address = par("destAddresses");
 	IPvXAddress cliAddr = IPAddressResolver().resolve(address);
@@ -86,6 +89,10 @@ void Proxy_Enhanced_MCoAVideoSrv::initialize()
 		//timer->setContextPointer(d);
 		scheduleAt(startTime, timer);
     }
+
+    cMessage *hurz = new cMessage("HURZ");
+    hurz->setKind(PROXY_CN_MESSAGE_TO_MOBILE_NODE);
+    scheduleAt(hurzTime,hurz);
 }
 
 void Proxy_Enhanced_MCoAVideoSrv::finish()
@@ -106,10 +113,19 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
 
         //###########################################
     	//Proxy_Unloading FJ
-    	if(msg->getName()=="Proxy_Context_Message"){
-    	    cout<<"Proxy Context wurde gestartet"<<endl;
-    	}
+    	if(msg->getKind()==PROXY_CN_MESSAGE_TO_MOBILE_NODE){
+    	    cout<<"CN will eine Nachricht an MN senden"<<endl;
 
+    	    IPvXAddress mn = IPAddressResolver().resolve("MN[0]");
+
+    	    FlowBindingUpdateMessage* halloWelt = new FlowBindingUpdateMessage();
+    	       halloWelt->setName(" HALLO WELT gesendet von CN");
+    	       halloWelt->setKind(PROXY_CN_MESSAGE_TO_MOBILE_NODE);
+
+
+
+    	    sendToUDPMCOA(halloWelt, localPort, mn, 1000, true);
+    	}
 
 
     	//###########################################

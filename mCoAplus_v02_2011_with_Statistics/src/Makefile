@@ -1077,6 +1077,7 @@ $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.o: application
 	networklayer/mcoa/IPv6TunAdr.h
 $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.o: applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
+	applications/mcoa/proxy_enhanced/FlowBindingUpdateMessage.h \
 	applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.h \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \
