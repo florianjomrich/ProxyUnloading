@@ -15,57 +15,83 @@
 // along with this program; if not, see <http://www.gnu.org/licenses/>.
 //
 
-
-//
-// based on the video streaming app of the similar name by Johnny Lai
-//
-
 #include "Proxy_Enhanced_MCoAVideoCli.h"
+#include "UDPControlInfo_m.h"
 #include "IPAddressResolver.h"
-#include "IPv6ControlInfo.h"
-
-#define PROXY_ENHANCED_BU_MESSAGE  42
 
 using std::cout;
 
 Define_Module(Proxy_Enhanced_MCoAVideoCli);
 
+inline std::ostream& operator<<(std::ostream& out, const Proxy_Enhanced_MCoAVideoCli::VideoStreamData& d) {
+    out << "client=" << d.clientAddr << ":" << d.clientPort
+        << "  size=" << d.videoSize << "  pksent=" << d.numPkSent << "  bytesleft=" << d.bytesLeft;
+    return out;
+}
+Proxy_Enhanced_MCoAVideoCli::Proxy_Enhanced_MCoAVideoCli() {
+	// TODO Auto-generated constructor stub
+
+}
+
+Proxy_Enhanced_MCoAVideoCli::~Proxy_Enhanced_MCoAVideoCli() {
+	// TODO Auto-generated destructor stub
+	for (unsigned int i=0; i<streamVector.size(); i++)
+	        delete streamVector[i];
+}
 
 void Proxy_Enhanced_MCoAVideoCli::initialize()
 {
-    //PROXY UNLOADING FJ
-    cout<<"Initializing Proxy_Enhanced_MCoAVideoCli module"<<endl;
-    startTime = par("startTime");
-
-
 	MCoAUDPBase::startMCoAUDPBase();
 
-	PktRcv.setName("MCOA VIDEO Packet Rcv");
-	PktLost.setName("MCOA VIDEO Packet Lost");
-	PktDelay.setName("MCOA VIDEO Delay");
+   // waitInterval = &par("waitInterval");
+  //  packetLen = &par("packetLen");
+   // videoSize = &par("videoSize");
+    localPort = par("localPort");
+    int destPort = par("destPort");
+    simtime_t startTime = par("startTime");
 
-    lastSeq=0;
+  //  const char *address = par("CN[0]");
 
-    int localPort = par("localPort");
+	//cout<< "CLIENT ADDRESS:"<<cliAddr<<endl;
+	//if (cliAddr.isUnspecified())
+	//{
+	/////	return;
+	//}
+
+    WATCH_PTRVECTOR(streamVector);
+
     bindToPort(localPort);
 
-    if (startTime>=0){
-        cMessage *start_proxying_context = new cMessage("Starting_Proxying_Context");
-        //timer->setContextPointer(d);
-        start_proxying_context->setKind(PROXY_CONTEXT_START);
-        scheduleAt(startTime, start_proxying_context);
-    }
+    PktSent.setName("MCOA VIDEO Packet Sent");
 
+
+
+    //Support only for one client... extend if needed
+    //FIXME:
+   // VideoStreamData *d = new VideoStreamData;
+	//d->clientAddr = cliAddr;
+	//d->clientPort = destPort;
+	//d->videoSize = (*videoSize);
+	//d->bytesLeft = d->videoSize;
+	//d->numPkSent = 0;
+	//d->seqTx = 0; //First Request
+	//streamVector.push_back(d);
+
+
+    if (startTime>=0){
+    	cMessage *timer = new cMessage("UDPVideoStart");
+		//timer->setContextPointer(d);
+		scheduleAt(startTime, timer);
+    }
 }
 
 void Proxy_Enhanced_MCoAVideoCli::finish()
 {
-	//Delete StatsPkt
-	StatsPkt.clear();
-
+    //recordScalar("streams served", numStreams);
+    //recordScalar("packets sent", numPkSent);
 }
 
-void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
+void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage *msg)
 {
     if (msg->isSelfMessage())
     {
@@ -74,92 +100,67 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
 
 			return; // and that's it!
 		}
-    	if(msg->getKind()== PROXY_CONTEXT_START){
-    	    cout<<"!! Proxying Context Started !!"<<endl;
 
-    	    //send new BindingUpdate-Message to Proxy-Server
-    	    //Configuration is done through the VoIPMCoAN.ini - MN[0] implicitly expected because of this configuration there
-    	  //  IPvXAddress ha = IPAddressResolver().resolve("HA");
-    	   // IPvXAddress me = IPAddressResolver().resolve("MN[0]");
-
-    	    /*IPv6ControlInfo *ctrl = new IPv6ControlInfo();
-    	          ctrl->setSrcAddr(me.get6());
-    	          ctrl->setDestAddr(ha.get6());
-    	          ctrl->setHopLimit(10);
-    	          msg->setControlInfo(ctrl);*/
-
-
-    	  //  cMessage* msg = new cMessage();
-    	  //  msg->setName("Message for the Proxy");
-    	 //   msg->setKind(PROXY_ENHANCED_BU_MESSAGE);
-    	 //   send(msg, "APP_proxy_Enhanced_Control_Channel_MN$o");
-
-    	}
-
+        // timer for a particular video stream expired, send packet
+    	sendControlData(msg);
     }
-    else
-    {
-    	if (dynamic_cast<MCoAVideoStreaming*>(msg)){
-    		receiveStream(PK(msg));
-    	}
-    }
+
+}
+void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage *timer)
+{
+    cout<<"@@ Send Control Data @@" << endl;
+    IPvXAddress cliAddr = IPAddressResolver().resolve("HA");
+    cout<<"@@ HA-Adress:" << cliAddr << endl;
+    cPacket *buPaket = new cPacket();
+    buPaket->setName("HALLO WELT");
+
+    sendToUDPMCOA(buPaket, localPort, cliAddr, 1000, true);
 }
 
 
-void Proxy_Enhanced_MCoAVideoCli::receiveStream(cPacket *msg)
+void Proxy_Enhanced_MCoAVideoCli::sendStreamData(cMessage *timer)
 {
-	MCoAVideoStreaming *pkt_video = (MCoAVideoStreaming *)(msg);
-    cout << "Video stream packet:\n";
-    int nLost;
+    //Be careful with statistics if multiple clients exist
+	for (uint i=0; i< streamVector.size();i++){
+		VideoStreamData *d = streamVector[i];
+		//VideoStreamData *d = (VideoStreamData *) timer->getContextPointer();
 
-    nLost = (pkt_video->getCurSeq() - lastSeq);
-    nLost < 0 ? nLost * (-1) : nLost;
+		char msgName[32];
+		sprintf(msgName,"MCoAUDPVIDEO");
 
-    long auxseqRx = pkt_video->getCurSeq();
-    SPkt::iterator pos = StatsPkt.find(auxseqRx);
-	if (pos != StatsPkt.end()) {
-		bool pktTreated;
-		pktTreated = (pos->second).treated;
+		// generate and send a packet
+		//cPacket *pkt = new cPacket("VideoStrmPk");
+		MCoAVideoStreaming *pkt_video = new MCoAVideoStreaming(msgName);
+		long pktLen = packetLen->longValue();
+		if (pktLen > d->bytesLeft)
+			pktLen = d->bytesLeft;
+		//pkt->setByteLength(pktLen);
+		d->seqTx = d->seqTx +1;
 
-		if (!pktTreated){
-			(pos->second).treated = true;
-			(pos->second).delay = pkt_video->getCurTime();
-			PktRcv.record(auxseqRx);
-			//pktRcvDelay.record(packet->getCurTime());
-			PktDelay.record(simTime().dbl() - pkt_video->getCurTime());
+		pkt_video->setByteLength(pktLen);
+		pkt_video->setCurSeq(d->seqTx);
+		pkt_video->setCurTime(simTime().dbl());
+
+		//sendToUDP(pkt, serverPort, d->clientAddr, d->clientPort);
+		sendToUDPMCOA(pkt_video, localPort, d->clientAddr, d->clientPort, true);
+
+		d->bytesLeft -= pktLen;
+		d->numPkSent++;
+
+		//Statistics
+		PktSent.record(pkt_video->getCurSeq());
+
+		// reschedule timer if there's bytes left to send
+		if (d->bytesLeft!=0)
+		{
+			simtime_t interval = (*waitInterval);
+			scheduleAt(simTime()+interval, timer);
 		}
-	}else{//Insert packet into structure
-		EV << "MCOA Video Inserting packet into Stats structure" << endl;
-		statPacketVIDEO auxS;
-		auxS.seq = auxseqRx;
-		auxS.treated = true;
-		auxS.delay = pkt_video->getCurTime();
-		StatsPkt.insert( std::make_pair(auxseqRx, auxS));
-
-		PktRcv.record(auxseqRx);
-		//pktRcvDelay.record(packet->getCurTime());
-		PktDelay.record(simTime().dbl() - pkt_video->getCurTime());
+		else
+		{
+			delete timer;
+			// TBD find VideoStreamData in streamVector and delete it
+		}
 	}
-
-
-
-    /*
-     * May not be always true, since it can arrive unordered,
-     * just to have a notation when happens the worst packet loss
-     *
-     * to determine packet loss do: sent - Rcv
-     */
-    if ((nLost) > 1){
-    	// There is packet loss
-    	PktLost.record(nLost);
-    	EV << "There was packet loss " << nLost << " at Sim time " << simTime() <<  endl;
-    }
-    //PktRcv.record(pkt_video->getCurSeq());
-    //PktDelay.record(simTime().dbl() - pkt_video->getCurTime());
-    lastSeq = pkt_video->getCurSeq();
-
-
-
-    delete msg;
 }
 

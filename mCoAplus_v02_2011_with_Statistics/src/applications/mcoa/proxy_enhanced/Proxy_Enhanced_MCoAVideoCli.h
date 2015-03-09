@@ -15,62 +15,61 @@
 // along with this program; if not, see <http://www.gnu.org/licenses/>.
 //
 
+#ifndef MCOAVIDEOSRV_H_
+#define MCOAVIDEOSRV_H_
 
-//
-// based on the video streaming app of the similar name by Johnny Lai
-//
-
-#ifndef __INET_UDPVIDEOCLI_H
-#define __INET_UDPVIDEOCLI_H
-
+#include <vector>
 #include <omnetpp.h>
 #include "MCoAUDPBase.h"
 #include "MCoAVideoStreaming_m.h"
 
-/**
- * A "Realtime" VideoStream client application.
- *
- * Basic video stream application. Clients receive streams from server.
- * video back.
- */
 class INET_API Proxy_Enhanced_MCoAVideoCli : public MCoAUDPBase
 {
-  protected:
-
-	struct statPacketVIDEO{
-		long seq;
-		bool treated;
-		long delay;
+public:
+	 /**
+	 * Stores information on a video stream
+	 */
+	struct VideoStreamData
+	{
+		IPvXAddress clientAddr;   ///< client address
+		int clientPort;           ///< client UDP port
+		long videoSize;           ///< total size of video
+		long bytesLeft;           ///< bytes left to transmit
+		long numPkSent;           ///< number of packets sent
+		long seqTx;				 // Sequence transmitted
 	};
-	typedef std::map<long , statPacketVIDEO> SPkt;
-	SPkt StatsPkt;
 
-    // statistics
-    cOutVector PktRcv;
-    cOutVector PktLost;
-    cOutVector PktDelay;
+protected:
+    typedef std::vector<VideoStreamData *> VideoStreamVector;
+    VideoStreamVector streamVector;
 
-    long lastSeq;
+    // module parameters
+    int localPort;
+    cPar *waitInterval;
+    cPar *packetLen;
+    cPar *videoSize;
 
-    //For ProxyUnloading FJ
-     simtime_t startTime;
+    cOutVector PktSent;
+public:
 
+    Proxy_Enhanced_MCoAVideoCli();
+	virtual ~Proxy_Enhanced_MCoAVideoCli();
 
-  protected:
-    ///@name Overridden cSimpleModule functions
+protected:
+    // process stream request from client
+    //virtual void processStreamRequest(cMessage *msg);
+
+    // send a packet of the given video stream
+    virtual void sendControlData(cMessage *timer);
+    virtual void sendStreamData(cMessage *timer);
+
+    ///@name Overidden cSimpleModule functions
     //@{
     virtual void initialize();
     virtual void finish();
-    virtual void handleMessage(cMessage *msg);
+    virtual void handleMessage(cMessage* msg);
     //@}
 
-  protected:
-
-    virtual void receiveStream(cPacket *msg);
 };
 
-
-#endif
-
-
-
+#endif /* MCoAVideoSrv_H_ */

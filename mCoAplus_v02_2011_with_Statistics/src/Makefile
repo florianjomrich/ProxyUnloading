@@ -1039,16 +1039,11 @@ $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.o: applications/
 	base/NotifierConsts.h \
 	networklayer/contract/IPAddress.h \
 	networklayer/contract/IPAddressResolver.h \
-	networklayer/contract/IPProtocolId_m.h \
 	networklayer/contract/IPv6Address.h \
-	networklayer/contract/IPv6ControlInfo.h \
-	networklayer/contract/IPv6ControlInfo_m.h \
 	networklayer/contract/IPvXAddress.h \
-	networklayer/ipv6/IPv6Datagram.h \
-	networklayer/ipv6/IPv6Datagram_m.h \
-	networklayer/ipv6/IPv6ExtensionHeaders_m.h \
 	networklayer/mcoa/IPv6PrefAdr.h \
-	networklayer/mcoa/IPv6TunAdr.h
+	networklayer/mcoa/IPv6TunAdr.h \
+	transport/contract/UDPControlInfo_m.h
 $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.o: applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
 	applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.h \
