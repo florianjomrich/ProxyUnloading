@@ -48,5 +48,6 @@ simple Proxy_Enhanced_MCoAVideoCli like MCoAUDPBase
         input udpIn;
         output udpOut;
         inout APP_proxy_Enhanced_Control_Channel_MN;
+        input fromBindingUpdateList;
 }
 

@@ -29,6 +29,7 @@
 // secret key used in RR by CN
 #define KCN	1
 
+using std::cout;
 
 Define_Module(BindingUpdateList);
 
@@ -140,7 +141,7 @@ void BindingUpdateList::addOrUpdateBUL(const KeyMCoABind& keyMCoA, const IPv6Add
 	entry->sequenceNumber = seq; //seq number of the last BU sent.
 	entry->BAck = false;
 
-	EV << "[MCoA]-addOrUpdateBUL Added Adr in BUL" << dest << "," << keyMCoA.Addr << " with BID " << keyMCoA.BID  << " for " << keyMCoA.getDestBID()
+	/*cout*/EV << "[MCoA]-addOrUpdateBUL Added Adr in BUL " << dest << "," << keyMCoA.Addr << " with BID " << keyMCoA.BID  << " for " << keyMCoA.getDestBID()
 			<< " Expire " << entry->bindingExpiry
 			<< " with Sequence " << entry->sequenceNumber
 			<< endl;

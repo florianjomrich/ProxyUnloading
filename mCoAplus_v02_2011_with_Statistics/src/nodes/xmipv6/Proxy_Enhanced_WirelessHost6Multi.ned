@@ -171,7 +171,9 @@ module Proxy_Enhanced_WirelessHost6Multi
         }
 
         //PROXY ENHANCED CONNECTION
-
+        for i=0..numUdpApps-1 {
+		buList.toProxyApp++-->udpApp[i].fromBindingUpdateList;
+        }
 
 }
 
