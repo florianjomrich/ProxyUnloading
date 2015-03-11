@@ -27,6 +27,7 @@
 
 
 #define PROXY_ENHANCED_BU_MESSAGE  42
+#define PROXY_CN_MESSAGE_TO_MOBILE_NODE 43
 
 using std::cout;
 
@@ -91,7 +92,7 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
     //	if (dynamic_cast<MCoAVideoStreaming*>(msg)){
     //		receiveStream(PK(msg));
     //	}
-
+      cout<<"Client App hat einen Nachricht von CN erhalten:"<<msg->getName()<<endl;
     	if(msg->getKind()==PROXY_CN_MESSAGE_TO_MOBILE_NODE){
     	            cout<<"Client App hat einen Nachricht von CN erhalten:"<<msg->getName()<<endl;
     	        }
