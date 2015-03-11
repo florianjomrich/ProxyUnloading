@@ -18,7 +18,7 @@
 #ifndef MCOAVIDEOSRV_H_
 #define MCOAVIDEOSRV_H_
 
-#define CN_APP_MESSAGE 50
+
 
 #include <vector>
 #include <omnetpp.h>

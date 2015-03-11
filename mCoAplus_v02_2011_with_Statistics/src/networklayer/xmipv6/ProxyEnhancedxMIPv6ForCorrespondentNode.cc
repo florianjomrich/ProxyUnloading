@@ -58,6 +58,8 @@ void ProxyEnhancedxMIPv6ForCorrespondentNode::processBUMessage(BindingUpdate* bu
                       msg->setName("Message for the CN UDP APP SERVER");
                       msg->setKind(CN_APP_MESSAGE);
                       msg->setHomeAddress(HoA);
+                      msg->setCareOfAddress(CoA);
+                      msg->setDestinationAddress(destAddress);
 
 
                       send(msg, "xMIP_proxy_Enhanced_Control_Channel_CN$o",0); //$o muss angegeben werden um über einen inout-Port etwas nach draußen senden zu können*/

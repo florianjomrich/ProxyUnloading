@@ -21,6 +21,9 @@
 #include "FlowBindingUpdateMessage.h"
 #include "BindingUpdateInformationtoAPPmessageCN.h"
 
+#define CN_APP_MESSAGE 50
+#define PROXY_MESSAGE_FROM_CN_TO_MN 51
+
 using std::cout;
 
 Define_Module(Proxy_Enhanced_MCoAVideoSrv);
@@ -141,9 +144,16 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
         if(msg->getKind()==CN_APP_MESSAGE){
             BindingUpdateInformation_to_APP_message_CN *meineMessage = (BindingUpdateInformation_to_APP_message_CN*) msg;
 
-            cout<< "HEIMAT ADRESSE ERHAlTEN:"<<meineMessage->HoA;
+            cout<< "HEIMAT ADRESSE ERHAlTEN:"<<meineMessage->HoA<<endl;
+            cout<< "CARE OF ADRESSE ERHALTEN:"<<meineMessage->CoA<<endl;
+
+            cPacket *testData = new cPacket();
+            testData->setName("HALALALAOAOOAOAOAOAOAOAA ");
+            testData->setKind(PROXY_MESSAGE_FROM_CN_TO_MN);
+
+            sendToUDPMCOA(testData, localPort, meineMessage->CoA, 1000, true);
         }
-        cout <<"CN received:"<< msg->getName() <<endl;
+        //cout <<"CN received:"<< msg->getName() <<endl;
 
     }
 
