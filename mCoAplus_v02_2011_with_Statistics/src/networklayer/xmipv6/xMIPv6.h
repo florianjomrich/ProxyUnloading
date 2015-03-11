@@ -395,7 +395,7 @@ protected:
 	/**
 	 * Update the an entry of the BUL with the provided parameters.
 	 */
-	void updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA, const IPv6Address& dest, const IPv6Address& CoA, InterfaceEntry* ie, const simtime_t sendTime); //04.06.07
+	virtual void updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA, const IPv6Address& dest, const IPv6Address& CoA, InterfaceEntry* ie, const simtime_t sendTime); //04.06.07
 
 	/**
 	 * This method takes an interface and a destination address and returns the appropriate IfEntry for an BU.

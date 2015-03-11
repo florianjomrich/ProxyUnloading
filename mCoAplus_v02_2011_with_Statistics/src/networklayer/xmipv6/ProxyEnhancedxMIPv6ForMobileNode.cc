@@ -47,3 +47,13 @@ void ProxyEnhancedxMIPv6ForMobileNode::handleMessage(cMessage *msg){
     }
 
 }
+
+void ProxyEnhancedxMIPv6ForMobileNode::updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA,  const IPv6Address& dest, const IPv6Address& CoA, InterfaceEntry* ie, const simtime_t sendTime)
+{
+    xMIPv6::updateBUL(bu, keyMCoA, dest,  CoA, ie,  sendTime);
+    cout<<"Proxy Enhanced Mobile Node aktulaisiert gerade seien BindingUpdatelist"<<endl;
+
+
+}
+
+

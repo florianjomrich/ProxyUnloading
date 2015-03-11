@@ -23,6 +23,7 @@ public:
     ProxyEnhancedxMIPv6ForMobileNode();
     virtual ~ProxyEnhancedxMIPv6ForMobileNode();
     virtual void handleMessage(cMessage *msg);
+   virtual void updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA,  const IPv6Address& dest, const IPv6Address& CoA, InterfaceEntry* ie, const simtime_t sendTime);
 };
 
 #endif /* PROXYENHANCEDXMIPV6_H_ */
