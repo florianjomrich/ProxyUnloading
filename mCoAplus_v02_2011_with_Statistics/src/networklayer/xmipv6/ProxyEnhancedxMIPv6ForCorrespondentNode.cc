@@ -17,6 +17,7 @@
 #include <BindingUpdateInformationtoAPPmessageCN.h>
 
 #define PROXY_ENHANCED_BU_MESSAGE  42
+#define CN_APP_MESSAGE 50
 
 Define_Module(ProxyEnhancedxMIPv6ForCorrespondentNode);
 
@@ -55,6 +56,7 @@ void ProxyEnhancedxMIPv6ForCorrespondentNode::processBUMessage(BindingUpdate* bu
 
     BindingUpdateInformation_to_APP_message_CN* msg = new BindingUpdateInformation_to_APP_message_CN();
                       msg->setName("Message for the CN UDP APP SERVER");
+                      msg->setKind(CN_APP_MESSAGE);
                       msg->setHomeAddress(HoA);
 
 

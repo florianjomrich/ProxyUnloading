@@ -1093,6 +1093,7 @@ $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.o: applications/
 	networklayer/contract/IPvXAddress.h \
 	networklayer/mcoa/IPv6PrefAdr.h \
 	networklayer/mcoa/IPv6TunAdr.h \
+	networklayer/xmipv6/BindingUpdateInformationtoAPPmessageCN.h \
 	transport/contract/UDPControlInfo_m.h
 $O/applications/mcoa/udpbase/MCoAUDPBase.o: applications/mcoa/udpbase/MCoAUDPBase.cc \
 	applications/mcoa/udpbase/MCoAUDPBase.h \

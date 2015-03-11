@@ -19,6 +19,7 @@
 #include "UDPControlInfo_m.h"
 #include "IPAddressResolver.h"
 #include "FlowBindingUpdateMessage.h"
+#include "BindingUpdateInformationtoAPPmessageCN.h"
 
 using std::cout;
 
@@ -137,7 +138,13 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
     }
 
     else{
+        if(msg->getKind()==CN_APP_MESSAGE){
+            BindingUpdateInformation_to_APP_message_CN *meineMessage = (BindingUpdateInformation_to_APP_message_CN*) msg;
+
+            cout<< "HEIMAT ADRESSE ERHAlTEN:"<<meineMessage->HoA;
+        }
         cout <<"CN received:"<< msg->getName() <<endl;
+
     }
 
 
