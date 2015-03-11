@@ -136,6 +136,10 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
 
     }
 
+    else{
+        cout <<"CN received:"<< msg->getName() <<endl;
+    }
+
 
 }
 

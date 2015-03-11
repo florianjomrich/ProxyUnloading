@@ -97,7 +97,7 @@ module Proxy_Enhanced_MobileIPLayer6_For_Correspondent_Node
                 isMobileNode = isMN;
                 @display("p=312,131;i=block/classifier2");
             gates:
-
+			
         }
         mCoA: MCoA {
             @display("p=326,285");
@@ -148,5 +148,11 @@ module Proxy_Enhanced_MobileIPLayer6_For_Correspondent_Node
         }
 
 
+		//PROXY ENHANCED
+		for i=0..sizeof(NETWORK_LAYER_proxy_Enhanced_Control_Channel_CN)-1{
+		    	NETWORK_LAYER_proxy_Enhanced_Control_Channel_CN[i]<-->xMobileIPv6.xMIP_proxy_Enhanced_Control_Channel_CN++;
+		    
+		}
+	
 }
 

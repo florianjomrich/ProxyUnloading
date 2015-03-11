@@ -142,6 +142,8 @@ module Proxy_Enhanced_Correspondent_Node6
         }
 
 //PROXY ENHANCED
-
+	for i=0..numUdpApps-1{
+		udpApp[0].APP_proxy_Enhanced_Control_Channel_CN	<--> networkLayer.NETWORK_LAYER_proxy_Enhanced_Control_Channel_CN++;   
+	}
 }
 

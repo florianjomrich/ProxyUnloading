@@ -853,9 +853,9 @@ void xMIPv6::createBUTimer( KeyMCoABind &keyMCoA, const IPv6Address& buDest, Int
 
 void xMIPv6::sendPeriodicBU(cMessage *msg)
 {
-	cout <<"Sending periodic BU message at time: " << simTime() << " seconds." << endl;
+	/*cout*/EV <<"Sending periodic BU message at time: " << simTime() << " seconds." << endl;
 	BUTransmitIfEntry *buIfEntry = (BUTransmitIfEntry*) msg->getContextPointer(); //detaching the corresponding buIfEntry pointer
-	cout << "### lifetime of buIfEntry=" << buIfEntry->lifeTime << " and seq#= " << buIfEntry->buSequenceNumber << endl;
+	/*cout*/ EV << "### lifetime of buIfEntry=" << buIfEntry->lifeTime << " and seq#= " << buIfEntry->buSequenceNumber << endl;
 
 	InterfaceEntry* ie = buIfEntry->ifEntry; //copy the ie info
 	IPv6Address& buDest = buIfEntry->dest;
@@ -1603,7 +1603,7 @@ void xMIPv6::processBUMessage(BindingUpdate* bu, IPv6ControlInfo* ctrlInfo)
 			//###################################################################
 			if(rt6->isHomeAgent()) cout<< "BU von HA empfangen." << endl; //FJ
 			if(!rt6->isHomeAgent() && !rt6->isMobileNode() && !rt6->isRouter()) cout << "BU von CN empfangen"  <<endl;
-			cout<<"Home-Agent-Address:"<< MNHoA <<endl;
+			//cout<<"Home-Agent-Address:"<< MNHoA <<endl;
             //###################################################################
 
 
