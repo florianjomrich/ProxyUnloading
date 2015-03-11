@@ -33,6 +33,8 @@
  */
 class INET_API BindingCacheAccess : public ModuleAccess<BindingCache>
 {
+
+
     public:
         BindingCacheAccess() : ModuleAccess<BindingCache>("bindingCache") {}
 };

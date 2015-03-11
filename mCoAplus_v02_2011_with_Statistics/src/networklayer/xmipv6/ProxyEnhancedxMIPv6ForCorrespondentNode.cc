@@ -14,6 +14,7 @@
 // 
 
 #include <ProxyEnhancedxMIPv6ForCorrespondentNode.h>
+#include <BindingUpdateInformationtoAPPmessageCN.h>
 
 #define PROXY_ENHANCED_BU_MESSAGE  42
 
@@ -50,11 +51,14 @@ void ProxyEnhancedxMIPv6ForCorrespondentNode::processBUMessage(BindingUpdate* bu
     IPv6Address& destAddress = ctrlInfo->getDestAddr();
     IPv6Address& HoA =    bu->getHomeAddressMN();
     xMIPv6::processBUMessage(bu,ctrlInfo);
-    cout<<"CorrespondentNode hat Binding Update vom MN empfangen HoA: "<<HoA << " CoA: "<< CoA<<"  desAddress:" << destAddress <<"Full Name"<< fullname<<endl;
+    cout<<"CorrespondentNode hat Binding Update vom MN empfangen HoA: "<<HoA << " CoA: "<< CoA<<"  desAddress:" << destAddress <<endl;
 
-     cMessage* msg = new cMessage();
+    BindingUpdateInformation_to_APP_message_CN* msg = new BindingUpdateInformation_to_APP_message_CN();
                       msg->setName("Message for the CN UDP APP SERVER");
+                      msg->setHomeAddress(HoA);
+
+
                       send(msg, "xMIP_proxy_Enhanced_Control_Channel_CN$o",0); //$o muss angegeben werden um über einen inout-Port etwas nach draußen senden zu können*/
-                      cout<<"HALLO WELT"<<endl;
+                      //cout<<"Sendevorgang abgeschlossen"<<endl;
 }
 
