@@ -114,7 +114,7 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
         //###########################################
     	//Proxy_Unloading FJ
     	if(msg->getKind()==PROXY_CN_MESSAGE_TO_MOBILE_NODE){
-    	    cout<<"CN will eine Nachricht an MN senden"<<endl;
+    	   // cout<<"CN will eine Nachricht an MN senden"<<endl;
 
     	    IPvXAddress mn = IPAddressResolver().resolve("MN[0]");
 

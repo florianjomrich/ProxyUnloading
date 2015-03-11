@@ -42,3 +42,16 @@ void ProxyEnhancedxMIPv6ForCorrespondentNode::handleMessage(cMessage *msg){
     }
 
 }
+
+void ProxyEnhancedxMIPv6ForCorrespondentNode::processBUMessage(BindingUpdate* bu, IPv6ControlInfo* ctrlInfo)
+{
+
+    IPv6Address& CoA = ctrlInfo->getSrcAddr();
+              IPv6Address& destAddress = ctrlInfo->getDestAddr();
+              cout<<"CorrespondentNode hat Binding Update vom MN empfangen   CoA: "<< CoA<<"  desAddress:" << destAddress <<endl;
+    xMIPv6::processBUMessage(bu,ctrlInfo);
+
+
+
+}
+

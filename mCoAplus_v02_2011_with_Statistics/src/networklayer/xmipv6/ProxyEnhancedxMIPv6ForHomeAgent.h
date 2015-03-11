@@ -23,6 +23,7 @@ public:
     ProxyEnhancedxMIPv6ForHomeAgent();
     virtual ~ProxyEnhancedxMIPv6ForHomeAgent();
     virtual void handleMessage(cMessage *msg);
+    virtual void processBUMessage(BindingUpdate* bu, IPv6ControlInfo* ctrlInfo);
 };
 
 #endif /* PROXYENHANCEDXMIPV6_H_ */

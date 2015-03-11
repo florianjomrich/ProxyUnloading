@@ -44,3 +44,16 @@ void ProxyEnhancedxMIPv6ForHomeAgent::handleMessage(cMessage *msg){
     }
 
 }
+
+
+void ProxyEnhancedxMIPv6ForHomeAgent::processBUMessage(BindingUpdate* bu, IPv6ControlInfo* ctrlInfo)
+{
+
+    IPv6Address& CoA = ctrlInfo->getSrcAddr();
+              IPv6Address& destAddress = ctrlInfo->getDestAddr();
+
+    xMIPv6::processBUMessage(bu,ctrlInfo);
+    cout<<"HomeAgent hat Binding Update vom MN empfangen   CoA: "<< CoA<<"  desAddress:" << destAddress <<endl;
+
+
+}

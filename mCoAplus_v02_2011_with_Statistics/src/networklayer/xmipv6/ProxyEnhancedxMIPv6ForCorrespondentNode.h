@@ -23,6 +23,7 @@ public:
     ProxyEnhancedxMIPv6ForCorrespondentNode();
     virtual ~ProxyEnhancedxMIPv6ForCorrespondentNode();
     virtual void handleMessage(cMessage *msg);
+    virtual void processBUMessage(BindingUpdate* bu, IPv6ControlInfo* ctrlInfo);
 };
 
 #endif /* PROXYENHANCEDXMIPV6_H_ */

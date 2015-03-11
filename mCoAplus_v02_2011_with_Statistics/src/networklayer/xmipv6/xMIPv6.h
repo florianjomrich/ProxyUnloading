@@ -412,7 +412,7 @@ protected:
 	/**
 	 * Process a BU - only applicable to HAs and CNs.
 	 */
-	void processBUMessage(BindingUpdate * bu, IPv6ControlInfo * ctrlInfo);
+	virtual void processBUMessage(BindingUpdate * bu, IPv6ControlInfo * ctrlInfo);
 
 	/**
 	 * Validate a BU - only applicable to HAs and CNs

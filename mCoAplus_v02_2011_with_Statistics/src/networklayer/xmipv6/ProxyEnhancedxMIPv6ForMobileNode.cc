@@ -35,10 +35,10 @@ void ProxyEnhancedxMIPv6ForMobileNode::handleMessage(cMessage *msg){
     if(msg->getKind()==PROXY_ENHANCED_BU_MESSAGE){
         cout<< "!! Steuernachricht der Proxy_Enhanced_App erhalten auf der Netzwerkebene des Mobile Nodes !!"<<endl;
        // xMIPv6::sendPeriodicBU(msg);
-        cMessage* msg = new cMessage();
+       /* cMessage* msg = new cMessage();
                    msg->setName("Message for the HomeAgent");
                    msg->setKind(PROXY_ENHANCED_BU_MESSAGE);
-                   send(msg, "XMIP_LAYER_HA_TO_MN$o"); //$o muss angegeben werden um über einen inout-Port etwas nach draußen senden zu können
+                   send(msg, "XMIP_LAYER_HA_TO_MN$o"); //$o muss angegeben werden um über einen inout-Port etwas nach draußen senden zu können*/
 
     }
     else{
@@ -51,7 +51,7 @@ void ProxyEnhancedxMIPv6ForMobileNode::handleMessage(cMessage *msg){
 void ProxyEnhancedxMIPv6ForMobileNode::updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA,  const IPv6Address& dest, const IPv6Address& CoA, InterfaceEntry* ie, const simtime_t sendTime)
 {
     xMIPv6::updateBUL(bu, keyMCoA, dest,  CoA, ie,  sendTime);
-    cout<<"Proxy Enhanced Mobile Node aktulaisiert gerade seien BindingUpdatelist"<<endl;
+    //cout<<"Proxy Enhanced Mobile Node aktualisiert gerade seine BindingUpdatelist"<<endl;
 
 
 }
