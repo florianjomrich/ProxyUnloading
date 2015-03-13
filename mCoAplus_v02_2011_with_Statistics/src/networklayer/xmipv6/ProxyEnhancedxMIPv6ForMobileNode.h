@@ -24,6 +24,10 @@ public:
     virtual ~ProxyEnhancedxMIPv6ForMobileNode();
     virtual void handleMessage(cMessage *msg);
    virtual void updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA,  const IPv6Address& dest, const IPv6Address& CoA, InterfaceEntry* ie, const simtime_t sendTime);
+   virtual void createAndSendBUMessage(const IPv6Address& dest, InterfaceEntry* ie, const uint buSeq, const uint lifeTime, const int bindAuthData,
+           MobOption_Binding_AuthorizationData *abAutho,
+           MobilityBIDOptions *aBIDmob, const int nMobOpts);
+
 };
 
 #endif /* PROXYENHANCEDXMIPV6_H_ */

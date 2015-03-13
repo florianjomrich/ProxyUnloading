@@ -174,6 +174,10 @@ module Proxy_Enhanced_WirelessHost6Multi
         for i=0..numUdpApps-1 {
 		buList.toProxyApp++-->udpApp[i].fromBindingUpdateList;
         }
+        
+        for i=0..numUdpApps-1{
+         networkLayer.NETWORK_LAYER_proxy_Enhanced_Control_Channel_MN++<-->udpApp[i].APP_proxy_Enhanced_Control_Channel_MN;   
+        }
 
 }
 

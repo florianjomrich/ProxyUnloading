@@ -51,9 +51,21 @@ void ProxyEnhancedxMIPv6ForMobileNode::handleMessage(cMessage *msg){
 void ProxyEnhancedxMIPv6ForMobileNode::updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA,  const IPv6Address& dest, const IPv6Address& CoA, InterfaceEntry* ie, const simtime_t sendTime)
 {
     xMIPv6::updateBUL(bu, keyMCoA, dest,  CoA, ie,  sendTime);
-    //cout<<"Proxy Enhanced Mobile Node aktualisiert gerade seine BindingUpdatelist"<<endl;
+    cout<<"Proxy Enhanced Mobile Node aktualisiert gerade seine BindingUpdatelist"<<endl;
 
 
 }
 
 
+void ProxyEnhancedxMIPv6ForMobileNode::createAndSendBUMessage(const IPv6Address& dest, InterfaceEntry* ie, const uint buSeq, const uint lifeTime, const int bindAuthData,
+        MobOption_Binding_AuthorizationData *abAutho,
+        MobilityBIDOptions *aBIDmob, const int nMobOpts)
+{
+    xMIPv6::createAndSendBUMessage(dest,ie,buSeq,lifeTime, bindAuthData,
+            abAutho,aBIDmob, nMobOpts);
+    cout<<"Mobile Node sendet gerade eine BU Message"<<endl;
+    cMessage *myMessage = new cMessage();
+    myMessage->setName("MN hat gerade BU gesendet - Nachricht empfangen von App im MN");
+
+    send(myMessage,"xMIP_proxy_Enhanced_Control_Channel_MN$o",0);
+}

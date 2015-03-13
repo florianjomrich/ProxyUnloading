@@ -387,7 +387,7 @@ protected:
 	 * Method for creating and sending a BU by a MN.
 	 *
 	 */
-	void createAndSendBUMessage(const IPv6Address& dest,InterfaceEntry* ie, const uint buSeq, const uint lifeTime, const int bindAuthData ,
+	virtual void createAndSendBUMessage(const IPv6Address& dest,InterfaceEntry* ie, const uint buSeq, const uint lifeTime, const int bindAuthData ,
 								MobOption_Binding_AuthorizationData *aDat,
 								MobilityBIDOptions* mOpt , const int nMobOpts);
 

@@ -147,6 +147,10 @@ module Proxy_Enhanced_MobileIPLayer6_For_Mobile_Node
             ifOut[i] <-- { @display("m=s"); } <-- ipv6.queueOut[i];
         }
 
+		//PROXY ENHANCED
+		for i=0..sizeof(NETWORK_LAYER_proxy_Enhanced_Control_Channel_MN)-1{
+		NETWORK_LAYER_proxy_Enhanced_Control_Channel_MN[i]<-->xMobileIPv6.xMIP_proxy_Enhanced_Control_Channel_MN++;
+		}
 
 }
 
