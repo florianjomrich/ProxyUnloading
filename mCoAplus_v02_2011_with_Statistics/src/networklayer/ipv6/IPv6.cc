@@ -788,6 +788,7 @@ IPv6Datagram *IPv6::encapsulate(cPacket *transportPacket, InterfaceEntry *&destI
 
     // set source and destination address
     IPv6Address dest = controlInfo->getDestAddr();
+
     datagram->setDestAddress(dest);
 
     IPv6Address src = controlInfo->getSrcAddr();
