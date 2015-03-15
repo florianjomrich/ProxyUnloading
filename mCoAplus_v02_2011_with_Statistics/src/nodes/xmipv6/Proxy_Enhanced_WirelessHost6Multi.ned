@@ -22,7 +22,8 @@ package inet.nodes.xmipv6;
 
 import inet.applications.pingapp.PingApp;
 import inet.applications.tcpapp.TCPApp;
-import inet.applications.mcoa.proxy_enhanced.Proxy_Enhanced_MCoAVideoCli;
+import inet.applications.udpapp.UDPApp;
+import inet.applications.mcoa.proxy_enhanced.Proxy_Unloading_Control_App;
 import inet.base.NotificationBoard;
 import inet.linklayer.ieee80211.Ieee80211NicSTA;
 import inet.mobility.BasicMobility;
@@ -91,7 +92,7 @@ module Proxy_Enhanced_WirelessHost6Multi
             parameters:
                 @display("p=195,170;i=block/wheelbarrow");
         }
-        udpApp[numUdpApps]: Proxy_Enhanced_MCoAVideoCli {
+        udpApp[numUdpApps]: <udpAppType> like UDPApp {
             parameters:
                 @display("i=block/app;p=312,75");
             gates:
@@ -102,19 +103,24 @@ module Proxy_Enhanced_WirelessHost6Multi
             parameters:
                 @display("p=312,170;i=block/transport");
         }
+        proxyUnloadingControlApp: Proxy_Unloading_Control_App {
+            parameters:
+                @display("p=122,396;i=block/wheelbarrow");
+        }
         pingApp: PingApp {
             parameters:
                 @display("i=block/app;p=341,286");
         }
-        networkLayer: Proxy_Enhanced_MobileIPLayer6_For_Mobile_Node {
+        networkLayer: Proxy_Unloading_MobileIPLayer6 {
             parameters:
                 isMN = true; //is Mobile Node
                 isHA = false; //is Home Agent
+                isCN =  false;//is Correspondent Node
                 @display("p=248,247;i=block/fork;q=queue");
             gates:
                 ifIn[(sizeof(out)+sizeof(ethOut))+numRadios];
                 ifOut[(sizeof(out)+sizeof(ethOut))+numRadios];
-                NETWORK_LAYER_proxy_Enhanced_Control_Channel_MN[];
+                NETWORK_LAYER_proxy_Enhanced_Control_Channel;
 
         }
         wlan[numRadios]: Ieee80211NicSTA {
@@ -171,13 +177,10 @@ module Proxy_Enhanced_WirelessHost6Multi
         }
 
         //PROXY ENHANCED CONNECTION
-        for i=0..numUdpApps-1 {
-		buList.toProxyApp++-->udpApp[i].fromBindingUpdateList;
-        }
-        
-        for i=0..numUdpApps-1{
-         networkLayer.NETWORK_LAYER_proxy_Enhanced_Control_Channel_MN++<-->udpApp[i].APP_proxy_Enhanced_Control_Channel_MN;   
-        }
+     
+       // buList.toProxyApp++ --> proxyUnloadingControlApp.fromBindingUpdateList;
+        networkLayer.NETWORK_LAYER_proxy_Enhanced_Control_Channel <--> proxyUnloadingControlApp.APP_proxy_Enhanced_Control_Channel;
+       
 
 }
 
