@@ -63,8 +63,7 @@ module Proxy_Enhanced_WirelessHost6Multi
            //out: out[];
            //in: ethIn[];
            //out: ethOut[];
-        inout from_to_HA;
-        inout from_to_CN;
+    
         input radioIn[numRadios] @directIn;
     submodules:
         notificationBoard: NotificationBoard {
@@ -104,7 +103,10 @@ module Proxy_Enhanced_WirelessHost6Multi
                 @display("p=312,170;i=block/transport");
         }
         proxyUnloadingControlApp: Proxy_Unloading_Control_App {
-            parameters:
+              parameters:
+                isMN = true; //is Mobile Node
+                isHA = false; //is Home Agent
+                isCN =  false;//is Correspondent Node
                 @display("p=122,396;i=block/wheelbarrow");
         }
         pingApp: PingApp {

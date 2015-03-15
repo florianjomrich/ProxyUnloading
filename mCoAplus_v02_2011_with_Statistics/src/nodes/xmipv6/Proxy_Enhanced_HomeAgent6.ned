@@ -90,10 +90,11 @@ module Proxy_Enhanced_HomeAgent6
             parameters:
                 @display("i=block/app;p=335,248");
         }
-        networkLayer: Proxy_Enhanced_MobileIPLayer6_For_Home_Agent {
+        networkLayer: Proxy_Unloading_MobileIPLayer6 {
             parameters:
-                isMN = false; //is Mobile Node
-                isHA = true; //is Home Agent
+                isMN = true; //is Mobile Node
+                isHA = false; //is Home Agent
+                isCN =  false;//is Correspondent Node
                 @display("p=257,177;i=block/fork;q=queue");
             gates:
                 ifIn[sizeof(out)+sizeof(ethOut)];
