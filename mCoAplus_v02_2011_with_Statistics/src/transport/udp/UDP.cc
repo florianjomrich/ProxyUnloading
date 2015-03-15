@@ -44,6 +44,8 @@
 
 Define_Module( UDP );
 
+using std::cout;
+
 
 static std::ostream & operator<<(std::ostream & os, const UDP::SockDesc& sd)
 {
@@ -435,7 +437,7 @@ void UDP::processUDPPacket(UDPPacket *udpPacket)
     SocketsByPortMap::iterator it = socketsByPortMap.find(destPort);
     if (it==socketsByPortMap.end())
     {
-        EV << "No socket registered on port " << destPort << "\n";
+        cout << "No socket registered on port " << destPort << "\n";
         processUndeliverablePacket(udpPacket, ctrl);
         return;
     }

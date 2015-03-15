@@ -112,10 +112,10 @@ void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
     IPvXAddress ha = IPAddressResolver().resolve("HA");
 
     FlowBindingUpdateMessage* halloWelt = new FlowBindingUpdateMessage();
-    halloWelt->setName(" HALLO WELT ");
+   // halloWelt->setName(" HALLO WELT ");
 
 
-                sendToUDPMCOA(halloWelt, localPort, ha, 1000, true);
+               // sendToUDPMCOA(halloWelt, localPort, ha, 2000, true);
 
 }
 
