@@ -182,7 +182,8 @@ module Proxy_Enhanced_WirelessHost6Multi
      
        // buList.toProxyApp++ --> proxyUnloadingControlApp.fromBindingUpdateList;
         networkLayer.NETWORK_LAYER_proxy_Enhanced_Control_Channel <--> proxyUnloadingControlApp.APP_proxy_Enhanced_Control_Channel;
-       
+       	proxyUnloadingControlApp.udpOut --> udp.appIn++;
+	 	proxyUnloadingControlApp.udpIn <-- udp.appOut++;
 
 }
 

@@ -133,6 +133,7 @@ OBJS = \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.o \
+    $O/applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.o \
     $O/applications/mcoa/udpbase/MCoAUDPBase.o \
     $O/applications/pingapp/Proxyunloading_PingApp.o \
     $O/applications/pingapp/PingApp.o \
@@ -427,15 +428,12 @@ OBJS = \
     $O/networklayer/rsvp_te/Utils.o \
     $O/networklayer/ted/TED.o \
     $O/networklayer/ted/LinkStateRouting.o \
+    $O/networklayer/xmipv6/ProxyUnloadingxMIPv6.o \
     $O/networklayer/xmipv6/BindingUpdateInformationtoAPPmessageCN.o \
     $O/networklayer/xmipv6/xMIPv6.o \
     $O/networklayer/xmipv6/BindingUpdateList.o \
-    $O/networklayer/xmipv6/ProxyEnhancedxMIPv6ForMobileNode.o \
-    $O/networklayer/xmipv6/ProxyEnhancedxMIPv6.o \
     $O/networklayer/xmipv6/MobilityHeader.o \
     $O/networklayer/xmipv6/BindingCache.o \
-    $O/networklayer/xmipv6/ProxyEnhancedxMIPv6ForHomeAgent.o \
-    $O/networklayer/xmipv6/ProxyEnhancedxMIPv6ForCorrespondentNode.o \
     $O/transport/contract/TCPSocket.o \
     $O/transport/contract/TCPSocketMap.o \
     $O/transport/contract/SCTPSocket.o \
@@ -1095,6 +1093,29 @@ $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.o: applications/
 	networklayer/mcoa/IPv6TunAdr.h \
 	networklayer/xmipv6/BindingUpdateInformationtoAPPmessageCN.h \
 	transport/contract/UDPControlInfo_m.h
+$O/applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.o: applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.cc \
+	applications/mcoa/Video/MCoAVideoStreaming_m.h \
+	applications/mcoa/proxy_enhanced/FlowBindingUpdateMessage.h \
+	applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.h \
+	applications/mcoa/udpbase/MCoAUDPBase.h \
+	base/INETDefs.h \
+	base/INotifiable.h \
+	base/MCoADefs.h \
+	base/ModuleAccess.h \
+	base/NotificationBoard.h \
+	base/NotifierConsts.h \
+	networklayer/contract/IPAddress.h \
+	networklayer/contract/IPAddressResolver.h \
+	networklayer/contract/IPProtocolId_m.h \
+	networklayer/contract/IPv6Address.h \
+	networklayer/contract/IPv6ControlInfo.h \
+	networklayer/contract/IPv6ControlInfo_m.h \
+	networklayer/contract/IPvXAddress.h \
+	networklayer/ipv6/IPv6Datagram.h \
+	networklayer/ipv6/IPv6Datagram_m.h \
+	networklayer/ipv6/IPv6ExtensionHeaders_m.h \
+	networklayer/mcoa/IPv6PrefAdr.h \
+	networklayer/mcoa/IPv6TunAdr.h
 $O/applications/mcoa/udpbase/MCoAUDPBase.o: applications/mcoa/udpbase/MCoAUDPBase.cc \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \
@@ -8039,7 +8060,7 @@ $O/networklayer/xmipv6/MobilityHeader_m.o: networklayer/xmipv6/MobilityHeader_m.
 	networklayer/ipv6/IPv6ExtensionHeaders_m.h \
 	networklayer/mcoa/KeyMCoABind.h \
 	networklayer/xmipv6/MobilityHeader_m.h
-$O/networklayer/xmipv6/ProxyEnhancedxMIPv6.o: networklayer/xmipv6/ProxyEnhancedxMIPv6.cc \
+$O/networklayer/xmipv6/ProxyUnloadingxMIPv6.o: networklayer/xmipv6/ProxyUnloadingxMIPv6.cc \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/MCoADefs.h \
@@ -8088,161 +8109,7 @@ $O/networklayer/xmipv6/ProxyEnhancedxMIPv6.o: networklayer/xmipv6/ProxyEnhancedx
 	networklayer/xmipv6/BindingUpdateListAccess.h \
 	networklayer/xmipv6/MobilityHeader.h \
 	networklayer/xmipv6/MobilityHeader_m.h \
-	networklayer/xmipv6/ProxyEnhancedxMIPv6.h \
-	networklayer/xmipv6/xMIPv6.h
-$O/networklayer/xmipv6/ProxyEnhancedxMIPv6ForCorrespondentNode.o: networklayer/xmipv6/ProxyEnhancedxMIPv6ForCorrespondentNode.cc \
-	base/INETDefs.h \
-	base/INotifiable.h \
-	base/MCoADefs.h \
-	base/ModuleAccess.h \
-	base/NotificationBoard.h \
-	base/NotifierConsts.h \
-	linklayer/contract/MACAddress.h \
-	networklayer/common/IInterfaceTable.h \
-	networklayer/common/InterfaceEntry.h \
-	networklayer/common/InterfaceTable.h \
-	networklayer/common/InterfaceTableAccess.h \
-	networklayer/common/InterfaceToken.h \
-	networklayer/contract/IPAddress.h \
-	networklayer/contract/IPAddressResolver.h \
-	networklayer/contract/IPProtocolId_m.h \
-	networklayer/contract/IPv6Address.h \
-	networklayer/contract/IPv6ControlInfo.h \
-	networklayer/contract/IPv6ControlInfo_m.h \
-	networklayer/contract/IPvXAddress.h \
-	networklayer/icmpv6/ICMPv6.h \
-	networklayer/icmpv6/ICMPv6Access.h \
-	networklayer/icmpv6/ICMPv6Message_m.h \
-	networklayer/icmpv6/IPv6NDMessage_m.h \
-	networklayer/icmpv6/IPv6NeighbourCache.h \
-	networklayer/icmpv6/IPv6NeighbourDiscovery.h \
-	networklayer/icmpv6/IPv6NeighbourDiscoveryAccess.h \
-	networklayer/ipv6/IPv6Datagram.h \
-	networklayer/ipv6/IPv6Datagram_m.h \
-	networklayer/ipv6/IPv6ExtensionHeaders.h \
-	networklayer/ipv6/IPv6ExtensionHeaders_m.h \
-	networklayer/ipv6/IPv6InterfaceData.h \
-	networklayer/ipv6/IPv6Tunneling.h \
-	networklayer/ipv6/IPv6TunnelingAccess.h \
-	networklayer/ipv6/RoutingTable6.h \
-	networklayer/ipv6/RoutingTable6Access.h \
-	networklayer/mcoa/IPv6PrefAdr.h \
-	networklayer/mcoa/IPv6TunAdr.h \
-	networklayer/mcoa/KeyMCoABind.h \
-	networklayer/mcoa/KeyMCoADAD.h \
-	networklayer/mcoa/MCoA.h \
-	networklayer/mcoa/MCoAAccess.h \
-	networklayer/mcoa/XMIPv6SM.h \
-	networklayer/xmipv6/BindingCache.h \
-	networklayer/xmipv6/BindingCacheAccess.h \
-	networklayer/xmipv6/BindingUpdateInformationtoAPPmessageCN.h \
-	networklayer/xmipv6/BindingUpdateList.h \
-	networklayer/xmipv6/BindingUpdateListAccess.h \
-	networklayer/xmipv6/MobilityHeader.h \
-	networklayer/xmipv6/MobilityHeader_m.h \
-	networklayer/xmipv6/ProxyEnhancedxMIPv6ForCorrespondentNode.h \
-	networklayer/xmipv6/xMIPv6.h
-$O/networklayer/xmipv6/ProxyEnhancedxMIPv6ForHomeAgent.o: networklayer/xmipv6/ProxyEnhancedxMIPv6ForHomeAgent.cc \
-	base/INETDefs.h \
-	base/INotifiable.h \
-	base/MCoADefs.h \
-	base/ModuleAccess.h \
-	base/NotificationBoard.h \
-	base/NotifierConsts.h \
-	linklayer/contract/MACAddress.h \
-	networklayer/common/IInterfaceTable.h \
-	networklayer/common/InterfaceEntry.h \
-	networklayer/common/InterfaceTable.h \
-	networklayer/common/InterfaceTableAccess.h \
-	networklayer/common/InterfaceToken.h \
-	networklayer/contract/IPAddress.h \
-	networklayer/contract/IPAddressResolver.h \
-	networklayer/contract/IPProtocolId_m.h \
-	networklayer/contract/IPv6Address.h \
-	networklayer/contract/IPv6ControlInfo.h \
-	networklayer/contract/IPv6ControlInfo_m.h \
-	networklayer/contract/IPvXAddress.h \
-	networklayer/icmpv6/ICMPv6.h \
-	networklayer/icmpv6/ICMPv6Access.h \
-	networklayer/icmpv6/ICMPv6Message_m.h \
-	networklayer/icmpv6/IPv6NDMessage_m.h \
-	networklayer/icmpv6/IPv6NeighbourCache.h \
-	networklayer/icmpv6/IPv6NeighbourDiscovery.h \
-	networklayer/icmpv6/IPv6NeighbourDiscoveryAccess.h \
-	networklayer/ipv6/IPv6Datagram.h \
-	networklayer/ipv6/IPv6Datagram_m.h \
-	networklayer/ipv6/IPv6ExtensionHeaders.h \
-	networklayer/ipv6/IPv6ExtensionHeaders_m.h \
-	networklayer/ipv6/IPv6InterfaceData.h \
-	networklayer/ipv6/IPv6Tunneling.h \
-	networklayer/ipv6/IPv6TunnelingAccess.h \
-	networklayer/ipv6/RoutingTable6.h \
-	networklayer/ipv6/RoutingTable6Access.h \
-	networklayer/mcoa/IPv6PrefAdr.h \
-	networklayer/mcoa/IPv6TunAdr.h \
-	networklayer/mcoa/KeyMCoABind.h \
-	networklayer/mcoa/KeyMCoADAD.h \
-	networklayer/mcoa/MCoA.h \
-	networklayer/mcoa/MCoAAccess.h \
-	networklayer/mcoa/XMIPv6SM.h \
-	networklayer/xmipv6/BindingCache.h \
-	networklayer/xmipv6/BindingCacheAccess.h \
-	networklayer/xmipv6/BindingUpdateList.h \
-	networklayer/xmipv6/BindingUpdateListAccess.h \
-	networklayer/xmipv6/MobilityHeader.h \
-	networklayer/xmipv6/MobilityHeader_m.h \
-	networklayer/xmipv6/ProxyEnhancedxMIPv6ForHomeAgent.h \
-	networklayer/xmipv6/xMIPv6.h
-$O/networklayer/xmipv6/ProxyEnhancedxMIPv6ForMobileNode.o: networklayer/xmipv6/ProxyEnhancedxMIPv6ForMobileNode.cc \
-	base/INETDefs.h \
-	base/INotifiable.h \
-	base/MCoADefs.h \
-	base/ModuleAccess.h \
-	base/NotificationBoard.h \
-	base/NotifierConsts.h \
-	linklayer/contract/MACAddress.h \
-	networklayer/common/IInterfaceTable.h \
-	networklayer/common/InterfaceEntry.h \
-	networklayer/common/InterfaceTable.h \
-	networklayer/common/InterfaceTableAccess.h \
-	networklayer/common/InterfaceToken.h \
-	networklayer/contract/IPAddress.h \
-	networklayer/contract/IPAddressResolver.h \
-	networklayer/contract/IPProtocolId_m.h \
-	networklayer/contract/IPv6Address.h \
-	networklayer/contract/IPv6ControlInfo.h \
-	networklayer/contract/IPv6ControlInfo_m.h \
-	networklayer/contract/IPvXAddress.h \
-	networklayer/icmpv6/ICMPv6.h \
-	networklayer/icmpv6/ICMPv6Access.h \
-	networklayer/icmpv6/ICMPv6Message_m.h \
-	networklayer/icmpv6/IPv6NDMessage_m.h \
-	networklayer/icmpv6/IPv6NeighbourCache.h \
-	networklayer/icmpv6/IPv6NeighbourDiscovery.h \
-	networklayer/icmpv6/IPv6NeighbourDiscoveryAccess.h \
-	networklayer/ipv6/IPv6Datagram.h \
-	networklayer/ipv6/IPv6Datagram_m.h \
-	networklayer/ipv6/IPv6ExtensionHeaders.h \
-	networklayer/ipv6/IPv6ExtensionHeaders_m.h \
-	networklayer/ipv6/IPv6InterfaceData.h \
-	networklayer/ipv6/IPv6Tunneling.h \
-	networklayer/ipv6/IPv6TunnelingAccess.h \
-	networklayer/ipv6/RoutingTable6.h \
-	networklayer/ipv6/RoutingTable6Access.h \
-	networklayer/mcoa/IPv6PrefAdr.h \
-	networklayer/mcoa/IPv6TunAdr.h \
-	networklayer/mcoa/KeyMCoABind.h \
-	networklayer/mcoa/KeyMCoADAD.h \
-	networklayer/mcoa/MCoA.h \
-	networklayer/mcoa/MCoAAccess.h \
-	networklayer/mcoa/XMIPv6SM.h \
-	networklayer/xmipv6/BindingCache.h \
-	networklayer/xmipv6/BindingCacheAccess.h \
-	networklayer/xmipv6/BindingUpdateList.h \
-	networklayer/xmipv6/BindingUpdateListAccess.h \
-	networklayer/xmipv6/MobilityHeader.h \
-	networklayer/xmipv6/MobilityHeader_m.h \
-	networklayer/xmipv6/ProxyEnhancedxMIPv6ForMobileNode.h \
+	networklayer/xmipv6/ProxyUnloadingxMIPv6.h \
 	networklayer/xmipv6/xMIPv6.h
 $O/networklayer/xmipv6/xMIPv6.o: networklayer/xmipv6/xMIPv6.cc \
 	base/INETDefs.h \

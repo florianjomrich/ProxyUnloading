@@ -25,7 +25,8 @@ package inet.nodes.xmipv6;
 
 import inet.applications.pingapp.PingApp;
 import inet.applications.tcpapp.TCPApp;
-import inet.applications.mcoa.proxy_enhanced.Proxy_Enhanced_MCoAVideoProxy;
+import inet.applications.udpapp.UDPApp;
+import inet.applications.mcoa.proxy_enhanced.Proxy_Unloading_Control_App;
 import inet.base.NotificationBoard;
 import inet.linklayer.ethernet.EthernetInterface;
 import inet.networklayer.common.InterfaceTable;
@@ -38,7 +39,7 @@ import inet.transport.udp.UDP;
 module Proxy_Enhanced_HomeAgent6
 {
     parameters:
-            double numTcpApps;
+        double numTcpApps;
         double numUdpApps;
         string tcpAppType;
         string udpAppType;
@@ -78,7 +79,7 @@ module Proxy_Enhanced_HomeAgent6
             parameters:
                 @display("p=187,170;i=block/wheelbarrow");
         }
-        udpApp[numUdpApps]: Proxy_Enhanced_MCoAVideoProxy {
+        udpApp[numUdpApps]: <udpAppType> like UDPApp {
             parameters:
                 @display("i=block/app;p=343,53");
         }
@@ -86,15 +87,22 @@ module Proxy_Enhanced_HomeAgent6
             parameters:
                 @display("p=323,146;i=block/transport");
         }
+        proxyUnloadingControlApp: Proxy_Unloading_Control_App {
+            parameters:
+                isMN = false; //is Mobile Node
+                isHA = true; //is Home Agent
+                isCN = false;//is Correspondent Node
+                @display("p=343,344;i=block/wheelbarrow");
+        }
         pingApp: PingApp {
             parameters:
-                @display("i=block/app;p=335,248");
+                @display("i=block/app;p=257,257");
         }
         networkLayer: Proxy_Unloading_MobileIPLayer6 {
             parameters:
-                isMN = true; //is Mobile Node
-                isHA = false; //is Home Agent
-                isCN =  false;//is Correspondent Node
+                isMN = false; //is Mobile Node
+                isHA = true; //is Home Agent
+                isCN = false;//is Correspondent Node
                 @display("p=257,177;i=block/fork;q=queue");
             gates:
                 ifIn[sizeof(out)+sizeof(ethOut)];
@@ -140,6 +148,7 @@ module Proxy_Enhanced_HomeAgent6
         }
 
         //PROXY EXTENSION - FOR CONTROLL MESSAGES FJ
-  
+        proxyUnloadingControlApp.udpOut --> udp.appIn++;
+        proxyUnloadingControlApp.udpIn <-- udp.appOut++;
 }
 
