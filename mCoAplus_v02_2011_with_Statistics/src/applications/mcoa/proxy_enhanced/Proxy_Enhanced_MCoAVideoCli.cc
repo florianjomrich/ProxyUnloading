@@ -54,7 +54,7 @@ void Proxy_Enhanced_MCoAVideoCli::initialize()
     bindToPort(localPort);
 
     if (startTime>=0){
-        cMessage *start_proxying_context = new cMessage("Starting_Proxying_Context");
+        cMessage *start_proxying_context = new cMessage("Starting_Proxying_Context MCoAVideoCli");
         //timer->setContextPointer(d);
         start_proxying_context->setKind(PROXY_CONTEXT_START);
         scheduleAt(startTime, start_proxying_context);
@@ -112,10 +112,10 @@ void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
     IPvXAddress ha = IPAddressResolver().resolve("HA");
 
     FlowBindingUpdateMessage* halloWelt = new FlowBindingUpdateMessage();
-   // halloWelt->setName(" HALLO WELT ");
+    halloWelt->setName(" HALLO WELT ");
 
 
-               // sendToUDPMCOA(halloWelt, localPort, ha, 2000, true);
+                sendToUDPMCOA(halloWelt, localPort, ha, 2000, true);
 
 }
 

@@ -197,6 +197,11 @@ protected:
     bool CnvtoBool(const char *s, const bool def=true);
 
     virtual void finish();
+
+
+
+    //PROXY UNLOADING EXTENSION
+    virtual IPv6Address* calculateFlowSourceAddress(IPv6ControlInfo *controlInfo, cPacket *transportPacket);
 };
 
 

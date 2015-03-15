@@ -227,6 +227,9 @@ void IPv6::handleMessageFromHL(cPacket *msg)
 
     // encapsulate upper-layer packet into IPv6Datagram
     InterfaceEntry *destIE; // to be filled in by encapsulate()
+
+
+
     IPv6Datagram *datagram = encapsulate(msg, destIE);
 
     if (datagram == NULL)
@@ -770,6 +773,16 @@ cPacket *IPv6::decapsulate(IPv6Datagram *datagram, bool isTunneled)
     return packet;
 }
 
+//PROXY UNLOADING EXTENSION
+IPv6Address* IPv6::calculateFlowSourceAddress(IPv6ControlInfo *controlInfo, cPacket *transportPacket){
+
+    IPv6Address *flowSourceAddress = new IPv6Address();
+
+    *flowSourceAddress = controlInfo->getSrcAddr().getIP_Adress_as_Integer_Part0()
+
+    return flowSourceAddress;
+}
+
 IPv6Datagram *IPv6::encapsulate(cPacket *transportPacket, InterfaceEntry *&destIE)
 {
 	EV <<"\n<<=======THIS IS THE IPv6::encapsulate() FUNCTION=========>>\n";
@@ -785,6 +798,18 @@ IPv6Datagram *IPv6::encapsulate(cPacket *transportPacket, InterfaceEntry *&destI
 
     // IPV6_MULTICAST_IF option, but allow interface selection for unicast packets as well
     destIE = ift->getInterfaceById(controlInfo->getInterfaceId());
+
+
+    //***********************************************
+    //Proxy Unloading Extension
+     //***********************************************
+
+    calculateFlowSourceAddress(controlInfo, transportPacket);
+
+
+
+
+    //***********************************************
 
     // set source and destination address
     IPv6Address dest = controlInfo->getDestAddr();
