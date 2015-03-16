@@ -31,6 +31,9 @@
 #include "xMIPv6.h"
 #include "IScriptable.h"
 
+//FOR PROXYUNLOADING
+#include "UDPControlInfo_m.h"
+
 class ICMPv6Message;
 
 /**
@@ -82,6 +85,9 @@ class INET_API IPv6 : public QueueBase, public  IScriptable
     	InterfaceEntry* ie;
     	MACAddress macAddr;
     };
+
+
+    //PROXY UNLOADING
 
   protected:
     // utility: look up interface from getArrivalGate()
@@ -201,7 +207,7 @@ protected:
 
 
     //PROXY UNLOADING EXTENSION
-    virtual IPv6Address* calculateFlowSourceAddress(IPv6ControlInfo *controlInfo, cPacket *transportPacket);
+    virtual  /*IPv6ControlInfo* */ void calculateFlowSourceAddress(UDPControlInfo *udpControlInfo, IPv6ControlInfo *controlInfo , cPacket *transportPacket);
 };
 
 

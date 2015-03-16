@@ -33,6 +33,8 @@
 #include "xMIPv6Access.h"
 
 
+
+
 #define FRAGMENT_TIMEOUT 60   // 60 sec, from IPv6 RFC
 
 
@@ -774,18 +776,87 @@ cPacket *IPv6::decapsulate(IPv6Datagram *datagram, bool isTunneled)
 }
 
 //PROXY UNLOADING EXTENSION
-IPv6Address* IPv6::calculateFlowSourceAddress(IPv6ControlInfo *controlInfo, cPacket *transportPacket){
+/*IPv6ControlInfo* */ void IPv6::calculateFlowSourceAddress(UDPControlInfo *udpCtrl, IPv6ControlInfo *controlInfo , cPacket *transportPacket){
 
-    IPv6Address *flowSourceAddress = new IPv6Address();
+//Die Unterscheidung nach MN, HA und CN does not happen here but on control app layer.
 
-    *flowSourceAddress = controlInfo->getSrcAddr().getIP_Adress_as_Integer_Part0()
 
-    return flowSourceAddress;
+
+    if(udpCtrl !=NULL){      //ansonsten kein UDP Paket, daher keine Abänderung der SourceAdresse in FlowSourceAdresse
+
+     //   cout<<"HIER NOCH"<<endl;
+        uint32_t srcPort = udpCtrl->getSrcPort();
+
+        cout<<"HIER AUCH NOCH: "<<srcPort<<endl;
+
+
+        //uint32_t destPort = udpCtrl->getDestPort();
+
+     //   IPv6Address ipV6Adresse = controlInfo->getSrcAddr();
+       // cout<<"SRC ADRESSE: "<<ipV6Adresse <<endl;
+
+       /* uint32_t srcAdressPart0 =  controlInfo->getSrcAddr().getIPAdressAsIntegerPart0();//4 Methods for 4*32Bit = 128 Bit IPv6 Adress-Length
+        uint32_t srcAdressPart1 = controlInfo->getSrcAddr().getIPAdressAsIntegerPart1();
+        uint32_t srcAdressPart2 = controlInfo->getSrcAddr().getIPAdressAsIntegerPart2();
+        uint32_t srcAdressPart3 = controlInfo->getSrcAddr().getIPAdressAsIntegerPart3();
+
+        uint32_t destAdressPart0 =  controlInfo->getDestAddr().getIPAdressAsIntegerPart0();//4 Methods for 4*32Bit = 128 Bit IPv6 Adress-Length
+        uint32_t destAdressPart1 = controlInfo->getDestAddr().getIPAdressAsIntegerPart1();
+        uint32_t destAdressPart2 = controlInfo->getDestAddr().getIPAdressAsIntegerPart2();
+        uint32_t destAdressPart3 = controlInfo->getDestAddr().getIPAdressAsIntegerPart3();*/
+
+        //hahsFunction now! - Knuths Multiplicativ Method - siehe http://stackoverflow.com/questions/664014/what-integer-hash-function-are-good-that-accepts-an-integer-hash-key
+  /*      uint32_t flowSourceAddress0 = ((srcAdressPart0+srcPort+destPort+destAdressPart0)*2654435761) % 2^32;
+        uint32_t flowSourceAddress1 = ((srcAdressPart1+srcPort+destPort+destAdressPart1)*2654435761) % 2^32;
+        uint32_t flowSourceAddress2 = ((srcAdressPart2+srcPort+destPort+destAdressPart2)*2654435761) % 2^32;
+        uint32_t flowSourceAddress3 = ((srcAdressPart3+srcPort+destPort+destAdressPart3)*2654435761) % 2^32; */
+
+  /*      UDPControlInfo* flowSourceControlInfo =  udpCtrl->dup();
+        IPv6Address* ipV6Address = new IPv6Address(flowSourceAddress0,flowSourceAddress1,flowSourceAddress2,flowSourceAddress3);
+        IPvXAddress* ipV6Address2 = new IPvXAddress();
+        ipV6Address2->set(*ipV6Address);
+        flowSourceControlInfo->setSrcAddr(*ipV6Address2);
+
+        cout<<udpCtrl->getSrcAddr() << "UDP CTRL"<<endl;
+        cout<<flowSourceControlInfo->getSrcAddr() <<"FLOW SOURCE ADDRESS"<<endl; */
+
+    }
+    else{
+         cout<<"UDP IST NULL"<<endl;
+    }
+
+
+  //  return controlInfo;
+
+
 }
 
 IPv6Datagram *IPv6::encapsulate(cPacket *transportPacket, InterfaceEntry *&destIE)
 {
 	EV <<"\n<<=======THIS IS THE IPv6::encapsulate() FUNCTION=========>>\n";
+
+    //***********************************************
+	//FOR PROXY UNLOADING
+    //***********************************************
+	//es muss geprüft werden, ob es sich auch um ein UDP Paket handelt!!!
+	if(transportPacket->getKind()==UDP_C_DATA){
+	    UDPControlInfo *udpCtrl = static_cast<UDPControlInfo *>(transportPacket->getControlInfo());
+	    int destPortProxyUnloading =udpCtrl->getDestPort();
+	    cout<<"TEST: "<<destPortProxyUnloading<<endl;
+	    int srcPortProxyUnloading = udpCtrl->getSrcPort();
+	    cout<<"TEST2: "<<srcPortProxyUnloading<<endl;
+	}
+	else{
+	    cout<<"KEIN UDP PAKET "<<endl;
+	}
+
+//	int destPortProxyUnloading =udpCtrl->getDestPort();
+	//int srcPortProxyUnloading = udpCtrl->getSrcPort();
+	//cout<<"TEST: "<<destPortProxyUnloading<<endl;
+	//cout<<"TEST2: "<<srcPortProxyUnloading<<endl;
+
+
+
     IPv6ControlInfo *controlInfo = check_and_cast<IPv6ControlInfo*>(transportPacket->removeControlInfo());
 
     EV << "Received on interface " << controlInfo->getInterfaceId() << endl;
@@ -801,10 +872,10 @@ IPv6Datagram *IPv6::encapsulate(cPacket *transportPacket, InterfaceEntry *&destI
 
 
     //***********************************************
-    //Proxy Unloading Extension
+    //FOR PROXY UNLOADING
      //***********************************************
 
-    calculateFlowSourceAddress(controlInfo, transportPacket);
+    //calculateFlowSourceAddress(controlInfo, transportPacket);
 
 
 
