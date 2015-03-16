@@ -184,6 +184,9 @@ module Proxy_Enhanced_WirelessHost6Multi
         networkLayer.NETWORK_LAYER_proxy_Enhanced_Control_Channel <--> proxyUnloadingControlApp.APP_proxy_Enhanced_Control_Channel;
        	proxyUnloadingControlApp.udpOut --> udp.appIn++;
 	 	proxyUnloadingControlApp.udpIn <-- udp.appOut++;
+	 	
+	 	
+	 	proxyUnloadingControlApp.uDPControllAppConnection <-- networkLayer.uDPControllAppConnection;
 
 }
 

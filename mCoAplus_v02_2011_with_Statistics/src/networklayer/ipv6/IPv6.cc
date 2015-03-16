@@ -828,10 +828,11 @@ cPacket *IPv6::decapsulate(IPv6Datagram *datagram, bool isTunneled) {
              legacyRequestMessage->setKind(REQUEST_FOR_CONNECTION_TO_LEGACY_SERVER);
              legacyRequestMessage->setSrcAddress(datagram->getSrcAddress());
              legacyRequestMessage->setDestAddress(datagram->getDestAddress());
+             legacyRequestMessage->setFlowSourceAddress(*flowSourceAddress);
              legacyRequestMessage->setSrcPort(sport);
              legacyRequestMessage->setDestPort(dport);
 
-             send(legacyRequestMessage,"UDPControllAppConnection");
+             send(legacyRequestMessage,"uDPControllAppConnection");
 
         }
 

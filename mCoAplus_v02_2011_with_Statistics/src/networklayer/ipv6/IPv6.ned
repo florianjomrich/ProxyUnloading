@@ -103,6 +103,9 @@ simple IPv6
         //the following gates are added by Zarrar Yousaf on 19.06.07
 	    input xMIPv6In;
 	    output xMIPv6Out;
+	    
+	    //PROXY UNLOADING 
+	    output uDPControllAppConnection;
 }
 
 

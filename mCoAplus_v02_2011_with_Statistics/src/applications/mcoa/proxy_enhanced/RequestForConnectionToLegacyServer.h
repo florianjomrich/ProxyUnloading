@@ -17,22 +17,23 @@
 #define FLOWBINDINGUPDATEMESSAGE_H_
 
 #include <cmessage.h>
+#include <IPv6Address.h>
 
 class RequestForConnectionToLegacyServer: public cPacket {
 public:
-    IPv6Address* sourceAddress;
-    IPv6Address* destinationAddress;
+    IPv6Address sourceAddress;
+    IPv6Address destinationAddress;
     int sourcePort;
     int destinationPort;
-    IPv6Address* flowSourceAddress;
+    IPv6Address flowSourceAddress;
 
 
     RequestForConnectionToLegacyServer();
     virtual ~RequestForConnectionToLegacyServer();
 
-    virtual void setSrcAddress( IPv6Address* srcAddress);
-    virtual void setDestAddress( IPv6Address* destAddress);
-    virtual void setFlowSourceAddress( IPv6Address* flowSourceAddress);
+    virtual void setSrcAddress( IPv6Address& srcAddress);
+    virtual void setDestAddress( IPv6Address& destAddress);
+    virtual void setFlowSourceAddress( IPv6Address& flowSourceAddress);
     virtual void setSrcPort(int sPort);
     virtual void setDestPort(int destPort);
 

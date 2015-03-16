@@ -1118,7 +1118,9 @@ $O/applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.o: applications/
 	networklayer/mcoa/IPv6PrefAdr.h \
 	networklayer/mcoa/IPv6TunAdr.h
 $O/applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServer.o: applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServer.cc \
-	applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServer.h
+	applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServer.h \
+	base/INETDefs.h \
+	networklayer/contract/IPv6Address.h
 $O/applications/mcoa/udpbase/MCoAUDPBase.o: applications/mcoa/udpbase/MCoAUDPBase.cc \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \

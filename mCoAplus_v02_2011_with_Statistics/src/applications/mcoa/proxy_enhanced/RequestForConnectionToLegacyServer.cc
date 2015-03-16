@@ -26,20 +26,26 @@ RequestForConnectionToLegacyServer::~RequestForConnectionToLegacyServer() {
 
 
 
-RequestForConnectionToLegacyServer::setSrcAddress(){
-
+void RequestForConnectionToLegacyServer::setSrcAddress(IPv6Address& srcAddress){
+    this->sourceAddress=srcAddress;
 }
 
-RequestForConnectionToLegacyServer::setDestAddress(){
+void RequestForConnectionToLegacyServer::setDestAddress(IPv6Address& destAddress){
+    this->destinationAddress=destAddress;
+}
 
+void RequestForConnectionToLegacyServer::setFlowSourceAddress(IPv6Address& flAddress){
+    this->flowSourceAddress=flAddress;
 }
 
 
-RequestForConnectionToLegacyServer::setSrcPort(){
-
+void RequestForConnectionToLegacyServer::setSrcPort(int srcPort){
+    this->sourcePort=srcPort;
 }
 
 
-RequestForConnectionToLegacyServer::setDestPort(){
-
+void RequestForConnectionToLegacyServer::setDestPort(int destPort){
+    this->destinationPort=destPort;
 }
+
+
