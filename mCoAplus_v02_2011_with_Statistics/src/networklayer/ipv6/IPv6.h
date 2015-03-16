@@ -88,6 +88,9 @@ class INET_API IPv6 : public QueueBase, public  IScriptable
 
 
     //PROXY UNLOADING
+    bool isMN;
+    bool isHA;
+    bool isCN;
 
   protected:
     // utility: look up interface from getArrivalGate()

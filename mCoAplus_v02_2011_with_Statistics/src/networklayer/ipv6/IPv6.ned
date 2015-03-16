@@ -81,6 +81,11 @@ simple IPv6
         string protocolMapping;
         bool isActive = default(true);
         @display("i=block/network2");
+        
+        //PROXY UNLOADING
+        bool isMN;
+        bool isHA;
+        bool isCN;
     gates:
         input transportIn[];
         output transportOut[];

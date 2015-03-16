@@ -134,6 +134,7 @@ OBJS = \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.o \
+    $O/applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServer.o \
     $O/applications/mcoa/udpbase/MCoAUDPBase.o \
     $O/applications/pingapp/Proxyunloading_PingApp.o \
     $O/applications/pingapp/PingApp.o \
@@ -1116,6 +1117,8 @@ $O/applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.o: applications/
 	networklayer/ipv6/IPv6ExtensionHeaders_m.h \
 	networklayer/mcoa/IPv6PrefAdr.h \
 	networklayer/mcoa/IPv6TunAdr.h
+$O/applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServer.o: applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServer.cc \
+	applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServer.h
 $O/applications/mcoa/udpbase/MCoAUDPBase.o: applications/mcoa/udpbase/MCoAUDPBase.cc \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \
@@ -3580,6 +3583,7 @@ $O/networklayer/ipv4/RoutingTableParser.o: networklayer/ipv4/RoutingTableParser.
 	networklayer/ipv4/RoutingTable.h \
 	networklayer/ipv4/RoutingTableParser.h
 $O/networklayer/ipv6/IPv6.o: networklayer/ipv6/IPv6.cc \
+	applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServer.h \
 	base/AbstractQueue.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
