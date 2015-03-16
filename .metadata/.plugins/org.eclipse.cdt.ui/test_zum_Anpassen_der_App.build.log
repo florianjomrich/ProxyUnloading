@@ -1,4 +1,4 @@
-14:19:47 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+15:12:05 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
 make MODE=debug CONFIGNAME=gcc-debug all 
 cd src && opp_makemake -f --deep
 Creating Makefile in /home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src...
@@ -12,5 +12,5 @@ make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_
 Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
 make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
 
-14:19:47 Build Finished (took 219ms)
+15:12:05 Build Finished (took 218ms)
 

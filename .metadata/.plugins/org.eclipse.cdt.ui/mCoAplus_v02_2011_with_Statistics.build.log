@@ -1,10 +1,24 @@
-14:19:42 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+15:12:03 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
 make MODE=debug CONFIGNAME=gcc-debug all 
 cd src && make
 make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
 networklayer/ipv6/IPv6.cc
-Creating shared library: ../out/gcc-debug/src/libinet.so
+networklayer/ipv6/IPv6.cc: In member function ‘virtual void IPv6::calculateFlowSourceAddress(IPv6Datagram*)’:
+networklayer/ipv6/IPv6.cc:829:36: error: ‘class RequestForConnectionToLegacyServer’ has no member named ‘setSrcAddress’
+              legacyRequestMessage->setSrcAddress(datagram->getSrcAddress());
+                                    ^
+networklayer/ipv6/IPv6.cc:830:36: error: ‘class RequestForConnectionToLegacyServer’ has no member named ‘setDestAddress’
+              legacyRequestMessage->setDestAddress(datagram->getDestAddress());
+                                    ^
+networklayer/ipv6/IPv6.cc:831:36: error: ‘class RequestForConnectionToLegacyServer’ has no member named ‘setSrcPort’
+              legacyRequestMessage->setSrcPort(sport);
+                                    ^
+networklayer/ipv6/IPv6.cc:832:36: error: ‘class RequestForConnectionToLegacyServer’ has no member named ‘setDestAddress’
+              legacyRequestMessage->setDestAddress(dport);
+                                    ^
+make[1]: *** [../out/gcc-debug/src/networklayer/ipv6/IPv6.o] Fehler 1
 make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
+make: *** [all] Fehler 2
 
-14:19:45 Build Finished (took 3s.456ms)
+15:12:03 Build Finished (took 673ms)
 
