@@ -1,10 +1,10 @@
-09:09:21 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+13:20:05 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
 make MODE=debug CONFIGNAME=gcc-debug all 
 cd src && make
 make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
-networklayer/xmipv6/ProxyEnhancedxMIPv6ForMobileNode.cc
+networklayer/ipv6/IPv6.cc
 Creating shared library: ../out/gcc-debug/src/libinet.so
 make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
 
-09:09:39 Build Finished (took 17s.728ms)
+13:20:08 Build Finished (took 3s.427ms)
 
