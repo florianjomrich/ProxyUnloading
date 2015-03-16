@@ -3638,7 +3638,9 @@ $O/networklayer/ipv6/IPv6.o: networklayer/ipv6/IPv6.cc \
 	networklayer/xmipv6/MobilityHeader_m.h \
 	networklayer/xmipv6/xMIPv6.h \
 	networklayer/xmipv6/xMIPv6Access.h \
-	transport/contract/UDPControlInfo_m.h
+	transport/contract/UDPControlInfo_m.h \
+	transport/udp/UDPPacket.h \
+	transport/udp/UDPPacket_m.h
 $O/networklayer/ipv6/IPv6Datagram.o: networklayer/ipv6/IPv6Datagram.cc \
 	base/INETDefs.h \
 	networklayer/contract/IPProtocolId_m.h \

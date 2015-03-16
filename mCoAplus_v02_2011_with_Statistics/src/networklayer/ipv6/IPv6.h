@@ -207,7 +207,7 @@ protected:
 
 
     //PROXY UNLOADING EXTENSION
-    virtual  /*IPv6ControlInfo* */ void calculateFlowSourceAddress(UDPControlInfo *udpControlInfo, IPv6ControlInfo *controlInfo , cPacket *transportPacket);
+    virtual  /*IPv6ControlInfo* */ void calculateFlowSourceAddress(IPv6Datagram *datagram);
 };
 
 

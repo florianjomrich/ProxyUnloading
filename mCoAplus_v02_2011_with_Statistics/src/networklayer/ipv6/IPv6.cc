@@ -31,6 +31,7 @@
 #include "MobilityHeader_m.h"
 #include "IPv6ExtensionHeaders_m.h"
 #include "xMIPv6Access.h"
+#include "UDPPacket.h"
 
 
 
@@ -776,19 +777,38 @@ cPacket *IPv6::decapsulate(IPv6Datagram *datagram, bool isTunneled)
 }
 
 //PROXY UNLOADING EXTENSION
-/*IPv6ControlInfo* */ void IPv6::calculateFlowSourceAddress(UDPControlInfo *udpCtrl, IPv6ControlInfo *controlInfo , cPacket *transportPacket){
+/*IPv6ControlInfo* */ void IPv6::calculateFlowSourceAddress(IPv6Datagram *datagram){
+
+
+    //UPPER LAYER PROTOCOL INFORMATION READ OUT FROM IP DATAGRAMM siehe: https://groups.google.com/forum/#!topic/omnetpp/PzYmRXP4eUI
+
+    int protocol = datagram->getTransportProtocol();
+    int sport=-1;
+    int dport=-1;
+    if (protocol==IP_PROT_UDP)
+    {
+        sport = dynamic_cast<UDPPacket*>
+(datagram->getEncapsulatedPacket())->getSourcePort();
+        dport = dynamic_cast<UDPPacket*>
+(datagram->getEncapsulatedPacket())->getDestinationPort();
+    }
+   if(dport!=-1) cout<<"DEST PORT: "<<dport<<" und SRC PORT: "<<sport<<endl;
 
 //Die Unterscheidung nach MN, HA und CN does not happen here but on control app layer.
 
-
+/*
 
     if(udpCtrl !=NULL){      //ansonsten kein UDP Paket, daher keine Abänderung der SourceAdresse in FlowSourceAdresse
 
      //   cout<<"HIER NOCH"<<endl;
-        uint32_t srcPort = udpCtrl->getSrcPort();
+        uint32_t srcPort = 43;
+        if(udpCtrl->getDestPort()){
+            srcPort = udpCtrl->getSrcPort();
+        }
 
+        cout<<"FUCK"<<endl;
         cout<<"HIER AUCH NOCH: "<<srcPort<<endl;
-
+*/
 
         //uint32_t destPort = udpCtrl->getDestPort();
 
@@ -819,11 +839,11 @@ cPacket *IPv6::decapsulate(IPv6Datagram *datagram, bool isTunneled)
 
         cout<<udpCtrl->getSrcAddr() << "UDP CTRL"<<endl;
         cout<<flowSourceControlInfo->getSrcAddr() <<"FLOW SOURCE ADDRESS"<<endl; */
-
+/*
     }
     else{
          cout<<"UDP IST NULL"<<endl;
-    }
+    }*/
 
 
   //  return controlInfo;
@@ -834,28 +854,6 @@ cPacket *IPv6::decapsulate(IPv6Datagram *datagram, bool isTunneled)
 IPv6Datagram *IPv6::encapsulate(cPacket *transportPacket, InterfaceEntry *&destIE)
 {
 	EV <<"\n<<=======THIS IS THE IPv6::encapsulate() FUNCTION=========>>\n";
-
-    //***********************************************
-	//FOR PROXY UNLOADING
-    //***********************************************
-	//es muss geprüft werden, ob es sich auch um ein UDP Paket handelt!!!
-	if(transportPacket->getKind()==UDP_C_DATA){
-	    UDPControlInfo *udpCtrl = static_cast<UDPControlInfo *>(transportPacket->getControlInfo());
-	    int destPortProxyUnloading =udpCtrl->getDestPort();
-	    cout<<"TEST: "<<destPortProxyUnloading<<endl;
-	    int srcPortProxyUnloading = udpCtrl->getSrcPort();
-	    cout<<"TEST2: "<<srcPortProxyUnloading<<endl;
-	}
-	else{
-	    cout<<"KEIN UDP PAKET "<<endl;
-	}
-
-//	int destPortProxyUnloading =udpCtrl->getDestPort();
-	//int srcPortProxyUnloading = udpCtrl->getSrcPort();
-	//cout<<"TEST: "<<destPortProxyUnloading<<endl;
-	//cout<<"TEST2: "<<srcPortProxyUnloading<<endl;
-
-
 
     IPv6ControlInfo *controlInfo = check_and_cast<IPv6ControlInfo*>(transportPacket->removeControlInfo());
 
@@ -871,16 +869,7 @@ IPv6Datagram *IPv6::encapsulate(cPacket *transportPacket, InterfaceEntry *&destI
     destIE = ift->getInterfaceById(controlInfo->getInterfaceId());
 
 
-    //***********************************************
-    //FOR PROXY UNLOADING
-     //***********************************************
 
-    //calculateFlowSourceAddress(controlInfo, transportPacket);
-
-
-
-
-    //***********************************************
 
     // set source and destination address
     IPv6Address dest = controlInfo->getDestAddr();
@@ -921,6 +910,18 @@ IPv6Datagram *IPv6::encapsulate(cPacket *transportPacket, InterfaceEntry *&destI
 
 	datagram->setByteLength(datagram->calculateHeaderByteLength()); // 30.08.07 - CB
 	datagram->encapsulate(transportPacket); // 30.08.07 - CB
+
+
+
+
+
+	//PROXY UNLOADING XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	calculateFlowSourceAddress(datagram);
+    //PROXY UNLOADING XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+
     return datagram;
 }
 
