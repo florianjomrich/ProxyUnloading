@@ -29,5 +29,9 @@ package inet.networklayer.xmipv6;
 //
 simple BindingUpdateList
 {
+    
+    gates:
+    output toProxyApp[];    
+        
 }
 

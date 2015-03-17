@@ -27,6 +27,8 @@
 
 
 #define PROXY_ENHANCED_BU_MESSAGE  42
+#define PROXY_CN_MESSAGE_TO_MOBILE_NODE 43
+#define PROXY_MESSAGE_FROM_CN_TO_MN 51
 
 using std::cout;
 
@@ -52,7 +54,7 @@ void Proxy_Enhanced_MCoAVideoCli::initialize()
     bindToPort(localPort);
 
     if (startTime>=0){
-        cMessage *start_proxying_context = new cMessage("Starting_Proxying_Context");
+        cMessage *start_proxying_context = new cMessage("Starting_Proxying_Context MCoAVideoCli");
         //timer->setContextPointer(d);
         start_proxying_context->setKind(PROXY_CONTEXT_START);
         scheduleAt(startTime, start_proxying_context);
@@ -83,30 +85,43 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
 
     	}
 
+
+
     }
     else
     {
-    	if (dynamic_cast<MCoAVideoStreaming*>(msg)){
-    		receiveStream(PK(msg));
+    //	if (dynamic_cast<MCoAVideoStreaming*>(msg)){
+    //		receiveStream(PK(msg));
+    //	}
+     // cout<<"Client App hat einen Nachricht von CN erhalten:"<<msg->getName()<<endl;
+    	if(msg->getKind()==PROXY_CN_MESSAGE_TO_MOBILE_NODE){
+    	            cout<<"Client App hat einen Nachricht von CN erhalten:"<<msg->getName()<<endl;
+    	        }
+
+    	/*const char* test = strcmp(msg->getName(),'HALALALAOAOOAOAOAOAOAOAA');
+    	if(test==0){
+    	        cout<<"Client App hat HALALALAOAOOAOAOAOAOAOAA  Nachricht von der CN App erhalten: "<<msg->getName()<<endl;
+    	}*/
+    	else{
+    	  //  cout<<"VIDEO CLIENT received: "<<msg->getName()<<endl;
     	}
     }
 }
 
 void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
-    IPvXAddress ha = IPAddressResolver().resolve("HA");
+    IPvXAddress cn = IPAddressResolver().resolve("CN[0]");
 
     FlowBindingUpdateMessage* halloWelt = new FlowBindingUpdateMessage();
-    halloWelt->setName("HALLO WELT Message for the Proxy");
+    halloWelt->setName("Senden einer Request Nachricht an den CN Server. Hierauf soll er anfangen Daten zu senden.");
 
-
-                sendToUDPMCOA(halloWelt, localPort, ha, 1000, true);
+    sendToUDPMCOA(halloWelt, localPort, cn, 2000, true);
 
 }
 
 void Proxy_Enhanced_MCoAVideoCli::receiveStream(cPacket *msg)
 {
 	MCoAVideoStreaming *pkt_video = (MCoAVideoStreaming *)(msg);
-    cout << "Video stream packet:\n";
+    //cout << "Video stream packet:\n";
     int nLost;
 
     nLost = (pkt_video->getCurSeq() - lastSeq);

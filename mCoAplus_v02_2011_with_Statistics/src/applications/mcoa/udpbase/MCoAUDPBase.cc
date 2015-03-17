@@ -27,6 +27,8 @@
 
 Define_Module(MCoAUDPBase);
 
+using std::cout;
+
 MCoAUDPBase::MCoAUDPBase(){
 
 }
@@ -173,6 +175,7 @@ void MCoAUDPBase::sendToUDPMCOA(cPacket *msg, int srcPort, const IPvXAddress& de
     	TrysendToUDPMCOA(msg,  srcPort, destAddr, destPort , appendCtrlInfo);
     }else{
     	if (useMode == MCOA_TUN_ALL_ADR_ALL){
+    	  //  cout<<"ICH WAR HIER !!!"<<endl; //ALL = DIESE OPTION HIER AUSGEWÄHLT
     		std::vector<AdrInfo>::iterator it;
 
 			for (it=adrsAvailable.begin(); it < adrsAvailable.end(); it++){
@@ -193,7 +196,7 @@ void MCoAUDPBase::sendToUDPMCOA(cPacket *msg, int srcPort, const IPvXAddress& de
 
 						if (!isDestiny){ // Sender can be single-homed
 							cPacket *msg1 = msg->dup();
-							EV << "MCoAUDPBase in Sending node duplicating message for adr " << it->mSrc << endl;
+						EV << "MCoAUDPBase in Sending node duplicating message for source adr " << it->mSrc << endl;
 							//Please note dup objects need to add controlinfo.
 							sendToUDP(msg1, it->mSrc, srcPort, it->mDest, destPort , true);
 							sentMsg= true;
@@ -253,6 +256,7 @@ void MCoAUDPBase::TrysendToUDPMCOA(cPacket *msg, int srcPort, const IPvXAddress&
 		ctrl->setDestAddr(destAddr);
 		ctrl->setDestPort(destPort);
 		msg->setControlInfo(ctrl);
+		//cout<<"CONTROL INFO HINZUFÜGEN: "<<msg->getName()<<endl;
 	}
 	EV << "Sending packet: ";
 	printPacket(msg);

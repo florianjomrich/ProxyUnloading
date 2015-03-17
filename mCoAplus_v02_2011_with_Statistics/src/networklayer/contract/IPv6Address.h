@@ -122,6 +122,16 @@ class INET_API IPv6Address
         }
         bool operator!=(const IPv6Address& addr) const {return !operator==(addr);}
 
+
+
+        //PROXY UNLOADING EXTENSION   ###############################################
+        uint32_t getIPAdressAsIntegerPart0();
+        uint32_t getIPAdressAsIntegerPart1();
+        uint32_t getIPAdressAsIntegerPart2();
+        uint32_t getIPAdressAsIntegerPart3();
+        //PROXY UNLOADING EXTENSION   ###############################################
+
+
         /**
          * Returns -1, 0 or 1.
          */
@@ -278,6 +288,9 @@ class INET_API IPv6Address
          * Get the 4-bit scope field of an IPv6 multicast address.
          */
         int getMulticastScope() const;
+
+
+
 };
 
 /**

@@ -281,8 +281,19 @@ void xMIPv6::processMobilityMessage(MobilityHeader* mipv6Msg, IPv6ControlInfo* c
 		EV <<"Message recognised as BINDING UPDATE (BU) From: " << ctrlInfo->getSrcAddr() << "  to: " << ctrlInfo->getDestAddr()  << endl;
 		cout <<"Message recognised as BINDING UPDATE (BU) From: " << ctrlInfo->getSrcAddr() << "  to: " << ctrlInfo->getDestAddr()  << endl;
 		//EV << "\n<<<<<<<<Giving Control to processBUMessage()>>>>>>>\n";
+
+	     IPvXAddress mn0 = IPAddressResolver().resolve("MN[0]");
+	        IPvXAddress mn1 = IPAddressResolver().resolve("MN[1]");
+	         IPvXAddress ha = IPAddressResolver().resolve("HA");
+	         IPvXAddress cn = IPAddressResolver().resolve("CN[0]");
+	     cout<<"MN0 - after Binding Update 2:"<<mn0 <<endl;
+	     cout<<"MN1 - after Binding Update 2:"<<mn1 <<endl;
+	     cout<<"HA - after Binding Update 2:"<<ha<<endl;
+	     cout<<"CN - after Binding Update 2:"<<cn<<endl;
+
 		BindingUpdate *bu = (BindingUpdate*) mipv6Msg;
 		processBUMessage(bu, ctrlInfo);
+
 	}
 	else if ( dynamic_cast<BindingAcknowledgement*>(mipv6Msg) )
 	{
@@ -842,9 +853,9 @@ void xMIPv6::createBUTimer( KeyMCoABind &keyMCoA, const IPv6Address& buDest, Int
 
 void xMIPv6::sendPeriodicBU(cMessage *msg)
 {
-	cout <<"Sending periodic BU message at time: " << simTime() << " seconds." << endl;
+	/*cout*/EV <<"Sending periodic BU message at time: " << simTime() << " seconds." << endl;
 	BUTransmitIfEntry *buIfEntry = (BUTransmitIfEntry*) msg->getContextPointer(); //detaching the corresponding buIfEntry pointer
-	cout << "### lifetime of buIfEntry=" << buIfEntry->lifeTime << " and seq#= " << buIfEntry->buSequenceNumber << endl;
+	/*cout*/ EV << "### lifetime of buIfEntry=" << buIfEntry->lifeTime << " and seq#= " << buIfEntry->buSequenceNumber << endl;
 
 	InterfaceEntry* ie = buIfEntry->ifEntry; //copy the ie info
 	IPv6Address& buDest = buIfEntry->dest;
@@ -879,7 +890,7 @@ void xMIPv6::sendPeriodicBU(cMessage *msg)
 	// Added by CB, 28.08.07
 	if ( !buIfEntry->homeRegistration ) // this BU goes to a CN
 	{
-		cout << "SEARCHING FOR COA in KEY " << keyMCoA << endl;
+		//cout << "SEARCHING FOR COA in KEY " << keyMCoA << endl;
 		//IPv6Address CoA = ie->ipv6()->globalAddress();
 		//prtTimers();
 		IPv6Address CoA = bul->getCoA(keyMCoA); // 24.9.07 - CB
@@ -1433,6 +1444,8 @@ void xMIPv6::createAndSendBUMessage(const IPv6Address& dest, InterfaceEntry* ie,
 	  o  The Destination Address of the IPv6 header MUST contain the
 	     address of the correspondent node.*/
 
+	 IPvXAddress mn0 = IPAddressResolver().resolve("MN[0]");
+	 cout<<"MN0 - after Binding Update:"<<mn0 <<endl;
 
 	sendMobilityMessageToIPv6Module(bu, dest, CoA, ie->getInterfaceId());
 
@@ -1590,7 +1603,7 @@ void xMIPv6::processBUMessage(BindingUpdate* bu, IPv6ControlInfo* ctrlInfo)
 			//###################################################################
 			if(rt6->isHomeAgent()) cout<< "BU von HA empfangen." << endl; //FJ
 			if(!rt6->isHomeAgent() && !rt6->isMobileNode() && !rt6->isRouter()) cout << "BU von CN empfangen"  <<endl;
-			cout<<"Home-Agent-Address:"<< MNHoA <<endl;
+			//cout<<"Home-Agent-Address:"<< MNHoA <<endl;
             //###################################################################
 
 

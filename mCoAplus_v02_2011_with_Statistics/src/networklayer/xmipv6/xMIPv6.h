@@ -387,7 +387,7 @@ protected:
 	 * Method for creating and sending a BU by a MN.
 	 *
 	 */
-	void createAndSendBUMessage(const IPv6Address& dest,InterfaceEntry* ie, const uint buSeq, const uint lifeTime, const int bindAuthData ,
+	virtual void createAndSendBUMessage(const IPv6Address& dest,InterfaceEntry* ie, const uint buSeq, const uint lifeTime, const int bindAuthData ,
 								MobOption_Binding_AuthorizationData *aDat,
 								MobilityBIDOptions* mOpt , const int nMobOpts);
 
@@ -395,7 +395,7 @@ protected:
 	/**
 	 * Update the an entry of the BUL with the provided parameters.
 	 */
-	void updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA, const IPv6Address& dest, const IPv6Address& CoA, InterfaceEntry* ie, const simtime_t sendTime); //04.06.07
+	virtual void updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA, const IPv6Address& dest, const IPv6Address& CoA, InterfaceEntry* ie, const simtime_t sendTime); //04.06.07
 
 	/**
 	 * This method takes an interface and a destination address and returns the appropriate IfEntry for an BU.
@@ -412,7 +412,7 @@ protected:
 	/**
 	 * Process a BU - only applicable to HAs and CNs.
 	 */
-	void processBUMessage(BindingUpdate * bu, IPv6ControlInfo * ctrlInfo);
+	virtual void processBUMessage(BindingUpdate * bu, IPv6ControlInfo * ctrlInfo);
 
 	/**
 	 * Validate a BU - only applicable to HAs and CNs

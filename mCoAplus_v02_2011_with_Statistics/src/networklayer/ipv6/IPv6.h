@@ -30,6 +30,10 @@
 #include "ProtocolMap.h"
 #include "xMIPv6.h"
 #include "IScriptable.h"
+#include "RequestForConnectionToLegacyServerTable.h"
+
+//FOR PROXYUNLOADING
+#include "UDPControlInfo_m.h"
 
 class ICMPv6Message;
 
@@ -82,6 +86,14 @@ class INET_API IPv6 : public QueueBase, public  IScriptable
     	InterfaceEntry* ie;
     	MACAddress macAddr;
     };
+
+
+    //PROXY UNLOADING
+    bool isMN;
+    bool isHA;
+    bool isCN;
+    RequestForConnectionToLegacyServerTable *requestForConnectionToLegacyServerTable;
+    char *myHumanReadableName;
 
   protected:
     // utility: look up interface from getArrivalGate()
@@ -197,6 +209,11 @@ protected:
     bool CnvtoBool(const char *s, const bool def=true);
 
     virtual void finish();
+
+
+
+    //PROXY UNLOADING EXTENSION
+    virtual  /*IPv6ControlInfo* */ void calculateFlowSourceAddress(IPv6Datagram *datagram);
 };
 
 

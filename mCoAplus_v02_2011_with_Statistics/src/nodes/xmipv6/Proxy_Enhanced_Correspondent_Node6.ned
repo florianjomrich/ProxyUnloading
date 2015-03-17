@@ -25,7 +25,8 @@ package inet.nodes.xmipv6;
 
 import inet.applications.pingapp.PingApp;
 import inet.applications.tcpapp.TCPApp;
-import inet.applications.mcoa.proxy_enhanced.Proxy_Enhanced_MCoAVideoSrv;
+import inet.applications.udpapp.UDPApp;
+import inet.applications.mcoa.proxy_enhanced.Proxy_Unloading_Control_App;
 import inet.base.NotificationBoard;
 import inet.linklayer.ethernet.EthernetInterface;
 import inet.networklayer.common.InterfaceTable;
@@ -81,7 +82,7 @@ module Proxy_Enhanced_Correspondent_Node6
             parameters:
                 @display("p=187,170;i=block/wheelbarrow");
         }
-        udpApp[numUdpApps]: Proxy_Enhanced_MCoAVideoSrv {
+       udpApp[numUdpApps]: <udpAppType> like UDPApp {
             parameters:
                 @display("i=block/app;p=312,75");
         }
@@ -89,14 +90,22 @@ module Proxy_Enhanced_Correspondent_Node6
             parameters:
                 @display("p=312,170;i=block/transport");
         }
+             proxyUnloadingControlApp: Proxy_Unloading_Control_App {
+              parameters:
+                isMN = false; //is Mobile Node
+                isHA = false; //is Home Agent
+                isCN =  true;//is Correspondent Node
+                @display("p=122,396;i=block/wheelbarrow");
+        }
         pingApp: PingApp {
             parameters:
                 @display("i=block/app;p=333,286");
         }
-        networkLayer: Proxy_Enhanced_MobileIPLayer6_For_Correspondent_Node {
+          networkLayer: Proxy_Unloading_MobileIPLayer6 {
             parameters:
                 isMN = false; //is Mobile Node
                 isHA = false; //is Home Agent
+                isCN =  true;//is Correspondent Node
                 @display("p=232,247;i=block/fork;q=queue");
             gates:
                 ifIn[sizeof(in)+sizeof(ethIn)];
@@ -141,7 +150,11 @@ module Proxy_Enhanced_Correspondent_Node6
             eth[i].netwIn <-- networkLayer.ifOut[sizeof(out)+i];
         }
 
-//PROXY ENHANCED
 
+		//PROXY ENHANCED
+		proxyUnloadingControlApp.APP_proxy_Enhanced_Control_Channel	<--> networkLayer.NETWORK_LAYER_proxy_Enhanced_Control_Channel;   
+	 	proxyUnloadingControlApp.udpOut --> udp.appIn++;
+	 	proxyUnloadingControlApp.udpIn <-- udp.appOut++;
+	 	proxyUnloadingControlApp.uDPControllAppConnection <--> networkLayer.uDPControllAppConnection;
 }
 

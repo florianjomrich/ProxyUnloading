@@ -81,6 +81,12 @@ simple IPv6
         string protocolMapping;
         bool isActive = default(true);
         @display("i=block/network2");
+        
+        //PROXY UNLOADING
+        bool isMN;
+        bool isHA;
+        bool isCN;
+       // string humanReadableNameForAutomaticAdding;
     gates:
         input transportIn[];
         output transportOut[];
@@ -98,6 +104,9 @@ simple IPv6
         //the following gates are added by Zarrar Yousaf on 19.06.07
 	    input xMIPv6In;
 	    output xMIPv6Out;
+	    
+	    //PROXY UNLOADING 
+	    inout uDPControllAppConnection;
 }
 
 

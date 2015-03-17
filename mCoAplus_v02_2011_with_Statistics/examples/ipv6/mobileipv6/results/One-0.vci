@@ -1,0 +1,197 @@
+file 1363232 1426525354                                         
+version 2
+run One-0-20150309-22:20:03-23652
+attr configname One
+attr datetime 20150309-22:20:03
+attr experiment One
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network mIPv6Network
+attr processid 23652
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+vector 0  mIPv6Network.Home_Agent.networkLayer.ipv6  IPv6Active_Event  ETV
+0	6294 8 0 0 0 0 1 1 1 1 1
+vector 29  mIPv6Network.R_1.networkLayer.ipv6  IPv6Active_Event  ETV
+29	41927 9 0 0 0 0 1 1 1 1 1
+vector 58  mIPv6Network.R_2.networkLayer.ipv6  IPv6Active_Event  ETV
+58	76998 9 0 0 0 0 1 1 1 1 1
+vector 105  mIPv6Network.MN[0].networkLayer.ipv6  IPv6Active_Event  ETV
+105	78198 10 0 0 0 0 1 1 1 1 1
+vector 115  mIPv6Network.CN[0].networkLayer.ipv6  IPv6Active_Event  ETV
+115	308121 10 0 0 0 0 1 1 1 1 1
+vector 134  mIPv6Network.CN[1].networkLayer.ipv6  IPv6Active_Event  ETV
+134	309193 10 0 0 0 0 1 1 1 1 1
+vector 109  mIPv6Network.MN[0].wlan.mac  RadioState  ETV
+attr enum "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname RadioState
+109	216222 91444 0 34416 0 29.993604280167 3340 0 2 1686 1726
+vector 108  mIPv6Network.MN[0].wlan.mac  State  ETV
+attr enum "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
+attr enumname Ieee80211Mac
+108	78208 138014 0 34417 0 29.993604280167 5042 0 7 384 1524
+vector 153  mIPv6Network.AP_Home.wlan.mac  RadioState  ETV
+attr enum "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname RadioState
+153	688771 99992 0 34415 0 29.993604007221 3670 0 2 3650 7282
+vector 152  mIPv6Network.AP_Home.wlan.mac  State  ETV
+attr enum "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
+attr enumname Ieee80211Mac
+152	344065 344706 0 34423 0 29.993714007221 12640 0 7 32648 123532
+vector 171  mIPv6Network.AP_1.wlan.mac  RadioState  ETV
+attr enum "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname RadioState
+171	1213236 97128 0 34394 0 29.992091380344 3558 0 2 3556 7112
+vector 170  mIPv6Network.AP_1.wlan.mac  State  ETV
+attr enum "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
+attr enumname Ieee80211Mac
+170	875430 337806 0 34396 0 29.992141380344 12368 0 5 31924 120744
+vector 44  mIPv6Network.R_1.eth[1].queue  "queue length"  ETV
+44	42058 474 53 686 0.097461444044 1.00006719999 20 0 10 100 670
+vector 199  mIPv6Network.R_2.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
+199	1363009 72 54 54 0.101218848489 0.101218848489 3 1 1 3 3
+vector 226  mIPv6Network.CN[1].networkLayer.neighbourDiscovery  "Starting DAD"  ETV
+226	1363182 50 71 2269 0.108087359648 2.332005369902 2 1 1 2 2
+vector 198  mIPv6Network.R_1.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
+198	1362961 48 77 77 0.117835437948 0.117835437948 2 1 1 2 2
+vector 15  mIPv6Network.Home_Agent.eth[1].queue  "queue length"  ETV
+15	6420 477 89 685 0.13078295523 1.00006719999 20 0 10 100 670
+vector 200  mIPv6Network.MN[0].networkLayer.neighbourDiscovery  "Starting DAD"  ETV
+200	1363081 50 94 2816 0.134851718787 2.764965834351 2 1 1 2 2
+vector 185  mIPv6Network.Home_Agent.networkLayer.neighbourDiscovery  "Starting DAD"  ETV
+185	1362913 48 98 98 0.158668476459 0.158668476459 2 1 1 2 2
+vector 213  mIPv6Network.CN[0].networkLayer.neighbourDiscovery  "Starting DAD"  ETV
+213	1363131 51 173 2268 0.359268750622 2.332005369902 2 1 1 2 2
+vector 45  mIPv6Network.R_1.eth[1].queue  drops  ETV
+45	42532 240 240 380 0.508792679154 0.958994793359 10 1 1 10 10
+vector 16  mIPv6Network.Home_Agent.eth[1].queue  drops  ETV
+16	6897 192 248 376 0.553757602406 0.951659189506 8 1 1 8 8
+vector 128  mIPv6Network.CN[0].eth[0].mac  collisions  ETV
+128	309041 76 426 2286 1.000001159999 2.332016529901 3 1 3 6 14
+vector 147  mIPv6Network.CN[1].eth[0].mac  collisions  ETV
+147	310114 76 427 2284 1.000001159999 2.332016529901 3 1 3 6 14
+vector 99  mIPv6Network.R_2.eth[2].mac  collisions  ETV
+99	78100 73 429 2287 1.000001159999 2.332016529901 3 1 3 6 14
+vector 129  mIPv6Network.CN[0].eth[0].mac  backoffs  ETV
+129	309117 76 441 2295 1.000001479999 2.332016849901 3 1 3 6 14
+vector 148  mIPv6Network.CN[1].eth[0].mac  backoffs  ETV
+148	310190 76 442 2294 1.000001479999 2.332016849901 3 1 3 6 14
+vector 100  mIPv6Network.R_2.eth[2].mac  backoffs  ETV
+100	78173 25 443 443 1.000001479999 1.000001479999 1 1 1 1 1
+vector 3  mIPv6Network.Home_Agent.eth[0].mac  framesSent  ETV
+3	6302 23 473 473 1.000006719999 1.000006719999 1 1 1 1 1
+vector 5  mIPv6Network.Home_Agent.eth[0].mac  bytesSent  ETV
+5	6348 24 473 473 1.000006719999 1.000006719999 1 64 64 64 4096
+vector 17  mIPv6Network.Home_Agent.eth[1].mac  framesSent  ETV
+17	7089 16814 474 34405 1.000006719999 29.993063907221 599 1 599 179700 71820100
+vector 19  mIPv6Network.Home_Agent.eth[1].mac  bytesSent  ETV
+19	23928 17948 474 34405 1.000006719999 29.993063907221 599 64 38336 11500800 294175129600
+vector 32  mIPv6Network.R_1.eth[0].mac  framesSent  ETV
+32	41936 24 475 475 1.000006719999 1.000006719999 1 1 1 1 1
+vector 34  mIPv6Network.R_1.eth[0].mac  bytesSent  ETV
+34	41984 25 475 475 1.000006719999 1.000006719999 1 64 64 64 4096
+vector 46  mIPv6Network.R_1.eth[1].mac  framesSent  ETV
+46	42772 16556 476 34385 1.000006719999 29.991551280344 589 1 589 173755 68285715
+vector 48  mIPv6Network.R_1.eth[1].mac  bytesSent  ETV
+48	59328 17670 476 34385 1.000006719999 29.991551280344 589 64 37696 11120320 279698288640
+vector 61  mIPv6Network.R_2.eth[0].mac  framesSent  ETV
+61	77007 24 477 477 1.000006719999 1.000006719999 1 1 1 1 1
+vector 63  mIPv6Network.R_2.eth[0].mac  bytesSent  ETV
+63	77055 25 477 477 1.000006719999 1.000006719999 1 64 64 64 4096
+vector 75  mIPv6Network.R_2.eth[1].mac  framesSent  ETV
+75	77129 24 478 478 1.000006719999 1.000006719999 1 1 1 1 1
+vector 77  mIPv6Network.R_2.eth[1].mac  bytesSent  ETV
+77	77177 25 478 478 1.000006719999 1.000006719999 1 64 64 64 4096
+vector 76  mIPv6Network.R_2.eth[1].mac  framesReceivedOK  ETV
+76	77153 24 483 483 1.000006819999 1.000006819999 1 1 1 1 1
+vector 78  mIPv6Network.R_2.eth[1].mac  bytesReceivedOK  ETV
+78	77202 25 483 483 1.000006819999 1.000006819999 1 64 64 64 4096
+vector 82  mIPv6Network.R_2.eth[1].mac  framesPassedToHL  ETV
+82	77227 24 483 483 1.000006819999 1.000006819999 1 1 1 1 1
+vector 156  mIPv6Network.AP_Home.eth[0]  framesReceivedOK  ETV
+156	788789 17414 484 34406 1.000006819999 29.993064007221 599 1 599 179700 71820100
+vector 158  mIPv6Network.AP_Home.eth[0]  bytesReceivedOK  ETV
+158	806230 18548 484 34406 1.000006819999 29.993064007221 599 64 38336 11500800 294175129600
+vector 162  mIPv6Network.AP_Home.eth[0]  framesPassedToHL  ETV
+162	824778 17414 484 34406 1.000006819999 29.993064007221 599 1 599 179700 71820100
+vector 62  mIPv6Network.R_2.eth[0].mac  framesReceivedOK  ETV
+62	77031 24 485 485 1.000006819999 1.000006819999 1 1 1 1 1
+vector 64  mIPv6Network.R_2.eth[0].mac  bytesReceivedOK  ETV
+64	77080 25 485 485 1.000006819999 1.000006819999 1 64 64 64 4096
+vector 68  mIPv6Network.R_2.eth[0].mac  framesPassedToHL  ETV
+68	77105 24 485 485 1.000006819999 1.000006819999 1 1 1 1 1
+vector 174  mIPv6Network.AP_1.eth[0]  framesReceivedOK  ETV
+174	1310364 17145 486 34386 1.000006819999 29.991551380344 589 1 589 173755 68285715
+vector 176  mIPv6Network.AP_1.eth[0]  bytesReceivedOK  ETV
+176	1327509 18259 486 34386 1.000006819999 29.991551380344 589 64 37696 11120320 279698288640
+vector 180  mIPv6Network.AP_1.eth[0]  framesPassedToHL  ETV
+180	1345768 17145 486 34386 1.000006819999 29.991551380344 589 1 589 173755 68285715
+vector 33  mIPv6Network.R_1.eth[0].mac  framesReceivedOK  ETV
+33	41960 24 487 487 1.000006819999 1.000006819999 1 1 1 1 1
+vector 35  mIPv6Network.R_1.eth[0].mac  bytesReceivedOK  ETV
+35	42009 25 487 487 1.000006819999 1.000006819999 1 64 64 64 4096
+vector 39  mIPv6Network.R_1.eth[0].mac  framesPassedToHL  ETV
+39	42034 24 487 487 1.000006819999 1.000006819999 1 1 1 1 1
+vector 4  mIPv6Network.Home_Agent.eth[0].mac  framesReceivedOK  ETV
+4	6325 23 488 488 1.000006819999 1.000006819999 1 1 1 1 1
+vector 6  mIPv6Network.Home_Agent.eth[0].mac  bytesReceivedOK  ETV
+6	6372 24 488 488 1.000006819999 1.000006819999 1 64 64 64 4096
+vector 10  mIPv6Network.Home_Agent.eth[0].mac  framesPassedToHL  ETV
+10	6396 24 488 488 1.000006819999 1.000006819999 1 1 1 1 1
+vector 149  mIPv6Network.AP_Home.relayUnit  "buffer level"  ETV
+149	310266 33300 490 34408 1.000006819999 29.993066007221 1200 0 64 38376 2455104
+vector 167  mIPv6Network.AP_1.relayUnit  "buffer level"  ETV
+167	842192 32739 492 34388 1.000006819999 29.991553380344 1178 0 64 37696 2412544
+vector 137  mIPv6Network.CN[1].eth[0].mac  framesSent  ETV
+137	309203 100 509 5329 1.000010079997 4.85951087523 4 1 4 10 30
+vector 139  mIPv6Network.CN[1].eth[0].mac  bytesSent  ETV
+139	309532 107 509 5329 1.000010079997 4.85951087523 4 64 256 640 122880
+vector 119  mIPv6Network.CN[0].eth[0].mac  framesReceivedOK  ETV
+119	308232 228 510 5759 1.000010279997 5.14830946973 9 1 9 45 285
+vector 121  mIPv6Network.CN[0].eth[0].mac  bytesReceivedOK  ETV
+121	308568 245 510 5759 1.000010279997 5.14830946973 9 64 576 2880 1167360
+vector 125  mIPv6Network.CN[0].eth[0].mac  framesPassedToHL  ETV
+125	308813 228 510 5759 1.000010279997 5.14830946973 9 1 9 45 285
+vector 90  mIPv6Network.R_2.eth[2].mac  framesReceivedOK  ETV
+90	77374 193 511 5331 1.000010279997 4.85951107523 8 1 8 36 204
+vector 92  mIPv6Network.R_2.eth[2].mac  bytesReceivedOK  ETV
+92	77699 208 511 5331 1.000010279997 4.85951107523 8 64 512 2304 835584
+vector 96  mIPv6Network.R_2.eth[2].mac  framesPassedToHL  ETV
+96	77907 193 511 5331 1.000010279997 4.85951107523 8 1 8 36 204
+vector 150  mIPv6Network.AP_Home.wlan.mgmt  "queue length"  ETV
+150	343566 499 557 864 1.000022259997 1.008108819999 20 0 9 86 502
+vector 168  mIPv6Network.AP_1.wlan.mgmt  "queue length"  ETV
+168	874931 499 558 868 1.000022259997 1.008288819999 20 0 9 92 550
+vector 89  mIPv6Network.R_2.eth[2].mac  framesSent  ETV
+89	77251 123 660 5758 1.000059399998 5.14830926973 5 1 5 15 55
+vector 91  mIPv6Network.R_2.eth[2].mac  bytesSent  ETV
+91	77567 132 660 5758 1.000059399998 5.14830926973 5 64 320 960 225280
+vector 138  mIPv6Network.CN[1].eth[0].mac  framesReceivedOK  ETV
+138	309303 229 662 5760 1.000059599998 5.14830946973 9 1 9 45 285
+vector 140  mIPv6Network.CN[1].eth[0].mac  bytesReceivedOK  ETV
+140	309639 246 662 5760 1.000059599998 5.14830946973 9 64 576 2880 1167360
+vector 144  mIPv6Network.CN[1].eth[0].mac  framesPassedToHL  ETV
+144	309885 229 662 5760 1.000059599998 5.14830946973 9 1 9 45 285
+vector 118  mIPv6Network.CN[0].eth[0].mac  framesSent  ETV
+118	308131 101 720 5140 1.000112279997 4.693889499099 4 1 4 10 30
+vector 120  mIPv6Network.CN[0].eth[0].mac  bytesSent  ETV
+120	308460 108 720 5140 1.000112279997 4.693889499099 4 64 256 640 122880
+vector 110  mIPv6Network.MN[0].wlan.radio  "MAC loss rate"  ETV
+110	307666 440 4745 33533 4.359838784079 29.259838735703 16 0 0 0 0
+vector 155  mIPv6Network.AP_Home.eth[0]  framesSent  ETV
+155	788763 26 5564 5564 5.000465033132 5.000465033132 1 1 1 1 1
+vector 157  mIPv6Network.AP_Home.eth[0]  bytesSent  ETV
+157	806203 27 5564 5564 5.000465033132 5.000465033132 1 40 40 40 1600
+vector 18  mIPv6Network.Home_Agent.eth[1].mac  framesReceivedOK  ETV
+18	23903 25 5565 5565 5.000465133132 5.000465133132 1 1 1 1 1
+vector 20  mIPv6Network.Home_Agent.eth[1].mac  bytesReceivedOK  ETV
+20	41876 26 5565 5565 5.000465133132 5.000465133132 1 40 40 40 1600
+vector 24  mIPv6Network.Home_Agent.eth[1].mac  framesPassedToHL  ETV
+24	41902 25 5565 5565 5.000465133132 5.000465133132 1 1 1 1 1
+vector 113  mIPv6Network.CN[0].pingApp  "PING: Ping Request"  ETV
+113	308106 15 34424 34424 30 30 1 0 0 0 0

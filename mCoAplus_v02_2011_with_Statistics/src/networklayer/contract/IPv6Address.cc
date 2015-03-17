@@ -377,3 +377,19 @@ int IPv6Address::getMulticastScope() const
 }
 
 
+//PROXY UNLOADING
+uint32_t IPv6Address::getIPAdressAsIntegerPart0(){
+    return d[0];
+}
+
+uint32_t IPv6Address::getIPAdressAsIntegerPart1(){
+    return d[1];
+}
+
+uint32_t IPv6Address::getIPAdressAsIntegerPart2(){
+    return d[2];
+}
+
+uint32_t IPv6Address::getIPAdressAsIntegerPart3(){
+    return d[3];
+}

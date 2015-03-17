@@ -118,6 +118,7 @@ class INET_API UDP : public cSimpleModule
     // create a blank UDP packet; override to subclass UDPPacket
     virtual UDPPacket *createUDPPacket(const char *name);
 
+
   public:
     UDP() {}
     virtual ~UDP();
