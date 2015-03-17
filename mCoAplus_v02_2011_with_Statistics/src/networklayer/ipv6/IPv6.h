@@ -93,7 +93,7 @@ class INET_API IPv6 : public QueueBase, public  IScriptable
     bool isHA;
     bool isCN;
     RequestForConnectionToLegacyServerTable *requestForConnectionToLegacyServerTable;
-    char *myHumanReadableName;
+    const char *myHumanReadableName;
 
   protected:
     // utility: look up interface from getArrivalGate()

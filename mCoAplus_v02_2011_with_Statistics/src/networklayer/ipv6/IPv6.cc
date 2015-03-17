@@ -77,7 +77,7 @@ void IPv6::initialize() {
    // cout<<"was wurde konfiguriert rein: "<<isMN<<isHA<<isCN<<endl;
     requestForConnectionToLegacyServerTable =
             new RequestForConnectionToLegacyServerTable();
-    //myHumanReadableName = par("humanReadableNameForAuto");
+    myHumanReadableName = par("humanReadableNameForAutomaticAdding").stringValue();
 
     //cout<<"Initialisiere IPv6 Layer"<<endl;
 
@@ -775,7 +775,7 @@ cPacket *IPv6::decapsulate(IPv6Datagram *datagram, bool isTunneled) {
     int protocol2 = datagram->getTransportProtocol();
     if (datagram->getSrcAddress().isUnspecified() && protocol2==IP_PROT_UDP ) {
         cout<<"@@SRC-ADRESSE  DES UDP-PAKETS WAR UNSPEZIFIZIERT und wurde automatisch ergänzt"<<endl;
-        IPvXAddress newSourceAdress = IPAddressResolver().resolve("MN[0]");
+        IPvXAddress newSourceAdress = IPAddressResolver().resolve(myHumanReadableName);
 
        datagram->setSrcAddress(newSourceAdress.get6());
     }

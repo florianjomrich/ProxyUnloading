@@ -86,7 +86,7 @@ simple IPv6
         bool isMN;
         bool isHA;
         bool isCN;
-       // string humanReadableNameForAutomaticAdding;
+        string humanReadableNameForAutomaticAdding;
     gates:
         input transportIn[];
         output transportOut[];
