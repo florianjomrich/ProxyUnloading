@@ -17,8 +17,9 @@
 // TODO generated message class
 //
 packet ACK_RequestConnectionToLegacyServer {
-    int someField;
-    string anotherField;
-    double arrayField1[];
-    double arrayField2[10];
+    int SrcPort;
+    int DestPort;
+    string FlowSourceAddress;
+    string SrcAddress;
+    string DestAddress;
 }

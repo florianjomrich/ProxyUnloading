@@ -19,21 +19,22 @@
  * Class generated from <tt>applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer.msg</tt> by opp_msgc.
  * <pre>
  * packet ACK_RequestConnectionToLegacyServer {
- *     int someField;
- *     string anotherField;
- *     double arrayField1[];
- *     double arrayField2[10];
+ *     int SrcPort;
+ *     int DestPort;
+ *     string FlowSourceAddress;
+ *     string SrcAddress;
+ *     string DestAddress;
  * }
  * </pre>
  */
 class ACK_RequestConnectionToLegacyServer : public ::cPacket
 {
   protected:
-    int someField_var;
-    opp_string anotherField_var;
-    double *arrayField1_var; // array ptr
-    unsigned int arrayField1_arraysize;
-    double arrayField2_var[10];
+    int SrcPort_var;
+    int DestPort_var;
+    opp_string FlowSourceAddress_var;
+    opp_string SrcAddress_var;
+    opp_string DestAddress_var;
 
   private:
     void copy(const ACK_RequestConnectionToLegacyServer& other);
@@ -43,7 +44,7 @@ class ACK_RequestConnectionToLegacyServer : public ::cPacket
     bool operator==(const ACK_RequestConnectionToLegacyServer&);
 
   public:
-    ACK_RequestConnectionToLegacyServer(const char *name="ACK_RequestConnectionToLegacyServer", int kind=0);
+    ACK_RequestConnectionToLegacyServer(const char *name=NULL, int kind=0);
     ACK_RequestConnectionToLegacyServer(const ACK_RequestConnectionToLegacyServer& other);
     virtual ~ACK_RequestConnectionToLegacyServer();
     ACK_RequestConnectionToLegacyServer& operator=(const ACK_RequestConnectionToLegacyServer& other);
@@ -52,17 +53,16 @@ class ACK_RequestConnectionToLegacyServer : public ::cPacket
     virtual void parsimUnpack(cCommBuffer *b);
 
     // field getter/setter methods
-    virtual int getSomeField() const;
-    virtual void setSomeField(int someField);
-    virtual const char * getAnotherField() const;
-    virtual void setAnotherField(const char * anotherField);
-    virtual void setArrayField1ArraySize(unsigned int size);
-    virtual unsigned int getArrayField1ArraySize() const;
-    virtual double getArrayField1(unsigned int k) const;
-    virtual void setArrayField1(unsigned int k, double arrayField1);
-    virtual unsigned int getArrayField2ArraySize() const;
-    virtual double getArrayField2(unsigned int k) const;
-    virtual void setArrayField2(unsigned int k, double arrayField2);
+    virtual int getSrcPort() const;
+    virtual void setSrcPort(int SrcPort);
+    virtual int getDestPort() const;
+    virtual void setDestPort(int DestPort);
+    virtual const char * getFlowSourceAddress() const;
+    virtual void setFlowSourceAddress(const char * FlowSourceAddress);
+    virtual const char * getSrcAddress() const;
+    virtual void setSrcAddress(const char * SrcAddress);
+    virtual const char * getDestAddress() const;
+    virtual void setDestAddress(const char * DestAddress);
 };
 
 inline void doPacking(cCommBuffer *b, ACK_RequestConnectionToLegacyServer& obj) {obj.parsimPack(b);}

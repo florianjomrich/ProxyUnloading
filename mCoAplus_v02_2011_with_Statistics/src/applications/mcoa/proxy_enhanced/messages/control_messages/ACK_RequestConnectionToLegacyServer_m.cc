@@ -36,24 +36,20 @@ Register_Class(ACK_RequestConnectionToLegacyServer);
 
 ACK_RequestConnectionToLegacyServer::ACK_RequestConnectionToLegacyServer(const char *name, int kind) : ::cPacket(name,kind)
 {
-    this->someField_var = 0;
-    this->anotherField_var = 0;
-    arrayField1_arraysize = 0;
-    this->arrayField1_var = 0;
-    for (unsigned int i=0; i<10; i++)
-        this->arrayField2_var[i] = 0;
+    this->SrcPort_var = 0;
+    this->DestPort_var = 0;
+    this->FlowSourceAddress_var = 0;
+    this->SrcAddress_var = 0;
+    this->DestAddress_var = 0;
 }
 
 ACK_RequestConnectionToLegacyServer::ACK_RequestConnectionToLegacyServer(const ACK_RequestConnectionToLegacyServer& other) : ::cPacket(other)
 {
-    arrayField1_arraysize = 0;
-    this->arrayField1_var = 0;
     copy(other);
 }
 
 ACK_RequestConnectionToLegacyServer::~ACK_RequestConnectionToLegacyServer()
 {
-    delete [] arrayField1_var;
 }
 
 ACK_RequestConnectionToLegacyServer& ACK_RequestConnectionToLegacyServer::operator=(const ACK_RequestConnectionToLegacyServer& other)
@@ -66,108 +62,81 @@ ACK_RequestConnectionToLegacyServer& ACK_RequestConnectionToLegacyServer::operat
 
 void ACK_RequestConnectionToLegacyServer::copy(const ACK_RequestConnectionToLegacyServer& other)
 {
-    this->someField_var = other.someField_var;
-    this->anotherField_var = other.anotherField_var;
-    delete [] this->arrayField1_var;
-    this->arrayField1_var = (other.arrayField1_arraysize==0) ? NULL : new double[other.arrayField1_arraysize];
-    arrayField1_arraysize = other.arrayField1_arraysize;
-    for (unsigned int i=0; i<arrayField1_arraysize; i++)
-        this->arrayField1_var[i] = other.arrayField1_var[i];
-    for (unsigned int i=0; i<10; i++)
-        this->arrayField2_var[i] = other.arrayField2_var[i];
+    this->SrcPort_var = other.SrcPort_var;
+    this->DestPort_var = other.DestPort_var;
+    this->FlowSourceAddress_var = other.FlowSourceAddress_var;
+    this->SrcAddress_var = other.SrcAddress_var;
+    this->DestAddress_var = other.DestAddress_var;
 }
 
 void ACK_RequestConnectionToLegacyServer::parsimPack(cCommBuffer *b)
 {
     ::cPacket::parsimPack(b);
-    doPacking(b,this->someField_var);
-    doPacking(b,this->anotherField_var);
-    b->pack(arrayField1_arraysize);
-    doPacking(b,this->arrayField1_var,arrayField1_arraysize);
-    doPacking(b,this->arrayField2_var,10);
+    doPacking(b,this->SrcPort_var);
+    doPacking(b,this->DestPort_var);
+    doPacking(b,this->FlowSourceAddress_var);
+    doPacking(b,this->SrcAddress_var);
+    doPacking(b,this->DestAddress_var);
 }
 
 void ACK_RequestConnectionToLegacyServer::parsimUnpack(cCommBuffer *b)
 {
     ::cPacket::parsimUnpack(b);
-    doUnpacking(b,this->someField_var);
-    doUnpacking(b,this->anotherField_var);
-    delete [] this->arrayField1_var;
-    b->unpack(arrayField1_arraysize);
-    if (arrayField1_arraysize==0) {
-        this->arrayField1_var = 0;
-    } else {
-        this->arrayField1_var = new double[arrayField1_arraysize];
-        doUnpacking(b,this->arrayField1_var,arrayField1_arraysize);
-    }
-    doUnpacking(b,this->arrayField2_var,10);
+    doUnpacking(b,this->SrcPort_var);
+    doUnpacking(b,this->DestPort_var);
+    doUnpacking(b,this->FlowSourceAddress_var);
+    doUnpacking(b,this->SrcAddress_var);
+    doUnpacking(b,this->DestAddress_var);
 }
 
-int ACK_RequestConnectionToLegacyServer::getSomeField() const
+int ACK_RequestConnectionToLegacyServer::getSrcPort() const
 {
-    return someField_var;
+    return SrcPort_var;
 }
 
-void ACK_RequestConnectionToLegacyServer::setSomeField(int someField)
+void ACK_RequestConnectionToLegacyServer::setSrcPort(int SrcPort)
 {
-    this->someField_var = someField;
+    this->SrcPort_var = SrcPort;
 }
 
-const char * ACK_RequestConnectionToLegacyServer::getAnotherField() const
+int ACK_RequestConnectionToLegacyServer::getDestPort() const
 {
-    return anotherField_var.c_str();
+    return DestPort_var;
 }
 
-void ACK_RequestConnectionToLegacyServer::setAnotherField(const char * anotherField)
+void ACK_RequestConnectionToLegacyServer::setDestPort(int DestPort)
 {
-    this->anotherField_var = anotherField;
+    this->DestPort_var = DestPort;
 }
 
-void ACK_RequestConnectionToLegacyServer::setArrayField1ArraySize(unsigned int size)
+const char * ACK_RequestConnectionToLegacyServer::getFlowSourceAddress() const
 {
-    double *arrayField1_var2 = (size==0) ? NULL : new double[size];
-    unsigned int sz = arrayField1_arraysize < size ? arrayField1_arraysize : size;
-    for (unsigned int i=0; i<sz; i++)
-        arrayField1_var2[i] = this->arrayField1_var[i];
-    for (unsigned int i=sz; i<size; i++)
-        arrayField1_var2[i] = 0;
-    arrayField1_arraysize = size;
-    delete [] this->arrayField1_var;
-    this->arrayField1_var = arrayField1_var2;
+    return FlowSourceAddress_var.c_str();
 }
 
-unsigned int ACK_RequestConnectionToLegacyServer::getArrayField1ArraySize() const
+void ACK_RequestConnectionToLegacyServer::setFlowSourceAddress(const char * FlowSourceAddress)
 {
-    return arrayField1_arraysize;
+    this->FlowSourceAddress_var = FlowSourceAddress;
 }
 
-double ACK_RequestConnectionToLegacyServer::getArrayField1(unsigned int k) const
+const char * ACK_RequestConnectionToLegacyServer::getSrcAddress() const
 {
-    if (k>=arrayField1_arraysize) throw cRuntimeError("Array of size %d indexed by %d", arrayField1_arraysize, k);
-    return arrayField1_var[k];
+    return SrcAddress_var.c_str();
 }
 
-void ACK_RequestConnectionToLegacyServer::setArrayField1(unsigned int k, double arrayField1)
+void ACK_RequestConnectionToLegacyServer::setSrcAddress(const char * SrcAddress)
 {
-    if (k>=arrayField1_arraysize) throw cRuntimeError("Array of size %d indexed by %d", arrayField1_arraysize, k);
-    this->arrayField1_var[k] = arrayField1;
+    this->SrcAddress_var = SrcAddress;
 }
 
-unsigned int ACK_RequestConnectionToLegacyServer::getArrayField2ArraySize() const
+const char * ACK_RequestConnectionToLegacyServer::getDestAddress() const
 {
-    return 10;
+    return DestAddress_var.c_str();
 }
 
-double ACK_RequestConnectionToLegacyServer::getArrayField2(unsigned int k) const
+void ACK_RequestConnectionToLegacyServer::setDestAddress(const char * DestAddress)
 {
-    if (k>=10) throw cRuntimeError("Array of size 10 indexed by %lu", (unsigned long)k);
-    return arrayField2_var[k];
-}
-
-void ACK_RequestConnectionToLegacyServer::setArrayField2(unsigned int k, double arrayField2)
-{
-    if (k>=10) throw cRuntimeError("Array of size 10 indexed by %lu", (unsigned long)k);
-    this->arrayField2_var[k] = arrayField2;
+    this->DestAddress_var = DestAddress;
 }
 
 class ACK_RequestConnectionToLegacyServerDescriptor : public cClassDescriptor
@@ -217,7 +186,7 @@ const char *ACK_RequestConnectionToLegacyServerDescriptor::getProperty(const cha
 int ACK_RequestConnectionToLegacyServerDescriptor::getFieldCount(void *object) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
-    return basedesc ? 4+basedesc->getFieldCount(object) : 4;
+    return basedesc ? 5+basedesc->getFieldCount(object) : 5;
 }
 
 unsigned int ACK_RequestConnectionToLegacyServerDescriptor::getFieldTypeFlags(void *object, int field) const
@@ -231,10 +200,11 @@ unsigned int ACK_RequestConnectionToLegacyServerDescriptor::getFieldTypeFlags(vo
     static unsigned int fieldTypeFlags[] = {
         FD_ISEDITABLE,
         FD_ISEDITABLE,
-        FD_ISARRAY | FD_ISEDITABLE,
-        FD_ISARRAY | FD_ISEDITABLE,
+        FD_ISEDITABLE,
+        FD_ISEDITABLE,
+        FD_ISEDITABLE,
     };
-    return (field>=0 && field<4) ? fieldTypeFlags[field] : 0;
+    return (field>=0 && field<5) ? fieldTypeFlags[field] : 0;
 }
 
 const char *ACK_RequestConnectionToLegacyServerDescriptor::getFieldName(void *object, int field) const
@@ -246,22 +216,24 @@ const char *ACK_RequestConnectionToLegacyServerDescriptor::getFieldName(void *ob
         field -= basedesc->getFieldCount(object);
     }
     static const char *fieldNames[] = {
-        "someField",
-        "anotherField",
-        "arrayField1",
-        "arrayField2",
+        "SrcPort",
+        "DestPort",
+        "FlowSourceAddress",
+        "SrcAddress",
+        "DestAddress",
     };
-    return (field>=0 && field<4) ? fieldNames[field] : NULL;
+    return (field>=0 && field<5) ? fieldNames[field] : NULL;
 }
 
 int ACK_RequestConnectionToLegacyServerDescriptor::findField(void *object, const char *fieldName) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
     int base = basedesc ? basedesc->getFieldCount(object) : 0;
-    if (fieldName[0]=='s' && strcmp(fieldName, "someField")==0) return base+0;
-    if (fieldName[0]=='a' && strcmp(fieldName, "anotherField")==0) return base+1;
-    if (fieldName[0]=='a' && strcmp(fieldName, "arrayField1")==0) return base+2;
-    if (fieldName[0]=='a' && strcmp(fieldName, "arrayField2")==0) return base+3;
+    if (fieldName[0]=='S' && strcmp(fieldName, "SrcPort")==0) return base+0;
+    if (fieldName[0]=='D' && strcmp(fieldName, "DestPort")==0) return base+1;
+    if (fieldName[0]=='F' && strcmp(fieldName, "FlowSourceAddress")==0) return base+2;
+    if (fieldName[0]=='S' && strcmp(fieldName, "SrcAddress")==0) return base+3;
+    if (fieldName[0]=='D' && strcmp(fieldName, "DestAddress")==0) return base+4;
     return basedesc ? basedesc->findField(object, fieldName) : -1;
 }
 
@@ -275,11 +247,12 @@ const char *ACK_RequestConnectionToLegacyServerDescriptor::getFieldTypeString(vo
     }
     static const char *fieldTypeStrings[] = {
         "int",
+        "int",
         "string",
-        "double",
-        "double",
+        "string",
+        "string",
     };
-    return (field>=0 && field<4) ? fieldTypeStrings[field] : NULL;
+    return (field>=0 && field<5) ? fieldTypeStrings[field] : NULL;
 }
 
 const char *ACK_RequestConnectionToLegacyServerDescriptor::getFieldProperty(void *object, int field, const char *propertyname) const
@@ -305,8 +278,6 @@ int ACK_RequestConnectionToLegacyServerDescriptor::getArraySize(void *object, in
     }
     ACK_RequestConnectionToLegacyServer *pp = (ACK_RequestConnectionToLegacyServer *)object; (void)pp;
     switch (field) {
-        case 2: return pp->getArrayField1ArraySize();
-        case 3: return 10;
         default: return 0;
     }
 }
@@ -321,10 +292,11 @@ std::string ACK_RequestConnectionToLegacyServerDescriptor::getFieldAsString(void
     }
     ACK_RequestConnectionToLegacyServer *pp = (ACK_RequestConnectionToLegacyServer *)object; (void)pp;
     switch (field) {
-        case 0: return long2string(pp->getSomeField());
-        case 1: return oppstring2string(pp->getAnotherField());
-        case 2: return double2string(pp->getArrayField1(i));
-        case 3: return double2string(pp->getArrayField2(i));
+        case 0: return long2string(pp->getSrcPort());
+        case 1: return long2string(pp->getDestPort());
+        case 2: return oppstring2string(pp->getFlowSourceAddress());
+        case 3: return oppstring2string(pp->getSrcAddress());
+        case 4: return oppstring2string(pp->getDestAddress());
         default: return "";
     }
 }
@@ -339,10 +311,11 @@ bool ACK_RequestConnectionToLegacyServerDescriptor::setFieldAsString(void *objec
     }
     ACK_RequestConnectionToLegacyServer *pp = (ACK_RequestConnectionToLegacyServer *)object; (void)pp;
     switch (field) {
-        case 0: pp->setSomeField(string2long(value)); return true;
-        case 1: pp->setAnotherField((value)); return true;
-        case 2: pp->setArrayField1(i,string2double(value)); return true;
-        case 3: pp->setArrayField2(i,string2double(value)); return true;
+        case 0: pp->setSrcPort(string2long(value)); return true;
+        case 1: pp->setDestPort(string2long(value)); return true;
+        case 2: pp->setFlowSourceAddress((value)); return true;
+        case 3: pp->setSrcAddress((value)); return true;
+        case 4: pp->setDestAddress((value)); return true;
         default: return false;
     }
 }
@@ -360,8 +333,9 @@ const char *ACK_RequestConnectionToLegacyServerDescriptor::getFieldStructName(vo
         NULL,
         NULL,
         NULL,
+        NULL,
     };
-    return (field>=0 && field<4) ? fieldStructNames[field] : NULL;
+    return (field>=0 && field<5) ? fieldStructNames[field] : NULL;
 }
 
 void *ACK_RequestConnectionToLegacyServerDescriptor::getFieldStructPointer(void *object, int field, int i) const

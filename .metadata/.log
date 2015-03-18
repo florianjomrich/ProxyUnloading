@@ -1155,3 +1155,44 @@ java.lang.Exception
 
 !ENTRY org.omnetpp.launch 4 133 2015-03-18 23:25:40.463
 !MESSAGE Run #0: Finished with Error
+
+!ENTRY org.omnetpp.launch 4 133 2015-03-19 00:07:42.593
+!MESSAGE Run #0: Finished with Error
+
+!ENTRY org.eclipse.cdt.core 4 2 2015-03-19 00:10:14.116
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.cdt.core".
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.util.LinkedHashMap$LinkedHashIterator.nextEntry(LinkedHashMap.java:394)
+	at java.util.LinkedHashMap$KeyIterator.next(LinkedHashMap.java:405)
+	at org.eclipse.cdt.internal.core.pdom.CModelListener.addLastRecentlyUsed(CModelListener.java:135)
+	at org.eclipse.cdt.internal.core.pdom.CModelListener.elementChanged(CModelListener.java:65)
+	at org.eclipse.cdt.internal.core.model.CModelManager$2.run(CModelManager.java:1158)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.cdt.internal.core.model.CModelManager.notifyListeners(CModelManager.java:1149)
+	at org.eclipse.cdt.internal.core.model.CModelManager.firePostChangeDelta(CModelManager.java:1106)
+	at org.eclipse.cdt.internal.core.model.CModelManager.fire(CModelManager.java:1071)
+	at org.eclipse.cdt.internal.core.model.CModelManager.fire(CModelManager.java:1028)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.run(CModelOperation.java:615)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.runOperation(CModelOperation.java:635)
+	at org.eclipse.cdt.internal.core.model.BinaryRunner$1.run(BinaryRunner.java:126)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-03-19 00:10:14.117
+!MESSAGE Error
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.util.LinkedHashMap$LinkedHashIterator.nextEntry(LinkedHashMap.java:394)
+	at java.util.LinkedHashMap$KeyIterator.next(LinkedHashMap.java:405)
+	at org.eclipse.cdt.internal.core.pdom.CModelListener.addLastRecentlyUsed(CModelListener.java:135)
+	at org.eclipse.cdt.internal.core.pdom.CModelListener.elementChanged(CModelListener.java:65)
+	at org.eclipse.cdt.internal.core.model.CModelManager$2.run(CModelManager.java:1158)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.cdt.internal.core.model.CModelManager.notifyListeners(CModelManager.java:1149)
+	at org.eclipse.cdt.internal.core.model.CModelManager.firePostChangeDelta(CModelManager.java:1106)
+	at org.eclipse.cdt.internal.core.model.CModelManager.fire(CModelManager.java:1071)
+	at org.eclipse.cdt.internal.core.model.CModelManager.fire(CModelManager.java:1028)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.run(CModelOperation.java:615)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.runOperation(CModelOperation.java:635)
+	at org.eclipse.cdt.internal.core.model.BinaryRunner$1.run(BinaryRunner.java:126)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)

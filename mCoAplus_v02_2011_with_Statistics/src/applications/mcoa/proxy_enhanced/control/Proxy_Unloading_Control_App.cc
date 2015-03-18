@@ -124,6 +124,8 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                         << messageFromHA->getDestAddress()
                         << " die Nachricht erhalten" << endl;
                 cout<<"Absender war: "<<messageFromHA->getSrcAddress()<<endl;
+                //IPvXAddress mn0 = IPAddressResolver().resolve("MN[0]");
+                //cout<<"Zum Vergleich MN[0]"<<mn0<<endl;
 
                 //update the FlowBindingTable with this Information now for later Processing - If CN is capable
                 if(isCapableCN){
@@ -132,11 +134,21 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
                     //send back a binding Acknowledgment to the HomeAgent and the MN who requested the call
                     ACK_RequestConnectionToLegacyServer* acknowledgmentToHA = new ACK_RequestConnectionToLegacyServer();
+                    acknowledgmentToHA->setSrcAddress(messageFromHA->getSrcAddress());
+                    acknowledgmentToHA->setDestAddress(messageFromHA->getDestAddress());
+                    acknowledgmentToHA->setFlowSourceAddress(messageFromHA->getFlowSourceAddress());
+                    acknowledgmentToHA->setDestPort(messageFromHA->getDestPort());
+                    acknowledgmentToHA->setSrcPort(messageFromHA->getSrcPort());
                     //acknowledgmentToHA->setName("ACK_RequestConnectionToLegacyServer");
                     IPvXAddress ha = IPAddressResolver().resolve("HA");
                     sendToUDPMCOA(acknowledgmentToHA,localPort,ha,2000,true);
 
                     ACK_RequestConnectionToLegacyServer* acknowledgmentToMN = new ACK_RequestConnectionToLegacyServer();
+                    acknowledgmentToMN->setSrcAddress(messageFromHA->getSrcAddress());
+                    acknowledgmentToMN->setDestAddress(messageFromHA->getDestAddress());
+                    acknowledgmentToMN->setFlowSourceAddress(messageFromHA->getFlowSourceAddress());
+                    acknowledgmentToMN->setDestPort(messageFromHA->getDestPort());
+                    acknowledgmentToMN->setSrcPort(messageFromHA->getSrcPort());
                     IPvXAddress mn = IPvXAddress();
                     mn.set(messageFromHA->getSrcAddress());
                     sendToUDPMCOA(acknowledgmentToMN,localPort,mn,2000,true);//Control-Info wurde hier bereits gesetzt
