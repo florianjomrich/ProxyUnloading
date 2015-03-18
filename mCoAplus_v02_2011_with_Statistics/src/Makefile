@@ -131,9 +131,9 @@ OBJS = \
     $O/applications/mcoa/Video/MCoAVideoSrv.o \
     $O/applications/mcoa/VoIP/MCoAUDPApp.o \
     $O/applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerTable.o \
-    $O/applications/mcoa/proxy_enhanced/FlowBindingUpdateMessage.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.o \
+    $O/applications/mcoa/proxy_enhanced/RequestVideoStream.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.o \
     $O/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o \
@@ -1037,12 +1037,10 @@ $O/applications/mcoa/VoIP/MCoAUDPApp.o: applications/mcoa/VoIP/MCoAUDPApp.cc \
 	networklayer/mcoa/IPv6PrefAdr.h \
 	networklayer/mcoa/IPv6TunAdr.h \
 	transport/contract/UDPControlInfo_m.h
-$O/applications/mcoa/proxy_enhanced/FlowBindingUpdateMessage.o: applications/mcoa/proxy_enhanced/FlowBindingUpdateMessage.cc \
-	applications/mcoa/proxy_enhanced/FlowBindingUpdateMessage.h
 $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.o: applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
-	applications/mcoa/proxy_enhanced/FlowBindingUpdateMessage.h \
 	applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.h \
+	applications/mcoa/proxy_enhanced/RequestVideoStream.h \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
@@ -1086,7 +1084,6 @@ $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.o: application
 	networklayer/mcoa/IPv6TunAdr.h
 $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.o: applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
-	applications/mcoa/proxy_enhanced/FlowBindingUpdateMessage.h \
 	applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.h \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \
@@ -1105,7 +1102,6 @@ $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.o: applications/
 	transport/contract/UDPControlInfo_m.h
 $O/applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.o: applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
-	applications/mcoa/proxy_enhanced/FlowBindingUpdateMessage.h \
 	applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.h \
 	applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.h \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
@@ -1131,6 +1127,8 @@ $O/applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerTable.o: a
 	applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerTable.h \
 	base/INETDefs.h \
 	networklayer/contract/IPv6Address.h
+$O/applications/mcoa/proxy_enhanced/RequestVideoStream.o: applications/mcoa/proxy_enhanced/RequestVideoStream.cc \
+	applications/mcoa/proxy_enhanced/RequestVideoStream.h
 $O/applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.o: applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.cc \
 	applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.h
 $O/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o: applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc \

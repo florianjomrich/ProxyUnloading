@@ -13,14 +13,14 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#include <FlowBindingUpdateMessage.h>
+#include <RequestVideoStream.h>
 
-FlowBindingUpdateMessage::FlowBindingUpdateMessage() {
+RequestVideoStream::RequestVideoStream() {
     // TODO Auto-generated constructor stub
 
 }
 
-FlowBindingUpdateMessage::~FlowBindingUpdateMessage() {
+RequestVideoStream::~RequestVideoStream() {
     // TODO Auto-generated destructor stub
 }
 

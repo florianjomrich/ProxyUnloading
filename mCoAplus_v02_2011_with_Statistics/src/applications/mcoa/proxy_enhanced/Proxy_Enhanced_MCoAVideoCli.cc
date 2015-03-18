@@ -23,7 +23,7 @@
 #include "Proxy_Enhanced_MCoAVideoCli.h"
 #include "IPAddressResolver.h"
 #include "IPv6ControlInfo.h"
-#include "FlowBindingUpdateMessage.h"
+#include "RequestVideoStream.h"
 
 
 #define PROXY_ENHANCED_BU_MESSAGE  42
@@ -111,7 +111,7 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
 void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
     IPvXAddress cn = IPAddressResolver().resolve("CN[0]");
 
-    FlowBindingUpdateMessage* halloWelt = new FlowBindingUpdateMessage();
+    RequestVideoStream* halloWelt = new RequestVideoStream();
     halloWelt->setName("Senden einer Request Nachricht an den CN Server. Hierauf soll er anfangen Daten zu senden.");
 
     sendToUDPMCOA(halloWelt, localPort, cn, 1000, true);//Port 1000 für Video - Port 2000 für Kontrolldaten

@@ -18,7 +18,6 @@
 #include "Proxy_Enhanced_MCoAVideoSrv.h"
 #include "UDPControlInfo_m.h"
 #include "IPAddressResolver.h"
-#include "FlowBindingUpdateMessage.h"
 #include "BindingUpdateInformationtoAPPmessageCN.h"
 
 #define CN_APP_MESSAGE 50
@@ -122,13 +121,13 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
 
     	    IPvXAddress mn = IPAddressResolver().resolve("MN[0]");
 
-    	    FlowBindingUpdateMessage* halloWelt = new FlowBindingUpdateMessage();
+    	/*    RequestVideoStream* halloWelt = new RequestVideoStream();
     	       halloWelt->setName(" HALLO WELT gesendet von CN");
     	       halloWelt->setKind(PROXY_CN_MESSAGE_TO_MOBILE_NODE);
 
 
 
-    	    sendToUDPMCOA(halloWelt, localPort, mn, 1000, true);
+    	    sendToUDPMCOA(halloWelt, localPort, mn, 1000, true);*/
     	}
 
 

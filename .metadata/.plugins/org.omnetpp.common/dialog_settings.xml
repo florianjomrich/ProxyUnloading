@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="TemplateBasedWizard">
+		<item value="bundleentry://278.fwk1121139649/templates/nedfile/" key="nedfile.template"/>
+	</section>
+</section>

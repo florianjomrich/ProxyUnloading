@@ -13,15 +13,15 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#ifndef FLOWBINDINGUPDATEMESSAGE_H_
-#define FLOWBINDINGUPDATEMESSAGE_H_
+#ifndef REQUESTVIDEOSTREAM__H_
+#define REQUESTVIDEOSTREAM__H_
 
 #include <cmessage.h>
 
-class FlowBindingUpdateMessage: public cPacket {
+class RequestVideoStream: public cPacket {
 public:
-    FlowBindingUpdateMessage();
-    virtual ~FlowBindingUpdateMessage();
+    RequestVideoStream();
+    virtual ~RequestVideoStream();
 };
 
 #endif /* FLOWBINDINGUPDATEMESSAGE_H_ */

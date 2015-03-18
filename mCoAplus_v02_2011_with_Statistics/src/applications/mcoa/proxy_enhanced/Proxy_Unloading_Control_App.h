@@ -65,7 +65,6 @@ class INET_API Proxy_Unloading_Control_App : public MCoAUDPBase
     virtual void initialize();
     virtual void finish();
     virtual void handleMessage(cMessage *msg);
-    virtual void sendControlData(cMessage *msg);
     //@}
 
   protected:

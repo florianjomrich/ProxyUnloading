@@ -22,7 +22,7 @@
 #include "Proxy_Unloading_Control_App.h"
 #include "IPAddressResolver.h"
 #include "IPv6ControlInfo.h"
-#include "FlowBindingUpdateMessage.h"
+
 #include "RequetConnectionToLegacyServer_m.h"
 
 #define PROXY_ENHANCED_BU_MESSAGE  42
@@ -148,15 +148,7 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
     }
 }
 
-void Proxy_Unloading_Control_App::sendControlData(cMessage* msg) {
-    IPvXAddress ha = IPAddressResolver().resolve("HA");
 
-    FlowBindingUpdateMessage* halloWelt = new FlowBindingUpdateMessage();
-    halloWelt->setName(" Flow Binding Update Data");
-
-    sendToUDPMCOA(halloWelt, localPort, ha, 2000, true);
-
-}
 
 void Proxy_Unloading_Control_App::receiveStream(cPacket *msg) {
     MCoAVideoStreaming *pkt_video = (MCoAVideoStreaming *) (msg);
