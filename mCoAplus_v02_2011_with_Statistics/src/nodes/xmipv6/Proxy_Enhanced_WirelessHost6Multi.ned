@@ -24,6 +24,7 @@ import inet.applications.pingapp.PingApp;
 import inet.applications.tcpapp.TCPApp;
 import inet.applications.udpapp.UDPApp;
 import inet.applications.mcoa.proxy_enhanced.Proxy_Unloading_Control_App;
+import inet.applications.mcoa.proxy_enhanced.modules.FlowBindingTable;
 import inet.base.NotificationBoard;
 import inet.linklayer.ieee80211.Ieee80211NicSTA;
 import inet.mobility.BasicMobility;
@@ -77,6 +78,10 @@ module Proxy_Enhanced_WirelessHost6Multi
         buList: BindingUpdateList {
             parameters:
                 @display("p=63,292;i=old/harddisk");
+        }
+    	flowBindingTable: FlowBindingTable {
+            parameters:
+                @display("p=20,308;i=old/floppy1");
         }
         routingTable6: RoutingTable6 {
             parameters:
@@ -187,6 +192,7 @@ module Proxy_Enhanced_WirelessHost6Multi
 	 	
 	 	
 	 	proxyUnloadingControlApp.uDPControllAppConnection <--> networkLayer.uDPControllAppConnection;
+	 	 proxyUnloadingControlApp.flowBindingTableCable <--> flowBindingTable.flowBindingTableCable;
 
 }
 

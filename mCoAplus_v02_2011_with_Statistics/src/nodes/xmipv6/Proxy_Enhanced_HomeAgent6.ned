@@ -27,6 +27,7 @@ import inet.applications.pingapp.PingApp;
 import inet.applications.tcpapp.TCPApp;
 import inet.applications.udpapp.UDPApp;
 import inet.applications.mcoa.proxy_enhanced.Proxy_Unloading_Control_App;
+import inet.applications.mcoa.proxy_enhanced.modules.FlowBindingTable;
 import inet.base.NotificationBoard;
 import inet.linklayer.ethernet.EthernetInterface;
 import inet.networklayer.common.InterfaceTable;
@@ -65,6 +66,10 @@ module Proxy_Enhanced_HomeAgent6
         bindingCache: BindingCache {
             parameters:
                 @display("p=55,124;i=old/harddisk");
+        }
+       flowBindingTable: FlowBindingTable {
+            parameters:
+                @display("p=20,308;i=old/floppy1");
         }
         routingTable6: RoutingTable6 {
             parameters:
@@ -150,5 +155,7 @@ module Proxy_Enhanced_HomeAgent6
         //PROXY EXTENSION - FOR CONTROLL MESSAGES FJ
         proxyUnloadingControlApp.udpOut --> udp.appIn++;
         proxyUnloadingControlApp.udpIn <-- udp.appOut++;
+     	proxyUnloadingControlApp.flowBindingTableCable <--> flowBindingTable.flowBindingTableCable;
+        
 }
 

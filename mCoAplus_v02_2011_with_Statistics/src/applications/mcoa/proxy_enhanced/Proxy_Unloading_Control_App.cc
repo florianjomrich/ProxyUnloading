@@ -81,51 +81,60 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
             return; // and that's it!
         }
-        /* if (msg->getKind() == PROXY_CONTEXT_START) {
-         cout << "!! Proxying Context Started through Mobile Node!!" << endl;
-         sendControlData(msg);
-
-         }*/
 
     } else {
-        //	if (dynamic_cast<MCoAVideoStreaming*>(msg)){
-        //		receiveStream(PK(msg));
-        //	}
-        // cout<<"Client App hat einen Nachricht von CN erhalten:"<<msg->getName()<<endl;
+
         if (msg->getKind() == PROXY_CN_MESSAGE_TO_MOBILE_NODE) {
             cout << "Client App hat einen Nachricht von CN erhalten:"
                     << msg->getName() << endl;
             return;
         }
 
-        /*const char* test = strcmp(msg->getName(),'HALALALAOAOOAOAOAOAOAOAA');
-         if(test==0){
-         cout<<"Client App hat HALALALAOAOOAOAOAOAOAOAA  Nachricht von der CN App erhalten: "<<msg->getName()<<endl;
-         }*/
         if (dynamic_cast<RequetConnectionToLegacyServer*>(msg)) {
-            cout << "isMN: " << isMN << "   isCN: " << isCN << "  isHA: "
-                                 << isHA << endl;
+            cout << "isMN: " << isMN << "  isHA: " << isHA << "   isCN: "
+                    << isCN << endl;
             if (isMN) {
 
                 cout
                         << "Netzwerkschicht des MN meldet ein Paket, dessen Server noch nicht auf ProxyUnloading-Funktionalität hin überprüft wurde"
                         << endl;
                 IPvXAddress ha = IPAddressResolver().resolve("HA");
-                RequetConnectionToLegacyServer* messageAnHA =   check_and_cast<RequetConnectionToLegacyServer *>(msg);
+
+                RequetConnectionToLegacyServer* messageAnHA = check_and_cast<
+                        RequetConnectionToLegacyServer *>(msg);
+
                 sendToUDPMCOA(messageAnHA, localPort, ha, 2000, true);
                 return;
             }
             if (isHA) {
-                RequetConnectionToLegacyServer* messageAnHA =   check_and_cast<RequetConnectionToLegacyServer *>(msg);
-                cout << "HA hat folgende Nachricht erhalten:" << messageAnHA->getName()<<" mit Destination: "<< messageAnHA->getDestAddress()<<" und FlowSourceAdresse: "<<messageAnHA->getFlowSourceAddress()<< endl;
+                RequetConnectionToLegacyServer* messageToCN = check_and_cast<
+                        RequetConnectionToLegacyServer *>(msg);
+                cout << "HA hat folgende Nachricht erhalten:"
+                        << messageToCN->getName() << " mit Destination: "
+                        << messageToCN->getDestAddress()
+                        << " und FlowSourceAdresse: "
+                        << messageToCN->getFlowSourceAddress() << endl;
                 cout << "HA hat neue Anfrage erhalten von einem MN" << endl;
+                IPvXAddress ha = IPAddressResolver().resolve("HA");
+                IPvXAddress* cn = new IPvXAddress(
+                        messageToCN->getDestAddress());
+                messageToCN->removeControlInfo(); //new ipv6 control info of the home Agent is needed to send the data properly to the correspondent node
+                sendToUDPMCOA(messageToCN, localPort, *cn, 2000, true);
                 return;
+            }
+            if (isCN) {
+                RequetConnectionToLegacyServer* messageFromHA = check_and_cast<
+                        RequetConnectionToLegacyServer *>(msg);
+                cout << "Nun hat auch der CN mit der Adresse:"
+                        << messageFromHA->getDestAddress()
+                        << " die Nachricht erhalten" << endl;
             }
 
         }
 
-        if (isHA){
-           cout << "HA hat folgende Nachricht erhalten:" << msg->getName()<< endl;
+        if (isHA) {
+            cout << "HA hat folgende Nachricht erhalten:" << msg->getName()
+                    << endl;
         }
 
         if (isCN)

@@ -19,6 +19,7 @@ INCLUDE_PATH = \
     -Iapplications/mcoa/Video \
     -Iapplications/mcoa/VoIP \
     -Iapplications/mcoa/proxy_enhanced \
+    -Iapplications/mcoa/proxy_enhanced/modules \
     -Iapplications/mcoa/udpbase \
     -Iapplications/pingapp \
     -Iapplications/rtpapp \
@@ -135,6 +136,7 @@ OBJS = \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.o \
+    $O/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o \
     $O/applications/mcoa/udpbase/MCoAUDPBase.o \
     $O/applications/pingapp/Proxyunloading_PingApp.o \
     $O/applications/pingapp/PingApp.o \
@@ -745,6 +747,7 @@ clean:
 	$(Q)-rm -f applications/mcoa/Video/*_m.cc applications/mcoa/Video/*_m.h
 	$(Q)-rm -f applications/mcoa/VoIP/*_m.cc applications/mcoa/VoIP/*_m.h
 	$(Q)-rm -f applications/mcoa/proxy_enhanced/*_m.cc applications/mcoa/proxy_enhanced/*_m.h
+	$(Q)-rm -f applications/mcoa/proxy_enhanced/modules/*_m.cc applications/mcoa/proxy_enhanced/modules/*_m.h
 	$(Q)-rm -f applications/mcoa/udpbase/*_m.cc applications/mcoa/udpbase/*_m.h
 	$(Q)-rm -f applications/pingapp/*_m.cc applications/pingapp/*_m.h
 	$(Q)-rm -f applications/rtpapp/*_m.cc applications/rtpapp/*_m.h
@@ -837,7 +840,7 @@ cleanall: clean
 
 depend:
 	$(qecho) Creating dependencies...
-	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc applications/*.cc applications/dhcp/*.cc applications/ethernet/*.cc applications/generic/*.cc applications/mcoa/*.cc applications/mcoa/Video/*.cc applications/mcoa/VoIP/*.cc applications/mcoa/proxy_enhanced/*.cc applications/mcoa/udpbase/*.cc applications/pingapp/*.cc applications/rtpapp/*.cc applications/sctpapp/*.cc applications/tcpapp/*.cc applications/udpapp/*.cc base/*.cc battery/*.cc linklayer/*.cc linklayer/contract/*.cc linklayer/ethernet/*.cc linklayer/etherswitch/*.cc linklayer/ext/*.cc linklayer/ieee80211/*.cc linklayer/ieee80211/mac/*.cc linklayer/ieee80211/mgmt/*.cc linklayer/mf80211/*.cc linklayer/mf80211/macLayer/*.cc linklayer/mf80211/phyLayer/*.cc linklayer/mf80211/phyLayer/decider/*.cc linklayer/mf80211/phyLayer/snrEval/*.cc linklayer/mfcore/*.cc linklayer/ppp/*.cc linklayer/radio/*.cc linklayer/radio/errormodel/*.cc linklayer/radio/propagation/*.cc mobility/*.cc mobility/traci/*.cc networklayer/*.cc networklayer/arp/*.cc networklayer/autorouting/*.cc networklayer/common/*.cc networklayer/contract/*.cc networklayer/extras/*.cc networklayer/icmpv6/*.cc networklayer/ipv4/*.cc networklayer/ipv6/*.cc networklayer/ldp/*.cc networklayer/manetrouting/*.cc networklayer/manetrouting/aodv/*.cc networklayer/manetrouting/aodv/aodv-uu/*.cc networklayer/manetrouting/base/*.cc networklayer/manetrouting/dsdv/*.cc networklayer/manetrouting/dsr/*.cc networklayer/manetrouting/dsr/dsr-uu/*.cc networklayer/manetrouting/dymo/*.cc networklayer/manetrouting/dymo/dymoum/*.cc networklayer/manetrouting/dymo_fau/*.cc networklayer/manetrouting/manager/*.cc networklayer/manetrouting/olsr/*.cc networklayer/mcoa/*.cc networklayer/mpls/*.cc networklayer/ospfv2/*.cc networklayer/ospfv2/interface/*.cc networklayer/ospfv2/messagehandler/*.cc networklayer/ospfv2/neighbor/*.cc networklayer/ospfv2/router/*.cc networklayer/queue/*.cc networklayer/rsvp_te/*.cc networklayer/ted/*.cc networklayer/xmipv6/*.cc nodes/*.cc nodes/adhoc/*.cc nodes/ethernet/*.cc nodes/inet/*.cc nodes/ipv6/*.cc nodes/mpls/*.cc nodes/wireless/*.cc nodes/xmipv6/*.cc transport/*.cc transport/contract/*.cc transport/rtp/*.cc transport/rtp/profiles/*.cc transport/rtp/profiles/avprofile/*.cc transport/sctp/*.cc transport/tcp/*.cc transport/tcp/flavours/*.cc transport/tcp/queues/*.cc transport/udp/*.cc util/*.cc util/headerserializers/*.cc util/headerserializers/headers/*.cc world/*.cc world/annotations/*.cc world/obstacles/*.cc world/traci/*.cc
+	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc applications/*.cc applications/dhcp/*.cc applications/ethernet/*.cc applications/generic/*.cc applications/mcoa/*.cc applications/mcoa/Video/*.cc applications/mcoa/VoIP/*.cc applications/mcoa/proxy_enhanced/*.cc applications/mcoa/proxy_enhanced/modules/*.cc applications/mcoa/udpbase/*.cc applications/pingapp/*.cc applications/rtpapp/*.cc applications/sctpapp/*.cc applications/tcpapp/*.cc applications/udpapp/*.cc base/*.cc battery/*.cc linklayer/*.cc linklayer/contract/*.cc linklayer/ethernet/*.cc linklayer/etherswitch/*.cc linklayer/ext/*.cc linklayer/ieee80211/*.cc linklayer/ieee80211/mac/*.cc linklayer/ieee80211/mgmt/*.cc linklayer/mf80211/*.cc linklayer/mf80211/macLayer/*.cc linklayer/mf80211/phyLayer/*.cc linklayer/mf80211/phyLayer/decider/*.cc linklayer/mf80211/phyLayer/snrEval/*.cc linklayer/mfcore/*.cc linklayer/ppp/*.cc linklayer/radio/*.cc linklayer/radio/errormodel/*.cc linklayer/radio/propagation/*.cc mobility/*.cc mobility/traci/*.cc networklayer/*.cc networklayer/arp/*.cc networklayer/autorouting/*.cc networklayer/common/*.cc networklayer/contract/*.cc networklayer/extras/*.cc networklayer/icmpv6/*.cc networklayer/ipv4/*.cc networklayer/ipv6/*.cc networklayer/ldp/*.cc networklayer/manetrouting/*.cc networklayer/manetrouting/aodv/*.cc networklayer/manetrouting/aodv/aodv-uu/*.cc networklayer/manetrouting/base/*.cc networklayer/manetrouting/dsdv/*.cc networklayer/manetrouting/dsr/*.cc networklayer/manetrouting/dsr/dsr-uu/*.cc networklayer/manetrouting/dymo/*.cc networklayer/manetrouting/dymo/dymoum/*.cc networklayer/manetrouting/dymo_fau/*.cc networklayer/manetrouting/manager/*.cc networklayer/manetrouting/olsr/*.cc networklayer/mcoa/*.cc networklayer/mpls/*.cc networklayer/ospfv2/*.cc networklayer/ospfv2/interface/*.cc networklayer/ospfv2/messagehandler/*.cc networklayer/ospfv2/neighbor/*.cc networklayer/ospfv2/router/*.cc networklayer/queue/*.cc networklayer/rsvp_te/*.cc networklayer/ted/*.cc networklayer/xmipv6/*.cc nodes/*.cc nodes/adhoc/*.cc nodes/ethernet/*.cc nodes/inet/*.cc nodes/ipv6/*.cc nodes/mpls/*.cc nodes/wireless/*.cc nodes/xmipv6/*.cc transport/*.cc transport/contract/*.cc transport/rtp/*.cc transport/rtp/profiles/*.cc transport/rtp/profiles/avprofile/*.cc transport/sctp/*.cc transport/tcp/*.cc transport/tcp/flavours/*.cc transport/tcp/queues/*.cc transport/udp/*.cc util/*.cc util/headerserializers/*.cc util/headerserializers/headers/*.cc world/*.cc world/annotations/*.cc world/obstacles/*.cc world/traci/*.cc
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
 $O/applications/dhcp/DHCPClient.o: applications/dhcp/DHCPClient.cc \
@@ -1130,6 +1133,8 @@ $O/applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerTable.o: a
 	networklayer/contract/IPv6Address.h
 $O/applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.o: applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.cc \
 	applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.h
+$O/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o: applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc \
+	applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h
 $O/applications/mcoa/udpbase/MCoAUDPBase.o: applications/mcoa/udpbase/MCoAUDPBase.cc \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \

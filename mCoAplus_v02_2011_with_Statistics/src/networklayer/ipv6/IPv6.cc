@@ -836,10 +836,14 @@ cPacket *IPv6::decapsulate(IPv6Datagram *datagram, bool isTunneled) {
 
             //cout << "FLOW SOURCE ADDRESS: " << flowSourceAddress << endl;
 
-            //IF NO MESSAGE WAS ALREADY SENT - SEND ONE CONTROL MESSAGE TO HA
+            //IF NO MESSAGE WAS ALREADY SENT TO the other HOST - AND the Message is not for the HA itself - SEND ONE CONTROL MESSAGE TO HA
             if (!requestForConnectionToLegacyServerTable->containsRequestAlready(
                     dport, sport, datagram->getDestAddress(),
-                    datagram->getSrcAddress(), flowSourceAddress)) {
+                    datagram->getSrcAddress(), flowSourceAddress)
+                    &&
+                    datagram->getDestAddress() != IPAddressResolver().resolve("HA").get6()
+
+            ) {
                 RequetConnectionToLegacyServer* legacyRequestPacket =
                         new RequetConnectionToLegacyServer();
                 legacyRequestPacket->setName(
