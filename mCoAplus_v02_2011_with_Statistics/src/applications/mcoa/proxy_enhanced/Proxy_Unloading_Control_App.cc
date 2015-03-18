@@ -43,7 +43,7 @@ void Proxy_Unloading_Control_App::initialize() {
     isCN = par("isCN");
 
     startTime = par("startTime");
-    cout<<"START ZEIT: "<<startTime<<endl;
+    cout << "START ZEIT: " << startTime << endl;
 
     MCoAUDPBase::startMCoAUDPBase();
 
@@ -73,8 +73,7 @@ void Proxy_Unloading_Control_App::finish() {
 }
 
 void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
-    cout<<"PROXY CONTROL APP: "<<isMN<<isHA<<isCN<<endl;
-
+    cout << "PROXY CONTROL APP: " << isMN << isHA << isCN << endl;
 
     if (msg->isSelfMessage()) {
         if (msg->getKind() == MK_REMOVE_ADDRESS_PAIR) {
@@ -82,11 +81,11 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
             return; // and that's it!
         }
-       /* if (msg->getKind() == PROXY_CONTEXT_START) {
-            cout << "!! Proxying Context Started through Mobile Node!!" << endl;
-            sendControlData(msg);
+        /* if (msg->getKind() == PROXY_CONTEXT_START) {
+         cout << "!! Proxying Context Started through Mobile Node!!" << endl;
+         sendControlData(msg);
 
-        }*/
+         }*/
 
     } else {
         //	if (dynamic_cast<MCoAVideoStreaming*>(msg)){
@@ -104,29 +103,31 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
          cout<<"Client App hat HALALALAOAOOAOAOAOAOAOAA  Nachricht von der CN App erhalten: "<<msg->getName()<<endl;
          }*/
         if (dynamic_cast<RequestForConnectionToLegacyServerPacket*>(msg)) {
-            cout<<"isMN: "<<isMN<<"   isCN: "<<isCN<<"  isHA: "<<isHA<<endl;
-            cout
-                    << "Netzwerkschicht des MN meldet ein Paket, dessen Server noch nicht auf ProxyUnloading-Funktionalität hin überprüft wurde"
-                    << endl;
-            RequestForConnectionToLegacyServerPacket *legacyRequestPacket =
-                    dynamic_cast<RequestForConnectionToLegacyServerPacket*>(msg);
-            legacyRequestPacket->setKind(
-                    REQUEST_FOR_CONNECTION_TO_LEGACY_SERVER_CONTROL_APP); //necessarry, otherwise infinite loop
-            IPvXAddress ha = IPAddressResolver().resolve("HA");
-            sendToUDPMCOA(legacyRequestPacket, localPort, ha, 2000, true);
-            return;
+            cout << "isMN: " << isMN << "   isCN: " << isCN << "  isHA: "
+                                 << isHA << endl;
+            if (isMN) {
+
+                cout
+                        << "Netzwerkschicht des MN meldet ein Paket, dessen Server noch nicht auf ProxyUnloading-Funktionalität hin überprüft wurde"
+                        << endl;
+                IPvXAddress ha = IPAddressResolver().resolve("HA");
+                RequestForConnectionToLegacyServerPacket* messageAnHA =   check_and_cast<RequestForConnectionToLegacyServerPacket *>(msg);
+                sendToUDPMCOA(messageAnHA, localPort, ha, 2000, true);
+                return;
+            }
+            if (isHA) {
+                RequestForConnectionToLegacyServerPacket* messageAnHA =   check_and_cast<RequestForConnectionToLegacyServerPacket *>(msg);
+                cout << "HA hat folgende Nachricht erhalten:" << msg->getName()<<" mit Destination: "<< messageAnHA->destinationAddress.str()<< endl;
+                cout << "HA hat neue Anfrage erhalten von einem MN" << endl;
+                return;
+            }
+
         }
-        if (msg->getKind() == REQUEST_FOR_CONNECTION_TO_LEGACY_SERVER && isHA) {
-            cout << "HA hat neue Anfrage erhalten" << endl;
-            return;
+
+        if (isHA){
+           cout << "HA hat folgende Nachricht erhalten:" << msg->getName()<< endl;
         }
 
-
-
-
-        if (isHA)
-            cout << "HA hat folgende Nachricht erhalten:" << msg->getName()
-                    << endl;
         if (isCN)
             cout << "CN hat folgende Nachricht erhalten:" << msg->getName()
                     << endl;
