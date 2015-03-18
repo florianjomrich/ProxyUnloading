@@ -13,6 +13,10 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
+/**
+ * Class makes sure, that each Request to A Legacy Server is performed just once
+ */
+
 #include <RequestForConnectionToLegacyServerTable.h>
 
 RequestForConnectionToLegacyServerTable::RequestForConnectionToLegacyServerTable() {

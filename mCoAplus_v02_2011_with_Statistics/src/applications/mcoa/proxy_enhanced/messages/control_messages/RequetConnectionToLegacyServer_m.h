@@ -46,7 +46,7 @@ class RequetConnectionToLegacyServer : public ::cPacket
     bool operator==(const RequetConnectionToLegacyServer&);
 
   public:
-    RequetConnectionToLegacyServer(const char *name=NULL, int kind=0);
+    RequetConnectionToLegacyServer(const char *name="REQUEST_FOR_CONNECTION_TO_LEGACY_SERVER", int kind=0);
     RequetConnectionToLegacyServer(const RequetConnectionToLegacyServer& other);
     virtual ~RequetConnectionToLegacyServer();
     RequetConnectionToLegacyServer& operator=(const RequetConnectionToLegacyServer& other);

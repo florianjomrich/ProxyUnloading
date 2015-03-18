@@ -27,6 +27,10 @@
 #include "MCoAUDPBase.h"
 #include "MCoAVideoStreaming_m.h"
 
+//Messages for Proxy Unloading inculded:
+#include "RequetConnectionToLegacyServer_m.h"
+#include "ACK_RequestConnectionToLegacyServer_m.h"
+
 /**
  * A "Realtime" VideoStream client application.
  *
@@ -54,6 +58,7 @@ class INET_API Proxy_Unloading_Control_App : public MCoAUDPBase
     bool isMN;
     bool isHA;
     bool isCN;
+    bool isCapableCN;
 
     //For ProxyUnloading FJ
      simtime_t startTime;
@@ -67,9 +72,7 @@ class INET_API Proxy_Unloading_Control_App : public MCoAUDPBase
     virtual void handleMessage(cMessage *msg);
     //@}
 
-  protected:
 
-    virtual void receiveStream(cPacket *msg);
 };
 
 

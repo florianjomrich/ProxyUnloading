@@ -533,6 +533,7 @@ OBJS = \
     $O/applications/mcoa/VoIP/MCOAVoIPMsg_m.o \
     $O/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.o \
     $O/applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.o \
+    $O/applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.o \
     $O/applications/pingapp/PingPayload_m.o \
     $O/applications/tcpapp/GenericAppMsg_m.o \
     $O/applications/udpapp/UDPEchoAppMsg_m.o \
@@ -605,6 +606,7 @@ MSGFILES = \
     applications/mcoa/VoIP/MCOAVoIPMsg.msg \
     applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.msg \
     applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer.msg \
+    applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer.msg \
     applications/pingapp/PingPayload.msg \
     applications/tcpapp/GenericAppMsg.msg \
     applications/udpapp/UDPEchoAppMsg.msg \
@@ -1115,6 +1117,7 @@ $O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.o: applicat
 $O/applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.o: applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
 	applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.h \
+	applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.h \
 	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \
@@ -1141,6 +1144,8 @@ $O/applications/mcoa/proxy_enhanced/control/RequestForConnectionToLegacyServerTa
 	networklayer/contract/IPv6Address.h
 $O/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.o: applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.cc \
 	applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.h
+$O/applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.o: applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.cc \
+	applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.h
 $O/applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.o: applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.cc \
 	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h
 $O/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o: applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc \

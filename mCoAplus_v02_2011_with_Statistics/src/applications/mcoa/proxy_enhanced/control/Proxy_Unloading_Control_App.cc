@@ -23,7 +23,7 @@
 #include "IPAddressResolver.h"
 #include "IPv6ControlInfo.h"
 
-#include "RequetConnectionToLegacyServer_m.h"
+
 
 #define PROXY_ENHANCED_BU_MESSAGE  42
 #define PROXY_CN_MESSAGE_TO_MOBILE_NODE 43
@@ -41,6 +41,7 @@ void Proxy_Unloading_Control_App::initialize() {
     isMN = par("isMN");
     isHA = par("isHA");
     isCN = par("isCN");
+    isCapableCN = par("isCapableCN");
 
     startTime = par("startTime");
     cout << "START ZEIT: " << startTime << endl;
@@ -84,12 +85,6 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
     } else {
 
-        if (msg->getKind() == PROXY_CN_MESSAGE_TO_MOBILE_NODE) {
-            cout << "Client App hat einen Nachricht von CN erhalten:"
-                    << msg->getName() << endl;
-            return;
-        }
-
         if (dynamic_cast<RequetConnectionToLegacyServer*>(msg)) {
             cout << "isMN: " << isMN << "  isHA: " << isHA << "   isCN: "
                     << isCN << endl;
@@ -115,7 +110,7 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                         << " und FlowSourceAdresse: "
                         << messageToCN->getFlowSourceAddress() << endl;
                 cout << "HA hat neue Anfrage erhalten von einem MN" << endl;
-                IPvXAddress ha = IPAddressResolver().resolve("HA");
+
                 IPvXAddress* cn = new IPvXAddress(
                         messageToCN->getDestAddress());
                 messageToCN->removeControlInfo(); //new ipv6 control info of the home Agent is needed to send the data properly to the correspondent node
@@ -128,6 +123,26 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 cout << "Nun hat auch der CN mit der Adresse:"
                         << messageFromHA->getDestAddress()
                         << " die Nachricht erhalten" << endl;
+                cout<<"Absender war: "<<messageFromHA->getSrcAddress()<<endl;
+
+                //update the FlowBindingTable with this Information now for later Processing - If CN is capable
+                if(isCapableCN){
+                    cout<<"CN supports the protocol and is actualizing his own FlowBindingTable"<<endl;
+                    send(messageFromHA,"flowBindingTableCable$o");
+
+                    //send back a binding Acknowledgment to the HomeAgent and the MN who requested the call
+                    ACK_RequestConnectionToLegacyServer* acknowledgmentToHA = new ACK_RequestConnectionToLegacyServer();
+                    //acknowledgmentToHA->setName("ACK_RequestConnectionToLegacyServer");
+                    IPvXAddress ha = IPAddressResolver().resolve("HA");
+                    sendToUDPMCOA(acknowledgmentToHA,localPort,ha,2000,true);
+
+                    ACK_RequestConnectionToLegacyServer* acknowledgmentToMN = new ACK_RequestConnectionToLegacyServer();
+                    IPvXAddress mn = IPvXAddress();
+                    mn.set(messageFromHA->getSrcAddress());
+                    sendToUDPMCOA(acknowledgmentToMN,localPort,mn,2000,true);//Control-Info wurde hier bereits gesetzt
+
+                }
+                return;
             }
 
         }
@@ -150,56 +165,5 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
 
 
 
-void Proxy_Unloading_Control_App::receiveStream(cPacket *msg) {
-    MCoAVideoStreaming *pkt_video = (MCoAVideoStreaming *) (msg);
-    //cout << "Video stream packet:\n";
-    int nLost;
 
-    nLost = (pkt_video->getCurSeq() - lastSeq);
-    nLost < 0 ? nLost * (-1) : nLost;
-
-    long auxseqRx = pkt_video->getCurSeq();
-    SPkt::iterator pos = StatsPkt.find(auxseqRx);
-    if (pos != StatsPkt.end()) {
-        bool pktTreated;
-        pktTreated = (pos->second).treated;
-
-        if (!pktTreated) {
-            (pos->second).treated = true;
-            (pos->second).delay = pkt_video->getCurTime();
-            PktRcv.record(auxseqRx);
-            //pktRcvDelay.record(packet->getCurTime());
-            PktDelay.record(simTime().dbl() - pkt_video->getCurTime());
-        }
-    } else {     //Insert packet into structure
-        EV << "MCOA Video Inserting packet into Stats structure" << endl;
-        statPacketVIDEO auxS;
-        auxS.seq = auxseqRx;
-        auxS.treated = true;
-        auxS.delay = pkt_video->getCurTime();
-        StatsPkt.insert(std::make_pair(auxseqRx, auxS));
-
-        PktRcv.record(auxseqRx);
-        //pktRcvDelay.record(packet->getCurTime());
-        PktDelay.record(simTime().dbl() - pkt_video->getCurTime());
-    }
-
-    /*
-     * May not be always true, since it can arrive unordered,
-     * just to have a notation when happens the worst packet loss
-     *
-     * to determine packet loss do: sent - Rcv
-     */
-    if ((nLost) > 1) {
-        // There is packet loss
-        PktLost.record(nLost);
-        EV << "There was packet loss " << nLost << " at Sim time " << simTime()
-                  << endl;
-    }
-    //PktRcv.record(pkt_video->getCurSeq());
-    //PktDelay.record(simTime().dbl() - pkt_video->getCurTime());
-    lastSeq = pkt_video->getCurSeq();
-
-    delete msg;
-}
 

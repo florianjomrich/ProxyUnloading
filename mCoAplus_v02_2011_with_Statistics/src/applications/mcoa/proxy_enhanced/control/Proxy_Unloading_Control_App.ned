@@ -45,6 +45,7 @@ simple Proxy_Unloading_Control_App like MCoAUDPBase
     	bool isMN; //is Mobile Node
         bool isHA; //is Home Agent
         bool isCN;//is Correspondent Node
+        bool isCapableCN;//to set whether the current CN is capable of dealing with the protocol or not
     	
     gates:
         input udpIn;
