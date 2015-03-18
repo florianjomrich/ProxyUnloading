@@ -140,7 +140,6 @@ OBJS = \
     $O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.o \
     $O/applications/mcoa/proxy_enhanced/control/RequestForConnectionToLegacyServerTable.o \
     $O/applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.o \
-    $O/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.o \
     $O/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o \
     $O/applications/mcoa/udpbase/MCoAUDPBase.o \
     $O/applications/pingapp/Proxyunloading_PingApp.o \
@@ -532,6 +531,7 @@ OBJS = \
     $O/applications/ethernet/EtherApp_m.o \
     $O/applications/mcoa/Video/MCoAVideoStreaming_m.o \
     $O/applications/mcoa/VoIP/MCOAVoIPMsg_m.o \
+    $O/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.o \
     $O/applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.o \
     $O/applications/pingapp/PingPayload_m.o \
     $O/applications/tcpapp/GenericAppMsg_m.o \
@@ -603,6 +603,7 @@ MSGFILES = \
     applications/ethernet/EtherApp.msg \
     applications/mcoa/Video/MCoAVideoStreaming.msg \
     applications/mcoa/VoIP/MCOAVoIPMsg.msg \
+    applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.msg \
     applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer.msg \
     applications/pingapp/PingPayload.msg \
     applications/tcpapp/GenericAppMsg.msg \
@@ -1050,7 +1051,7 @@ $O/applications/mcoa/VoIP/MCoAUDPApp.o: applications/mcoa/VoIP/MCoAUDPApp.cc \
 $O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoCli.o: applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoCli.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
 	applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoCli.h \
-	applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.h \
+	applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.h \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
@@ -1095,6 +1096,7 @@ $O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoProxy.o: applic
 $O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.o: applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
 	applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.h \
+	applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.h \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
@@ -1137,8 +1139,8 @@ $O/applications/mcoa/proxy_enhanced/control/RequestForConnectionToLegacyServerTa
 	applications/mcoa/proxy_enhanced/control/RequestForConnectionToLegacyServerTable.h \
 	base/INETDefs.h \
 	networklayer/contract/IPv6Address.h
-$O/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.o: applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.cc \
-	applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.h
+$O/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.o: applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.cc \
+	applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.h
 $O/applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.o: applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.cc \
 	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h
 $O/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o: applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc \

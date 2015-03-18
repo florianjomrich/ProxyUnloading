@@ -23,7 +23,7 @@
 #include "Proxy_Enhanced_MCoAVideoCli.h"
 #include "IPAddressResolver.h"
 #include "IPv6ControlInfo.h"
-#include "RequestVideoStream.h"
+#include "RequestVideoStream_m.h"
 
 
 #define PROXY_ENHANCED_BU_MESSAGE  42
@@ -90,10 +90,10 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
     }
     else
     {
-    //	if (dynamic_cast<MCoAVideoStreaming*>(msg)){
-    //		receiveStream(PK(msg));
-    //	}
-     // cout<<"Client App hat einen Nachricht von CN erhalten:"<<msg->getName()<<endl;
+    	if (dynamic_cast<MCoAVideoStreaming*>(msg)){
+    		receiveStream(PK(msg));
+    	}
+    	cout<<"Client App hat einen Nachricht von CN erhalten:"<<msg->getName()<<endl;
     	if(msg->getKind()==PROXY_CN_MESSAGE_TO_MOBILE_NODE){
     	            cout<<"Client App hat einen Nachricht von CN erhalten:"<<msg->getName()<<endl;
     	        }
@@ -112,7 +112,7 @@ void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
     IPvXAddress cn = IPAddressResolver().resolve("CN[0]");
 
     RequestVideoStream* halloWelt = new RequestVideoStream();
-    halloWelt->setName("Senden einer Request Nachricht an den CN Server. Hierauf soll er anfangen Daten zu senden.");
+    halloWelt->setName("MCoACli (MN) requests Video Stream from MCoASrv (CN).");
 
     sendToUDPMCOA(halloWelt, localPort, cn, 1000, true);//Port 1000 für Video - Port 2000 für Kontrolldaten
 

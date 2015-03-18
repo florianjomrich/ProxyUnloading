@@ -19,6 +19,7 @@
 #include "UDPControlInfo_m.h"
 #include "IPAddressResolver.h"
 #include "BindingUpdateInformationtoAPPmessageCN.h"
+#include "RequestVideoStream_m.h"
 
 #define CN_APP_MESSAGE 50
 #define PROXY_MESSAGE_FROM_CN_TO_MN 51
@@ -86,16 +87,16 @@ void Proxy_Enhanced_MCoAVideoSrv::initialize()
 	streamVector.push_back(d);
 
 
-    if (startTime>=0){
+   /* if (startTime>=0){
     	cMessage *timer = new cMessage("UDPVideoStart");
     	timer->setName("Proxy_Context_Message");
 		//timer->setContextPointer(d);
 		scheduleAt(startTime, timer);
-    }
+    } */
 
-    cMessage *hurz = new cMessage("HURZ");
-    hurz->setKind(PROXY_CN_MESSAGE_TO_MOBILE_NODE);
-    scheduleAt(hurzTime,hurz);
+   // cMessage *hurz = new cMessage("HURZ");
+   // hurz->setKind(PROXY_CN_MESSAGE_TO_MOBILE_NODE);
+   // scheduleAt(hurzTime,hurz);
 }
 
 void Proxy_Enhanced_MCoAVideoSrv::finish()
@@ -114,46 +115,19 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
 			return; // and that's it!
 		}
 
-        //###########################################
-    	//Proxy_Unloading FJ
-    	if(msg->getKind()==PROXY_CN_MESSAGE_TO_MOBILE_NODE){
-    	   // cout<<"CN will eine Nachricht an MN senden"<<endl;
 
-    	    IPvXAddress mn = IPAddressResolver().resolve("MN[0]");
-
-    	/*    RequestVideoStream* halloWelt = new RequestVideoStream();
-    	       halloWelt->setName(" HALLO WELT gesendet von CN");
-    	       halloWelt->setKind(PROXY_CN_MESSAGE_TO_MOBILE_NODE);
-
-
-
-    	    sendToUDPMCOA(halloWelt, localPort, mn, 1000, true);*/
-    	}
-
-
-    	//###########################################
-
-
-        // timer for a particular video stream expired, send packet
-        sendStreamData(msg);
 
     }
 
     else{
-        if(msg->getKind()==CN_APP_MESSAGE){
-            BindingUpdateInformation_to_APP_message_CN *meineMessage = (BindingUpdateInformation_to_APP_message_CN*) msg;
 
-            cout<< "HEIMAT ADRESSE ERHAlTEN:"<<meineMessage->HoA<<endl;
-            cout<< "CARE OF ADRESSE ERHALTEN:"<<meineMessage->CoA<<endl;
+        if(dynamic_cast<RequestVideoStream*>(msg)){
+            cout<<"MCoASrv: Request for sending Video received"<<endl;
 
-            cPacket *testData = new cPacket();
-            testData->setName("HALALALAOAOOAOAOAOAOAOAA ");
-            testData->setKind(PROXY_MESSAGE_FROM_CN_TO_MN);
+            //TODO das hier noch mal fixen, das korrekt Daten gesendet werden dann
 
-            sendToUDPMCOA(testData, localPort, meineMessage->CoA, 1000, true);
-        }
-        else{
-            cout <<"CN-MCoASrv received: "<< msg->getName() <<endl;
+            //cMessage *timer = new cMessage("UDPVideoStart");
+            //sendStreamData(timer);
         }
 
     }
