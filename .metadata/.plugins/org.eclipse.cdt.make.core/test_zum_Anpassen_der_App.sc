@@ -113,6 +113,10 @@
 <includePath path="/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src/applications/ethernet"/>
 <includePath path="/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src/applications/dhcp"/>
 <includePath path="/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages"/>
+<includePath path="/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages/control_messages"/>
+<includePath path="/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/messages/app_messages"/>
+<includePath path="/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/control"/>
+<includePath path="/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src/applications/mcoa/proxy_enhanced/apps"/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__cplusplus=199711L"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>

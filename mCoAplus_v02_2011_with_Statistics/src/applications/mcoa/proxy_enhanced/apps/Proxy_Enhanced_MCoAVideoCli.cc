@@ -81,9 +81,7 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
     	if(msg->getKind()== PROXY_CONTEXT_START){
     	    cout<<"!! Proxying Context Started !!"<<endl;
     	    sendControlData(msg);
-
-
-    	}
+    	    }
 
 
 
@@ -93,17 +91,9 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
     	if (dynamic_cast<MCoAVideoStreaming*>(msg)){
     		receiveStream(PK(msg));
     	}
-    	cout<<"Client App hat einen Nachricht von CN erhalten:"<<msg->getName()<<endl;
-    	if(msg->getKind()==PROXY_CN_MESSAGE_TO_MOBILE_NODE){
-    	            cout<<"Client App hat einen Nachricht von CN erhalten:"<<msg->getName()<<endl;
-    	        }
 
-    	/*const char* test = strcmp(msg->getName(),'HALALALAOAOOAOAOAOAOAOAA');
-    	if(test==0){
-    	        cout<<"Client App hat HALALALAOAOOAOAOAOAOAOAA  Nachricht von der CN App erhalten: "<<msg->getName()<<endl;
-    	}*/
     	else{
-    	  //  cout<<"VIDEO CLIENT received: "<<msg->getName()<<endl;
+    	    cout<<"VIDEO CLIENT received: "<<msg->getName()<<endl;
     	}
     }
 }
@@ -111,10 +101,10 @@ void Proxy_Enhanced_MCoAVideoCli::handleMessage(cMessage* msg)
 void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
     IPvXAddress cn = IPAddressResolver().resolve("CN[0]");
 
-    RequestVideoStream* halloWelt = new RequestVideoStream();
-    halloWelt->setName("MCoACli (MN) requests Video Stream from MCoASrv (CN).");
+    RequestVideoStream* requestVideoStream = new RequestVideoStream();
+    requestVideoStream->setName("MCoACli (MN) requests Video Stream from MCoASrv (CN).");
 
-    sendToUDPMCOA(halloWelt, localPort, cn, 1000, true);//Port 1000 für Video - Port 2000 für Kontrolldaten
+    sendToUDPMCOA(requestVideoStream, localPort, cn, 1000, true);//Port 1000 für Video - Port 2000 für Kontrolldaten
 
 }
 
