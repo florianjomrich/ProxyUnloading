@@ -32,8 +32,10 @@
 #include "xMIPv6Access.h"
 #include "UDPPacket.h"
 
-//PROXY UNLOADING EXTENSION
-#include "RequestForConnectionToLegacyServerPacket.h"
+//PROXY UNLOADING
+#include "RequetConnectionToLegacyServer_m.h"
+
+
 
 #define FRAGMENT_TIMEOUT 60   // 60 sec, from IPv6 RFC
 #define REQUEST_FOR_CONNECTION_TO_LEGACY_SERVER 145
@@ -838,15 +840,15 @@ cPacket *IPv6::decapsulate(IPv6Datagram *datagram, bool isTunneled) {
             if (!requestForConnectionToLegacyServerTable->containsRequestAlready(
                     dport, sport, datagram->getDestAddress(),
                     datagram->getSrcAddress(), flowSourceAddress)) {
-                RequestForConnectionToLegacyServerPacket* legacyRequestPacket =
-                        new RequestForConnectionToLegacyServerPacket();
+                RequetConnectionToLegacyServer* legacyRequestPacket =
+                        new RequetConnectionToLegacyServer();
                 legacyRequestPacket->setName(
                         "REQUEST_FOR_CONNECTION_TO_LEGACY_SERVER");
                 legacyRequestPacket->setKind(
                         REQUEST_FOR_CONNECTION_TO_LEGACY_SERVER);
-                legacyRequestPacket->setSrcAddress(datagram->getSrcAddress());
-                legacyRequestPacket->setDestAddress(datagram->getDestAddress());
-                legacyRequestPacket->setFlowSourceAddress(*flowSourceAddress);
+                legacyRequestPacket->setSrcAddress(datagram->getSrcAddress().str().c_str());
+                legacyRequestPacket->setDestAddress(datagram->getDestAddress().str().c_str());
+                legacyRequestPacket->setFlowSourceAddress(flowSourceAddress->str().c_str());
                 legacyRequestPacket->setSrcPort(sport);
                 legacyRequestPacket->setDestPort(dport);
 

@@ -133,7 +133,6 @@ OBJS = \
     $O/applications/mcoa/proxy_enhanced/FlowBindingUpdateMessage.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.o \
-    $O/applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerPacket.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.o \
     $O/applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.o \
     $O/applications/mcoa/udpbase/MCoAUDPBase.o \
@@ -526,6 +525,7 @@ OBJS = \
     $O/applications/ethernet/EtherApp_m.o \
     $O/applications/mcoa/Video/MCoAVideoStreaming_m.o \
     $O/applications/mcoa/VoIP/MCOAVoIPMsg_m.o \
+    $O/applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.o \
     $O/applications/pingapp/PingPayload_m.o \
     $O/applications/tcpapp/GenericAppMsg_m.o \
     $O/applications/udpapp/UDPEchoAppMsg_m.o \
@@ -596,6 +596,7 @@ MSGFILES = \
     applications/ethernet/EtherApp.msg \
     applications/mcoa/Video/MCoAVideoStreaming.msg \
     applications/mcoa/VoIP/MCOAVoIPMsg.msg \
+    applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer.msg \
     applications/pingapp/PingPayload.msg \
     applications/tcpapp/GenericAppMsg.msg \
     applications/udpapp/UDPEchoAppMsg.msg \
@@ -1103,7 +1104,7 @@ $O/applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.o: applications/
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
 	applications/mcoa/proxy_enhanced/FlowBindingUpdateMessage.h \
 	applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.h \
-	applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerPacket.h \
+	applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.h \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
@@ -1123,14 +1124,12 @@ $O/applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.o: applications/
 	networklayer/ipv6/IPv6ExtensionHeaders_m.h \
 	networklayer/mcoa/IPv6PrefAdr.h \
 	networklayer/mcoa/IPv6TunAdr.h
-$O/applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerPacket.o: applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerPacket.cc \
-	applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerPacket.h \
-	base/INETDefs.h \
-	networklayer/contract/IPv6Address.h
 $O/applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerTable.o: applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerTable.cc \
 	applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerTable.h \
 	base/INETDefs.h \
 	networklayer/contract/IPv6Address.h
+$O/applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.o: applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.cc \
+	applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.h
 $O/applications/mcoa/udpbase/MCoAUDPBase.o: applications/mcoa/udpbase/MCoAUDPBase.cc \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \
@@ -3595,8 +3594,8 @@ $O/networklayer/ipv4/RoutingTableParser.o: networklayer/ipv4/RoutingTableParser.
 	networklayer/ipv4/RoutingTable.h \
 	networklayer/ipv4/RoutingTableParser.h
 $O/networklayer/ipv6/IPv6.o: networklayer/ipv6/IPv6.cc \
-	applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerPacket.h \
 	applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerTable.h \
+	applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.h \
 	base/AbstractQueue.h \
 	base/INETDefs.h \
 	base/INotifiable.h \

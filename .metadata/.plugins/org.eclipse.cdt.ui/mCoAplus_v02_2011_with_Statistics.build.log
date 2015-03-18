@@ -1,4 +1,4 @@
-00:24:08 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+11:29:21 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
 make MODE=debug CONFIGNAME=gcc-debug all 
 cd src && make
 make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
@@ -10,5 +10,5 @@ applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.cc:158:37: warning:
 Creating shared library: ../out/gcc-debug/src/libinet.so
 make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
 
-00:24:11 Build Finished (took 3s.528ms)
+11:29:26 Build Finished (took 4s.698ms)
 

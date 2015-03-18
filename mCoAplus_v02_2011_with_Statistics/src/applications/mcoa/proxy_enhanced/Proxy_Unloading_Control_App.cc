@@ -23,7 +23,7 @@
 #include "IPAddressResolver.h"
 #include "IPv6ControlInfo.h"
 #include "FlowBindingUpdateMessage.h"
-#include "RequestForConnectionToLegacyServerPacket.h"
+#include "RequetConnectionToLegacyServer_m.h"
 
 #define PROXY_ENHANCED_BU_MESSAGE  42
 #define PROXY_CN_MESSAGE_TO_MOBILE_NODE 43
@@ -102,7 +102,7 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
          if(test==0){
          cout<<"Client App hat HALALALAOAOOAOAOAOAOAOAA  Nachricht von der CN App erhalten: "<<msg->getName()<<endl;
          }*/
-        if (dynamic_cast<RequestForConnectionToLegacyServerPacket*>(msg)) {
+        if (dynamic_cast<RequetConnectionToLegacyServer*>(msg)) {
             cout << "isMN: " << isMN << "   isCN: " << isCN << "  isHA: "
                                  << isHA << endl;
             if (isMN) {
@@ -111,13 +111,13 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                         << "Netzwerkschicht des MN meldet ein Paket, dessen Server noch nicht auf ProxyUnloading-Funktionalität hin überprüft wurde"
                         << endl;
                 IPvXAddress ha = IPAddressResolver().resolve("HA");
-                RequestForConnectionToLegacyServerPacket* messageAnHA =   check_and_cast<RequestForConnectionToLegacyServerPacket *>(msg);
+                RequetConnectionToLegacyServer* messageAnHA =   check_and_cast<RequetConnectionToLegacyServer *>(msg);
                 sendToUDPMCOA(messageAnHA, localPort, ha, 2000, true);
                 return;
             }
             if (isHA) {
-                RequestForConnectionToLegacyServerPacket* messageAnHA =   check_and_cast<RequestForConnectionToLegacyServerPacket *>(msg);
-                cout << "HA hat folgende Nachricht erhalten:" << msg->getName()<<" mit Destination: "<< messageAnHA->destinationAddress.str()<< endl;
+                RequetConnectionToLegacyServer* messageAnHA =   check_and_cast<RequetConnectionToLegacyServer *>(msg);
+                cout << "HA hat folgende Nachricht erhalten:" << messageAnHA->getName()<<" mit Destination: "<< messageAnHA->getDestAddress()<<" und FlowSourceAdresse: "<<messageAnHA->getFlowSourceAddress()<< endl;
                 cout << "HA hat neue Anfrage erhalten von einem MN" << endl;
                 return;
             }
