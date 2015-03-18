@@ -19,6 +19,11 @@ INCLUDE_PATH = \
     -Iapplications/mcoa/Video \
     -Iapplications/mcoa/VoIP \
     -Iapplications/mcoa/proxy_enhanced \
+    -Iapplications/mcoa/proxy_enhanced/apps \
+    -Iapplications/mcoa/proxy_enhanced/control \
+    -Iapplications/mcoa/proxy_enhanced/messages \
+    -Iapplications/mcoa/proxy_enhanced/messages/app_messages \
+    -Iapplications/mcoa/proxy_enhanced/messages/control_messages \
     -Iapplications/mcoa/proxy_enhanced/modules \
     -Iapplications/mcoa/udpbase \
     -Iapplications/pingapp \
@@ -130,12 +135,12 @@ OBJS = \
     $O/applications/mcoa/Video/MCoAVideoCli.o \
     $O/applications/mcoa/Video/MCoAVideoSrv.o \
     $O/applications/mcoa/VoIP/MCoAUDPApp.o \
-    $O/applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerTable.o \
-    $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.o \
-    $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.o \
-    $O/applications/mcoa/proxy_enhanced/RequestVideoStream.o \
-    $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.o \
-    $O/applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.o \
+    $O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoProxy.o \
+    $O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoCli.o \
+    $O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.o \
+    $O/applications/mcoa/proxy_enhanced/control/RequestForConnectionToLegacyServerTable.o \
+    $O/applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.o \
+    $O/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.o \
     $O/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o \
     $O/applications/mcoa/udpbase/MCoAUDPBase.o \
     $O/applications/pingapp/Proxyunloading_PingApp.o \
@@ -527,7 +532,7 @@ OBJS = \
     $O/applications/ethernet/EtherApp_m.o \
     $O/applications/mcoa/Video/MCoAVideoStreaming_m.o \
     $O/applications/mcoa/VoIP/MCOAVoIPMsg_m.o \
-    $O/applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.o \
+    $O/applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.o \
     $O/applications/pingapp/PingPayload_m.o \
     $O/applications/tcpapp/GenericAppMsg_m.o \
     $O/applications/udpapp/UDPEchoAppMsg_m.o \
@@ -598,7 +603,7 @@ MSGFILES = \
     applications/ethernet/EtherApp.msg \
     applications/mcoa/Video/MCoAVideoStreaming.msg \
     applications/mcoa/VoIP/MCOAVoIPMsg.msg \
-    applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer.msg \
+    applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer.msg \
     applications/pingapp/PingPayload.msg \
     applications/tcpapp/GenericAppMsg.msg \
     applications/udpapp/UDPEchoAppMsg.msg \
@@ -747,6 +752,11 @@ clean:
 	$(Q)-rm -f applications/mcoa/Video/*_m.cc applications/mcoa/Video/*_m.h
 	$(Q)-rm -f applications/mcoa/VoIP/*_m.cc applications/mcoa/VoIP/*_m.h
 	$(Q)-rm -f applications/mcoa/proxy_enhanced/*_m.cc applications/mcoa/proxy_enhanced/*_m.h
+	$(Q)-rm -f applications/mcoa/proxy_enhanced/apps/*_m.cc applications/mcoa/proxy_enhanced/apps/*_m.h
+	$(Q)-rm -f applications/mcoa/proxy_enhanced/control/*_m.cc applications/mcoa/proxy_enhanced/control/*_m.h
+	$(Q)-rm -f applications/mcoa/proxy_enhanced/messages/*_m.cc applications/mcoa/proxy_enhanced/messages/*_m.h
+	$(Q)-rm -f applications/mcoa/proxy_enhanced/messages/app_messages/*_m.cc applications/mcoa/proxy_enhanced/messages/app_messages/*_m.h
+	$(Q)-rm -f applications/mcoa/proxy_enhanced/messages/control_messages/*_m.cc applications/mcoa/proxy_enhanced/messages/control_messages/*_m.h
 	$(Q)-rm -f applications/mcoa/proxy_enhanced/modules/*_m.cc applications/mcoa/proxy_enhanced/modules/*_m.h
 	$(Q)-rm -f applications/mcoa/udpbase/*_m.cc applications/mcoa/udpbase/*_m.h
 	$(Q)-rm -f applications/pingapp/*_m.cc applications/pingapp/*_m.h
@@ -840,7 +850,7 @@ cleanall: clean
 
 depend:
 	$(qecho) Creating dependencies...
-	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc applications/*.cc applications/dhcp/*.cc applications/ethernet/*.cc applications/generic/*.cc applications/mcoa/*.cc applications/mcoa/Video/*.cc applications/mcoa/VoIP/*.cc applications/mcoa/proxy_enhanced/*.cc applications/mcoa/proxy_enhanced/modules/*.cc applications/mcoa/udpbase/*.cc applications/pingapp/*.cc applications/rtpapp/*.cc applications/sctpapp/*.cc applications/tcpapp/*.cc applications/udpapp/*.cc base/*.cc battery/*.cc linklayer/*.cc linklayer/contract/*.cc linklayer/ethernet/*.cc linklayer/etherswitch/*.cc linklayer/ext/*.cc linklayer/ieee80211/*.cc linklayer/ieee80211/mac/*.cc linklayer/ieee80211/mgmt/*.cc linklayer/mf80211/*.cc linklayer/mf80211/macLayer/*.cc linklayer/mf80211/phyLayer/*.cc linklayer/mf80211/phyLayer/decider/*.cc linklayer/mf80211/phyLayer/snrEval/*.cc linklayer/mfcore/*.cc linklayer/ppp/*.cc linklayer/radio/*.cc linklayer/radio/errormodel/*.cc linklayer/radio/propagation/*.cc mobility/*.cc mobility/traci/*.cc networklayer/*.cc networklayer/arp/*.cc networklayer/autorouting/*.cc networklayer/common/*.cc networklayer/contract/*.cc networklayer/extras/*.cc networklayer/icmpv6/*.cc networklayer/ipv4/*.cc networklayer/ipv6/*.cc networklayer/ldp/*.cc networklayer/manetrouting/*.cc networklayer/manetrouting/aodv/*.cc networklayer/manetrouting/aodv/aodv-uu/*.cc networklayer/manetrouting/base/*.cc networklayer/manetrouting/dsdv/*.cc networklayer/manetrouting/dsr/*.cc networklayer/manetrouting/dsr/dsr-uu/*.cc networklayer/manetrouting/dymo/*.cc networklayer/manetrouting/dymo/dymoum/*.cc networklayer/manetrouting/dymo_fau/*.cc networklayer/manetrouting/manager/*.cc networklayer/manetrouting/olsr/*.cc networklayer/mcoa/*.cc networklayer/mpls/*.cc networklayer/ospfv2/*.cc networklayer/ospfv2/interface/*.cc networklayer/ospfv2/messagehandler/*.cc networklayer/ospfv2/neighbor/*.cc networklayer/ospfv2/router/*.cc networklayer/queue/*.cc networklayer/rsvp_te/*.cc networklayer/ted/*.cc networklayer/xmipv6/*.cc nodes/*.cc nodes/adhoc/*.cc nodes/ethernet/*.cc nodes/inet/*.cc nodes/ipv6/*.cc nodes/mpls/*.cc nodes/wireless/*.cc nodes/xmipv6/*.cc transport/*.cc transport/contract/*.cc transport/rtp/*.cc transport/rtp/profiles/*.cc transport/rtp/profiles/avprofile/*.cc transport/sctp/*.cc transport/tcp/*.cc transport/tcp/flavours/*.cc transport/tcp/queues/*.cc transport/udp/*.cc util/*.cc util/headerserializers/*.cc util/headerserializers/headers/*.cc world/*.cc world/annotations/*.cc world/obstacles/*.cc world/traci/*.cc
+	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc applications/*.cc applications/dhcp/*.cc applications/ethernet/*.cc applications/generic/*.cc applications/mcoa/*.cc applications/mcoa/Video/*.cc applications/mcoa/VoIP/*.cc applications/mcoa/proxy_enhanced/*.cc applications/mcoa/proxy_enhanced/apps/*.cc applications/mcoa/proxy_enhanced/control/*.cc applications/mcoa/proxy_enhanced/messages/*.cc applications/mcoa/proxy_enhanced/messages/app_messages/*.cc applications/mcoa/proxy_enhanced/messages/control_messages/*.cc applications/mcoa/proxy_enhanced/modules/*.cc applications/mcoa/udpbase/*.cc applications/pingapp/*.cc applications/rtpapp/*.cc applications/sctpapp/*.cc applications/tcpapp/*.cc applications/udpapp/*.cc base/*.cc battery/*.cc linklayer/*.cc linklayer/contract/*.cc linklayer/ethernet/*.cc linklayer/etherswitch/*.cc linklayer/ext/*.cc linklayer/ieee80211/*.cc linklayer/ieee80211/mac/*.cc linklayer/ieee80211/mgmt/*.cc linklayer/mf80211/*.cc linklayer/mf80211/macLayer/*.cc linklayer/mf80211/phyLayer/*.cc linklayer/mf80211/phyLayer/decider/*.cc linklayer/mf80211/phyLayer/snrEval/*.cc linklayer/mfcore/*.cc linklayer/ppp/*.cc linklayer/radio/*.cc linklayer/radio/errormodel/*.cc linklayer/radio/propagation/*.cc mobility/*.cc mobility/traci/*.cc networklayer/*.cc networklayer/arp/*.cc networklayer/autorouting/*.cc networklayer/common/*.cc networklayer/contract/*.cc networklayer/extras/*.cc networklayer/icmpv6/*.cc networklayer/ipv4/*.cc networklayer/ipv6/*.cc networklayer/ldp/*.cc networklayer/manetrouting/*.cc networklayer/manetrouting/aodv/*.cc networklayer/manetrouting/aodv/aodv-uu/*.cc networklayer/manetrouting/base/*.cc networklayer/manetrouting/dsdv/*.cc networklayer/manetrouting/dsr/*.cc networklayer/manetrouting/dsr/dsr-uu/*.cc networklayer/manetrouting/dymo/*.cc networklayer/manetrouting/dymo/dymoum/*.cc networklayer/manetrouting/dymo_fau/*.cc networklayer/manetrouting/manager/*.cc networklayer/manetrouting/olsr/*.cc networklayer/mcoa/*.cc networklayer/mpls/*.cc networklayer/ospfv2/*.cc networklayer/ospfv2/interface/*.cc networklayer/ospfv2/messagehandler/*.cc networklayer/ospfv2/neighbor/*.cc networklayer/ospfv2/router/*.cc networklayer/queue/*.cc networklayer/rsvp_te/*.cc networklayer/ted/*.cc networklayer/xmipv6/*.cc nodes/*.cc nodes/adhoc/*.cc nodes/ethernet/*.cc nodes/inet/*.cc nodes/ipv6/*.cc nodes/mpls/*.cc nodes/wireless/*.cc nodes/xmipv6/*.cc transport/*.cc transport/contract/*.cc transport/rtp/*.cc transport/rtp/profiles/*.cc transport/rtp/profiles/avprofile/*.cc transport/sctp/*.cc transport/tcp/*.cc transport/tcp/flavours/*.cc transport/tcp/queues/*.cc transport/udp/*.cc util/*.cc util/headerserializers/*.cc util/headerserializers/headers/*.cc world/*.cc world/annotations/*.cc world/obstacles/*.cc world/traci/*.cc
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
 $O/applications/dhcp/DHCPClient.o: applications/dhcp/DHCPClient.cc \
@@ -1037,10 +1047,10 @@ $O/applications/mcoa/VoIP/MCoAUDPApp.o: applications/mcoa/VoIP/MCoAUDPApp.cc \
 	networklayer/mcoa/IPv6PrefAdr.h \
 	networklayer/mcoa/IPv6TunAdr.h \
 	transport/contract/UDPControlInfo_m.h
-$O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.o: applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.cc \
+$O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoCli.o: applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoCli.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
-	applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.h \
-	applications/mcoa/proxy_enhanced/RequestVideoStream.h \
+	applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoCli.h \
+	applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.h \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
@@ -1060,9 +1070,9 @@ $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoCli.o: applications/
 	networklayer/ipv6/IPv6ExtensionHeaders_m.h \
 	networklayer/mcoa/IPv6PrefAdr.h \
 	networklayer/mcoa/IPv6TunAdr.h
-$O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.o: applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.cc \
+$O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoProxy.o: applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoProxy.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
-	applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.h \
+	applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoProxy.h \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
@@ -1082,9 +1092,9 @@ $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoProxy.o: application
 	networklayer/ipv6/IPv6ExtensionHeaders_m.h \
 	networklayer/mcoa/IPv6PrefAdr.h \
 	networklayer/mcoa/IPv6TunAdr.h
-$O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.o: applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.cc \
+$O/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.o: applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
-	applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.h \
+	applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.h \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
@@ -1100,10 +1110,10 @@ $O/applications/mcoa/proxy_enhanced/Proxy_Enhanced_MCoAVideoSrv.o: applications/
 	networklayer/mcoa/IPv6TunAdr.h \
 	networklayer/xmipv6/BindingUpdateInformationtoAPPmessageCN.h \
 	transport/contract/UDPControlInfo_m.h
-$O/applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.o: applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.cc \
+$O/applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.o: applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.cc \
 	applications/mcoa/Video/MCoAVideoStreaming_m.h \
-	applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.h \
-	applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.h \
+	applications/mcoa/proxy_enhanced/control/Proxy_Unloading_Control_App.h \
+	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
@@ -1123,14 +1133,14 @@ $O/applications/mcoa/proxy_enhanced/Proxy_Unloading_Control_App.o: applications/
 	networklayer/ipv6/IPv6ExtensionHeaders_m.h \
 	networklayer/mcoa/IPv6PrefAdr.h \
 	networklayer/mcoa/IPv6TunAdr.h
-$O/applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerTable.o: applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerTable.cc \
-	applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerTable.h \
+$O/applications/mcoa/proxy_enhanced/control/RequestForConnectionToLegacyServerTable.o: applications/mcoa/proxy_enhanced/control/RequestForConnectionToLegacyServerTable.cc \
+	applications/mcoa/proxy_enhanced/control/RequestForConnectionToLegacyServerTable.h \
 	base/INETDefs.h \
 	networklayer/contract/IPv6Address.h
-$O/applications/mcoa/proxy_enhanced/RequestVideoStream.o: applications/mcoa/proxy_enhanced/RequestVideoStream.cc \
-	applications/mcoa/proxy_enhanced/RequestVideoStream.h
-$O/applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.o: applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.cc \
-	applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.h
+$O/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.o: applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.cc \
+	applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.h
+$O/applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.o: applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.cc \
+	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h
 $O/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o: applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc \
 	applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h
 $O/applications/mcoa/udpbase/MCoAUDPBase.o: applications/mcoa/udpbase/MCoAUDPBase.cc \
@@ -3597,8 +3607,8 @@ $O/networklayer/ipv4/RoutingTableParser.o: networklayer/ipv4/RoutingTableParser.
 	networklayer/ipv4/RoutingTable.h \
 	networklayer/ipv4/RoutingTableParser.h
 $O/networklayer/ipv6/IPv6.o: networklayer/ipv6/IPv6.cc \
-	applications/mcoa/proxy_enhanced/RequestForConnectionToLegacyServerTable.h \
-	applications/mcoa/proxy_enhanced/RequetConnectionToLegacyServer_m.h \
+	applications/mcoa/proxy_enhanced/control/RequestForConnectionToLegacyServerTable.h \
+	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h \
 	base/AbstractQueue.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
