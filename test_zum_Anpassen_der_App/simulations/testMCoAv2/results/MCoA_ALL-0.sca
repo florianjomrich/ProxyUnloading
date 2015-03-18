@@ -1,14 +1,14 @@
 version 2
-run MCoA_ALL-0-20150318-15:28:10-9335
+run MCoA_ALL-0-20150318-15:32:49-10002
 attr configname MCoA_ALL
-attr datetime 20150318-15:28:10
+attr datetime 20150318-15:32:49
 attr experiment MCoA_ALL
 attr inifile VoIPMCoACN.ini
 attr iterationvars ""
 attr iterationvars2 $repetition=0
 attr measurement ""
 attr network VoIPMCoAMulti
-attr processid 9335
+attr processid 10002
 attr repetition 0
 attr replication #0
 attr resultdir results

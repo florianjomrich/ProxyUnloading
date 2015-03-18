@@ -154,7 +154,7 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
             sendToUDPMCOA(testData, localPort, meineMessage->CoA, 1000, true);
         }
         else{
-            cout <<"CN received: "<< msg->getName() <<endl;
+            cout <<"CN-MCoASrv received: "<< msg->getName() <<endl;
         }
 
     }

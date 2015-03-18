@@ -114,7 +114,7 @@ void Proxy_Enhanced_MCoAVideoCli::sendControlData(cMessage* msg){
     FlowBindingUpdateMessage* halloWelt = new FlowBindingUpdateMessage();
     halloWelt->setName("Senden einer Request Nachricht an den CN Server. Hierauf soll er anfangen Daten zu senden.");
 
-    sendToUDPMCOA(halloWelt, localPort, cn, 2000, true);
+    sendToUDPMCOA(halloWelt, localPort, cn, 1000, true);//Port 1000 für Video - Port 2000 für Kontrolldaten
 
 }
 
