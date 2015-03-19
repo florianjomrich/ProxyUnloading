@@ -29,6 +29,8 @@ FlowBindingTable::~FlowBindingTable() {
     // TODO Auto-generated destructor stub
 }
 
+
+
 void FlowBindingTable::handleMessage(cMessage* msg)
 {
     if (msg->isSelfMessage())
@@ -56,17 +58,55 @@ void  FlowBindingTable::insertNewFlowBindingEntry(RequetConnectionToLegacyServer
     srcAdresses.insert ( std::pair<const char*,std::set<const char*> >(newFlowBindingEntry->getFlowSourceAddress(),mySrcAdressSet) );
 
     std::set<const char*> myDestAdressSet;
-    mySrcAdressSet.insert(newFlowBindingEntry->getDestAddress());
+    myDestAdressSet.insert(newFlowBindingEntry->getDestAddress());
     destAdresses.insert ( std::pair<const char*,std::set<const char*> >(newFlowBindingEntry->getFlowSourceAddress(),myDestAdressSet) );
 
 
 }
 
-FlowBindingEntry FlowBindingTable::getFlowBindingEntryFromTable(const char* flowSourceAdress){
+//check if an entry already exists:
+bool FlowBindingTable::entryAlreadyExistsInTable(const char* flowSourceAdress){
     const bool srcPortFound = this->srcPorts.find(flowSourceAdress) != srcPorts.end();
+    const bool destPortFound = this->destPorts.find(flowSourceAdress) != destPorts.end();
+    const bool srcAddressFound = this->srcAdresses.find(flowSourceAdress) != srcAdresses.end();
+    const bool destAddressFound = this->destAdresses.find(flowSourceAdress) != destAdresses.end();
 
-    if(srcPortFound){
+    return (srcPortFound && destPortFound && srcAddressFound && destAddressFound);
+}
+
+//it has to be checked first if the entry really exist by calling the above method first !
+FlowBindingEntry* FlowBindingTable::getFlowBindingEntryFromTable(const char* flowSourceAdress){
+
+
+//    const bool srcPortFound = this->srcPorts.find(flowSourceAdress) != srcPorts.end();
+
+    if(entryAlreadyExistsInTable(flowSourceAdress)){
+
+        std::map<const char*,int>::iterator srcPortIterator =  srcPorts.find(flowSourceAdress);
+        int srcPort = srcPortIterator->second;
+
+        std::map<const char*,int>::iterator destPortIterator =  destPorts.find(flowSourceAdress);
+        int destPort = destPortIterator->second;
+
+        std::map<const char*,std::set<const char*> >::iterator srcAddresstIterator =  srcAdresses.find(flowSourceAdress);
+        std::set<const char*> srcAddressesOfTheNode = srcAddresstIterator->second;
+        std::set<const char*> ::iterator srcAddressesOfTheNodeIterator = srcAddressesOfTheNode.begin();//use the first IP Address found
+        const char* usedSourceAddress = *srcAddressesOfTheNodeIterator;
+
+        std::map<const char*,std::set<const char*> >::iterator destAddresstIterator =  destAdresses.find(flowSourceAdress);
+        std::set<const char*> destAddressesOfTheNode = destAddresstIterator->second;
+        std::set<const char*> ::iterator destAddressesOfTheNodeIterator = destAddressesOfTheNode.begin();//use the first IP Address found
+        const char* usedDestAddress = *destAddressesOfTheNodeIterator;
+
+
+
         cout<<"FlowBinding entry was found"<<endl;
-        //cout<<"source Port found:"<<searchSrcPort->second<<" for Key:"<<searchSrcPort->first<<endl;
+        cout<<"Found Source Port: "<<srcPort<<"\n  Dest Port:"<<destPort<<"\n  Source Address: "<<usedSourceAddress<<"\n Dest Address: "<<usedDestAddress<<"\n for Key:"<<srcPortIterator->first<<endl;
+
+
+        return new FlowBindingEntry(true,srcPort,destPort,usedSourceAddress,usedDestAddress);
+    }
+    else{
+        return new FlowBindingEntry(false,0,0,"none","none");
     }
 }

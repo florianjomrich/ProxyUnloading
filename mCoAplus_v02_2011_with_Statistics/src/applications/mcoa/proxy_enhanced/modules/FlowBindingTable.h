@@ -37,7 +37,8 @@ public:
     virtual ~FlowBindingTable();
     virtual void handleMessage(cMessage *msg);
     virtual void insertNewFlowBindingEntry(RequetConnectionToLegacyServer *newFlowBindingEntry);
-    virtual FlowBindingEntry getFlowBindingEntryFromTable(const char* flowSourceAdress);
+    virtual FlowBindingEntry* getFlowBindingEntryFromTable(const char* flowSourceAdress);
+    virtual bool entryAlreadyExistsInTable(const char* flowSourceAdress);
 };
 
 #endif /* FLOWBINDINGTABLE_H_ */

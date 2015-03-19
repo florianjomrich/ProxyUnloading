@@ -644,22 +644,22 @@ void IPv6::isLocalAddress(IPv6Datagram *datagram, bool isTunnelled) {
 
 
 
-    //*************************************************************
+//*************************************************************
              //TEST OB MAN DIE SRC IP ADRESSE ÄNDERN KANN ZUM UPPER LAYER HOCH:
 
 
-              if (datagram->getTransportProtocol() == 17){
-             //  if(isMN || isHA || isCN){
+              if (datagram->getTransportProtocol() == 17){//handelt es sich um ein UDP Paket ?
+               if(isMN || isCN){
                    IPv6Address* neueAdresse = new IPv6Address("1111:111::1111:111");/// ????
-                                   datagram->setSrcAddress(*neueAdresse);
-                                   cout<<"SOURCE ADRESSE ="<<datagram->getSrcAddress()<<endl;
-                                     }
-
-               //}
-
+                                  // datagram->setSrcAddress(*neueAdresse); // hierüber ersetzt man die IP-Adresse nach oben hin zum UDP-Layer
+              }
+                           cout<<"SOURCE ADRESSE ="<<datagram->getSrcAddress()<<endl;
+              }
 
 
-             //*********************************************************++
+
+
+//*************************************************************
 
 
 

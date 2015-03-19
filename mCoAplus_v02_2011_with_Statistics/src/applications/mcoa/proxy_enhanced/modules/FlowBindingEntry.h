@@ -18,8 +18,55 @@
 
 class FlowBindingEntry {
 public:
+    bool isValidEntry;
+    int srcPort;
+    int destPort;
+    const char* srcAddress;
+    const char* destAddress;
+
     FlowBindingEntry();
+    FlowBindingEntry(bool isValidEntry,int srcPort, int destPort,const char* srcAddress,const char* destAddress);
     virtual ~FlowBindingEntry();
+
+    const char* getDestAddress() const {
+        return destAddress;
+    }
+
+    void setDestAddress(char* destAddress) {
+        this->destAddress = destAddress;
+    }
+
+    int getDestPort() const {
+        return destPort;
+    }
+
+    void setDestPort(int destPort) {
+        this->destPort = destPort;
+    }
+
+    bool isIsValidEntry() const {
+        return isValidEntry;
+    }
+
+    void setIsValidEntry(bool isValidEntry) {
+        this->isValidEntry = isValidEntry;
+    }
+
+    const char* getSrcAddress() const {
+        return srcAddress;
+    }
+
+    void setSrcAddress(const char* srcAddress) {
+        this->srcAddress = srcAddress;
+    }
+
+    int getSrcPort() const {
+        return srcPort;
+    }
+
+    void setSrcPort(int srcPort) {
+        this->srcPort = srcPort;
+    }
 };
 
 #endif /* FLOWBINDINGENTRY_H_ */

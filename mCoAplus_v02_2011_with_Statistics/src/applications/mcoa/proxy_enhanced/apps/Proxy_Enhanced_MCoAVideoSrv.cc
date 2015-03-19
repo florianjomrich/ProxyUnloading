@@ -123,6 +123,8 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
 
         if(dynamic_cast<RequestVideoStream*>(msg)){
             cout<<"MCoASrv: Request for sending Video received"<<endl;
+
+            //Auslesen der Controll-Informationen - SRC und DEST IP usw. usf. zum Umsetzen des FlowSource_IP-Adressen-Konzeptes
             UDPControlInfo* myControllInfo = check_and_cast<UDPControlInfo*>(msg->getControlInfo());
             IPvXAddress srcIPAdresse = myControllInfo->getSrcAddr();
             cout<<"MCoASrv received IP-Adress: "<<srcIPAdresse<<endl;
