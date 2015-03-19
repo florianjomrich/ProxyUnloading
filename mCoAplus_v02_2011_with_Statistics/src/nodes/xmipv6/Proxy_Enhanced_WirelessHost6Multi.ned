@@ -192,6 +192,7 @@ module Proxy_Enhanced_WirelessHost6Multi
 
 
         proxyUnloadingControlApp.uDPControllAppConnection <--> networkLayer.uDPControllAppConnection;
+        proxyUnloadingControlApp.bindingUpdateChannelToProxyControlApp<-->networkLayer.bindingUpdateChannelToProxyControlApp;
         
 }
 

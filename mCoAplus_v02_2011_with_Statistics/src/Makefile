@@ -533,6 +533,7 @@ OBJS = \
     $O/applications/mcoa/Video/MCoAVideoStreaming_m.o \
     $O/applications/mcoa/VoIP/MCOAVoIPMsg_m.o \
     $O/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.o \
+    $O/applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.o \
     $O/applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.o \
     $O/applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.o \
     $O/applications/pingapp/PingPayload_m.o \
@@ -606,6 +607,7 @@ MSGFILES = \
     applications/mcoa/Video/MCoAVideoStreaming.msg \
     applications/mcoa/VoIP/MCOAVoIPMsg.msg \
     applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream.msg \
+    applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate.msg \
     applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer.msg \
     applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer.msg \
     applications/pingapp/PingPayload.msg \
@@ -1147,6 +1149,8 @@ $O/applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.o
 	applications/mcoa/proxy_enhanced/messages/app_messages/RequestVideoStream_m.h
 $O/applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.o: applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.cc \
 	applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnectionToLegacyServer_m.h
+$O/applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.o: applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.cc \
+	applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.h
 $O/applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.o: applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.cc \
 	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h
 $O/applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.o: applications/mcoa/proxy_enhanced/modules/FlowBindingEntry.cc \
@@ -8365,6 +8369,7 @@ $O/networklayer/xmipv6/ProxyUnloadingxMIPv6.o: networklayer/xmipv6/ProxyUnloadin
 	networklayer/xmipv6/ProxyUnloadingxMIPv6.h \
 	networklayer/xmipv6/xMIPv6.h
 $O/networklayer/xmipv6/xMIPv6.o: networklayer/xmipv6/xMIPv6.cc \
+	applications/mcoa/proxy_enhanced/messages/control_messages/FlowBindingUpdate_m.h \
 	base/INETDefs.h \
 	base/INotifiable.h \
 	base/MCoADefs.h \

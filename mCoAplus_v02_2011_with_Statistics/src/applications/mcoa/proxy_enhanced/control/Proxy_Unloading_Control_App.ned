@@ -53,6 +53,7 @@ simple Proxy_Unloading_Control_App like MCoAUDPBase
         inout APP_proxy_Enhanced_Control_Channel;
         input fromBindingUpdateList;
         inout uDPControllAppConnection;
+        inout bindingUpdateChannelToProxyControlApp;
        
 }
 

@@ -27,6 +27,9 @@
 #include <iostream>
 #include "NotifierConsts.h"
 
+//PROXY UNLOADING
+#include "FlowBindingUpdate_m.h"
+
 #define MK_SEND_PERIODIC_BU			1
 // 18.09.07 - CB
 #define MK_SEND_PERIODIC_BR			2
@@ -1459,6 +1462,18 @@ void xMIPv6::createAndSendBUMessage(const IPv6Address& dest, InterfaceEntry* ie,
 
 void xMIPv6::updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA,  const IPv6Address& dest, const IPv6Address& CoA, InterfaceEntry* ie, const simtime_t sendTime)
 {
+
+    //***********************PROXY UNLOADING********************
+    FlowBindingUpdate* newFlowBindingUpdateToSend = new FlowBindingUpdate();
+    newFlowBindingUpdateToSend->setHomeAddress(bu->getHomeAddressMN().str().c_str());
+    newFlowBindingUpdateToSend->setNewCoAdress(CoA.str().c_str());
+
+    cout<<"Binding-Update für HomeAdresse:"<<newFlowBindingUpdateToSend->getHomeAddress()<<" neue CoA: "<<newFlowBindingUpdateToSend->getNewCoAdress()<<endl;
+    newFlowBindingUpdateToSend->setName("Flow Binding Update");
+    send(newFlowBindingUpdateToSend,"bindingUpdateChannelToProxyControlApp$o");
+
+   // **********************************************************
+
 
 	uint buLife = 4 * bu->getLifetime(); /* 6.1.7 One time unit is 4 seconds. */ // update 11.06.08 - CB
 	uint buSeq = bu->getSequence();
