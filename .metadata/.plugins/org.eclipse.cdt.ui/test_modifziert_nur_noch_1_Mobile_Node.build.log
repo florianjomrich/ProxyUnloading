@@ -1,4 +1,4 @@
-10:05:58 **** Incremental Build of configuration gcc-debug for project test_modifziert_nur_noch_1_Mobile_Node ****
+10:56:47 **** Incremental Build of configuration gcc-debug for project test_modifziert_nur_noch_1_Mobile_Node ****
 make MODE=debug CONFIGNAME=gcc-debug all 
 cd src && opp_makemake -f --deep
 Creating Makefile in /home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src...
@@ -12,5 +12,5 @@ make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_no
 Creating executable: ../out/gcc-debug//src/test_modifziert_nur_noch_1_Mobile_Node
 make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
 
-10:05:58 Build Finished (took 220ms)
+10:56:47 Build Finished (took 209ms)
 

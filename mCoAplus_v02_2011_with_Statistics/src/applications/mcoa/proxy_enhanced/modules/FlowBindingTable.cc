@@ -44,3 +44,11 @@ void FlowBindingTable::handleMessage(cMessage* msg)
         }
     }
 }
+
+void  FlowBindingTable::insertNewFlowBindingEntry(RequetConnectionToLegacyServer *newFlowBindingEntry){
+    srcPorts.insert ( std::pair<const char*,int>(newFlowBindingEntry->getFlowSourceAddress(),newFlowBindingEntry->getSrcPort()) );
+}
+
+FlowBindingEntry FlowBindingTable::getFlowBindingEntryFromTable(char* flowSourceAdress){
+
+}

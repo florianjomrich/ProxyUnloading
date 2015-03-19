@@ -110,8 +110,11 @@ void IPv6::updateDisplayString() {
 void IPv6::endService(cPacket *msg) {
 
     //check if it is a control message form the ProxyUnloading_Control_App:
-    if (dynamic_cast<RequetConnectionToLegacyServer*>(msg) && (isMN||isCN||isHA)) {
-        cout<<"The network layer of MN-HA-CN "<<isMN<<isHA<<isCN<<" updates now it's FlowBindingTable"<<endl;
+    if (dynamic_cast<RequetConnectionToLegacyServer*>(msg) && isCN) {
+        cout<<"The network layer of CN inserts a new entry into it's FlowBindingTable"<<endl;
+        RequetConnectionToLegacyServer* newFlowBindingEntryMessage = check_and_cast<
+                               RequetConnectionToLegacyServer *>(msg);
+        flowBindingTable->insertNewFlowBindingEntry(newFlowBindingEntryMessage);
         return;
     }
 
