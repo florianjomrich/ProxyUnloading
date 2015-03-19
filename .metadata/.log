@@ -310,3 +310,12 @@ java.util.ConcurrentModificationException
 
 !ENTRY org.omnetpp.launch 4 133 2015-03-19 15:31:59.880
 !MESSAGE Run #0: Finished with Error
+!SESSION 2015-03-19 18:06:20.158 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_75
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.omnetpp.main 1 0 2015-03-19 18:06:40.122
+!MESSAGE OMNeT++ IDE 4.4.1.140307-1086eab started.
