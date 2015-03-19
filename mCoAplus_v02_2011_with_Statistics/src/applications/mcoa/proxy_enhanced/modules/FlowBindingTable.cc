@@ -18,6 +18,8 @@
 
 Define_Module(FlowBindingTable);
 
+using std::cout;
+
 FlowBindingTable::FlowBindingTable() {
     // TODO Auto-generated constructor stub
 
@@ -47,8 +49,24 @@ void FlowBindingTable::handleMessage(cMessage* msg)
 
 void  FlowBindingTable::insertNewFlowBindingEntry(RequetConnectionToLegacyServer *newFlowBindingEntry){
     srcPorts.insert ( std::pair<const char*,int>(newFlowBindingEntry->getFlowSourceAddress(),newFlowBindingEntry->getSrcPort()) );
+    destPorts.insert ( std::pair<const char*,int>(newFlowBindingEntry->getFlowSourceAddress(),newFlowBindingEntry->getDestPort()) );
+
+    std::set<const char*> mySrcAdressSet;
+    mySrcAdressSet.insert(newFlowBindingEntry->getSrcAddress());
+    srcAdresses.insert ( std::pair<const char*,std::set<const char*> >(newFlowBindingEntry->getFlowSourceAddress(),mySrcAdressSet) );
+
+    std::set<const char*> myDestAdressSet;
+    mySrcAdressSet.insert(newFlowBindingEntry->getDestAddress());
+    destAdresses.insert ( std::pair<const char*,std::set<const char*> >(newFlowBindingEntry->getFlowSourceAddress(),myDestAdressSet) );
+
+
 }
 
-FlowBindingEntry FlowBindingTable::getFlowBindingEntryFromTable(char* flowSourceAdress){
+FlowBindingEntry FlowBindingTable::getFlowBindingEntryFromTable(const char* flowSourceAdress){
+    const bool srcPortFound = this->srcPorts.find(flowSourceAdress) != srcPorts.end();
 
+    if(srcPortFound){
+        cout<<"FlowBinding entry was found"<<endl;
+        //cout<<"source Port found:"<<searchSrcPort->second<<" for Key:"<<searchSrcPort->first<<endl;
+    }
 }

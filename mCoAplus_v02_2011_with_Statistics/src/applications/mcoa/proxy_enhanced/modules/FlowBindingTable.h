@@ -22,6 +22,7 @@
 #include <set>
 #include <FlowBindingEntry.h>
 #include <RequetConnectionToLegacyServer_m.h>
+// alternative #include <string.h>
 
 class FlowBindingTable: public cSimpleModule {
 public:
@@ -36,7 +37,7 @@ public:
     virtual ~FlowBindingTable();
     virtual void handleMessage(cMessage *msg);
     virtual void insertNewFlowBindingEntry(RequetConnectionToLegacyServer *newFlowBindingEntry);
-    virtual FlowBindingEntry getFlowBindingEntryFromTable(char* flowSourceAdress);
+    virtual FlowBindingEntry getFlowBindingEntryFromTable(const char* flowSourceAdress);
 };
 
 #endif /* FLOWBINDINGTABLE_H_ */
