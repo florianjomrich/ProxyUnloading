@@ -55,12 +55,15 @@ class INET_API Proxy_Unloading_Control_App : public MCoAUDPBase
     cOutVector PktDelay;
 
     long lastSeq;
+
+    //For ProxyUnloading FJ
     bool isMN;
     bool isHA;
     bool isCN;
     bool isCapableCN;
 
-    //For ProxyUnloading FJ
+
+
      simtime_t startTime;
 
 

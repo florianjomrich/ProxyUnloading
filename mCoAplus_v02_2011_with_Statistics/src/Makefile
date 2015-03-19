@@ -1149,6 +1149,7 @@ $O/applications/mcoa/proxy_enhanced/messages/control_messages/ACK_RequestConnect
 $O/applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.o: applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.cc \
 	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h
 $O/applications/mcoa/proxy_enhanced/modules/FlowBindingTable.o: applications/mcoa/proxy_enhanced/modules/FlowBindingTable.cc \
+	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h \
 	applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h
 $O/applications/mcoa/udpbase/MCoAUDPBase.o: applications/mcoa/udpbase/MCoAUDPBase.cc \
 	applications/mcoa/udpbase/MCoAUDPBase.h \
@@ -3616,6 +3617,8 @@ $O/networklayer/ipv4/RoutingTableParser.o: networklayer/ipv4/RoutingTableParser.
 $O/networklayer/ipv6/IPv6.o: networklayer/ipv6/IPv6.cc \
 	applications/mcoa/proxy_enhanced/control/RequestForConnectionToLegacyServerTable.h \
 	applications/mcoa/proxy_enhanced/messages/control_messages/RequetConnectionToLegacyServer_m.h \
+	applications/mcoa/proxy_enhanced/modules/FlowBindingTable.h \
+	applications/mcoa/proxy_enhanced/modules/FlowBindingTableAccess.h \
 	base/AbstractQueue.h \
 	base/INETDefs.h \
 	base/INotifiable.h \

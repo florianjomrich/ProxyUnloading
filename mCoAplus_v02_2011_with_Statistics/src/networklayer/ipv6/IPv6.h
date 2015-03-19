@@ -34,6 +34,8 @@
 
 //FOR PROXYUNLOADING
 #include "UDPControlInfo_m.h"
+#include "FlowBindingTable.h"
+#include "FlowBindingTableAccess.h"
 
 class ICMPv6Message;
 
@@ -94,6 +96,7 @@ class INET_API IPv6 : public QueueBase, public  IScriptable
     bool isCN;
     RequestForConnectionToLegacyServerTable *requestForConnectionToLegacyServerTable;
     const char *myHumanReadableName;
+    FlowBindingTable *flowBindingTable;
 
   protected:
     // utility: look up interface from getArrivalGate()

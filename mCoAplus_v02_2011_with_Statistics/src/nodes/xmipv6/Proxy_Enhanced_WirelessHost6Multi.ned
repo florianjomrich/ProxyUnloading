@@ -81,7 +81,7 @@ module Proxy_Enhanced_WirelessHost6Multi
         }
         flowBindingTable: FlowBindingTable {
             parameters:
-                @display("p=648,89;i=old/floppy1");
+                @display("p=150,292;i=old/floppy1");
         }
         routingTable6: RoutingTable6 {
             parameters:
@@ -192,7 +192,6 @@ module Proxy_Enhanced_WirelessHost6Multi
 
 
         proxyUnloadingControlApp.uDPControllAppConnection <--> networkLayer.uDPControllAppConnection;
-        proxyUnloadingControlApp.flowBindingTableCable <--> flowBindingTable.flowBindingTableCable;
-
+        
 }
 

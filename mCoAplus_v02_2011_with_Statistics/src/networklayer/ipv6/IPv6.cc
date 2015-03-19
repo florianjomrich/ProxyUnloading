@@ -76,10 +76,17 @@ void IPv6::initialize() {
     isMN = par("isMN");
     isHA = par("isHA");
     isCN = par("isCN");
+    myHumanReadableName = par("humanReadableNameForAutomaticAdding").stringValue();
    // cout<<"was wurde konfiguriert rein: "<<isMN<<isHA<<isCN<<endl;
     requestForConnectionToLegacyServerTable =
             new RequestForConnectionToLegacyServerTable();
-    myHumanReadableName = par("humanReadableNameForAutomaticAdding").stringValue();
+
+    //get Instance of the FlowBindingTable - but only if MN or CN or HA - not a normal router - they do not have such a module
+    // this module could be added in a further investigation
+    if(isMN || isHA || isCN){
+        flowBindingTable = FlowBindingTableAccess().get();
+    }
+
 
     //cout<<"Initialisiere IPv6 Layer"<<endl;
 
@@ -101,6 +108,18 @@ void IPv6::updateDisplayString() {
 }
 
 void IPv6::endService(cPacket *msg) {
+
+    //check if it is a control message form the ProxyUnloading_Control_App:
+    if (dynamic_cast<RequetConnectionToLegacyServer*>(msg)) {
+        cout<<"Netzwerk-Layer aktualisiert nun seine FlowBindingTable"<<endl;
+        return;
+    }
+
+
+
+    //OTHERWISE IT is a normal data package - that has to be dealed with in the following:
+
+
     EV << "\n<<=======THIS IS THE IPv6::endService() function=========>>\n";
     bool isTunneled = false;
 
@@ -238,6 +257,8 @@ void IPv6::handleDatagramFromNetwork(IPv6Datagram *datagram, bool isTunnelled) {
 }
 
 void IPv6::handleMessageFromHL(cPacket *msg) {
+
+
     // if no interface exists, do not send datagram
     if (ift->getNumInterfaces() == 0) {
         EV << "No interfaces exist, dropping packet\n";

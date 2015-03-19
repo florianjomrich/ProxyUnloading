@@ -130,7 +130,7 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 //update the FlowBindingTable with this Information now for later Processing - If CN is capable
                 if(isCapableCN){
                     cout<<"CN supports the protocol and is actualizing his own FlowBindingTable"<<endl;
-                    send(messageFromHA,"flowBindingTableCable$o");
+                    send(messageFromHA,"uDPControllAppConnection$o");
 
                     //send back a binding Acknowledgment to the HomeAgent and the MN who requested the call
                     ACK_RequestConnectionToLegacyServer* acknowledgmentToHA = new ACK_RequestConnectionToLegacyServer();

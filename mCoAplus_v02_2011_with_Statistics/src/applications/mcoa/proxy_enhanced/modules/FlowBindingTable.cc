@@ -14,6 +14,7 @@
 // 
 
 #include "FlowBindingTable.h"
+#include "RequetConnectionToLegacyServer_m.h"
 
 Define_Module(FlowBindingTable);
 
@@ -35,6 +36,11 @@ void FlowBindingTable::handleMessage(cMessage* msg)
     }
     else
     {
+        /*
+         * A new entry has to be created
+         */
+        if (dynamic_cast<RequetConnectionToLegacyServer*>(msg)) {
 
+        }
     }
 }
