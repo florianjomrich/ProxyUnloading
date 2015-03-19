@@ -64,6 +64,21 @@ void  FlowBindingTable::insertNewFlowBindingEntry(RequetConnectionToLegacyServer
 
 }
 
+void  FlowBindingTable::insertNewFlowBindingEntry(ACK_RequestConnectionToLegacyServer *newFlowBindingEntry){
+    srcPorts.insert ( std::pair<const char*,int>(newFlowBindingEntry->getFlowSourceAddress(),newFlowBindingEntry->getSrcPort()) );
+    destPorts.insert ( std::pair<const char*,int>(newFlowBindingEntry->getFlowSourceAddress(),newFlowBindingEntry->getDestPort()) );
+
+    std::set<const char*> mySrcAdressSet;
+    mySrcAdressSet.insert(newFlowBindingEntry->getSrcAddress());
+    srcAdresses.insert ( std::pair<const char*,std::set<const char*> >(newFlowBindingEntry->getFlowSourceAddress(),mySrcAdressSet) );
+
+    std::set<const char*> myDestAdressSet;
+    myDestAdressSet.insert(newFlowBindingEntry->getDestAddress());
+    destAdresses.insert ( std::pair<const char*,std::set<const char*> >(newFlowBindingEntry->getFlowSourceAddress(),myDestAdressSet) );
+
+
+}
+
 //check if an entry already exists:
 bool FlowBindingTable::entryAlreadyExistsInTable(const char* flowSourceAdress){
     const bool srcPortFound = this->srcPorts.find(flowSourceAdress) != srcPorts.end();

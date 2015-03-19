@@ -156,5 +156,6 @@ module Proxy_Enhanced_HomeAgent6
         //PROXY EXTENSION - FOR CONTROLL MESSAGES FJ
         proxyUnloadingControlApp.udpOut --> udp.appIn++;
         proxyUnloadingControlApp.udpIn <-- udp.appOut++;
+        proxyUnloadingControlApp.uDPControllAppConnection <--> networkLayer.uDPControllAppConnection;
 }
 

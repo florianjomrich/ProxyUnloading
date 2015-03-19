@@ -127,7 +127,7 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                 //IPvXAddress mn0 = IPAddressResolver().resolve("MN[0]");
                 //cout<<"Zum Vergleich MN[0]"<<mn0<<endl;
 
-                //update the FlowBindingTable with this Information now for later Processing - If CN is capable
+                //update the FlowBindingTable with this Information now for later Processing - If CN is capable of dealing with the ProxyUnloading-Protocol
                 if(isCapableCN){
                     cout<<"CN supports the protocol and is actualizing his own FlowBindingTable"<<endl;
                     send(messageFromHA,"uDPControllAppConnection$o");
@@ -139,7 +139,7 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                     acknowledgmentToHA->setFlowSourceAddress(messageFromHA->getFlowSourceAddress());
                     acknowledgmentToHA->setDestPort(messageFromHA->getDestPort());
                     acknowledgmentToHA->setSrcPort(messageFromHA->getSrcPort());
-                    //acknowledgmentToHA->setName("ACK_RequestConnectionToLegacyServer");
+                    acknowledgmentToHA->setName("ACK_RequestConnectionToLegacyServer");
                     IPvXAddress ha = IPAddressResolver().resolve("HA");
                     sendToUDPMCOA(acknowledgmentToHA,localPort,ha,2000,true);
 
@@ -149,14 +149,23 @@ void Proxy_Unloading_Control_App::handleMessage(cMessage* msg) {
                     acknowledgmentToMN->setFlowSourceAddress(messageFromHA->getFlowSourceAddress());
                     acknowledgmentToMN->setDestPort(messageFromHA->getDestPort());
                     acknowledgmentToMN->setSrcPort(messageFromHA->getSrcPort());
+                    acknowledgmentToMN->setName("ACK_RequestConnectionToLegacyServer");
                     IPvXAddress mn = IPvXAddress();
                     mn.set(messageFromHA->getSrcAddress());
-                    sendToUDPMCOA(acknowledgmentToMN,localPort,mn,2000,true);//Control-Info wurde hier bereits gesetzt
+                    sendToUDPMCOA(acknowledgmentToMN,localPort,mn,2000,true);
 
                 }
                 return;
             }
 
+        }
+
+        if (dynamic_cast<ACK_RequestConnectionToLegacyServer*>(msg)) {
+            if(isHA || isMN){
+                //the flow-Binding-Table on the network layer has to be updated for the MN and the HA as well
+                send(msg,"uDPControllAppConnection$o");
+            }
+            return;
         }
 
         if (isHA) {

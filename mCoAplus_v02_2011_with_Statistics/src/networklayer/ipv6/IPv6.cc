@@ -123,6 +123,18 @@ void IPv6::endService(cPacket *msg) {
     }
 
 
+    if (dynamic_cast<ACK_RequestConnectionToLegacyServer*>(msg)) {
+      if(isHA || isMN){
+          //the flow-Binding-Table on the network layer has to be updated for the MN and the HA as well
+          cout<<"MN/HA"<<isMN<<isHA<<" haben bestätigung vom CN erhalten und aktualisieren jetzt ebenfalls ihre FlowBindingTable"<<endl;
+          ACK_RequestConnectionToLegacyServer* newFlowBindingEntryMessage = check_and_cast<
+                  ACK_RequestConnectionToLegacyServer *>(msg);
+                 flowBindingTable->insertNewFlowBindingEntry(newFlowBindingEntryMessage);
+                 flowBindingTable->getFlowBindingEntryFromTable(newFlowBindingEntryMessage->getFlowSourceAddress());
+       return;
+      }
+    }
+
     //*********************************************************************************************************
     //OTHERWISE IT is a normal data package - that has to be dealed with in the following:
 
@@ -268,6 +280,10 @@ void IPv6::handleDatagramFromNetwork(IPv6Datagram *datagram, bool isTunnelled) {
 }
 
 void IPv6::handleMessageFromHL(cPacket *msg) {
+
+
+
+
 
 
     // if no interface exists, do not send datagram
@@ -644,14 +660,14 @@ void IPv6::isLocalAddress(IPv6Datagram *datagram, bool isTunnelled) {
 
 
 
-//*************************************************************
+    //*************************************************************
              //TEST OB MAN DIE SRC IP ADRESSE ÄNDERN KANN ZUM UPPER LAYER HOCH:
 
 
               if (datagram->getTransportProtocol() == 17){//handelt es sich um ein UDP Paket ?
                if(isMN || isCN){
                    IPv6Address* neueAdresse = new IPv6Address("1111:111::1111:111");/// ????
-                                  // datagram->setSrcAddress(*neueAdresse); // hierüber ersetzt man die IP-Adresse nach oben hin zum UDP-Layer
+                                  // datagram->setSrcAddress(*neueAdresse); // hierüber ersetzt man die IP-Adresse nach oben hin zum UDP-
               }
                            cout<<"SOURCE ADRESSE ="<<datagram->getSrcAddress()<<endl;
               }
@@ -659,7 +675,8 @@ void IPv6::isLocalAddress(IPv6Datagram *datagram, bool isTunnelled) {
 
 
 
-//*************************************************************
+
+             //*********************************************************++
 
 
 
