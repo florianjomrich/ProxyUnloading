@@ -123,7 +123,9 @@ void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage *msg)
 
         if(dynamic_cast<RequestVideoStream*>(msg)){
             cout<<"MCoASrv: Request for sending Video received"<<endl;
-
+            UDPControlInfo* myControllInfo = check_and_cast<UDPControlInfo*>(msg->getControlInfo());
+            IPvXAddress srcIPAdresse = myControllInfo->getSrcAddr();
+            cout<<"MCoASrv received IP-Adress: "<<srcIPAdresse<<endl;
             //TODO das hier noch mal fixen, das korrekt Daten gesendet werden dann
 
             //cMessage *timer = new cMessage("UDPVideoStart");

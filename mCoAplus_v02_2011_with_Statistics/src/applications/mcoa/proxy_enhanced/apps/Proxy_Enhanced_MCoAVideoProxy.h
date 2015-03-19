@@ -26,6 +26,7 @@
 #include <omnetpp.h>
 #include "MCoAUDPBase.h"
 #include "MCoAVideoStreaming_m.h"
+#include "IPvXAddress.h"
 
 /**
  * A "Realtime" VideoStream client application.

@@ -17075,3 +17075,420 @@ cd src && make
 make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
 Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
 make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+13:12:35 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc: In member function ‘virtual void Proxy_Enhanced_MCoAVideoSrv::initialize()’:
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:58:15: warning: variable ‘startTime’ set but not used [-Wunused-but-set-variable]
+     simtime_t startTime = par("startTime");
+               ^
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:60:15: warning: variable ‘hurzTime’ set but not used [-Wunused-but-set-variable]
+     simtime_t hurzTime = 10;
+               ^
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc: In member function ‘virtual void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage*)’:
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:126:66: error: invalid conversion from ‘cObject*’ to ‘UDPControlInfo*’ [-fpermissive]
+             UDPControlInfo* myControllInfo = msg->getControlInfo();
+                                                                  ^
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:126:29: warning: unused variable ‘myControllInfo’ [-Wunused-variable]
+             UDPControlInfo* myControllInfo = msg->getControlInfo();
+                             ^
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.o] Fehler 1
+make: *** [all] Fehler 2
+13:12:35 **** Incremental Build of configuration gcc-debug for project ProxyUnloading ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/ProxyUnloading/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/ProxyUnloading/src'
+13:12:36 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+13:12:36 **** Incremental Build of configuration gcc-debug for project test_modifziert_PingApp_Dynamisch_eingestellt ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+Creating executable: ../out/gcc-debug//src/test_modifziert_PingApp_Dynamisch_eingestellt
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+13:12:36 **** Incremental Build of configuration gcc-debug for project test_modifziert_nur_noch_1_Mobile_Node ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+Creating executable: ../out/gcc-debug//src/test_modifziert_nur_noch_1_Mobile_Node
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+13:12:37 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+13:13:17 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc: In member function ‘virtual void Proxy_Enhanced_MCoAVideoSrv::initialize()’:
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:58:15: warning: variable ‘startTime’ set but not used [-Wunused-but-set-variable]
+     simtime_t startTime = par("startTime");
+               ^
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:60:15: warning: variable ‘hurzTime’ set but not used [-Wunused-but-set-variable]
+     simtime_t hurzTime = 10;
+               ^
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc: In member function ‘virtual void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage*)’:
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:126:82: error: no matching function for call to ‘check_and_cast(cObject*)’
+             UDPControlInfo* myControllInfo = check_and_cast(msg->getControlInfo());
+                                                                                  ^
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:126:82: note: candidates are:
+In file included from /home/ubuntu/omnetpp-4.4.1/include/carray.h:23:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/omnetpp.h:21,
+                 from applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.h:24,
+                 from applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:18:
+/home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:325:3: note: template<class T> T check_and_cast(cObject*)
+ T check_and_cast(cObject *p)
+   ^
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
+/home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:325:3: note:   template argument deduction/substitution failed:
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:126:82: note:   couldn't deduce template parameter ‘T’
+             UDPControlInfo* myControllInfo = check_and_cast(msg->getControlInfo());
+                                                                                  ^
+In file included from /home/ubuntu/omnetpp-4.4.1/include/carray.h:23:0,
+                 from /home/ubuntu/omnetpp-4.4.1/include/omnetpp.h:21,
+                 from applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.h:24,
+                 from applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:18:
+/home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:340:9: note: template<class T> const T check_and_cast(const cObject*)
+ const T check_and_cast(const cObject *p)
+         ^
+/home/ubuntu/omnetpp-4.4.1/include/cownedobject.h:340:9: note:   template argument deduction/substitution failed:
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:126:82: note:   couldn't deduce template parameter ‘T’
+             UDPControlInfo* myControllInfo = check_and_cast(msg->getControlInfo());
+                                                                                  ^
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:126:29: warning: unused variable ‘myControllInfo’ [-Wunused-variable]
+             UDPControlInfo* myControllInfo = check_and_cast(msg->getControlInfo());
+                             ^
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.o] Fehler 1
+make: *** [all] Fehler 2
+13:13:18 **** Incremental Build of configuration gcc-debug for project ProxyUnloading ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/ProxyUnloading/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/ProxyUnloading/src'
+13:13:18 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+13:13:18 **** Incremental Build of configuration gcc-debug for project test_modifziert_PingApp_Dynamisch_eingestellt ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+Creating executable: ../out/gcc-debug//src/test_modifziert_PingApp_Dynamisch_eingestellt
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+13:13:19 **** Incremental Build of configuration gcc-debug for project test_modifziert_nur_noch_1_Mobile_Node ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+Creating executable: ../out/gcc-debug//src/test_modifziert_nur_noch_1_Mobile_Node
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+13:13:19 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+13:15:19 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc: In member function ‘virtual void Proxy_Enhanced_MCoAVideoSrv::initialize()’:
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:58:15: warning: variable ‘startTime’ set but not used [-Wunused-but-set-variable]
+     simtime_t startTime = par("startTime");
+               ^
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:60:15: warning: variable ‘hurzTime’ set but not used [-Wunused-but-set-variable]
+     simtime_t hurzTime = 10;
+               ^
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc: In member function ‘virtual void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage*)’:
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:126:29: warning: unused variable ‘myControllInfo’ [-Wunused-variable]
+             UDPControlInfo* myControllInfo = check_and_cast<UDPControlInfo*>(msg->getControlInfo());
+                             ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
+13:15:22 **** Incremental Build of configuration gcc-debug for project ProxyUnloading ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/ProxyUnloading/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/ProxyUnloading/src'
+13:15:23 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+13:15:23 **** Incremental Build of configuration gcc-debug for project test_modifziert_PingApp_Dynamisch_eingestellt ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+Creating executable: ../out/gcc-debug//src/test_modifziert_PingApp_Dynamisch_eingestellt
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+13:15:23 **** Incremental Build of configuration gcc-debug for project test_modifziert_nur_noch_1_Mobile_Node ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+Creating executable: ../out/gcc-debug//src/test_modifziert_nur_noch_1_Mobile_Node
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+13:15:24 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+opp_makedep: warning: no input files
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+13:18:23 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc: In member function ‘virtual void Proxy_Enhanced_MCoAVideoSrv::initialize()’:
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:58:15: warning: variable ‘startTime’ set but not used [-Wunused-but-set-variable]
+     simtime_t startTime = par("startTime");
+               ^
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:60:15: warning: variable ‘hurzTime’ set but not used [-Wunused-but-set-variable]
+     simtime_t hurzTime = 10;
+               ^
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc: In member function ‘virtual void Proxy_Enhanced_MCoAVideoSrv::handleMessage(cMessage*)’:
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:127:12: error: ‘IPvXAdress’ was not declared in this scope
+            IPvXAdress srcIPAdresse = myControllInfo->getSrcAddr();
+            ^
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:127:23: error: expected ‘;’ before ‘srcIPAdresse’
+            IPvXAdress srcIPAdresse = myControllInfo->getSrcAddr();
+                       ^
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:128:51: error: ‘srcIPAdresse’ was not declared in this scope
+             cout<<"MCoASrv received IP-Adress: "<<srcIPAdresse<<endl;
+                                                   ^
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:126:29: warning: unused variable ‘myControllInfo’ [-Wunused-variable]
+             UDPControlInfo* myControllInfo = check_and_cast<UDPControlInfo*>(msg->getControlInfo());
+                             ^
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
+make[1]: *** [../out/gcc-debug/src/applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.o] Fehler 1
+make: *** [all] Fehler 2
+13:18:23 **** Incremental Build of configuration gcc-debug for project ProxyUnloading ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/ProxyUnloading/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/ProxyUnloading/src'
+13:18:23 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+13:18:24 **** Incremental Build of configuration gcc-debug for project test_modifziert_PingApp_Dynamisch_eingestellt ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+Creating executable: ../out/gcc-debug//src/test_modifziert_PingApp_Dynamisch_eingestellt
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+13:18:24 **** Incremental Build of configuration gcc-debug for project test_modifziert_nur_noch_1_Mobile_Node ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+Creating executable: ../out/gcc-debug//src/test_modifziert_nur_noch_1_Mobile_Node
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+13:18:24 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+13:19:25 **** Incremental Build of configuration gcc-debug for project mCoAplus_v02_2011_with_Statistics ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoProxy.cc
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoProxy.cc: In member function ‘virtual void Proxy_Enhanced_MCoAVideoProxy::receiveStream(cPacket*)’:
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoProxy.cc:84:37: warning: statement has no effect [-Wunused-value]
+     nLost < 0 ? nLost * (-1) : nLost;
+                                     ^
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc: In member function ‘virtual void Proxy_Enhanced_MCoAVideoSrv::initialize()’:
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:58:15: warning: variable ‘startTime’ set but not used [-Wunused-but-set-variable]
+     simtime_t startTime = par("startTime");
+               ^
+applications/mcoa/proxy_enhanced/apps/Proxy_Enhanced_MCoAVideoSrv.cc:60:15: warning: variable ‘hurzTime’ set but not used [-Wunused-but-set-variable]
+     simtime_t hurzTime = 10;
+               ^
+Creating shared library: ../out/gcc-debug/src/libinet.so
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/mCoAplus_v02_2011_with_Statistics/src'
+13:19:29 **** Incremental Build of configuration gcc-debug for project ProxyUnloading ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/ProxyUnloading/src'
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/ProxyUnloading/src'
+13:19:29 **** Incremental Build of configuration gcc-debug for project testMCoA_v2_2011 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+Creating executable: ../out/gcc-debug//src/testMCoA_v2_2011
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/testMCoA_v2_2011/src'
+13:19:30 **** Incremental Build of configuration gcc-debug for project test_modifziert_PingApp_Dynamisch_eingestellt ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+Creating executable: ../out/gcc-debug//src/test_modifziert_PingApp_Dynamisch_eingestellt
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_PingApp_Dynamisch_eingestellt/src'
+13:19:30 **** Incremental Build of configuration gcc-debug for project test_modifziert_nur_noch_1_Mobile_Node ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+Creating executable: ../out/gcc-debug//src/test_modifziert_nur_noch_1_Mobile_Node
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_modifziert_nur_noch_1_Mobile_Node/src'
+13:19:30 **** Incremental Build of configuration gcc-debug for project test_zum_Anpassen_der_App ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+cd src && opp_makemake -f --deep
+Creating Makefile in /home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src...
+Makefile created, running "make depend" to add dependencies...
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+Creating dependencies...
+opp_makedep: warning: no input files
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+cd src && make
+make[1]: Betrete Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
+Creating executable: ../out/gcc-debug//src/test_zum_Anpassen_der_App
+make[1]: Verlasse Verzeichnis '/home/ubuntu/ProxyUnloading/test_zum_Anpassen_der_App/src'
