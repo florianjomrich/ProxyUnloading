@@ -76,10 +76,17 @@ void IPv6::initialize() {
     isMN = par("isMN");
     isHA = par("isHA");
     isCN = par("isCN");
+    myHumanReadableName = par("humanReadableNameForAutomaticAdding").stringValue();
    // cout<<"was wurde konfiguriert rein: "<<isMN<<isHA<<isCN<<endl;
     requestForConnectionToLegacyServerTable =
             new RequestForConnectionToLegacyServerTable();
-    myHumanReadableName = par("humanReadableNameForAutomaticAdding").stringValue();
+
+    //get Instance of the FlowBindingTable - but only if MN or CN or HA - not a normal router - they do not have such a module
+    // this module could be added in a further investigation
+    if(isMN || isHA || isCN){
+        flowBindingTable = FlowBindingTableAccess().get();
+    }
+
 
     //cout<<"Initialisiere IPv6 Layer"<<endl;
 
@@ -101,6 +108,37 @@ void IPv6::updateDisplayString() {
 }
 
 void IPv6::endService(cPacket *msg) {
+
+    //*********************************************************************************************************
+    //PROXY UNLOADING
+    //*********************************************************************************************************
+    //check if it is a control message form the ProxyUnloading_Control_App:
+    if (dynamic_cast<RequetConnectionToLegacyServer*>(msg) && isCN) {
+        cout<<"The network layer of CN inserts a new entry into it's FlowBindingTable"<<endl;
+        RequetConnectionToLegacyServer* newFlowBindingEntryMessage = check_and_cast<
+                               RequetConnectionToLegacyServer *>(msg);
+        flowBindingTable->insertNewFlowBindingEntry(newFlowBindingEntryMessage);
+        flowBindingTable->getFlowBindingEntryFromTable(newFlowBindingEntryMessage->getFlowSourceAddress());
+        return;
+    }
+
+
+    if (dynamic_cast<ACK_RequestConnectionToLegacyServer*>(msg) && (isHA || isMN) ) {
+
+          //the flow-Binding-Table on the network layer has to be updated for the MN and the HA as well
+          cout<<"MN/HA"<<isMN<<isHA<<" haben bestätigung vom CN erhalten und aktualisieren jetzt ebenfalls ihre FlowBindingTable"<<endl;
+          ACK_RequestConnectionToLegacyServer* newFlowBindingEntryMessage = check_and_cast<
+                  ACK_RequestConnectionToLegacyServer *>(msg);
+                 flowBindingTable->insertNewFlowBindingEntry(newFlowBindingEntryMessage);
+                 flowBindingTable->getFlowBindingEntryFromTable(newFlowBindingEntryMessage->getFlowSourceAddress());
+       return;
+
+    }
+
+    //*********************************************************************************************************
+    //OTHERWISE IT is a normal data package - that has to be dealed with in the following:
+
+
     EV << "\n<<=======THIS IS THE IPv6::endService() function=========>>\n";
     bool isTunneled = false;
 
@@ -200,6 +238,10 @@ InterfaceEntry *IPv6::getSourceInterfaceFrom(cPacket *msg, bool isTunneled) {
 }
 
 void IPv6::handleDatagramFromNetwork(IPv6Datagram *datagram, bool isTunnelled) {
+
+
+
+
     EV << "\n<<=======HandleMessagefromNetwork() Called=========>>  " << endl;
     // check for header biterror
     if (datagram->hasBitError()) {
@@ -238,6 +280,12 @@ void IPv6::handleDatagramFromNetwork(IPv6Datagram *datagram, bool isTunnelled) {
 }
 
 void IPv6::handleMessageFromHL(cPacket *msg) {
+
+
+
+
+
+
     // if no interface exists, do not send datagram
     if (ift->getNumInterfaces() == 0) {
         EV << "No interfaces exist, dropping packet\n";
@@ -609,6 +657,30 @@ void IPv6::routeMulticastPacket(IPv6Datagram *datagram, InterfaceEntry *destIE,
 }
 
 void IPv6::isLocalAddress(IPv6Datagram *datagram, bool isTunnelled) {
+
+
+
+    //*************************************************************
+             //TEST OB MAN DIE SRC IP ADRESSE ÄNDERN KANN ZUM UPPER LAYER HOCH:
+
+
+              if (datagram->getTransportProtocol() == 17){//handelt es sich um ein UDP Paket ?
+               if(isMN || isCN){
+                   IPv6Address* neueAdresse = new IPv6Address("1111:111::1111:111");/// ????
+                                  // datagram->setSrcAddress(*neueAdresse); // hierüber ersetzt man die IP-Adresse nach oben hin zum UDP-
+              }
+                           cout<<"SOURCE ADRESSE ="<<datagram->getSrcAddress()<<endl;
+              }
+
+
+
+
+
+             //*********************************************************++
+
+
+
+
     /* FIXME revise and complete defragmentation
      // Defragmentation. skip defragmentation if datagram is not fragmented
      if (datagram->getFragmentOffset()!=0 || datagram->getMoreFragments())
@@ -690,6 +762,10 @@ void IPv6::isLocalAddress(IPv6Datagram *datagram, bool isTunnelled) {
             //Bruno Sousa
             // Assign on receiving packets also... only for apps
             parse_ipv6_datagram_for_mcoa(datagram, NULL, true);
+
+
+
+
 
             //TODO: Indication of forward progress
             send(packet, "transportOut", gateindex);
@@ -846,8 +922,6 @@ cPacket *IPv6::decapsulate(IPv6Datagram *datagram, bool isTunneled) {
             ) {
                 RequetConnectionToLegacyServer* legacyRequestPacket =
                         new RequetConnectionToLegacyServer();
-                legacyRequestPacket->setName(
-                        "REQUEST_FOR_CONNECTION_TO_LEGACY_SERVER");
                 legacyRequestPacket->setKind(
                         REQUEST_FOR_CONNECTION_TO_LEGACY_SERVER);
                 legacyRequestPacket->setSrcAddress(datagram->getSrcAddress().str().c_str());
@@ -864,6 +938,14 @@ cPacket *IPv6::decapsulate(IPv6Datagram *datagram, bool isTunneled) {
                 send(legacyRequestPacket, "uDPControllAppConnection$o");
             }
 
+          /*
+           * IP ADRESSE SO ERSETZEN
+           *
+             IPv6Address* neueAdresse = new IPv6Address(flowSourceAddress->str().c_str());/// ????
+               datagram->setSrcAddress(*neueAdresse);
+           */
+
+
         }
 
     }
@@ -873,6 +955,9 @@ cPacket *IPv6::decapsulate(IPv6Datagram *datagram, bool isTunneled) {
 IPv6Datagram *IPv6::encapsulate(cPacket *transportPacket,
         InterfaceEntry *&destIE) {
     EV << "\n<<=======THIS IS THE IPv6::encapsulate() FUNCTION=========>>\n";
+
+
+
 
     IPv6ControlInfo *controlInfo = check_and_cast<IPv6ControlInfo*>(
             transportPacket->removeControlInfo());
@@ -894,6 +979,8 @@ IPv6Datagram *IPv6::encapsulate(cPacket *transportPacket,
     datagram->setDestAddress(dest);
 
     IPv6Address src = controlInfo->getSrcAddr();
+
+
 
     // when source address was given, use it; otherwise it'll get the address
     // of the outgoing interface after routing

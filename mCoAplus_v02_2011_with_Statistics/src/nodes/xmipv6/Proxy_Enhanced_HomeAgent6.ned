@@ -26,7 +26,7 @@ package inet.nodes.xmipv6;
 import inet.applications.pingapp.PingApp;
 import inet.applications.tcpapp.TCPApp;
 import inet.applications.udpapp.UDPApp;
-import inet.applications.mcoa.proxy_enhanced.Proxy_Unloading_Control_App;
+import inet.applications.mcoa.proxy_enhanced.control.Proxy_Unloading_Control_App;
 import inet.applications.mcoa.proxy_enhanced.modules.FlowBindingTable;
 import inet.base.NotificationBoard;
 import inet.linklayer.ethernet.EthernetInterface;
@@ -45,6 +45,7 @@ module Proxy_Enhanced_HomeAgent6
         string tcpAppType;
         string udpAppType;
         @node();
+        @display("bgb=893,393");
     gates:
            //in: in[];
            //out: out[];
@@ -61,61 +62,61 @@ module Proxy_Enhanced_HomeAgent6
         }
         interfaceTable: InterfaceTable {
             parameters:
-                @display("p=150,60;i=block/table");
+                @display("p=170,60;i=block/table");
         }
         bindingCache: BindingCache {
             parameters:
                 @display("p=55,124;i=old/harddisk");
         }
-       flowBindingTable: FlowBindingTable {
+        flowBindingTable: FlowBindingTable {
             parameters:
-                @display("p=20,308;i=old/floppy1");
+                @display("p=60,209;i=old/floppy1");
         }
         routingTable6: RoutingTable6 {
             parameters:
                 isRouter = true;
-                @display("p=257,36;i=block/table2");
+                @display("p=263,67;i=block/table2");
         }
         tcpApp[numTcpApps]: <tcpAppType> like TCPApp {
             parameters:
-                @display("p=218,99;i=block/app");
+                @display("p=524,53;i=block/app");
         }
         tcp: TCP {
             parameters:
-                @display("p=187,170;i=block/wheelbarrow");
+                @display("p=510,146;i=block/wheelbarrow");
         }
         udpApp[numUdpApps]: <udpAppType> like UDPApp {
             parameters:
-                @display("i=block/app;p=343,53");
+                @display("i=block/app;p=680,53");
         }
         udp: UDP {
             parameters:
-                @display("p=323,146;i=block/transport");
+                @display("p=660,146;i=block/transport");
         }
         proxyUnloadingControlApp: Proxy_Unloading_Control_App {
             parameters:
                 isMN = false; //is Mobile Node
                 isHA = true; //is Home Agent
                 isCN = false;//is Correspondent Node
-                @display("p=343,344;i=block/wheelbarrow");
+                @display("p=822,156;i=block/wheelbarrow");
         }
         pingApp: PingApp {
             parameters:
-                @display("i=block/app;p=257,257");
+                @display("i=block/app;p=594,257");
         }
         networkLayer: Proxy_Unloading_MobileIPLayer6 {
             parameters:
                 isMN = false; //is Mobile Node
                 isHA = true; //is Home Agent
                 isCN = false;//is Correspondent Node
-                @display("p=257,177;i=block/fork;q=queue");
+                @display("p=594,177;i=block/fork;q=queue");
             gates:
                 ifIn[sizeof(out)+sizeof(ethOut)];
                 ifOut[sizeof(out)+sizeof(ethOut)];
         }
         eth[sizeof(ethOut)]: EthernetInterface {
             parameters:
-                @display("p=145,257,row,110;q=l2queue;i=block/ifcard");
+                @display("p=357,257,row,110;q=l2queue;i=block/ifcard");
         }
     connections allowunconnected:
         for i=0..numTcpApps-1 {
@@ -155,7 +156,6 @@ module Proxy_Enhanced_HomeAgent6
         //PROXY EXTENSION - FOR CONTROLL MESSAGES FJ
         proxyUnloadingControlApp.udpOut --> udp.appIn++;
         proxyUnloadingControlApp.udpIn <-- udp.appOut++;
-     	proxyUnloadingControlApp.flowBindingTableCable <--> flowBindingTable.flowBindingTableCable;
-        
+        proxyUnloadingControlApp.uDPControllAppConnection <--> networkLayer.uDPControllAppConnection;
 }
 

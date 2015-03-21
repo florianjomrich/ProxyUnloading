@@ -20,6 +20,5 @@ package inet.applications.mcoa.proxy_enhanced.modules;
 //
 simple FlowBindingTable 
 {
-    gates:
-    inout flowBindingTableCable;
+   
 }

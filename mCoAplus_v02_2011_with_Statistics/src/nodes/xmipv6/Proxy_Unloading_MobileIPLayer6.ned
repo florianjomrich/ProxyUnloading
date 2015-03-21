@@ -63,6 +63,7 @@ module Proxy_Unloading_MobileIPLayer6
         inout NETWORK_LAYER_proxy_Enhanced_Control_Channel;
         inout proxy_Enhanced_Control_Channel;
         inout uDPControllAppConnection;
+        inout bindingUpdateChannelToProxyControlApp;
     submodules:
         ipv6: IPv6 {
             parameters:
@@ -149,5 +150,7 @@ module Proxy_Unloading_MobileIPLayer6
         //PROXY ENHANCED
         proxy_Enhanced_Control_Channel<-->xMobileIPv6.xMIP_proxy_Enhanced_Control_Channel;
         uDPControllAppConnection <--> ipv6.uDPControllAppConnection;
+        
+        bindingUpdateChannelToProxyControlApp<-->xMobileIPv6.bindingUpdateChannelToProxyControlApp;//for the BindingUpdates to be received by the Upper Layer App
 }
 

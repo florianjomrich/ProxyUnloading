@@ -23,7 +23,7 @@ package inet.nodes.xmipv6;
 import inet.applications.pingapp.PingApp;
 import inet.applications.tcpapp.TCPApp;
 import inet.applications.udpapp.UDPApp;
-import inet.applications.mcoa.proxy_enhanced.Proxy_Unloading_Control_App;
+import inet.applications.mcoa.proxy_enhanced.control.Proxy_Unloading_Control_App;
 import inet.applications.mcoa.proxy_enhanced.modules.FlowBindingTable;
 import inet.base.NotificationBoard;
 import inet.linklayer.ieee80211.Ieee80211NicSTA;
@@ -58,13 +58,13 @@ module Proxy_Enhanced_WirelessHost6Multi
         //IPForward: bool,
         string routingFile;
         string mobilityType;
-        @display("i=device/wifilaptop");
+        @display("i=device/wifilaptop;bgb=1012,479");
     gates:
            //in: in[];
            //out: out[];
            //in: ethIn[];
            //out: ethOut[];
-    
+
         input radioIn[numRadios] @directIn;
     submodules:
         notificationBoard: NotificationBoard {
@@ -79,9 +79,9 @@ module Proxy_Enhanced_WirelessHost6Multi
             parameters:
                 @display("p=63,292;i=old/harddisk");
         }
-    	flowBindingTable: FlowBindingTable {
+        flowBindingTable: FlowBindingTable {
             parameters:
-                @display("p=20,308;i=old/floppy1");
+                @display("p=150,292;i=old/floppy1");
         }
         routingTable6: RoutingTable6 {
             parameters:
@@ -90,40 +90,40 @@ module Proxy_Enhanced_WirelessHost6Multi
         }
         tcpApp[numTcpApps]: <tcpAppType> like TCPApp {
             parameters:
-                @display("p=195,75;i=block/app");
+                @display("p=442,135;i=block/app");
         }
         tcp: TCP {
             parameters:
-                @display("p=195,170;i=block/wheelbarrow");
+                @display("p=516,198;i=block/wheelbarrow");
         }
         udpApp[numUdpApps]: <udpAppType> like UDPApp {
             parameters:
-                @display("i=block/app;p=312,75");
+                @display("i=block/app;p=800,96");
             gates:
 
 
         }
         udp: UDP {
             parameters:
-                @display("p=312,170;i=block/transport");
+                @display("p=800,191;i=block/transport");
         }
         proxyUnloadingControlApp: Proxy_Unloading_Control_App {
-              parameters:
+            parameters:
                 isMN = true; //is Mobile Node
                 isHA = false; //is Home Agent
-                isCN =  false;//is Correspondent Node
-                @display("p=122,396;i=block/wheelbarrow");
+                isCN = false;//is Correspondent Node
+                @display("p=668,174;i=block/wheelbarrow");
         }
         pingApp: PingApp {
             parameters:
-                @display("i=block/app;p=341,286");
+                @display("i=block/app;p=829,307");
         }
         networkLayer: Proxy_Unloading_MobileIPLayer6 {
             parameters:
                 isMN = true; //is Mobile Node
                 isHA = false; //is Home Agent
-                isCN =  false;//is Correspondent Node
-                @display("p=248,247;i=block/fork;q=queue");
+                isCN = false;//is Correspondent Node
+                @display("p=736,268;i=block/fork;q=queue");
             gates:
                 ifIn[(sizeof(out)+sizeof(ethOut))+numRadios];
                 ifOut[(sizeof(out)+sizeof(ethOut))+numRadios];
@@ -132,7 +132,7 @@ module Proxy_Enhanced_WirelessHost6Multi
         }
         wlan[numRadios]: Ieee80211NicSTA {
             parameters:
-                @display("p=234,357;q=queue;i=block/ifcard");
+                @display("p=722,378;q=queue;i=block/ifcard");
         }
         mobility: <mobilityType> like BasicMobility {
             parameters:
@@ -184,15 +184,15 @@ module Proxy_Enhanced_WirelessHost6Multi
         }
 
         //PROXY ENHANCED CONNECTION
-     
-       // buList.toProxyApp++ --> proxyUnloadingControlApp.fromBindingUpdateList;
-        networkLayer.NETWORK_LAYER_proxy_Enhanced_Control_Channel <--> proxyUnloadingControlApp.APP_proxy_Enhanced_Control_Channel;
-       	proxyUnloadingControlApp.udpOut --> udp.appIn++;
-	 	proxyUnloadingControlApp.udpIn <-- udp.appOut++;
-	 	
-	 	
-	 	proxyUnloadingControlApp.uDPControllAppConnection <--> networkLayer.uDPControllAppConnection;
-	 	 proxyUnloadingControlApp.flowBindingTableCable <--> flowBindingTable.flowBindingTableCable;
 
+        // buList.toProxyApp++ --> proxyUnloadingControlApp.fromBindingUpdateList;
+        networkLayer.NETWORK_LAYER_proxy_Enhanced_Control_Channel <--> proxyUnloadingControlApp.APP_proxy_Enhanced_Control_Channel;
+        proxyUnloadingControlApp.udpOut --> udp.appIn++;
+        proxyUnloadingControlApp.udpIn <-- udp.appOut++;
+
+
+        proxyUnloadingControlApp.uDPControllAppConnection <--> networkLayer.uDPControllAppConnection;
+        proxyUnloadingControlApp.bindingUpdateChannelToProxyControlApp<-->networkLayer.bindingUpdateChannelToProxyControlApp;
+        
 }
 

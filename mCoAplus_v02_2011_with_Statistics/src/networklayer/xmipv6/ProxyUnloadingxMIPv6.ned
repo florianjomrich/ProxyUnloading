@@ -38,5 +38,6 @@ simple ProxyUnloadingxMIPv6
 		input fromIPv6;
 		output toIPv6;
 		inout xMIP_proxy_Enhanced_Control_Channel;
+		inout bindingUpdateChannelToProxyControlApp;
 }
 

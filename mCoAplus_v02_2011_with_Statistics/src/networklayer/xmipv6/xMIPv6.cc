@@ -27,6 +27,9 @@
 #include <iostream>
 #include "NotifierConsts.h"
 
+//PROXY UNLOADING
+#include "FlowBindingUpdate_m.h"
+
 #define MK_SEND_PERIODIC_BU			1
 // 18.09.07 - CB
 #define MK_SEND_PERIODIC_BR			2
@@ -341,6 +344,8 @@ void xMIPv6::initiateMIPv6Protocol(InterfaceEntry *ie, IPv6Address& CoA)
 {
 	Enter_Method_Silent(); // can be called by NeighborDiscovery module
 
+
+
 	//trigger MIPv6 once.
 	//if (!mipv6sm->getMIPv6triggered() || (!mCoA->getProhibited() && mCoA->getTypeUseMCoA() != MCOA_TUN_ALL_ADR_ALL)){
 	if (!mipv6sm->getMIPv6triggered() ){
@@ -367,6 +372,7 @@ void xMIPv6::initiateMIPv6Protocol(InterfaceEntry *ie, IPv6Address& CoA)
 
 				KeyMCoABind keyAux =  KeyMCoABind(CoA,get_and_calcBID(CoA, ie), haDest );
 
+
 				if (mCoA->getTypeUseMCoA() == MCOA_TUN_ALL_ADR_ALL || mCoA->getTypeUseMCoA() == MCOA_TUN_ALL_ADR_SINGLE_RR || mCoA->getTypeUseMCoA() == MCOA_TUN_ALL_ADR_SINGLE_FIRST){
 					//MCoAcreateBUTimer(keyAux, haDest, ie, false); //register all the CoA
 					MCoAcreateBUTimer(keyAux, haDest, ie, true); //register all the CoA
@@ -389,7 +395,8 @@ void xMIPv6::initiateMIPv6Protocol(InterfaceEntry *ie, IPv6Address& CoA)
 			// RO with CNs is triggered after receiving a valid BA from the HA
 		}
 
-		// a movement occured -> BUL entries for CNs not valid anymore
+		cout<<"A MOVEMENT OCCURED"<<endl;
+		// A MOVMENT OCCURED -> BUL entries for CNs not valid anymore
 		//IPv6Address HoA = ie->ipv6Data()->getMNHomeAddress();
 		IPv6Address HoA = rt6->getHomeNetHoA_adr();//MCoA2
 
@@ -401,6 +408,7 @@ void xMIPv6::initiateMIPv6Protocol(InterfaceEntry *ie, IPv6Address& CoA)
 
 			//IPv6Address cn = *(itCNList);
 			IPv6Address cn = (*it).first;
+			cout<<"CN-Adresses Test?: "<<cn<<endl;
 			std::vector<int> aBIDs = (*it).second;
 			std::vector<int>::iterator bit;
 
@@ -415,6 +423,8 @@ void xMIPv6::initiateMIPv6Protocol(InterfaceEntry *ie, IPv6Address& CoA)
 				 * for standard MIPv6 the vector should only have one BID.
 				 */
 				IPv6Address auxCoA = get_adr_from_bid(auxBID);
+				cout<<"itCoA: "<<itCoA->first<<endl;
+				cout<<"aux CoA: "<<auxCoA<<endl;
 
 				KeyMCoABind keyM;
 				if (!mCoA->getProhibited()){
@@ -723,7 +733,7 @@ void xMIPv6::MCoAcreateBUTimer(KeyMCoABind &keyMCoA, const IPv6Address& buDest,I
 
 void xMIPv6::createBUTimer( KeyMCoABind &keyMCoA, const IPv6Address& buDest, InterfaceEntry* ie)
 {
-	cout << "[MCOA] BUTimer Bu Timer for " << keyMCoA.getDestBID() << ", " << keyMCoA.getBID() << " with CoA =" << keyMCoA.getAddr() << "?=" << buDest << endl;
+	cout << "[MCOA] BUTimer Bu Timer for " << keyMCoA.getDestBID() << ", BID:" << keyMCoA.getBID() << " with CoA =" << keyMCoA.getAddr() << "?=" << buDest << endl;
 
 
 	//if (keyMCoA.getAddr() == ie->ipv6Data()->getMNHomeAddress()){
@@ -1365,7 +1375,7 @@ void xMIPv6::createAndSendBUMessage(const IPv6Address& dest, InterfaceEntry* ie,
 				sizeOpts+= aBIDmob->getMobOpts(ci).getPayloadLength();
 
 
-				EV<<"\n\n[MCOA] >>>>> send [in BU message] BU with dest " << keyMCoA.getDestBID() << "  and  BID " << keyMCoA.getBID()
+				cout<<"\n\n[MCOA] >>>>> send [in BU message] BU with dest " << keyMCoA.getDestBID() << "  and  BID " << keyMCoA.getBID()
 						<< " for CoA "<< keyMCoA.getAddr() << " and sequenceNumber " << bu->getSequence()   <<  endl;
 
 				/*11.7.1
@@ -1376,7 +1386,7 @@ void xMIPv6::createAndSendBUMessage(const IPv6Address& dest, InterfaceEntry* ie,
 
 				ci_mob++;
 			}else {
-				EV<<"[MCOA] >>>>>ignore Option with addr " << adrCoA  <<endl;
+				cout<<"[MCOA] >>>>>ignore Option with addr " << adrCoA  <<endl;
 			}
 		}
 
@@ -1459,6 +1469,28 @@ void xMIPv6::createAndSendBUMessage(const IPv6Address& dest, InterfaceEntry* ie,
 
 void xMIPv6::updateBUL(BindingUpdate* bu, KeyMCoABind &keyMCoA,  const IPv6Address& dest, const IPv6Address& CoA, InterfaceEntry* ie, const simtime_t sendTime)
 {
+
+    //***********************PROXY UNLOADING********************
+    //send only once to the HA - to not increase the traffic over the air gap !!!!
+    IPvXAddress ha = IPAddressResolver().resolve("HA");
+    if(dest==ha.get6()){
+        cout<<"MN sendet eine einzelne BU Nachricht an den HA"<<endl;
+
+        FlowBindingUpdate* newFlowBindingUpdateToSend = new FlowBindingUpdate();
+        newFlowBindingUpdateToSend->setHomeAddress(bu->getHomeAddressMN().str().c_str());
+        newFlowBindingUpdateToSend->setNewCoAdress(CoA.str().c_str());
+        newFlowBindingUpdateToSend->setDestAddress(dest.str().c_str());
+        newFlowBindingUpdateToSend->setWasSendFromHA(false);//for avoiding infinite loop at HomeAgent
+
+        cout<<"Binding-Update für HomeAdresse:"<<newFlowBindingUpdateToSend->getHomeAddress()<<" neue CoA: "<<newFlowBindingUpdateToSend->getNewCoAdress()<<" mit DestA: "<<dest<<endl;
+        newFlowBindingUpdateToSend->setName("Flow Binding Update");
+        send(newFlowBindingUpdateToSend,"bindingUpdateChannelToProxyControlApp$o");
+    }
+
+    cout<<"BINDING UPDATE!!!"<<endl;
+
+   // **********************************************************
+
 
 	uint buLife = 4 * bu->getLifetime(); /* 6.1.7 One time unit is 4 seconds. */ // update 11.06.08 - CB
 	uint buSeq = bu->getSequence();
@@ -1626,9 +1658,9 @@ void xMIPv6::processBUMessage(BindingUpdate* bu, IPv6ControlInfo* ctrlInfo)
 			if (buLifetime==0 && mCoA->getDeregisterALL()==MCoA::DEREGISTER_ALL_SIMULTANEOUSLY) {
 
 				if ( rt6->isHomeAgent()) {
-					EV << "[MCOA] HA Receiving BU with lifetime = 0 ... processing " << endl;
+					cout << "[MCOA] HA Receiving BU with lifetime = 0 ... processing " << endl;
 				}else {
-					EV << "[MCOA] CN Receiving BU with lifetime = 0 ... processing " << endl;
+					cout << "[MCOA] CN Receiving BU with lifetime = 0 ... processing " << endl;
 				}
 
 				if (bc->deleteALLEntries() ) {mcoaDeregistered= true; }
@@ -1672,7 +1704,7 @@ void xMIPv6::processBUMessage(BindingUpdate* bu, IPv6ControlInfo* ctrlInfo)
 					 */
 					if (buLifetime == 0){
 						if( rt6->isHomeAgent()){
-							EV << "[MCOA] HA Receiving BU with lifetime = 0 ... processing " << keyBID.getAddr() << endl;
+							cout << "[MCOA] HA Receiving BU with lifetime = 0 ... processing " << keyBID.getAddr() << endl;
 
 							cancelTimerIfEntry(keyBID.getAddr(), interfaceID, KEY_BC_EXP, keyBID.getBID());
 
